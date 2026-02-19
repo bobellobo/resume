@@ -1,14 +1,5 @@
 import { ref, watch } from 'vue'
-
-export interface Project {
-  id: number
-  title: string
-  description: string
-  image: string
-  technologies: string[]
-  link: string
-  shortDescription: string
-}
+import type { Project } from '../Projects/Projects'
 
 export function useModalLogic() {
   const isOpen = ref(false)

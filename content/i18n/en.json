@@ -32,7 +32,8 @@
   },
   "modal": {
     "visitProject": "Visit Project",
-    "backToPortfolio": "Back to Portfolio"
+    "backToPortfolio": "Back to Portfolio",
+    "technologiesUsed": "Technologies Used"
   },
   "projectCard": {
     "viewProject": "View Project"

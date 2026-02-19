@@ -32,7 +32,8 @@
   },
   "modal": {
     "visitProject": "Voir le projet",
-    "backToPortfolio": "Retour au portfolio"
+    "backToPortfolio": "Retour au portfolio",
+    "technologiesUsed": "Technologies Utilisées"
   },
   "projectCard": {
     "viewProject": "Voir le projet"

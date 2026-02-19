@@ -10,11 +10,11 @@
           @click="$emit('selectProject', project)"
         >
           <div class="card-image">
-            <img :src="`/content/projects/${project.image}`" :alt="project.title" />
+            <img :src="`/content/projects/${project.image}`" :alt="project.content[currentLocale].title" />
           </div>
           <div class="card-content">
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.shortDescription }}</p>
+            <h3>{{ project.content[currentLocale].title }}</h3>
+            <p>{{ project.content[currentLocale].shortDescription }}</p>
             <div class="card-tags">
               <span v-for="tech in project.technologies" :key="tech" class="tag">
                 {{ tech }}
@@ -31,10 +31,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useProjectsData, type Project } from './Projects'
 
-useI18n()
+const { locale } = useI18n()
+const currentLocale = computed(() => locale.value as 'en' | 'fr')
 
 const { projects } = useProjectsData()
 

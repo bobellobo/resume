@@ -12,6 +12,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Project } from './components/Projects/Projects'
 import Header from './components/Header/Header.vue'
 import Hero from './components/Hero/Hero.vue'
 import About from './components/About/About.vue'
@@ -19,16 +20,6 @@ import Projects from './components/Projects/Projects.vue'
 import Contact from './components/Contact/Contact.vue'
 import Footer from './components/Footer/Footer.vue'
 import ProjectModal from './components/ProjectModal/ProjectModal.vue'
-
-interface Project {
-  id: number
-  title: string
-  description: string
-  image: string
-  technologies: string[]
-  link: string
-  shortDescription: string
-}
 
 const projectModalRef = ref<InstanceType<typeof ProjectModal> | null>(null)
 

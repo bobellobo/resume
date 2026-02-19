@@ -1,38 +1,74 @@
 [
   {
     "id": 1,
-    "title": "Project Title 1",
-    "description": "Detailed description of your first project. This is where you can explain the project in depth, including the problem it solved, your approach, and the results achieved.",
+    "content": {
+      "en": {
+        "title": "Project Title 1",
+        "description": "Detailed description of your first project. This is where you can explain the project in depth, including the problem it solved, your approach, and the results achieved.",
+        "shortDescription": "Brief description of your first project. Highlight the key features and technologies used."
+      },
+      "fr": {
+        "title": "Titre du Projet 1",
+        "description": "Description détaillée de votre premier projet. Ceci est l'endroit où vous pouvez expliquer le projet en détail, y compris le problème qu'il a résolu, votre approche et les résultats obtenus.",
+        "shortDescription": "Brève description de votre premier projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
+      }
+    },
     "image": "images/project-1.jpg",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "link": "#",
-    "shortDescription": "Brief description of your first project. Highlight the key features and technologies used."
+    "link": "#"
   },
   {
     "id": 2,
-    "title": "Project Title 2",
-    "description": "Detailed description of your second project. Describe the technologies used, challenges faced, and the final outcome of this exciting project.",
+    "content": {
+      "en": {
+        "title": "Project Title 2",
+        "description": "Detailed description of your second project. Describe the technologies used, challenges faced, and the final outcome of this exciting project.",
+        "shortDescription": "Brief description of your second project. Highlight the key features and technologies used."
+      },
+      "fr": {
+        "title": "Titre du Projet 2",
+        "description": "Description détaillée de votre deuxième projet. Décrivez les technologies utilisées, les défis rencontrés et le résultat final de ce projet passionnant.",
+        "shortDescription": "Brève description de votre deuxième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
+      }
+    },
     "image": "images/project-2.jpg",
     "technologies": ["JavaScript", "React", "CSS"],
-    "link": "#",
-    "shortDescription": "Brief description of your second project. Highlight the key features and technologies used."
+    "link": "#"
   },
   {
     "id": 3,
-    "title": "Project Title 3",
-    "description": "Detailed description of your third project. Share insights about the backend development, database design, and server architecture that powered this application.",
+    "content": {
+      "en": {
+        "title": "Project Title 3",
+        "description": "Detailed description of your third project. Share insights about the backend development, database design, and server architecture that powered this application.",
+        "shortDescription": "Brief description of your third project. Highlight the key features and technologies used."
+      },
+      "fr": {
+        "title": "Titre du Projet 3",
+        "description": "Description détaillée de votre troisième projet. Partagez des informations sur le développement du backend, la conception de la base de données et l'architecture du serveur qui a alimenté cette application.",
+        "shortDescription": "Brève description de votre troisième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
+      }
+    },
     "image": "images/project-3.jpg",
     "technologies": ["Node.js", "MongoDB", "Express"],
-    "link": "#",
-    "shortDescription": "Brief description of your third project. Highlight the key features and technologies used."
+    "link": "#"
   },
   {
     "id": 4,
-    "title": "Project Title 4",
-    "description": "Detailed description of your fourth project. Highlight the unique features, user experience improvements, and the impact it had on the target audience.",
+    "content": {
+      "en": {
+        "title": "Project Title 4",
+        "description": "Detailed description of your fourth project. Highlight the unique features, user experience improvements, and the impact it had on the target audience.",
+        "shortDescription": "Brief description of your fourth project. Highlight the key features and technologies used."
+      },
+      "fr": {
+        "title": "Titre du Projet 4",
+        "description": "Description détaillée de votre quatrième projet. Mettez en évidence les fonctionnalités uniques, les améliorations de l'expérience utilisateur et l'impact qu'il a eu sur le public cible.",
+        "shortDescription": "Brève description de votre quatrième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
+      }
+    },
     "image": "images/project-4.jpg",
     "technologies": ["Vue.js", "Firebase", "CSS"],
-    "link": "#",
-    "shortDescription": "Brief description of your fourth project. Highlight the key features and technologies used."
+    "link": "#"
   }
 ]

@@ -4,13 +4,13 @@
     <div class="modal-content" @click.stop>
       <button class="modal-close" @click="closeModal">&times;</button>
       <div class="modal-header">
-        <img :src="`/content/projects/${currentProject?.image}`" :alt="currentProject?.title" class="modal-image" />
+        <img :src="`/content/projects/${currentProject?.image}`" :alt="currentProject?.content[currentLocale].title" class="modal-image" />
       </div>
       <div class="modal-body">
-        <h2>{{ currentProject?.title }}</h2>
-        <p>{{ currentProject?.description }}</p>
+        <h2>{{ currentProject?.content[currentLocale].title }}</h2>
+        <p>{{ currentProject?.content[currentLocale].description }}</p>
         <div class="modal-tags">
-          <h4>Technologies Used:</h4>
+          <h4>{{ $t('modal.technologiesUsed') }}</h4>
           <div class="technologies">
             <span v-for="tech in currentProject?.technologies" :key="tech" class="modal-tag">
               {{ tech }}
@@ -29,10 +29,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useModalLogic } from './ProjectModal'
 
-useI18n()
+const { locale } = useI18n()
+const currentLocale = computed(() => locale.value as 'en' | 'fr')
 
 const { isOpen, currentProject, openModal, closeModal } = useModalLogic()
 

@@ -1,13 +1,20 @@
 import { ref, onMounted } from 'vue'
 
-export interface Project {
-  id: number
+export interface ProjectContent {
   title: string
   description: string
+  shortDescription: string
+}
+
+export interface Project {
+  id: number
+  content: {
+    en: ProjectContent
+    fr: ProjectContent
+  }
   image: string
   technologies: string[]
   link: string
-  shortDescription: string
 }
 
 export function useProjectsData() {
@@ -15,7 +22,7 @@ export function useProjectsData() {
 
   const loadProjects = async () => {
     try {
-      const response = await fetch('/content/projects.json')
+      const response = await fetch('content/projects/projects.json')
       if (!response.ok) {
         throw new Error('Failed to load projects')
       }
