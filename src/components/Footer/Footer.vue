@@ -17,4 +17,4 @@ import { useI18n } from 'vue-i18n'
 useI18n()
 </script>
 
-<style scoped src="../styles/components/Footer.css"></style>
+<style scoped src="./Footer.css"></style>

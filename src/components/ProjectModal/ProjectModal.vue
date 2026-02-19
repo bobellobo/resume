@@ -29,49 +29,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useModalLogic } from './ProjectModal'
 
-interface Project {
-  id: number
-  title: string
-  description: string
-  image: string
-  technologies: string[]
-  link: string
-  shortDescription: string
-}
+useI18n()
 
-const { t: $t } = useI18n()
-const isOpen = ref(false)
-const currentProject = ref<Project | null>(null)
-
-const openModal = (project: Project) => {
-  currentProject.value = project
-  isOpen.value = true
-  document.body.style.overflow = 'hidden'
-}
-
-const closeModal = () => {
-  isOpen.value = false
-  currentProject.value = null
-  document.body.style.overflow = 'auto'
-}
-
-// Listen for keyboard escape
-const handleKeydown = (e: KeyboardEvent) => {
-  if (e.key === 'Escape' && isOpen.value) {
-    closeModal()
-  }
-}
-
-watch(isOpen, (newVal) => {
-  if (newVal) {
-    window.addEventListener('keydown', handleKeydown)
-  } else {
-    window.removeEventListener('keydown', handleKeydown)
-  }
-})
+const { isOpen, currentProject, openModal, closeModal } = useModalLogic()
 
 defineExpose({
   openModal,
@@ -79,4 +42,4 @@ defineExpose({
 })
 </script>
 
-<style scoped src="../styles/components/ProjectModal.css"></style>
+<style scoped src="./ProjectModal.css"></style>

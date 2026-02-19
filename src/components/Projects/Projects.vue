@@ -31,37 +31,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useProjectsData, type Project } from './Projects'
 
-interface Project {
-  id: number
-  title: string
-  description: string
-  image: string
-  technologies: string[]
-  link: string
-  shortDescription: string
-}
+useI18n()
 
-const { t: $t } = useI18n()
-const projects = ref<Project[]>([])
+const { projects } = useProjectsData()
 
 defineEmits<{
   selectProject: [project: Project]
 }>()
-
-onMounted(async () => {
-  try {
-    const response = await fetch('/content/projects/projects.json')
-    if (!response.ok) {
-      throw new Error('Failed to load projects')
-    }
-    projects.value = await response.json()
-  } catch (error) {
-    console.error('Error loading projects:', error)
-  }
-})
 </script>
 
-<style scoped src="../styles/components/Projects.css"></style>
+<style scoped src="./Projects.css"></style>

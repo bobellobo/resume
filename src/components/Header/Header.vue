@@ -24,17 +24,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { useHeaderLogic } from './Header'
 
-const { locale } = useI18n()
-const currentLanguage = ref(locale.value)
-
-const switchLanguage = (lang: string) => {
-  locale.value = lang
-  currentLanguage.value = lang
-  localStorage.setItem('language', lang)
-}
+const { currentLanguage, switchLanguage } = useHeaderLogic()
 </script>
 
-<style scoped src="../styles/components/Header.css"></style>
+<style scoped src="./Header.css"></style>

@@ -12,13 +12,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import Header from './components/Header.vue'
-import Hero from './components/Hero.vue'
-import About from './components/About.vue'
-import Projects from './components/Projects.vue'
-import Contact from './components/Contact.vue'
-import Footer from './components/Footer.vue'
-import ProjectModal from './components/ProjectModal.vue'
+import Header from './components/Header/Header.vue'
+import Hero from './components/Hero/Hero.vue'
+import About from './components/About/About.vue'
+import Projects from './components/Projects/Projects.vue'
+import Contact from './components/Contact/Contact.vue'
+import Footer from './components/Footer/Footer.vue'
+import ProjectModal from './components/ProjectModal/ProjectModal.vue'
 
 interface Project {
   id: number

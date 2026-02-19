@@ -13,4 +13,4 @@ import { useI18n } from 'vue-i18n'
 useI18n()
 </script>
 
-<style scoped src="../styles/components/About.css"></style>
+<style scoped src="./About.css"></style>
