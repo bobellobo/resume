@@ -18,7 +18,8 @@
     "description": "Je suis un développeur dévoué avec une expertise en développement web et en design. J'aime créer des solutions élégantes à des problèmes complexes et construire des applications conviviales."
   },
   "projects": {
-    "title": "Projets et réalisations"
+    "title": "Projets et réalisations",
+    "imageUnavailable": "Aperçu du projet indisponible"
   },
   "contact": {
     "title": "Me contacter",

@@ -18,7 +18,8 @@
     "description": "I'm a dedicated developer with expertise in web development and design. I love creating elegant solutions to complex problems and building user-friendly applications."
   },
   "projects": {
-    "title": "Projects & realizations"
+    "title": "Projects & realizations",
+    "imageUnavailable": "Project preview unavailable"
   },
   "contact": {
     "title": "Let's get in touch",

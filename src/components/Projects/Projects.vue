@@ -10,7 +10,7 @@
           @click="$emit('selectProject', project)"
         >
           <div class="card-image">
-            <img :src="`/content/projects/${project.image}`" :alt="project.content[currentLocale].title" />
+            <img :src="getProjectImageOrFallback(project.image, $t('projects.imageUnavailable'))" :alt="project.content[currentLocale].title" />
           </div>
           <div class="card-content">
             <h3>{{ project.content[currentLocale].title }}</h3>
@@ -33,7 +33,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useProjectsData, type Project } from './Projects'
+import { useProjectsData, type Project, getProjectImageOrFallback } from './Projects'
 
 const { locale } = useI18n()
 const currentLocale = computed(() => locale.value as 'en' | 'fr')

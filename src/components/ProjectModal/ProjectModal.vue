@@ -4,7 +4,7 @@
     <div class="modal-content" @click.stop>
       <button class="modal-close" @click="closeModal">&times;</button>
       <div class="modal-header">
-        <img :src="`/content/projects/${currentProject?.image}`" :alt="currentProject?.content[currentLocale].title" class="modal-image" />
+        <img :src="getProjectImageOrFallback(currentProject?.image ?? '', $t('projects.imageUnavailable'))" :alt="currentProject?.content[currentLocale].title" class="modal-image" />
       </div>
       <div class="modal-body">
         <h2>{{ currentProject?.content[currentLocale].title }}</h2>
@@ -32,6 +32,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useModalLogic } from './ProjectModal'
+import { getProjectImageOrFallback } from '../Projects/Projects'
 
 const { locale } = useI18n()
 const currentLocale = computed(() => locale.value as 'en' | 'fr')
