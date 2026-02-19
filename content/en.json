@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Welcome to My Portfolio",
+    "subtitle": "Hi, I'm Pippo. I'm a passionate developer creating amazing digital experiences.",
+    "cta": "Get Started"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a dedicated developer with expertise in web development and design. I love creating elegant solutions to complex problems and building user-friendly applications."
+  },
+  "projects": {
+    "title": "Projects & Realizations"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Feel free to reach out for collaborations or just a friendly hello",
+    "cta": "Contact Me"
+  },
+  "footer": {
+    "copyright": "© 2026 Pippo. All rights reserved.",
+    "links": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "twitter": "Twitter"
+    }
+  },
+  "modal": {
+    "visitProject": "Visit Project",
+    "backToPortfolio": "Back to Portfolio"
+  },
+  "projectCard": {
+    "viewProject": "View Project"
+  }
+}

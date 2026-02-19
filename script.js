@@ -1,3 +1,86 @@
+// ========== Internationalization (i18n) ========== 
+let currentLanguage = localStorage.getItem('language') || 'en';
+let translations = {};
+
+/**
+ * Load language file and apply translations
+ */
+async function loadLanguage(lang) {
+    try {
+        const response = await fetch(`content/${lang}.json`);
+        if (!response.ok) {
+            throw new Error(`Failed to load ${lang} translations`);
+        }
+        translations = await response.json();
+        currentLanguage = lang;
+        localStorage.setItem('language', lang);
+        applyTranslations();
+        updateLanguageButtons();
+    } catch (error) {
+        console.error('Error loading language:', error);
+    }
+}
+
+/**
+ * Get nested translation value using dot notation (e.g., "nav.home")
+ */
+function getTranslation(key) {
+    const keys = key.split('.');
+    let value = translations;
+    for (const k of keys) {
+        value = value[k];
+        if (value === undefined) return key; // Return key if translation not found
+    }
+    return value;
+}
+
+/**
+ * Apply translations to all elements with data-i18n attributes
+ */
+function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = getTranslation(key);
+        
+        if (element.tagName === 'INPUT' || element.tagName === 'BUTTON') {
+            element.textContent = translation;
+        } else {
+            element.textContent = translation;
+        }
+    });
+}
+
+/**
+ * Update active language button styling
+ */
+function updateLanguageButtons() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === currentLanguage) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
+/**
+ * Set up language switcher event listeners
+ */
+function setupLanguageSwitcher() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            if (lang !== currentLanguage) {
+                loadLanguage(lang);
+                // Reload projects to apply any language changes
+                loadProjects();
+            }
+        });
+    });
+}
+
+// ========== Projects Management ========== 
+
 // Modal Elements
 const modal = document.getElementById('projectModal');
 const modalOverlay = document.querySelector('.modal-overlay');
@@ -59,7 +142,7 @@ function renderProjects(projects) {
                 <div class="card-tags">
                     ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
                 </div>
-                <a href="#" class="card-link">View Project</a>
+                <a href="#" class="card-link">${getTranslation('projectCard.viewProject')}</a>
             </div>
         `;
 
@@ -143,5 +226,16 @@ document.querySelector('.modal-content').addEventListener('click', (e) => {
     e.stopPropagation();
 });
 
-// Load projects on page load
-document.addEventListener('DOMContentLoaded', loadProjects);
+/**
+ * Initialize on page load
+ */
+document.addEventListener('DOMContentLoaded', async () => {
+    // Load language and apply translations
+    await loadLanguage(currentLanguage);
+    
+    // Set up language switcher
+    setupLanguageSwitcher();
+    
+    // Load projects
+    loadProjects();
+});

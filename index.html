@@ -12,28 +12,32 @@
         <nav class="navbar">
             <div class="logo">Pippo</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Hi, I'm Pippo. I'm a passionate developer creating amazing digital experiences.</p>
-            <button class="cta-button">Get Started</button>
+            <h1 data-i18n="hero.title">Welcome to My Portfolio</h1>
+            <p data-i18n="hero.subtitle">Hi, I'm Pippo. I'm a passionate developer creating amazing digital experiences.</p>
+            <button class="cta-button" data-i18n="hero.cta">Get Started</button>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2>About Me</h2>
-            <p>
+            <h2 data-i18n="about.title">About Me</h2>
+            <p data-i18n="about.description">
                 I'm a dedicated developer with expertise in web development and design. 
                 I love creating elegant solutions to complex problems and building user-friendly applications.
             </p>
@@ -43,7 +47,7 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2>Projects & Realizations</h2>
+            <h2 data-i18n="projects.title">Projects & Realizations</h2>
             <div class="projects-grid" id="projectsGrid">
                 <!-- Projects will be loaded dynamically from projects.json -->
             </div>
@@ -53,20 +57,20 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Feel free to reach out for collaborations or just a friendly hello</p>
-            <button class="cta-button">Contact Me</button>
+            <h2 data-i18n="contact.title">Get In Touch</h2>
+            <p data-i18n="contact.description">Feel free to reach out for collaborations or just a friendly hello</p>
+            <button class="cta-button" data-i18n="contact.cta">Contact Me</button>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Pippo. All rights reserved.</p>
+            <p data-i18n="footer.copyright">© 2026 Pippo. All rights reserved.</p>
             <div class="social-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-                <a href="#">Twitter</a>
+                <a href="#" data-i18n="footer.links.linkedin">LinkedIn</a>
+                <a href="#" data-i18n="footer.links.github">GitHub</a>
+                <a href="#" data-i18n="footer.links.twitter">Twitter</a>
             </div>
         </div>
     </footer>
@@ -87,8 +91,8 @@
                     <div id="modalTechnologies"></div>
                 </div>
                 <div class="modal-actions">
-                    <a id="modalLink" href="#" class="cta-button">Visit Project</a>
-                    <button class="modal-back-button">Back to Portfolio</button>
+                    <a id="modalLink" href="#" class="cta-button" data-i18n="modal.visitProject">Visit Project</a>
+                    <button class="modal-back-button" data-i18n="modal.backToPortfolio">Back to Portfolio</button>
                 </div>
             </div>
         </div>
