@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Project Title 1",
+    "description": "Detailed description of your first project. This is where you can explain the project in depth, including the problem it solved, your approach, and the results achieved.",
+    "image": "images/project-1.jpg",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "link": "#",
+    "shortDescription": "Brief description of your first project. Highlight the key features and technologies used."
+  },
+  {
+    "id": 2,
+    "title": "Project Title 2",
+    "description": "Detailed description of your second project. Describe the technologies used, challenges faced, and the final outcome of this exciting project.",
+    "image": "images/project-2.jpg",
+    "technologies": ["JavaScript", "React", "CSS"],
+    "link": "#",
+    "shortDescription": "Brief description of your second project. Highlight the key features and technologies used."
+  },
+  {
+    "id": 3,
+    "title": "Project Title 3",
+    "description": "Detailed description of your third project. Share insights about the backend development, database design, and server architecture that powered this application.",
+    "image": "images/project-3.jpg",
+    "technologies": ["Node.js", "MongoDB", "Express"],
+    "link": "#",
+    "shortDescription": "Brief description of your third project. Highlight the key features and technologies used."
+  },
+  {
+    "id": 4,
+    "title": "Project Title 4",
+    "description": "Detailed description of your fourth project. Highlight the unique features, user experience improvements, and the impact it had on the target audience.",
+    "image": "images/project-4.jpg",
+    "technologies": ["Vue.js", "Firebase", "CSS"],
+    "link": "#",
+    "shortDescription": "Brief description of your fourth project. Highlight the key features and technologies used."
+  }
+]
