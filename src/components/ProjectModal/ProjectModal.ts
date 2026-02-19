@@ -1,5 +1,6 @@
 import { ref, watch } from 'vue'
-import type { Project } from '@/components/Projects/Projects'
+import { Project } from '../Projects/Projects'
+
 
 export function useModalLogic() {
   const isOpen = ref(false)

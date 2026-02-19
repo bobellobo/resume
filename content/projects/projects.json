@@ -31,7 +31,7 @@
         "shortDescription": "Brève description de votre deuxième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
       }
     },
-    "image": "images/project-2.jpg",
+    "image": "images/prj2.png",
     "technologies": ["JavaScript", "React", "CSS"],
     "link": "#"
   },
@@ -49,7 +49,7 @@
         "shortDescription": "Brève description de votre troisième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
       }
     },
-    "image": "images/project-3.jpg",
+    "image": "images/prj3.png",
     "technologies": ["Node.js", "MongoDB", "Express"],
     "link": "#"
   },
@@ -67,7 +67,7 @@
         "shortDescription": "Brève description de votre quatrième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
       }
     },
-    "image": "images/project-4.jpg",
+    "image": "images/prj4.png",
     "technologies": ["Vue.js", "Firebase", "CSS"],
     "link": "#"
   }
