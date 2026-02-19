@@ -1,0 +1,14 @@
+.contact {
+  background-color: var(--bg-light);
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+}
+
+p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
