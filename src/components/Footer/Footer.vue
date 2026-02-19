@@ -2,11 +2,6 @@
   <footer class="footer">
     <div class="container">
       <p>{{ $t('footer.copyright') }}</p>
-      <div class="social-links">
-        <a href="#">{{ $t('footer.links.linkedin') }}</a>
-        <a href="#">{{ $t('footer.links.github') }}</a>
-        <a href="#">{{ $t('footer.links.twitter') }}</a>
-      </div>
     </div>
   </footer>
 </template>

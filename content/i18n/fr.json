@@ -1,4 +1,7 @@
 {
+  "misc" : {
+    "jobTitle": "Développeur Full Stack"
+  },
   "nav": {
     "home": "Accueil",
     "about": "À propos",
@@ -15,25 +18,25 @@
     "description": "Je suis un développeur dévoué avec une expertise en développement web et en design. J'aime créer des solutions élégantes à des problèmes complexes et construire des applications conviviales."
   },
   "projects": {
-    "title": "Projets & Réalisations"
+    "title": "Projets et réalisations"
   },
   "contact": {
-    "title": "Nous soyons en contact",
+    "title": "Me contacter",
     "description": "N'hésitez pas à me contacter pour des collaborations ou juste un simple bonjour",
     "cta": "Me contacter"
   },
   "footer": {
-    "copyright": "© 2026 Pippo. Tous droits réservés.",
+    "copyright": "© 2026 Titouan Guedon. Tous droits réservés.",
     "links": {
       "linkedin": "LinkedIn",
       "github": "GitHub",
-      "twitter": "Twitter"
+      "email": "Email"
     }
   },
   "modal": {
     "visitProject": "Voir le projet",
     "backToPortfolio": "Retour au portfolio",
-    "technologiesUsed": "Technologies Utilisées"
+    "technologiesUsed": "Technologies utilisées"
   },
   "projectCard": {
     "viewProject": "Voir le projet"

@@ -17,15 +17,24 @@
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--primary-color);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.job-title {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-top: 0.25rem;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 2rem;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-links a {

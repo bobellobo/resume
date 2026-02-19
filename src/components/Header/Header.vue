@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <nav class="navbar">
-      <div class="logo">Pippo</div>
+      <div class="logo">Titouan Guedon / <span class="job-title">{{ $t('misc.jobTitle') }}</span></div>
       <ul class="nav-links">
         <li><a href="#home">{{ $t('nav.home') }}</a></li>
         <li><a href="#about">{{ $t('nav.about') }}</a></li>

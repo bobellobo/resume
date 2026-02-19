@@ -14,19 +14,3 @@ p {
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1rem;
 }
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.social-links a {
-  color: var(--bg-white);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: var(--primary-color);
-}

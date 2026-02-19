@@ -1,4 +1,7 @@
 {
+  "misc" : {
+    "jobTitle": "Full Stack Developer"
+  },
   "nav": {
     "home": "Home",
     "about": "About",
@@ -6,7 +9,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Welcome to My Portfolio",
+    "title": "Welcome to my portfolio",
     "subtitle": "Hi, I'm Pippo. I'm a passionate developer creating amazing digital experiences.",
     "cta": "Get Started"
   },
@@ -15,27 +18,27 @@
     "description": "I'm a dedicated developer with expertise in web development and design. I love creating elegant solutions to complex problems and building user-friendly applications."
   },
   "projects": {
-    "title": "Projects & Realizations"
+    "title": "Projects & realizations"
   },
   "contact": {
-    "title": "Get In Touch",
+    "title": "Let's get in touch",
     "description": "Feel free to reach out for collaborations or just a friendly hello",
     "cta": "Contact Me"
   },
   "footer": {
-    "copyright": "© 2026 Pippo. All rights reserved.",
+    "copyright": "© 2026 Titouan Guedon. All rights reserved.",
     "links": {
       "linkedin": "LinkedIn",
       "github": "GitHub",
-      "twitter": "Twitter"
+      "email": "Email"
     }
   },
   "modal": {
-    "visitProject": "Visit Project",
-    "backToPortfolio": "Back to Portfolio",
-    "technologiesUsed": "Technologies Used"
+    "visitProject": "Visit project",
+    "backToPortfolio": "Back to portfolio",
+    "technologiesUsed": "Technologies used"
   },
   "projectCard": {
-    "viewProject": "View Project"
+    "viewProject": "View project"
   }
 }
