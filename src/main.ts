@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n'
 import App from './App.vue'
-import enMessages from '../content/i18n/en.json'
-import frMessages from '../content/i18n/fr.json'
+import enMessages from '@content/i18n/en.json'
+import frMessages from '@content/i18n/fr.json'
 import './style.css'
 
 const i18n = createI18n({

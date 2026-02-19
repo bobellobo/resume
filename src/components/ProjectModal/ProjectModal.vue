@@ -32,7 +32,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useModalLogic } from './ProjectModal'
-import { getProjectImageOrFallback } from '../Projects/Projects'
+import { getProjectImageOrFallback } from '@/components/Projects/Projects'
 
 const { locale } = useI18n()
 const currentLocale = computed(() => locale.value as 'en' | 'fr')

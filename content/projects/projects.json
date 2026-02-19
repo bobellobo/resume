@@ -13,7 +13,7 @@
         "shortDescription": "Brève description de votre premier projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
       }
     },
-    "image": "images/project-1.jpg",
+    "image": "images/prj1.png",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "link": "#"
   },
