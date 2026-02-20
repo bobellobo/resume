@@ -3,19 +3,19 @@
     "id": 1,
     "content": {
       "en": {
-        "title": "Project Title 1",
-        "description": "Detailed description of your first project. This is where you can explain the project in depth, including the problem it solved, your approach, and the results achieved.",
-        "shortDescription": "Brief description of your first project. Highlight the key features and technologies used."
+        "title": "WB2MX2",
+        "description": "An agnostic approach for API oriented systems integration. This project focuses on creating a flexible and scalable solution for integrating various APIs in a seamless manner. The main goal is to provide a unified interface for developers to interact with different APIs without worrying about the underlying complexities.",
+        "shortDescription": "Agnostic approach for API oriented systems integration. Led to a patent application."
       },
       "fr": {
-        "title": "Titre du Projet 1",
-        "description": "Description détaillée de votre premier projet. Ceci est l'endroit où vous pouvez expliquer le projet en détail, y compris le problème qu'il a résolu, votre approche et les résultats obtenus.",
-        "shortDescription": "Brève description de votre premier projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
+        "title": "WB2MX2",
+        "description": "Développement d'une approche agnostique pour l'intégration de systèmes orientés API. Ce projet se concentre sur la création d'une solution flexible et évolutive pour intégrer diverses API de manière transparente. L'objectif principal est de fournir une interface unifiée permettant aux développeurs d'interagir avec différentes API sans se soucier des complexités sous-jacentes.",
+        "shortDescription": "Approche agnostique pour l'intégration de systèmes orientés API via l'implémentation d'un système flexible et évolutif de templating. A conduit à une demande de brevet."
       }
     },
     "image": "images/prj1.png",
-    "technologies": ["HTML", "CSS", "JavaScript"],
-    "link": "#"
+    "technologies": ["EffectTS", "Typescript", "NodeJS", "Functional Programming", "Eta", "Handlebars"],
+    "link": "https://www.st.com/content/st_com/en/ecosystems/stm32-motor-control-ecosystem.html"
   },
   {
     "id": 2,
@@ -31,9 +31,9 @@
         "shortDescription": "Brève description de votre deuxième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
       }
     },
-    "image": "images/prj2.png",
-    "technologies": ["JavaScript", "React", "CSS"],
-    "link": "#"
+    "image": "images/estimate.png",
+    "technologies": ["Angular", "D3.js", "ramda", "RxJS", "TypeScript", "Functional Programming", "Docker", "WSL", "MongoDB"],
+    "link": "https://eds.st.com/eds-console/"
   },
   {
     "id": 3,
