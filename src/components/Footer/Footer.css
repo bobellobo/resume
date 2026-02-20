@@ -1,6 +1,6 @@
 .footer {
-  background-color: var(--text-dark);
-  color: var(--bg-white);
+  background-color: var(--footer-bg);
+  color: var(--text-on-brand);
   padding: 2rem 20px;
   text-align: center;
   border-top: 1px solid var(--border-color);
@@ -11,6 +11,6 @@
 }
 
 p {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--footer-text);
   margin-bottom: 1rem;
 }

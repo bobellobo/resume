@@ -1,6 +1,8 @@
 {
   "misc" : {
-    "jobTitle": "Full Stack Developer"
+    "jobTitle": "Full Stack Developer",
+    "lightMode": "Light",
+    "darkMode": "Dark"
   },
   "nav": {
     "home": "Home",

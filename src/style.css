@@ -12,6 +12,32 @@
     --border-color: #e5e7eb;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --text-on-brand: #ffffff;
+    --hero-subtext: rgba(255, 255, 255, 0.9);
+    --footer-bg: #1f2937;
+    --footer-text: rgba(255, 255, 255, 0.8);
+    --project-placeholder-start: #e5e7eb;
+    --project-placeholder-end: #d1d5db;
+    --overlay-color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='dark'] {
+    --primary-color: #3b82f6;
+    --secondary-color: #2563eb;
+    --text-dark: #f3f4f6;
+    --text-light: #9ca3af;
+    --bg-light: #111827;
+    --bg-white: #1f2937;
+    --border-color: #374151;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+    --text-on-brand: #ffffff;
+    --hero-subtext: rgba(255, 255, 255, 0.92);
+    --footer-bg: #0b1220;
+    --footer-text: rgba(255, 255, 255, 0.75);
+    --project-placeholder-start: #374151;
+    --project-placeholder-end: #4b5563;
+    --overlay-color: rgba(0, 0, 0, 0.65);
 }
 
 /* ========== General Styles ========== */
@@ -30,6 +56,7 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-white);
     line-height: 1.6;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* ========== Typography ========== */

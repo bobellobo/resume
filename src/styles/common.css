@@ -32,7 +32,7 @@
 
 .cta-button {
   background-color: var(--primary-color);
-  color: var(--bg-white);
+  color: var(--text-on-brand);
   border: none;
   padding: 0.75rem 2rem;
   font-size: 1rem;

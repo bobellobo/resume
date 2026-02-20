@@ -48,10 +48,15 @@
   color: var(--primary-color);
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .language-switcher {
   display: flex;
   gap: 0.5rem;
-  margin-left: 2rem;
 }
 
 .lang-btn {
@@ -74,8 +79,39 @@
 
 .lang-btn.active {
   background-color: var(--primary-color);
-  color: var(--bg-white);
+  color: var(--text-on-brand);
   border-color: var(--primary-color);
+}
+
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background-color: transparent;
+  color: var(--text-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Geist Mono', monospace;
+  padding: 0.35rem 0.6rem;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.theme-icon {
+  font-size: 1rem;
+}
+
+.theme-label {
+  white-space: nowrap;
+}
+
+.theme-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
@@ -84,7 +120,11 @@
     font-size: 0.9rem;
   }
 
-  .language-switcher {
-    margin-left: 1rem;
+  .header-controls {
+    gap: 0.5rem;
+  }
+
+  .lang-btn {
+    padding: 0.35rem 0.6rem;
   }
 }
