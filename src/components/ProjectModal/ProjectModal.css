@@ -47,9 +47,14 @@
   right: 1rem;
   background: none;
   border: none;
+  width: 2.75rem;
+  height: 2.75rem;
   font-size: 2rem;
   cursor: pointer;
   color: var(--text-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   z-index: 10;
   transition: color 0.3s ease;
 }

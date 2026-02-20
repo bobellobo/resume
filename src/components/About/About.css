@@ -1,9 +1,19 @@
 .about {
   background-color: var(--bg-light);
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
+  width: 100%;
   max-width: 800px;
+}
+
+.about.section-block {
+  padding: 2rem 20px;
 }
 
 p {
@@ -11,4 +21,31 @@ p {
   font-size: 1.1rem;
   text-align: center;
   line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .about.section-block {
+    padding: 1.5rem 20px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-height: 700px) {
+  .about.section-block {
+    padding: 1rem 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
 }

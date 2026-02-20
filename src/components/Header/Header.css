@@ -41,6 +41,8 @@
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
   transition: color 0.3s ease;
 }
 
@@ -120,11 +122,123 @@
     font-size: 0.9rem;
   }
 
+  .nav-links a {
+    min-height: 2.5rem;
+    padding: 0.2rem 0.3rem;
+  }
+
   .header-controls {
     gap: 0.5rem;
   }
 
   .lang-btn {
     padding: 0.35rem 0.6rem;
+    min-height: 2.5rem;
+  }
+
+  .theme-btn {
+    min-height: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.85rem 16px;
+  }
+
+  .logo {
+    text-align: center;
+    white-space: normal;
+    font-size: 1.05rem;
+  }
+
+  .job-title {
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    font-size: 0.88rem;
+  }
+
+  .header-controls {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem 12px;
+    gap: 0.65rem;
+  }
+
+  .logo {
+    font-size: 0.95rem;
+  }
+
+  .job-title {
+    font-size: 0.82rem;
+  }
+
+  .nav-links {
+    gap: 0.55rem 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  .header-controls {
+    gap: 0.4rem;
+  }
+
+  .lang-btn,
+  .theme-btn {
+    font-size: 0.75rem;
+    padding: 0.28rem 0.45rem;
+  }
+
+  .theme-label {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0.65rem 10px;
+  }
+
+  .job-title {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 0.45rem 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  .header-controls {
+    gap: 0.3rem;
+  }
+
+  .language-switcher {
+    gap: 0.3rem;
+  }
+
+  .lang-btn {
+    min-width: 2rem;
+    padding: 0.25rem 0.35rem;
+    font-size: 0.68rem;
+    text-align: center;
+  }
+
+  .theme-btn {
+    min-width: 2rem;
+    padding: 0.25rem 0.35rem;
   }
 }

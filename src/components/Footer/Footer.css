@@ -14,3 +14,25 @@ p {
   color: var(--footer-text);
   margin-bottom: 1rem;
 }
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 1.5rem 14px;
+  }
+
+  p {
+    font-size: 0.92rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.25rem 12px;
+  }
+
+  p {
+    font-size: 0.86rem;
+    margin-bottom: 0.7rem;
+  }
+}

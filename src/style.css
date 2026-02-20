@@ -19,6 +19,7 @@
     --project-placeholder-start: #e5e7eb;
     --project-placeholder-end: #d1d5db;
     --overlay-color: rgba(0, 0, 0, 0.5);
+    --focus-ring: rgba(37, 99, 235, 0.3);
 }
 
 [data-theme='dark'] {
@@ -38,6 +39,7 @@
     --project-placeholder-start: #374151;
     --project-placeholder-end: #4b5563;
     --overlay-color: rgba(0, 0, 0, 0.65);
+    --focus-ring: rgba(59, 130, 246, 0.38);
 }
 
 /* ========== General Styles ========== */
@@ -81,6 +83,34 @@ h3 {
 p {
     color: var(--text-light);
     margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 480px) {

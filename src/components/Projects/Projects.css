@@ -72,6 +72,8 @@
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
   transition: color 0.3s ease;
 }
 
@@ -84,5 +86,57 @@
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .card-image {
+    height: 180px;
+  }
+
+  .card-content {
+    padding: 1.1rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-tags {
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .tag {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .card-link {
+    min-height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    gap: 1rem;
+  }
+
+  .card-image {
+    height: 165px;
+  }
+
+  .card-content {
+    padding: 0.95rem;
+  }
+
+  .card-content h3 {
+    margin-bottom: 0.55rem;
+  }
+
+  .card-content p {
+    font-size: 0.86rem;
+    margin-bottom: 0.7rem;
   }
 }
