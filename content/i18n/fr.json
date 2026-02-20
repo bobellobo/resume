@@ -15,7 +15,38 @@
   },
   "about": {
     "title": "À propos de moi",
-    "description": "Je suis un développeur dévoué avec une expertise en développement web et en design. J'aime créer des solutions élégantes à des problèmes complexes et construire des applications conviviales."
+    "description": "Je suis un développeur dévoué avec une expertise en développement web et en design. J'aime créer des solutions élégantes à des problèmes complexes et construire des applications conviviales.",
+    "skillsTitle": "Aperçu des compétences",
+    "skills": {
+      "development": {
+        "title": "Développement",
+        "item1": "Développement web full-stack",
+        "item2": "TypeScript, JavaScript et frameworks modernes",
+        "item3": "Conception et intégration d'API",
+        "item4": "Architecture propre et code maintenable"
+      },
+      "cognitiveScience": {
+        "title": "Sciences cognitives",
+        "item1": "Analyse des comportements utilisateurs",
+        "item2": "Principes d'interaction humain-machine",
+        "item3": "Conception et interprétation d'expériences",
+        "item4": "Prise de décision produit basée sur les données"
+      },
+      "languages": {
+        "title": "Langues parlées",
+        "item1": "Français (langue maternelle)",
+        "item2": "Anglais (bilingue professionnel)",
+        "item3": "Italien (bilingue professionnel)",
+        "item4": "Espagnol (intermédiaire)"
+      },
+      "softSkills": {
+        "title": "Soft skills",
+        "item1": "Communication claire",
+        "item2": "Esprit d'équipe et collaboration",
+        "item3": "Résolution de problèmes",
+        "item4": "Adaptabilité et apprentissage continu"
+      }
+    }
   },
   "projects": {
     "title": "Projets et réalisations",

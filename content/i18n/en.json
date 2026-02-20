@@ -15,7 +15,38 @@
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a dedicated developer with expertise in web development and design. I love creating elegant solutions to complex problems and building user-friendly applications."
+    "description": "I'm a dedicated developer with expertise in web development and design. I love creating elegant solutions to complex problems and building user-friendly applications.",
+    "skillsTitle": "Skills Overview",
+    "skills": {
+      "development": {
+        "title": "Development related",
+        "item1": "Full-stack web development",
+        "item2": "TypeScript, JavaScript, and modern frameworks",
+        "item3": "API design and integration",
+        "item4": "Clean architecture and maintainable code"
+      },
+      "cognitiveScience": {
+        "title": "Cognitive science",
+        "item1": "User behavior analysis",
+        "item2": "Human-computer interaction principles",
+        "item3": "Experimental design and interpretation",
+        "item4": "Data-informed product thinking"
+      },
+      "languages": {
+        "title": "Languages spoken",
+        "item1": "French (native)",
+        "item2": "English (fluent)",
+        "item3": "Italian (fluent)",
+        "item4": "Spanish (intermediate)"
+      },
+      "softSkills": {
+        "title": "Soft skills",
+        "item1": "Clear communication",
+        "item2": "Collaborative teamwork",
+        "item3": "Problem solving",
+        "item4": "Adaptability and continuous learning"
+      }
+    }
   },
   "projects": {
     "title": "Projects & realizations",
