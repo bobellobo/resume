@@ -112,12 +112,12 @@
 
 .modal-tag {
   display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--text-on-brand);
-  padding: 0.5rem 1rem;
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+  padding: 0.4rem 0.8rem;
   border-radius: 0.3rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 600
 }
 
 .modal-actions {
