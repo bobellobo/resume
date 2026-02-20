@@ -11,11 +11,12 @@
     "contact": "Contact"
   },
   "hero": {
-    "subtitle": "Hi, I'm Titouan, a passionate fullstack developer based in France. I have a diploma as a cognitive science engineer paired with a solid background in web development and design. I love creating elegant solutions to complex problems and building user-friendly applications."
+    "subtitle": "Hi, I'm Titouan, a passionate fullstack developer based in France. I have a diploma as a cognitive science engineer paired with a solid background in web development and design."
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a dedicated developer with expertise in web development and design. I love creating elegant solutions to complex problems and building user-friendly applications.",
+    "description": "I'm a dedicated fullstack developer with over 3 years of experience, trained at {university}.",
+    "universityLabel": "Ecole Nationale Supérieure de Cognitique",
     "skillsTitle": "Skills Overview",
     "skills": {
       "development": {
@@ -23,7 +24,8 @@
         "item1": "Full-stack web development",
         "item2": "TypeScript, JavaScript, and modern frameworks",
         "item3": "API design and integration",
-        "item4": "Clean architecture and maintainable code"
+        "item4": "Functional programming",
+        "item5": "Clean architecture and maintainable code"
       },
       "cognitiveScience": {
         "title": "Cognitive science",
@@ -54,16 +56,10 @@
   },
   "contact": {
     "title": "Let's get in touch",
-    "description": "Feel free to reach out for collaborations or just a friendly hello",
-    "cta": "Contact Me"
+    "description": "Feel free to reach out for collaborations or just a friendly hello"
   },
   "footer": {
-    "copyright": "© 2026 Titouan Guedon. All rights reserved.",
-    "links": {
-      "linkedin": "LinkedIn",
-      "github": "GitHub",
-      "email": "Email"
-    }
+    "copyright": "© 2026 Titouan Guedon. All rights reserved."
   },
   "modal": {
     "visitProject": "Visit project",

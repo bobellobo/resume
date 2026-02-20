@@ -15,7 +15,8 @@
   },
   "about": {
     "title": "À propos de moi",
-    "description": "Je suis un développeur dévoué avec une expertise en développement web et en design. J'aime créer des solutions élégantes à des problèmes complexes et construire des applications conviviales.",
+    "description": "Je suis un développeur fullstack avec plus de 3 ans d'expérience, formé à l'{university}.",
+    "universityLabel": "Ecole Nationale Supérieure de Cognitique",
     "skillsTitle": "Aperçu des compétences",
     "skills": {
       "development": {
@@ -23,7 +24,8 @@
         "item1": "Développement web full-stack",
         "item2": "TypeScript, JavaScript et frameworks modernes",
         "item3": "Conception et intégration d'API",
-        "item4": "Architecture propre et code maintenable"
+        "item4": "Programmation fonctionnelle",
+        "item5": "Architecture propre et code maintenable"
       },
       "cognitiveScience": {
         "title": "Sciences cognitives",
@@ -54,16 +56,10 @@
   },
   "contact": {
     "title": "Me contacter",
-    "description": "N'hésitez pas à me contacter pour des collaborations ou juste un simple bonjour",
-    "cta": "Me contacter"
+    "description": "N'hésitez pas à me contacter pour des collaborations ou juste un simple bonjour"
   },
   "footer": {
-    "copyright": "© 2026 Titouan Guedon. Tous droits réservés.",
-    "links": {
-      "linkedin": "LinkedIn",
-      "github": "GitHub",
-      "email": "Email"
-    }
+    "copyright": "© 2026 Titouan Guedon. Tous droits réservés."
   },
   "modal": {
     "visitProject": "Voir le projet",

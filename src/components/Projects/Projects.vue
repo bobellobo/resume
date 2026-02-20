@@ -31,18 +31,18 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useProjectsData, type Project, getProjectImageOrFallback } from './Projects'
+  import { computed } from 'vue'
+  import { useI18n } from 'vue-i18n'
+  import { useProjectsData, type Project, getProjectImageOrFallback } from './Projects'
 
-const { locale } = useI18n()
-const currentLocale = computed(() => locale.value as 'en' | 'fr')
+  const { locale } = useI18n()
+  const currentLocale = computed(() => locale.value as 'en' | 'fr')
 
-const { projects } = useProjectsData()
+  const { projects } = useProjectsData()
 
-defineEmits<{
-  selectProject: [project: Project]
-}>()
+  defineEmits<{
+    selectProject: [project: Project]
+  }>()
 </script>
 
 <style scoped src="./Projects.css"></style>

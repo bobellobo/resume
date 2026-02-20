@@ -25,6 +25,18 @@
   max-width: 760px;
 }
 
+.inline-link {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+.inline-link:hover {
+  color: var(--secondary-color);
+}
+
 .skills-block {
   margin-top: 2.25rem;
 }

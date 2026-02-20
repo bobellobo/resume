@@ -2,7 +2,18 @@
   <section id="about" class="about section-block">
     <div class="container">
       <h2 class="section-title">{{ $t('about.title') }}</h2>
-      <p class="about-description">{{ $t('about.description') }}</p>
+      <i18n-t keypath="about.description" tag="p" class="about-description">
+        <template #university>
+          <a
+            class="inline-link"
+            href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ $t('about.universityLabel') }}
+          </a>
+        </template>
+      </i18n-t>
 
       <div class="skills-block">
         <h3 class="skills-title">{{ $t('about.skillsTitle') }}</h3>
@@ -34,7 +45,8 @@ const skillCategories = [
       'about.skills.development.item1',
       'about.skills.development.item2',
       'about.skills.development.item3',
-      'about.skills.development.item4'
+      'about.skills.development.item4',
+      'about.skills.development.item5'
     ]
   },
   {
