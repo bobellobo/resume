@@ -59,7 +59,12 @@
     "description": "N'hésitez pas à me contacter pour des collaborations ou juste un simple bonjour"
   },
   "footer": {
-    "copyright": "© 2026 Titouan Guedon. Tous droits réservés."
+    "copyright": "© 2026 Titouan Guedon. Tous droits réservés.",
+    "links": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "email": "Email"
+    }
   },
   "modal": {
     "visitProject": "Voir le projet",
