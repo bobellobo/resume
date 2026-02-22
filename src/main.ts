@@ -14,7 +14,7 @@ document.documentElement.setAttribute('data-theme', initialTheme)
 
 const i18n = createI18n({
   legacy: false,
-  locale: localStorage.getItem('language') || 'en',
+  locale: 'en',
   fallbackLocale: 'en',
   messages: {
     en: enMessages,
