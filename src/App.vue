@@ -4,6 +4,7 @@
     <Header />
     <Hero />
     <About />
+    <Experience />
     <Projects @selectProject="handleSelectProject" />
     <Contact />
     <ProjectModal ref="projectModalRef" />
@@ -17,6 +18,7 @@ import type { Project } from './components/Projects/Projects'
 import Header from './components/Header/Header.vue'
 import Hero from './components/Hero/Hero.vue'
 import About from './components/About/About.vue'
+import Experience from './components/Experience/Experience.vue'
 import Projects from './components/Projects/Projects.vue'
 import Contact from './components/Contact/Contact.vue'
 import Footer from './components/Footer/Footer.vue'

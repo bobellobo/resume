@@ -6,6 +6,7 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact"
   },
@@ -53,9 +54,32 @@
     "title": "Projects & realizations",
     "imageUnavailable": "Project preview unavailable"
   },
+  "experience": {
+    "title": "Professional Experience",
+    "items": {
+      "item1": {
+        "period": "2024 — Present",
+        "role": "Full-stack Developer",
+        "company": "Freelance & Product Collaborations",
+        "description": "Design and deliver web applications end-to-end, from architecture to deployment, with a strong focus on clean interfaces, performance, and maintainable code."
+      },
+      "item2": {
+        "period": "2022 — 2024",
+        "role": "Software Engineer",
+        "company": "Digital Product Team",
+        "description": "Built and improved internal and client-facing features, collaborated with design and product stakeholders, and maintained robust APIs and front-end components."
+      },
+      "item3": {
+        "period": "2020 — 2022",
+        "role": "Web Developer & UX-oriented Engineer",
+        "company": "Innovation Projects",
+        "description": "Contributed to user-centered digital projects combining cognitive science methods with modern web development to deliver practical, user-friendly solutions."
+      }
+    }
+  },
   "contact": {
     "title": "Let's get in touch",
-    "description": "Feel free to reach out for collaborations or just a friendly hello"
+    "description": "Feel free to reach out for collaborations or just to say hi!"
   },
   "footer": {
     "copyright": "© 2026 Titouan Guedon. All rights reserved.",

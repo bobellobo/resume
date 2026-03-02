@@ -1,5 +1,5 @@
 .about {
-  background-color: var(--bg-light);
+  background-color: var(--surface-section-muted);
   min-height: 100vh;
   min-height: 100svh;
   display: flex;

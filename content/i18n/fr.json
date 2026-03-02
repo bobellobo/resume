@@ -6,6 +6,7 @@
   "nav": {
     "home": "Accueil",
     "about": "À propos",
+    "experience": "Expériences",
     "projects": "Projets",
     "contact": "Contact"
   },
@@ -53,9 +54,32 @@
     "title": "Projets et réalisations",
     "imageUnavailable": "Aperçu du projet indisponible"
   },
+  "experience": {
+    "title": "Expériences professionnelles",
+    "items": {
+      "item1": {
+        "period": "2024 — Aujourd'hui",
+        "role": "Développeur Full-stack",
+        "company": "Freelance & collaborations produit",
+        "description": "Conception et livraison d'applications web de bout en bout, de l'architecture au déploiement, avec un fort accent sur des interfaces propres, la performance et un code maintenable."
+      },
+      "item2": {
+        "period": "2022 — 2024",
+        "role": "Ingénieur logiciel",
+        "company": "Équipe produit digital",
+        "description": "Développement et amélioration de fonctionnalités internes et orientées clients, en collaboration avec les équipes design et produit, tout en maintenant des APIs robustes et des composants front-end fiables."
+      },
+      "item3": {
+        "period": "2020 — 2022",
+        "role": "Développeur web & ingénieur orienté UX",
+        "company": "Projets d'innovation",
+        "description": "Contribution à des projets numériques centrés utilisateur, combinant les méthodes des sciences cognitives avec le développement web moderne pour proposer des solutions concrètes et intuitives."
+      }
+    }
+  },
   "contact": {
     "title": "Me contacter",
-    "description": "N'hésitez pas à me contacter pour des collaborations ou juste un simple bonjour"
+    "description": "N'hésitez pas à me contacter pour des projets de collaboration, je suis toujours ouvert à de nouveaux projets ou simplement pour discuter !"
   },
   "footer": {
     "copyright": "© 2026 Titouan Guedon. Tous droits réservés.",
