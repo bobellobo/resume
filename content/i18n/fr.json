@@ -11,11 +11,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "subtitle": "Salut, je suis Titouan, un développeur fullstack basé en France. Je suis titulaire d'un diplôme d'ingénieur cogniticien avec une solide expérience en développement et design web."
+    "subtitle": "Salut, je suis Titouan, un développeur au profil transverse. Je suis titulaire d'un diplôme d'ingénieur cogniticien, et possède une solide expérience en développement fullstack et design web. Après 2 ans passés en Italie, je suis à la recherche de nouvelles opportunités en France pour continuer à évoluer en tant que développeur."
   },
   "about": {
     "title": "À propos de moi",
-    "description": "Je suis un développeur fullstack avec plus de 3 ans d'expérience, formé à l'{university}.",
+    "description": "Je suis un développeur fullstack avec plus de 3 ans d'expérience, formé à l'{university}. De par ma formation, j'ai une approche de conception centrée utilisateur et suis sensible à l'importance d'une bonne expérience utilisateur, tout en ayant une solide expertise technique acquise au cours de mes expériences passées. Chaque projet m'a amené à prendre en main de nouvelles technologies et outils et je sais monter en compétence rapidement pour me concentrer sur le coeur de la conception, sans jamais faire une croix sur l'exigence de qualité technique.",
     "universityLabel": "Ecole Nationale Supérieure de Cognitique",
     "skillsTitle": "Aperçu des compétences",
     "skills": {

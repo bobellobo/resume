@@ -2,7 +2,7 @@
   background-color: var(--footer-bg);
   color: var(--text-on-brand);
   padding: 2rem 20px;
-  text-align: center;
+  text-align: left;
   border-top: 1px solid var(--border-color);
 }
 

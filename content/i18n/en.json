@@ -11,11 +11,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "subtitle": "Hi, I'm Titouan, a passionate fullstack developer based in France. I have a diploma as a cognitive science engineer paired with a solid background in web development and design."
+    "subtitle": "Hi, I'm Titouan, a passionate fullstack developer with a very diverse background. I hold a degree as a cognitive science engineer, and got a solid experience in web development and design. After 2 years in Italy, I am now moving back to France and looking for exciting new opportunities for me to apply my skills and grow as a developer."
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a dedicated fullstack developer with over 3 years of experience, trained at {university}.",
+    "description": "I'm a dedicated fullstack developer with over 3 years of experience, trained at {university}. \nThanks to this background, I have a user-centered design approach and understand the importance of a good user experience. In my past experiences on the other hand, I have always been able to take technical subjects in hand and quickly gain skill to focus on the core of the design, without ever compromising on technical quality and clean code.",
     "universityLabel": "Ecole Nationale Supérieure de Cognitique",
     "skillsTitle": "Skills Overview",
     "skills": {

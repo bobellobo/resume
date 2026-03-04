@@ -79,6 +79,7 @@
   margin-bottom: 0;
   color: var(--text-light);
   line-height: 1.65;
+  white-space: pre-line;
 }
 
 @media (max-width: 768px) {

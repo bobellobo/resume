@@ -4,16 +4,16 @@
     "content": {
       "en": {
         "title": "WB2MX2",
-        "description": "An agnostic approach for API oriented systems integration. This project focuses on creating a flexible and scalable solution for integrating various APIs in a seamless manner. The main goal is to provide a unified interface for developers to interact with different APIs without worrying about the underlying complexities.",
-        "shortDescription": "Agnostic approach for API oriented systems integration. Led to a patent application."
+        "description": "An agnostic approach for API oriented systems integration. This project focuses on creating a flexible and scalable solution for integrating various APIs in a seamless manner. The main goal is to provide a unified interface for developers to interact with different APIs without worrying about the underlying complexities. In this case study, the solution was implemented as a templating system to integrate various APIs and ensure inter-operability of the STM32 Motor Control Ecosystem. This project led to a patent application.",
+        "shortDescription": "Agnostic approach for API oriented systems integration and inter-operability. Part of the STM32 Motor Control SDK. \nLed to a patent application."
       },
       "fr": {
         "title": "WB2MX2",
-        "description": "Développement d'une approche agnostique pour l'intégration de systèmes orientés API. Ce projet se concentre sur la création d'une solution flexible et évolutive pour intégrer diverses API de manière transparente. L'objectif principal est de fournir une interface unifiée permettant aux développeurs d'interagir avec différentes API sans se soucier des complexités sous-jacentes.",
+        "description": "Développement d'une approche agnostique pour l'intégration de systèmes d'API. Création d'une solution flexible et évolutive pour intégrer diverses API de manière transparente. L'objectif principal est de fournir une interface unifiée permettant aux développeurs d'interagir avec différentes API sans se soucier des complexités sous-jacentes.",
         "shortDescription": "Approche agnostique pour l'intégration de systèmes orientés API via l'implémentation d'un système flexible et évolutif de templating. A conduit à une demande de brevet."
       }
     },
-    "image": "images/prj1.png",
+    "image": "images/wb2mx.avif",
     "technologies": ["EffectTS", "Typescript", "NodeJS", "Functional Programming", "Eta", "Handlebars"],
     "link": "https://www.st.com/content/st_com/en/ecosystems/stm32-motor-control-ecosystem.html"
   },
@@ -21,36 +21,38 @@
     "id": 2,
     "content": {
       "en": {
-        "title": "Project Title 2",
-        "description": "Detailed description of your second project. Describe the technologies used, challenges faced, and the final outcome of this exciting project.",
-        "shortDescription": "Brief description of your second project. Highlight the key features and technologies used."
+        "title": "Estimate (eDesignSuite)",
+        "description": "Estimation tool for circuit design and lifetime estimations. Refactored the frontend, reduced the technical debt over the span of 8 months. Then I created a SVG manager toolchart for circuit design with d3.js.",
+        "shortDescription": "Estimation tool for circuit design and lifetime estimations. Refactored the whole frontend, especially the SVG toolchart."
       },
       "fr": {
-        "title": "Titre du Projet 2",
-        "description": "Description détaillée de votre deuxième projet. Décrivez les technologies utilisées, les défis rencontrés et le résultat final de ce projet passionnant.",
-        "shortDescription": "Brève description de votre deuxième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
+        "title": "Estimate (eDesignSuite)",
+        "description": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Refonte complète du frontend.",
+        "shortDescription": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Tâches de refonte et de réduction de la dette technique du frontend. Création d'un outil de design de circuit firmware avec d3.js et des données SVG."
+    
+        
       }
     },
     "image": "images/estimate.png",
-    "technologies": ["Angular", "D3.js", "ramda", "RxJS", "TypeScript", "Functional Programming", "Docker", "WSL", "MongoDB"],
+    "technologies": ["Angular", "Redux", "D3.js", "ramda", "RxJS", "TypeScript", "Functional Programming", "Docker", "WSL", "MongoDB"],
     "link": "https://eds.st.com/eds-console/"
   },
   {
     "id": 3,
     "content": {
       "en": {
-        "title": "Project Title 3",
-        "description": "Detailed description of your third project. Share insights about the backend development, database design, and server architecture that powered this application.",
-        "shortDescription": "Brief description of your third project. Highlight the key features and technologies used."
+        "title": "Multi-player card game app",
+        "description": "A React Native based application using Firebase for real-time multiplayer card gaming. Designed for playing with friends on the go when you've forgotten to bring a deck. This was a quick side project that I am planning to review soon to improve the codebase and the features.",
+        "shortDescription": "An app dealing with real-time multiplayer card gaming. Designed for playing with friends on the go."
       },
       "fr": {
-        "title": "Titre du Projet 3",
-        "description": "Description détaillée de votre troisième projet. Partagez des informations sur le développement du backend, la conception de la base de données et l'architecture du serveur qui a alimenté cette application.",
-        "shortDescription": "Brève description de votre troisième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
+        "title": "Application mobile pour jeu de cartes multijoueur",
+        "description": "Application basée sur React Native + Firebase pour jouer aux cartes en multijoueur et en temps réel. Conçue pour jouer à des jeux simples entre amis lorsque tout le monde a oublié d'apporter un jeu de cartes. Il s'agit d'un projet annexe sur lequel j'ai prévu de refaire une passe pour ajouter des features et améliorer le code.",
+        "shortDescription": "Application mobile pour jeu de cartes en multijoueur. Conçue pour jouer avec des amis en déplacement."
       }
     },
-    "image": "images/prj3.png",
-    "technologies": ["Node.js", "MongoDB", "Express"],
+    "image": "images/cardapp.png",
+    "technologies": ["React Native", "Expo", "Firebase", "TypeScript"],
     "link": "#"
   },
   {

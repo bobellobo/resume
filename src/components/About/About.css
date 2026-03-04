@@ -19,8 +19,9 @@
 .about-description {
   color: var(--text-light);
   font-size: 1.1rem;
-  text-align: center;
+  text-align: left;
   line-height: 1.8;
+  white-space: pre-line;
   margin: 0 auto;
   max-width: 760px;
 }

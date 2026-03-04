@@ -1,6 +1,6 @@
 .hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  color: var(--text-on-brand);
+  background-color: var(--surface-section);
+  color: var(--text-dark);
   min-height: 100vh;
   min-height: 100svh;
   padding: 2rem 20px;
@@ -22,7 +22,7 @@
   border-radius: 9999px;
   object-fit: cover;
   margin: 0 auto 2rem;
-  border: 4px solid var(--text-on-brand);
+  border: 4px solid var(--border-color);
   box-shadow: var(--shadow-lg);
 }
 
@@ -33,20 +33,21 @@
 
 .hero-content p {
   font-size: 1.25rem;
-  color: var(--hero-subtext);
+  color: var(--text-light);
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
 }
 
 .scroll-next-btn {
   width: 3rem;
   height: 3rem;
   border-radius: 9999px;
-  border: 2px solid var(--text-on-brand);
+  border: 2px solid var(--primary-color);
   background-color: transparent;
-  color: var(--text-on-brand);
+  color: var(--primary-color);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +57,7 @@
 }
 
 .scroll-next-btn:hover {
-  background-color: rgba(255, 255, 255, 0.18);
+  background-color: color-mix(in srgb, var(--primary-color) 12%, transparent);
   transform: translateY(3px);
   animation-play-state: paused;
 }

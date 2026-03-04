@@ -5,6 +5,7 @@
 
 .section-block {
   padding: 6rem 20px;
+  scroll-margin-top: 2.5rem;
 }
 
 .section-title {
@@ -88,6 +89,7 @@
 
   .section-block {
     padding: 4rem 16px;
+    scroll-margin-top: 8rem;
   }
 
   .section-title {
@@ -118,6 +120,7 @@
 
   .section-block {
     padding: 2.75rem 12px;
+    scroll-margin-top: 9.5rem;
   }
 
   .section-title {
