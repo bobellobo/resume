@@ -18,7 +18,15 @@
           </div>
         </div>
         <div class="modal-actions">
-          <a :href="currentProject?.link" class="cta-button">{{ $t('modal.visitProject') }}</a>
+          <a
+            v-if="projectLink"
+            :href="projectLink"
+            class="cta-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ $t('modal.visitProject') }}
+          </a>
           <button class="modal-back-button btn-secondary" @click="closeModal">
             {{ $t('modal.backToPortfolio') }}
           </button>
@@ -38,6 +46,11 @@ const { locale } = useI18n()
 const currentLocale = computed(() => locale.value as 'en' | 'fr')
 
 const { isOpen, currentProject, openModal, closeModal } = useModalLogic()
+
+const projectLink = computed(() => {
+  const link = currentProject.value?.link?.trim() ?? ''
+  return link && link !== '#' ? link : ''
+})
 
 defineExpose({
   openModal,

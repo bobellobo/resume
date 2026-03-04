@@ -22,7 +22,7 @@
   position: relative;
   background-color: var(--bg-white);
   border-radius: 1rem;
-  max-width: 600px;
+  width: min(92vw, 680px);
   max-height: 90vh;
   margin: auto;
   overflow-y: auto;

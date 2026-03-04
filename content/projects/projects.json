@@ -9,7 +9,7 @@
       },
       "fr": {
         "title": "WB2MX2",
-        "description": "Développement d'une approche agnostique pour l'intégration de systèmes d'API. Création d'une solution flexible et évolutive pour intégrer diverses API de manière transparente. L'objectif principal est de fournir une interface unifiée permettant aux développeurs d'interagir avec différentes API sans se soucier des complexités sous-jacentes.",
+        "description": "Développement d'une approche agnostique pour l'intégration de systèmes d'API. Création d'une solution flexible et évolutive pour intégrer diverses API de manière transparente. L'objectif principal est de fournir une interface unifiée permettant aux développeurs d'interagir avec différentes API sans se soucier des complexités sous-jacentes. Un dépôt de brevet a été déposé pour le design de ce système de templating.",
         "shortDescription": "Approche agnostique pour l'intégration de systèmes orientés API via l'implémentation d'un système flexible et évolutif de templating. A conduit à une demande de brevet."
       }
     },
@@ -27,10 +27,8 @@
       },
       "fr": {
         "title": "Estimate (eDesignSuite)",
-        "description": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Refonte complète du frontend.",
-        "shortDescription": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Tâches de refonte et de réduction de la dette technique du frontend. Création d'un outil de design de circuit firmware avec d3.js et des données SVG."
-    
-        
+        "description": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Tâches de refonte et de réduction de la dette technique du frontend. Création d'un outil de design de circuit firmware avec d3.js et des données SVG.",
+        "shortDescription": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Refonte complète du frontend."
       }
     },
     "image": "images/estimate.png",
@@ -39,6 +37,24 @@
   },
   {
     "id": 3,
+    "content": {
+      "en": {
+        "title": "AeroWebb - Module GAV",
+        "description": "Detailed description of your fourth project. Highlight the unique features, user experience improvements, and the impact it had on the target audience.",
+        "shortDescription": "Brief description of your fourth project. Highlight the key features and technologies used."
+      },
+      "fr": {
+        "title": "AeroWebb - Module GAV",
+        "description": "Développement d'un tout nouveau module pour la gestion avancée des grandes visites pour la maintenance aéronautique. Ce module est intégré au coeur de la plateforme AeroWebb, offrant une solution complète pour la planification, le suivi et la gestion des grandes visites. Grâce à ce module, les utilisateurs peuvent facilement organiser les tâches, suivre les progrès et assurer une maintenance efficace des aéronefs. ",
+        "shortDescription": "Développement d'un tout nouveau module pour la gestion avancée des grandes visites pour la maintenance aéronautique. Module intégré au coeur de la plateforme AeroWebb."
+      }
+    },
+    "image": "images/aero.webp",
+    "technologies": ["Angular", "RxJS", "TypeScript", "Java", "PostgreSQL", "Tomcat", "Hibernate"],
+    "link": "https://2moro.fr/aerowebb"
+  },
+  {
+    "id": 4,
     "content": {
       "en": {
         "title": "Multi-player card game app",
@@ -53,24 +69,6 @@
     },
     "image": "images/cardapp.png",
     "technologies": ["React Native", "Expo", "Firebase", "TypeScript"],
-    "link": "#"
-  },
-  {
-    "id": 4,
-    "content": {
-      "en": {
-        "title": "Project Title 4",
-        "description": "Detailed description of your fourth project. Highlight the unique features, user experience improvements, and the impact it had on the target audience.",
-        "shortDescription": "Brief description of your fourth project. Highlight the key features and technologies used."
-      },
-      "fr": {
-        "title": "Titre du Projet 4",
-        "description": "Description détaillée de votre quatrième projet. Mettez en évidence les fonctionnalités uniques, les améliorations de l'expérience utilisateur et l'impact qu'il a eu sur le public cible.",
-        "shortDescription": "Brève description de votre quatrième projet. Mettez en évidence les fonctionnalités clés et les technologies utilisées."
-      }
-    },
-    "image": "images/prj4.png",
-    "technologies": ["Vue.js", "Firebase", "CSS"],
     "link": "#"
   }
 ]
