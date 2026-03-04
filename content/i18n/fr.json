@@ -60,22 +60,22 @@
     "title": "Expériences professionnelles",
     "items": {
       "item1": {
-        "period": "2024 — Aujourd'hui",
+        "period": "Janvier 2023 — Janvier 2026",
         "role": "Développeur Full-stack",
-        "company": "Freelance & collaborations produit",
-        "description": "Conception et livraison d'applications web de bout en bout, de l'architecture au déploiement, avec un fort accent sur des interfaces propres, la performance et un code maintenable."
+        "company": "STMicroelectronics - System Research & Application",
+        "description": "Conception et livraison d'applications web de bout en bout, de l'architecture au déploiement, avec un fort accent sur des interfaces propres, la performance et un code maintenable. Fort accent sur les paradigmes de programmation fonctionnelle et les bonnes pratiques de développement."
       },
       "item2": {
-        "period": "2022 — 2024",
-        "role": "Ingénieur logiciel",
-        "company": "Équipe produit digital",
-        "description": "Développement et amélioration de fonctionnalités internes et orientées clients, en collaboration avec les équipes design et produit, tout en maintenant des APIs robustes et des composants front-end fiables."
+        "period": "Septembre 2022 — Août 2023",
+        "role": "Développeur Full-stack",
+        "company": "Sopra Steria - Aeroline",
+        "description": "Tâches de développement dans un projet d'envergure du secteur de l'aéronautique, toujours dans un contexte agile."
       },
       "item3": {
-        "period": "2020 — 2022",
-        "role": "Développeur web & ingénieur orienté UX",
-        "company": "Projets d'innovation",
-        "description": "Contribution à des projets numériques centrés utilisateur, combinant les méthodes des sciences cognitives avec le développement web moderne pour proposer des solutions concrètes et intuitives."
+        "period": "Mai 2022 - Août 2022",
+        "role": "Stagiaire Développeur Full-stack",
+        "company": "Sopra Steria - Aeroline",
+        "description": "Participation à des tâches de développement en tant que membre d'une équipe de 4 personnes, contribuant à un projet pour un acteur majeur de l'industrie aéronautique."
       }
     }
   },

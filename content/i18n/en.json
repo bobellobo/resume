@@ -60,22 +60,22 @@
     "title": "Professional Experience",
     "items": {
       "item1": {
-        "period": "2024 — Present",
-        "role": "Full-stack Developer",
-        "company": "Freelance & Product Collaborations",
-        "description": "Design and deliver web applications end-to-end, from architecture to deployment, with a strong focus on clean interfaces, performance, and maintainable code."
+        "period": "Jan 2023 — Jan 2026",
+        "role": "Full-stack Engineer",
+        "company": "STMicroelectronics - System Research & Application",
+        "description": "Designed and delivered tools end-to-end, from architecture to deployment, with a strong focus on clean interfaces, performance, and maintainable code. Strong emphasis on functional programming paradigms and development best practices."
       },
       "item2": {
-        "period": "2022 — 2024",
-        "role": "Software Engineer",
-        "company": "Digital Product Team",
-        "description": "Built and improved internal and client-facing features, collaborated with design and product stakeholders, and maintained robust APIs and front-end components."
+        "period": " Sept 2022 —  Aug 2023",
+        "role": "Full-stack Engineer",
+        "company": "Sopra Steria - Aeroline",
+        "description": "Development tasks in a challenging and large, international project."
       },
       "item3": {
-        "period": "2020 — 2022",
-        "role": "Web Developer & UX-oriented Engineer",
-        "company": "Innovation Projects",
-        "description": "Contributed to user-centered digital projects combining cognitive science methods with modern web development to deliver practical, user-friendly solutions."
+        "period": "May 2022 - Aug 2022",
+        "role": "Full-stack Developer Intern",
+        "company": "Sopra Steria - Aeroline",
+        "description": "Took part in development tasks as a member of a team of 4, contributing to a project for a major actor in the aeronautical industry."
       }
     }
   },

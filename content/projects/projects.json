@@ -40,8 +40,8 @@
     "content": {
       "en": {
         "title": "AeroWebb - Module GAV",
-        "description": "Detailed description of your fourth project. Highlight the unique features, user experience improvements, and the impact it had on the target audience.",
-        "shortDescription": "Brief description of your fourth project. Highlight the key features and technologies used."
+        "description": "Developped a whole new module as a part of the AeroWebb suite, made for the management of D type checks in aeronautical maintenance. It provides a comprehensive solution for planning, tracking and managing D checks operations. With this module, users can easily organize tasks, track progress and ensure efficient maintenance of aircrafts.",
+        "shortDescription": "Developped a whole new module as a part of the AeroWebb suite, made for the management of D type checks in aeronautical maintenance."
       },
       "fr": {
         "title": "AeroWebb - Module GAV",
