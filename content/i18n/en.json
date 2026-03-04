@@ -1,7 +1,9 @@
 {
   "misc" : {
     "lightMode": "Light",
-    "darkMode": "Dark"
+    "darkMode": "Dark",
+    "previous": "Previous",
+    "next": "Next"
   },
   "nav": {
     "home": "Home",
