@@ -43,17 +43,49 @@
             </span>
           </span>
         </button>
-        <div class="language-switcher">
-          <select
-            id="language-select"
-            class="language-select"
-            :value="currentLanguage"
+        <div
+          ref="languageSwitcherRef"
+          class="language-switcher"
+          @keydown.esc.stop="closeLanguageMenu"
+        >
+          <button
+            type="button"
+            class="language-trigger"
+            :class="{ 'menu-open': isLanguageMenuOpen }"
             aria-label="Select language"
-            @change="switchLanguage(($event.target as HTMLSelectElement).value)"
+            aria-haspopup="listbox"
+            :aria-expanded="isLanguageMenuOpen"
+            @click="toggleLanguageMenu"
           >
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-          </select>
+            {{ currentLanguageLabel }}
+          </button>
+
+          <ul v-if="isLanguageMenuOpen" class="language-menu" role="listbox" aria-label="Language options">
+            <li>
+              <button
+                type="button"
+                class="language-option"
+                :class="{ active: currentLanguage === 'en' }"
+                role="option"
+                :aria-selected="currentLanguage === 'en'"
+                @click="handleLanguageSelect('en')"
+              >
+                English
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="language-option"
+                :class="{ active: currentLanguage === 'fr' }"
+                role="option"
+                :aria-selected="currentLanguage === 'fr'"
+                @click="handleLanguageSelect('fr')"
+              >
+                Français
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -61,9 +93,48 @@
 </template>
 
 <script setup lang="ts">
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useHeaderLogic } from './Header'
 
 const { currentLanguage, switchLanguage, currentTheme, toggleTheme } = useHeaderLogic()
+
+const languageSwitcherRef = ref<HTMLElement | null>(null)
+const isLanguageMenuOpen = ref(false)
+
+const currentLanguageLabel = computed(() => (currentLanguage.value === 'fr' ? 'Français' : 'English'))
+
+const toggleLanguageMenu = () => {
+  isLanguageMenuOpen.value = !isLanguageMenuOpen.value
+}
+
+const closeLanguageMenu = () => {
+  isLanguageMenuOpen.value = false
+}
+
+const handleLanguageSelect = (lang: 'en' | 'fr') => {
+  switchLanguage(lang)
+  closeLanguageMenu()
+}
+
+const handleDocumentMouseDown = (event: MouseEvent) => {
+  if (!languageSwitcherRef.value) {
+    return
+  }
+
+  const target = event.target as Node | null
+
+  if (target && !languageSwitcherRef.value.contains(target)) {
+    closeLanguageMenu()
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('mousedown', handleDocumentMouseDown)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('mousedown', handleDocumentMouseDown)
+})
 </script>
 
 <style scoped src="./Header.css"></style>
