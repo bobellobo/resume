@@ -1,20 +1,24 @@
 <template>
   <section id="home" class="hero">
     <div class="hero-content">
-      <img class="hero-photo" :src="heroPhoto" alt="Bibi photo" />
-      <p class="hero-subtitle">{{ $t('hero.subtitle') }}</p>
-      <i18n-t keypath="profile.description" tag="p" class="hero-about">
-        <template #university>
-          <a
-            class="inline-link"
-            href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ $t('profile.universityLabel') }}
-          </a>
-        </template>
-      </i18n-t>
+      <div class="hero-main">
+        <div class="hero-copy">
+          <!-- <p class="hero-subtitle">{{ $t('hero.subtitle') }}</p> -->
+          <i18n-t keypath="profile.description" tag="p" class="hero-about">
+            <template #university>
+              <a
+                class="inline-link"
+                href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ $t('profile.universityLabel') }}
+              </a>
+            </template>
+          </i18n-t>
+        </div>
+        <img class="hero-photo" :src="heroPhoto" alt="Bibi photo" />
+      </div>
       <button
         class="scroll-next-btn"
         type="button"
