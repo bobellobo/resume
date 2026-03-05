@@ -19,7 +19,7 @@
 .about-description {
   color: var(--text-light);
   font-size: 1.1rem;
-  text-align: left;
+  text-align: center;
   line-height: 1.8;
   white-space: pre-line;
   margin: 0 auto;

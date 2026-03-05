@@ -1,13 +1,13 @@
 <template>
-  <header class="header">
+  <header ref="headerRef" class="header">
     <nav class="navbar">
       <div class="logo">Titouan Guedon</div>
-      <ul class="nav-links">
-        <li><a href="#home">{{ $t('nav.home') }}</a></li>
-        <li><a href="#about">{{ $t('nav.about') }}</a></li>
-        <li><a href="#experience">{{ $t('nav.experience') }}</a></li>
-        <li><a href="#projects">{{ $t('nav.projects') }}</a></li>
-        <li><a href="#contact">{{ $t('nav.contact') }}</a></li>
+      <ul id="primary-navigation" :class="['nav-links', { open: isMobileMenuOpen }]">
+        <li><a href="#home" @click="handleNavLinkClick">{{ $t('nav.home') }}</a></li>
+        <li><a href="#about" @click="handleNavLinkClick">{{ $t('nav.about') }}</a></li>
+        <li><a href="#experience" @click="handleNavLinkClick">{{ $t('nav.experience') }}</a></li>
+        <li><a href="#projects" @click="handleNavLinkClick">{{ $t('nav.projects') }}</a></li>
+        <li><a href="#contact" @click="handleNavLinkClick">{{ $t('nav.contact') }}</a></li>
       </ul>
       <div class="header-controls">
         <button
@@ -87,6 +87,18 @@
             </li>
           </ul>
         </div>
+        <button
+          type="button"
+          :class="['menu-toggle', { 'menu-open': isMobileMenuOpen }]"
+          aria-label="Toggle navigation menu"
+          aria-controls="primary-navigation"
+          :aria-expanded="isMobileMenuOpen"
+          @click="toggleMobileMenu"
+        >
+          <span class="menu-toggle-line"></span>
+          <span class="menu-toggle-line"></span>
+          <span class="menu-toggle-line"></span>
+        </button>
       </div>
     </nav>
   </header>
@@ -97,9 +109,12 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useHeaderLogic } from './Header'
 
 const { currentLanguage, switchLanguage, currentTheme, toggleTheme } = useHeaderLogic()
+const MOBILE_BREAKPOINT = 768
 
+const headerRef = ref<HTMLElement | null>(null)
 const languageSwitcherRef = ref<HTMLElement | null>(null)
 const isLanguageMenuOpen = ref(false)
+const isMobileMenuOpen = ref(false)
 
 const currentLanguageLabel = computed(() => (currentLanguage.value === 'fr' ? 'Français' : 'English'))
 
@@ -111,29 +126,53 @@ const closeLanguageMenu = () => {
   isLanguageMenuOpen.value = false
 }
 
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
+
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false
+}
+
+const handleNavLinkClick = () => {
+  closeMobileMenu()
+}
+
 const handleLanguageSelect = (lang: 'en' | 'fr') => {
   switchLanguage(lang)
   closeLanguageMenu()
 }
 
 const handleDocumentMouseDown = (event: MouseEvent) => {
+  const target = event.target as Node | null
+
+  if (target && headerRef.value && !headerRef.value.contains(target)) {
+    closeMobileMenu()
+  }
+
   if (!languageSwitcherRef.value) {
     return
   }
-
-  const target = event.target as Node | null
 
   if (target && !languageSwitcherRef.value.contains(target)) {
     closeLanguageMenu()
   }
 }
 
+const handleWindowResize = () => {
+  if (window.innerWidth > MOBILE_BREAKPOINT) {
+    closeMobileMenu()
+  }
+}
+
 onMounted(() => {
   document.addEventListener('mousedown', handleDocumentMouseDown)
+  window.addEventListener('resize', handleWindowResize)
 })
 
 onBeforeUnmount(() => {
   document.removeEventListener('mousedown', handleDocumentMouseDown)
+  window.removeEventListener('resize', handleWindowResize)
 })
 </script>
 
