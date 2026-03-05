@@ -41,6 +41,28 @@
   text-align: center;
 }
 
+.hero-subtitle {
+  margin-bottom: 1rem;
+}
+
+.hero-about {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  white-space: pre-line;
+}
+
+.inline-link {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+.inline-link:hover {
+  color: var(--secondary-color);
+}
+
 .scroll-next-btn {
   width: 3rem;
   height: 3rem;
@@ -96,6 +118,12 @@
 
   .hero-content p {
     font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-about {
+    font-size: 0.98rem;
+    line-height: 1.65;
   }
 
   .hero {
@@ -128,6 +156,10 @@
     font-size: 0.95rem;
     margin-bottom: 1rem;
     line-height: 1.5;
+  }
+
+  .hero-about {
+    font-size: 0.9rem;
   }
 
   .scroll-next-btn {

@@ -63,4 +63,4 @@ const skillCategories = [
 ]
 </script>
 
-<style scoped src="./About.css"></style>
+<style scoped src="./Skills.css"></style>

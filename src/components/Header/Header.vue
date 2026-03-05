@@ -4,7 +4,7 @@
       <div class="logo">Titouan Guedon</div>
       <ul id="primary-navigation" :class="['nav-links', { open: isMobileMenuOpen }]">
         <li><a href="#home" @click="handleNavLinkClick">{{ $t('nav.home') }}</a></li>
-        <li><a href="#about" @click="handleNavLinkClick">{{ $t('nav.about') }}</a></li>
+        <li><a href="#skills" @click="handleNavLinkClick">{{ $t('nav.skills') }}</a></li>
         <li><a href="#experience" @click="handleNavLinkClick">{{ $t('nav.experience') }}</a></li>
         <li><a href="#projects" @click="handleNavLinkClick">{{ $t('nav.projects') }}</a></li>
         <li><a href="#contact" @click="handleNavLinkClick">{{ $t('nav.contact') }}</a></li>

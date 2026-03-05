@@ -2,7 +2,19 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <img class="hero-photo" :src="heroPhoto" alt="Bibi photo" />
-      <p>{{ $t('hero.subtitle') }}</p>
+      <p class="hero-subtitle">{{ $t('hero.subtitle') }}</p>
+      <i18n-t keypath="profile.description" tag="p" class="hero-about">
+        <template #university>
+          <a
+            class="inline-link"
+            href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ $t('profile.universityLabel') }}
+          </a>
+        </template>
+      </i18n-t>
       <button
         class="scroll-next-btn"
         type="button"
@@ -22,10 +34,10 @@ import heroPhoto from '@content/projects/images/bibi.jpeg'
 useI18n()
 
 const scrollToNextSection = () => {
-  const aboutSection = document.getElementById('about')
+  const skillsSection = document.getElementById('skills')
 
-  if (aboutSection) {
-    aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  if (skillsSection) {
+    skillsSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
     return
   }
 

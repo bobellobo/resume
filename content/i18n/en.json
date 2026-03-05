@@ -7,7 +7,7 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
+    "skills": "Skills",
     "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact"
@@ -15,8 +15,7 @@
   "hero": {
     "subtitle": "Hi, I'm Titouan, a passionate fullstack developer with a very diverse background. I hold a degree as a cognitive science engineer, and got a solid experience in web development and design. After 2 years in Italy, I am now moving back to France and looking for exciting new opportunities for me to apply my skills and grow as a developer."
   },
-  "about": {
-    "title": "About Me",
+  "profile": {
     "description": "I'm a dedicated fullstack developer with over 3 years of experience, trained at {university}. \nThanks to this background, I have a user-centered design approach and understand the importance of a good user experience. In my past experiences on the other hand, I have always been able to take technical subjects in hand and quickly gain skill to focus on the core of the design, without ever compromising on technical quality and clean code.",
     "universityLabel": "Ecole Nationale Supérieure de Cognitique",
     "skillsTitle": "Skills Overview",
@@ -34,7 +33,7 @@
         "item1": "User behavior analysis",
         "item2": "Human-computer interaction principles",
         "item3": "Experimental design and interpretation",
-        "item4": "Data-informed product thinking"
+        "item4": "User-centered design"
       },
       "languages": {
         "title": "Languages spoken",
@@ -53,7 +52,7 @@
     }
   },
   "projects": {
-    "title": "Projects & realizations",
+    "title": "Projects & Achievements",
     "imageUnavailable": "Project preview unavailable"
   },
   "experience": {
@@ -66,16 +65,16 @@
         "description": "Designed and delivered tools end-to-end, from architecture to deployment, with a strong focus on clean interfaces, performance, and maintainable code. Strong emphasis on functional programming paradigms and development best practices."
       },
       "item2": {
-        "period": " Sept 2022 —  Aug 2023",
+        "period": "Sept 2022 —  Aug 2023",
         "role": "Full-stack Engineer",
         "company": "Sopra Steria - Aeroline",
-        "description": "Development tasks in a challenging and large, international project."
+        "description": "Development tasks in a challenging and large, international project. Part of a team of 3 developers and one product owner. Agile environment with a lot of ownership and responsibilities given to the developers."
       },
       "item3": {
         "period": "May 2022 - Aug 2022",
         "role": "Full-stack Developer Intern",
         "company": "Sopra Steria - Aeroline",
-        "description": "Took part in development tasks as a member of a team of 4, contributing to a project for a major actor in the aeronautical industry."
+        "description": "Took part in development tasks as a member of a team of 4, contributing to a project for a major actor in the aeronautical industry. Developed a new module for the core application from start to finish, including design, development, testing and deployment. Gained experience in working in a large codebase and following best practices for maintainable code."
       }
     }
   },

@@ -7,7 +7,7 @@
   },
   "nav": {
     "home": "Accueil",
-    "about": "À propos",
+    "skills": "Compétences",
     "experience": "Expériences",
     "projects": "Projets",
     "contact": "Contact"
@@ -15,8 +15,7 @@
   "hero": {
     "subtitle": "Salut, je suis Titouan, un développeur au profil transverse. Je suis titulaire d'un diplôme d'ingénieur cogniticien, et possède une solide expérience en développement fullstack et design web. Après 2 ans passés en Italie, je suis à la recherche de nouvelles opportunités en France pour continuer à évoluer en tant que développeur."
   },
-  "about": {
-    "title": "À propos de moi",
+  "profile": {
     "description": "Je suis un développeur fullstack avec plus de 3 ans d'expérience, formé à l'{university}. De par ma formation, j'ai une approche de conception centrée utilisateur et suis sensible à l'importance d'une bonne expérience utilisateur, tout en ayant une solide expertise technique acquise au cours de mes expériences passées. Chaque projet m'a amené à prendre en main de nouvelles technologies et outils et je sais monter en compétence rapidement pour me concentrer sur le coeur de la conception, sans jamais faire une croix sur l'exigence de qualité technique.",
     "universityLabel": "Ecole Nationale Supérieure de Cognitique",
     "skillsTitle": "Aperçu des compétences",
@@ -34,7 +33,7 @@
         "item1": "Analyse des comportements utilisateurs",
         "item2": "Principes d'interaction humain-machine",
         "item3": "Conception et interprétation d'expériences",
-        "item4": "Prise de décision produit basée sur les données"
+        "item4": "Conception centrée utilisateur"
       },
       "languages": {
         "title": "Langues parlées",
@@ -69,13 +68,13 @@
         "period": "Septembre 2022 — Août 2023",
         "role": "Développeur Full-stack",
         "company": "Sopra Steria - Aeroline",
-        "description": "Tâches de développement dans un projet d'envergure du secteur de l'aéronautique, toujours dans un contexte agile."
+        "description": "Tâches de développement dans un projet d'envergure du secteur de l'aéronautique, toujours dans un contexte agile. Dans la continuité du travail fourni en stage avec toujours un ownership important et des responsabilités accrues."
       },
       "item3": {
         "period": "Mai 2022 - Août 2022",
         "role": "Stagiaire Développeur Full-stack",
         "company": "Sopra Steria - Aeroline",
-        "description": "Participation à des tâches de développement en tant que membre d'une équipe de 4 personnes, contribuant à un projet pour un acteur majeur de l'industrie aéronautique."
+        "description": "Participation à des tâches de développement en tant que membre d'une équipe de 4 personnes, contribuant à un projet pour un acteur majeur de l'industrie aéronautique. Développement de A à Z d'un nouveau module pour l'application, y compris la conception, le développement, les tests et le déploiement. Expérience sur une codebase très large, dans le respect des bonnes pratiques avec beaucoup de code review."
       }
     }
   },
