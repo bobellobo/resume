@@ -107,6 +107,10 @@
     "contactLinks": "Liens de contact",
     "profile": "Profil",
     "attribution": "Ce PDF a été exporté depuis le site portfolio : {link}",
+    "previewOn": "Apercu Impression",
+    "previewOff": "Quitter Apercu",
+    "previewOnHint": "Activer le mode apercu impression",
+    "previewOffHint": "Desactiver le mode apercu impression",
     "switchToFrench": "Passer la langue en français",
     "switchToEnglish": "Passer la langue en anglais"
   }

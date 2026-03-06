@@ -1,5 +1,5 @@
 <template>
-  <main class="resume-page">
+  <main :class="['resume-page', { 'print-preview': isPrintPreview }]">
     <div class="resume-toolbar" role="toolbar" :aria-label="$t('exportView.actionsLabel')">
       <a class="toolbar-link" href="/">{{ $t('exportView.backToPortfolio') }}</a>
       <button
@@ -10,6 +10,15 @@
         @click="toggleLanguage"
       >
         {{ languageSwitchLabel }}
+      </button>
+      <button
+        type="button"
+        :class="['toolbar-button', { 'toolbar-button-active': isPrintPreview }]"
+        :title="printPreviewTitle"
+        :aria-label="printPreviewTitle"
+        @click="togglePrintPreview"
+      >
+        {{ printPreviewLabel }}
       </button>
       <button type="button" class="toolbar-button" @click="printExport">{{ $t('exportView.exportPdfJpeg') }}</button>
     </div>
@@ -89,12 +98,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const LANGUAGE_STORAGE_KEY = 'language'
 
 const { locale, t } = useI18n()
+const isPrintPreview = ref(false)
 
 const experienceItems = [
   'experience.items.item1',
@@ -149,11 +159,21 @@ const languageSwitchLabel = computed(() => (locale.value === 'fr' ? 'EN' : 'FR')
 const languageSwitchTitle = computed(() => (
   locale.value === 'fr' ? t('exportView.switchToEnglish') : t('exportView.switchToFrench')
 ))
+const printPreviewLabel = computed(() => (
+  isPrintPreview.value ? t('exportView.previewOff') : t('exportView.previewOn')
+))
+const printPreviewTitle = computed(() => (
+  isPrintPreview.value ? t('exportView.previewOffHint') : t('exportView.previewOnHint')
+))
 
 const toggleLanguage = () => {
   const nextLanguage = locale.value === 'fr' ? 'en' : 'fr'
   locale.value = nextLanguage
   localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage)
+}
+
+const togglePrintPreview = () => {
+  isPrintPreview.value = !isPrintPreview.value
 }
 
 const printExport = () => {

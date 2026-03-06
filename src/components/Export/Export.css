@@ -35,6 +35,12 @@
   color: #c2410c;
 }
 
+.toolbar-button-active {
+  border-color: #c2410c;
+  color: #c2410c;
+  background: color-mix(in srgb, #c2410c 8%, #ffffff);
+}
+
 .resume-sheet {
   width: 210mm;
   min-height: 297mm;
@@ -197,7 +203,7 @@
   color: #c2410c;
 }
 
-@media (max-width: 980px) {
+@media screen and (max-width: 980px) {
   .resume-page {
     padding: 1rem 0.5rem 2rem;
   }
@@ -236,6 +242,119 @@
   margin: 0;
 }
 
+.resume-page.print-preview {
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+
+.resume-page.print-preview .resume-sheet {
+  width: 210mm;
+  min-height: auto;
+  padding: 10mm;
+  border: none;
+  box-shadow: none;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.resume-page.print-preview .resume-header {
+  gap: 0.9rem;
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.7rem;
+}
+
+.resume-page.print-preview .resume-name {
+  font-size: 1.62rem;
+}
+
+.resume-page.print-preview .resume-role {
+  font-size: 0.84rem;
+}
+
+.resume-page.print-preview .resume-links {
+  font-size: 0.74rem;
+  line-height: 1.3;
+}
+
+.resume-page.print-preview .resume-section {
+  margin-bottom: 0.72rem;
+}
+
+.resume-page.print-preview .resume-section h2 {
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
+}
+
+.resume-page.print-preview .resume-section h3 {
+  font-size: 0.86rem;
+}
+
+.resume-page.print-preview .resume-text {
+  font-size: 0.77rem;
+  line-height: 1.32;
+}
+
+.resume-page.print-preview .experience-item {
+  margin-bottom: 0.52rem;
+}
+
+.resume-page.print-preview .experience-period {
+  font-size: 0.72rem;
+}
+
+.resume-page.print-preview .experience-company {
+  margin-bottom: 0.14rem;
+  font-size: 0.74rem;
+}
+
+.resume-page.print-preview .skills-grid {
+  gap: 0.55rem;
+}
+
+.resume-page.print-preview .skill-category {
+  padding: 0.46rem 0.56rem;
+}
+
+.resume-page.print-preview .skill-category li {
+  font-size: 0.73rem;
+  line-height: 1.26;
+}
+
+.resume-page.print-preview .export-attribution {
+  margin-top: 0.58rem;
+  padding-top: 0.38rem;
+  font-size: 0.64rem;
+  line-height: 1.28;
+}
+
+.resume-page.print-preview .resume-header {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.resume-page.print-preview .resume-links {
+  text-align: right;
+}
+
+.resume-page.print-preview .skills-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.resume-page.print-preview .experience-heading {
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.resume-page.print-preview a {
+  color: #111827;
+  text-decoration: none;
+}
+
+.resume-page.print-preview .export-attribution a {
+  text-decoration: underline;
+}
+
 @media print {
   .resume-page {
     padding: 0;
@@ -248,11 +367,101 @@
   }
 
   .resume-sheet {
-    width: 100%;
+    width: 210mm;
     min-height: auto;
+    padding: 10mm;
     border: none;
     box-shadow: none;
-    margin: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .resume-header {
+    gap: 0.9rem;
+    padding-bottom: 0.65rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .resume-name {
+    font-size: 1.62rem;
+  }
+
+  .resume-role {
+    font-size: 0.84rem;
+  }
+
+  .resume-links {
+    font-size: 0.74rem;
+    line-height: 1.3;
+  }
+
+  .resume-section {
+    margin-bottom: 0.72rem;
+  }
+
+  .resume-section h2 {
+    margin-bottom: 0.35rem;
+    font-size: 0.78rem;
+  }
+
+  .resume-section h3 {
+    font-size: 0.86rem;
+  }
+
+  .resume-text {
+    font-size: 0.77rem;
+    line-height: 1.32;
+  }
+
+  .experience-item {
+    margin-bottom: 0.52rem;
+  }
+
+  .experience-period {
+    font-size: 0.72rem;
+  }
+
+  .experience-company {
+    margin-bottom: 0.14rem;
+    font-size: 0.74rem;
+  }
+
+  .skills-grid {
+    gap: 0.55rem;
+  }
+
+  .skill-category {
+    padding: 0.46rem 0.56rem;
+  }
+
+  .skill-category li {
+    font-size: 0.73rem;
+    line-height: 1.26;
+  }
+
+  .export-attribution {
+    margin-top: 0.58rem;
+    padding-top: 0.38rem;
+    font-size: 0.64rem;
+    line-height: 1.28;
+  }
+
+  .resume-header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .resume-links {
+    text-align: right;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-heading {
+    flex-direction: row;
+    align-items: baseline;
   }
 
   a {
