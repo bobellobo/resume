@@ -172,6 +172,64 @@
   }
 }
 
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 1rem 12px 1.25rem;
+  }
+
+  .hero-content {
+    gap: 0.9rem;
+  }
+
+  .hero-main {
+    gap: 0.8rem;
+  }
+
+  .hero-photo {
+    width: 106px;
+    height: 106px;
+    border-width: 3px;
+  }
+
+  .hero-content p {
+    font-size: 0.92rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.55;
+  }
+
+  .hero-about {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .scroll-next-btn {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .scroll-next-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 0.85rem 10px 1.1rem;
+  }
+
+  .hero-photo {
+    width: 94px;
+    height: 94px;
+  }
+
+  .hero-content p,
+  .hero-about {
+    font-size: 0.85rem;
+    line-height: 1.48;
+  }
+}
+
 @media (max-height: 700px) {
   .hero {
     padding: 1rem 20px;
