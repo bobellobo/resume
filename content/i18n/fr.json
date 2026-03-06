@@ -13,7 +13,7 @@
     "contact": "Contact"
   },
   "profile": {
-    "description": "Salut! \nJe suis Titouan, un développeur fullstack avec plus de 3 ans d'expérience, formé à l'{university}. J'ai de par ma formation une approche de conception centrée sur l'utilisateur et suis sensible à l'importance d'une bonne UX/UI. \nDans mes expériences passées, j'ai également acquis une solide expertise technique avec divers outils et méthodologies. Je suis capable de prendre en main des sujets techniques et de monter rapidement en compétence pour me concentrer sur le cœur de la conception, sans compromis sur la qualité technique et la propreté du code. \nAprès 2 ans passés en Italie, je suis à la recherche de nouvelles opportunités en France pour continuer à évoluer en tant que développeur.",
+    "description": "Salut! \nJe suis Titouan, un développeur fullstack avec plus de 3 ans d'expérience, formé à l'{university}. J'ai de par ma formation une approche de conception centrée sur l'utilisateur et suis sensible à l'importance d'une bonne UX/UI. \n\nDans mes expériences passées, j'ai également acquis une solide expertise technique avec divers outils et méthodologies. \nJe suis capable de prendre en main des sujets techniques et de monter rapidement en compétence pour me concentrer sur le cœur de la conception, sans compromis sur la qualité technique et la propreté du code. \n\nAprès 2 ans passés à travailler à l'étranger, je suis à la recherche de nouvelles opportunités en France pour continuer à évoluer en tant que développeur.",
     "universityLabel": "Ecole Nationale Supérieure de Cognitique",
     "skillsTitle": "Aperçu des compétences",
     "skills": {
@@ -60,7 +60,7 @@
     "title": "Expériences professionnelles",
     "items": {
       "item1": {
-        "period": "Janvier 2023 — Janvier 2026",
+        "period": "Janvier 2024 — Janvier 2026",
         "role": "Développeur Full-stack",
         "company": "STMicroelectronics - System Research & Application",
         "description": "Conception et livraison d'applications web de bout en bout, de l'architecture au déploiement, avec une grande attention portée à la propreté des interfaces et la performance.Fort accent sur les paradigmes de programmation fonctionnelle et les bonnes pratiques de développement."
@@ -92,12 +92,12 @@
     }
   },
   "modal": {
-    "visitProject": "Voir plus",
+    "visitProject": "Voir le projet",
     "backToPortfolio": "Retour au portfolio",
     "technologiesUsed": "Technologies utilisées"
   },
   "projectCard": {
-    "viewProject": "Voir le projet"
+    "viewProject": "Voir plus"
   },
   "exportView": {
     "actionsLabel": "Actions d'export",
