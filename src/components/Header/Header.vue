@@ -1,7 +1,7 @@
 <template>
   <header ref="headerRef" class="header">
     <nav class="navbar">
-      <div class="logo">Titouan Guedon</div>
+      <a href="#home" class="logo" @click="handleNavLinkClick">Titouan Guedon</a>
       <ul id="primary-navigation" :class="['nav-links', { open: isMobileMenuOpen }]">
         <li><a href="#home" @click="handleNavLinkClick">{{ $t('nav.home') }}</a></li>
         <li><a href="#skills" @click="handleNavLinkClick">{{ $t('nav.skills') }}</a></li>

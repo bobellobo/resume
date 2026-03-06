@@ -34,12 +34,24 @@ const skillCategories = [
     ]
   },
   {
+    titleKey: 'profile.skills.softSkills.title',
+    itemKeys: [
+      'profile.skills.softSkills.item1',
+      'profile.skills.softSkills.item2',
+      'profile.skills.softSkills.item3',
+      'profile.skills.softSkills.item4',
+      'profile.skills.softSkills.item5',
+      'profile.skills.softSkills.item6'
+    ]
+  },
+  {
     titleKey: 'profile.skills.cognitiveScience.title',
     itemKeys: [
       'profile.skills.cognitiveScience.item1',
       'profile.skills.cognitiveScience.item2',
       'profile.skills.cognitiveScience.item3',
-      'profile.skills.cognitiveScience.item4'
+      'profile.skills.cognitiveScience.item4',
+      'profile.skills.cognitiveScience.item5'
     ]
   },
   {
@@ -49,15 +61,6 @@ const skillCategories = [
       'profile.skills.languages.item2',
       'profile.skills.languages.item3',
       'profile.skills.languages.item4'
-    ]
-  },
-  {
-    titleKey: 'profile.skills.softSkills.title',
-    itemKeys: [
-      'profile.skills.softSkills.item1',
-      'profile.skills.softSkills.item2',
-      'profile.skills.softSkills.item3',
-      'profile.skills.softSkills.item4'
     ]
   }
 ]
