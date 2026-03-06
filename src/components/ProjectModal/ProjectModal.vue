@@ -4,7 +4,15 @@
     <div class="modal-content" @click.stop>
       <button class="modal-close" @click="closeModal">&times;</button>
       <div class="modal-header">
-        <img :src="getProjectImageOrFallback(currentProject?.image ?? '', $t('projects.imageUnavailable'))" :alt="currentProject?.content[currentLocale].title" class="modal-image" />
+        <div class="modal-media-stage">
+          <img
+            :src="getProjectImageOrFallback(currentProject?.image ?? '', $t('projects.imageUnavailable'))"
+            alt=""
+            class="modal-image modal-image-blur"
+            aria-hidden="true"
+          />
+          <img :src="getProjectImageOrFallback(currentProject?.image ?? '', $t('projects.imageUnavailable'))" :alt="currentProject?.content[currentLocale].title" class="modal-image" />
+        </div>
       </div>
       <div class="modal-body">
         <h2>{{ currentProject?.content[currentLocale].title }}</h2>
