@@ -1,7 +1,7 @@
 <template>
   <main :class="['resume-page', { 'print-preview': isPrintPreview }]">
     <div class="resume-toolbar" role="toolbar" :aria-label="$t('exportView.actionsLabel')">
-      <a class="toolbar-link" href="/">{{ $t('exportView.backToPortfolio') }}</a>
+      <a class="toolbar-link" href="/resume/">{{ $t('exportView.backToPortfolio') }}</a>
       <button
         type="button"
         class="toolbar-button"
