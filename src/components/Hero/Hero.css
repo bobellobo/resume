@@ -91,18 +91,6 @@
   align-self: center;
 }
 
-.scroll-next-btn::before {
-  content: '';
-  position: absolute;
-  top: -0.75rem;
-  left: 50%;
-  width: 2.4rem;
-  height: 2px;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background-color: color-mix(in srgb, var(--primary-color) 80%, transparent);
-}
-
 .scroll-next-btn:hover {
   background-color: color-mix(in srgb, var(--primary-color) 12%, transparent);
   transform: translateY(3px);
