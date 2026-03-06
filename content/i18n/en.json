@@ -105,6 +105,7 @@
     "exportPdfJpeg": "Export PDF / JPEG",
     "documentLabel": "Titouan Guedon export view",
     "role": "Full-stack Engineer",
+    "profileDescription": "Full-stack developer with more than 3 years of experience, trained at {university}. I combine a user-centered design mindset with strong technical ownership, from architecture to delivery. In previous roles, I developed expertise across modern tools and methodologies, with a strong focus on clean code, performance, and maintainable solutions. After two years in Italy, I am now based in France and looking for new opportunities to contribute and continue growing as a developer.",
     "contactLinks": "Contact links",
     "profile": "Profile",
     "attribution": "This PDF was exported from the portfolio website: {link}",

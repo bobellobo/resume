@@ -42,7 +42,7 @@
 
       <section class="resume-section">
         <h2>{{ $t('exportView.profile') }}</h2>
-        <i18n-t keypath="profile.description" tag="p" class="resume-text">
+        <i18n-t keypath="exportView.profileDescription" tag="p" class="resume-text">
           <template #university>
             <a
               class="inline-link"
