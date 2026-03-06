@@ -105,6 +105,10 @@
     padding-left: 0.2rem;
   }
 
+  .timeline-dot {
+    left: calc(var(--timeline-dot-center-from-item) - var(--timeline-dot-size) + 0.25rem);
+  }
+
   .timeline-item {
     padding-bottom: 1rem;
   }
