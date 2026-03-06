@@ -47,6 +47,11 @@
   margin-right: 0.45rem;
 }
 
+.skill-item-label-joke {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
 @media (max-width: 768px) {
   .skills.section-block {
     padding: 1.5rem 20px;

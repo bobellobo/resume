@@ -7,8 +7,14 @@
         <article v-for="category in skillCategories" :key="category.titleKey" class="skill-card surface-card">
           <h3 class="skill-heading">{{ $t(category.titleKey) }}</h3>
           <ul class="skill-list">
-            <li v-for="itemKey in category.itemKeys" :key="itemKey" class="skill-item">
-              {{ $t(itemKey) }}
+            <li
+              v-for="itemKey in category.itemKeys"
+              :key="itemKey"
+              class="skill-item"
+            >
+              <span :class="['skill-item-label', { 'skill-item-label-joke': category.strikethroughItemKeys?.includes(itemKey) }]">
+                {{ $t(itemKey) }}
+              </span>
             </li>
           </ul>
         </article>
@@ -42,7 +48,8 @@ const skillCategories = [
       'profile.skills.softSkills.item4',
       'profile.skills.softSkills.item5',
       'profile.skills.softSkills.item6'
-    ]
+    ],
+    strikethroughItemKeys: ['profile.skills.softSkills.item6']
   },
   {
     titleKey: 'profile.skills.cognitiveScience.title',
