@@ -97,5 +97,17 @@
   },
   "projectCard": {
     "viewProject": "View project"
+  },
+  "exportView": {
+    "actionsLabel": "Export actions",
+    "backToPortfolio": "Back to portfolio",
+    "exportPdfJpeg": "Export PDF / JPEG",
+    "documentLabel": "Titouan Guedon export view",
+    "role": "Full-stack Engineer",
+    "contactLinks": "Contact links",
+    "profile": "Profile",
+    "attribution": "This PDF was exported from the portfolio website: {link}",
+    "switchToFrench": "Switch language to French",
+    "switchToEnglish": "Switch language to English"
   }
 }

@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <ExportView v-if="isExportPage" />
+  <div v-else id="app">
     <div class="scroll-progress" aria-hidden="true"></div>
     <Header />
     <Hero />
@@ -15,6 +16,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Project } from './components/Projects/Projects'
+import ExportView from './components/Export/Export.vue'
 import Header from './components/Header/Header.vue'
 import Hero from './components/Hero/Hero.vue'
 import Skills from './components/Skills/Skills.vue'
@@ -23,6 +25,11 @@ import Projects from './components/Projects/Projects.vue'
 import Contact from './components/Contact/Contact.vue'
 import Footer from './components/Footer/Footer.vue'
 import ProjectModal from './components/ProjectModal/ProjectModal.vue'
+
+const urlParams = new URLSearchParams(window.location.search)
+const isExportPage = [window.location.pathname, window.location.hash].includes('/export')
+  || window.location.hash === '#/export'
+  || urlParams.get('view') === 'export'
 
 const projectModalRef = ref<InstanceType<typeof ProjectModal> | null>(null)
 

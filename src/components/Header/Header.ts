@@ -5,6 +5,7 @@ type Theme = 'light' | 'dark'
 type Language = 'en' | 'fr'
 
 const THEME_STORAGE_KEY = 'theme'
+const LANGUAGE_STORAGE_KEY = 'language'
 
 export function useHeaderLogic() {
   const { locale } = useI18n()
@@ -34,7 +35,8 @@ export function useHeaderLogic() {
 
     setTheme(initialTheme);
 
-    const activeLocale: Language = locale.value === 'fr' ? 'fr' : 'en';
+    const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY)
+    const activeLocale: Language = savedLanguage === 'fr' ? 'fr' : (locale.value === 'fr' ? 'fr' : 'en');
     currentLanguage.value = activeLocale;
     locale.value = activeLocale;
   })
@@ -43,6 +45,7 @@ export function useHeaderLogic() {
     const nextLanguage: Language = lang === 'fr' ? 'fr' : 'en';
     locale.value = nextLanguage;
     currentLanguage.value = nextLanguage;
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage)
   }
 
   return {

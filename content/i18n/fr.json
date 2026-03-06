@@ -97,5 +97,17 @@
   },
   "projectCard": {
     "viewProject": "Voir le projet"
+  },
+  "exportView": {
+    "actionsLabel": "Actions d'export",
+    "backToPortfolio": "Retour au portfolio",
+    "exportPdfJpeg": "Exporter PDF / JPEG",
+    "documentLabel": "Vue d'export de Titouan Guedon",
+    "role": "Développeur Full-stack",
+    "contactLinks": "Liens de contact",
+    "profile": "Profil",
+    "attribution": "Ce PDF a été exporté depuis le site portfolio : {link}",
+    "switchToFrench": "Passer la langue en français",
+    "switchToEnglish": "Passer la langue en anglais"
   }
 }
