@@ -68,7 +68,7 @@
   background-color: var(--bg-white);
   color: var(--text-dark);
   border: 2px solid var(--border-color);
-  padding: 0.38rem 2rem 0.38rem 0.78rem;
+  padding: 0.38rem 2.2rem 0.38rem 0.78rem;
   font-size: 0.85rem;
   font-weight: 600;
   font-family: 'Geist Mono', monospace;
@@ -79,6 +79,9 @@
   min-width: 7.25rem;
   box-shadow: none;
   outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .language-trigger::after {
@@ -262,7 +265,7 @@
   box-shadow: 0 0 0 4px var(--focus-ring);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .nav-links {
     gap: 1rem;
     font-size: 0.9rem;
@@ -286,7 +289,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header {
     padding: 0.4rem 16px;
   }

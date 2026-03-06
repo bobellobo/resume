@@ -109,7 +109,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useHeaderLogic } from './Header'
 
 const { currentLanguage, switchLanguage, currentTheme, toggleTheme } = useHeaderLogic()
-const MOBILE_BREAKPOINT = 768
+const MOBILE_BREAKPOINT = 900
 
 const headerRef = ref<HTMLElement | null>(null)
 const languageSwitcherRef = ref<HTMLElement | null>(null)
