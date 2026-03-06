@@ -71,6 +71,13 @@
           ›
         </button>
       </div>
+      <p
+        v-if="showSwipeHint"
+        :class="['swipe-hint', { 'is-fading': isSwipeHintFading }]"
+        aria-hidden="true"
+      >
+        ↔ {{ $t('projects.swipeHint') }}
+      </p>
     </div>
   </section>
 </template>
@@ -95,8 +102,12 @@
   const AUTO_ADVANCE_MS = 5000
   const SWIPE_THRESHOLD_PX = 48
   const SWIPE_INTENT_PX = 10
+  const SWIPE_HINT_HIDE_DELAY_MS = 3800
+  const SWIPE_HINT_FADE_DURATION_MS = 300
   const DESKTOP_BREAKPOINT = '(min-width: 1024px)'
   let autoplayTimer: number | null = null
+  let swipeHintTimer: number | null = null
+  let swipeHintFadeTimer: number | null = null
   let mediaQuery: MediaQueryList | null = null
   let mediaQueryHandler: ((event: MediaQueryListEvent) => void) | null = null
 
@@ -109,6 +120,8 @@
   const mouseDeltaX = ref(0)
   const isMouseDown = ref(false)
   const isMouseGesture = ref(false)
+  const showSwipeHint = ref(false)
+  const isSwipeHintFading = ref(false)
 
   const totalProjects = computed(() => projects.value.length)
   const cloneCount = computed(() => Math.min(visibleCards.value, totalProjects.value))
@@ -129,7 +142,7 @@
 
   const carouselStyle = computed(() => ({
     transform: `translateX(-${(virtualIndex.value * 100) / visibleCards.value}%)`,
-    transition: isTransitionEnabled.value ? 'transform 0.45s ease' : 'none'
+    transition: isTransitionEnabled.value ? 'transform 0.33s ease' : 'none'
   }))
 
   const setVirtualIndexWithoutAnimation = (nextIndex: number, onDone?: () => void) => {
@@ -202,6 +215,61 @@
     startAutoplay()
   }
 
+  const clearSwipeHintTimers = () => {
+    if (swipeHintTimer !== null) {
+      window.clearTimeout(swipeHintTimer)
+      swipeHintTimer = null
+    }
+
+    if (swipeHintFadeTimer !== null) {
+      window.clearTimeout(swipeHintFadeTimer)
+      swipeHintFadeTimer = null
+    }
+  }
+
+  const hideSwipeHintImmediately = () => {
+    clearSwipeHintTimers()
+    showSwipeHint.value = false
+    isSwipeHintFading.value = false
+  }
+
+  const fadeOutSwipeHint = () => {
+    if (!showSwipeHint.value) {
+      return
+    }
+
+    clearSwipeHintTimers()
+    isSwipeHintFading.value = true
+    swipeHintFadeTimer = window.setTimeout(() => {
+      showSwipeHint.value = false
+      isSwipeHintFading.value = false
+      swipeHintFadeTimer = null
+    }, SWIPE_HINT_FADE_DURATION_MS)
+  }
+
+  const scheduleSwipeHintFadeOut = () => {
+    clearSwipeHintTimers()
+    swipeHintTimer = window.setTimeout(() => {
+      fadeOutSwipeHint()
+      swipeHintTimer = null
+    }, SWIPE_HINT_HIDE_DELAY_MS)
+  }
+
+  const syncSwipeHintVisibility = () => {
+    const isSmallScreen = window.innerWidth <= 640
+
+    if (!isSmallScreen || totalProjects.value <= 1) {
+      hideSwipeHintImmediately()
+      return
+    }
+
+    if (!showSwipeHint.value) {
+      showSwipeHint.value = true
+      isSwipeHintFading.value = false
+      scheduleSwipeHintFadeOut()
+    }
+  }
+
   const updateVisibleCards = (isDesktop: boolean) => {
     visibleCards.value = isDesktop ? 3 : 1
   }
@@ -253,6 +321,7 @@
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > SWIPE_INTENT_PX) {
       isSwipeGesture.value = true
       touchDeltaX.value = deltaX
+      fadeOutSwipeHint()
     }
   }
 
@@ -306,6 +375,7 @@
     if (Math.abs(deltaX) > SWIPE_INTENT_PX) {
       isMouseGesture.value = true
       mouseDeltaX.value = deltaX
+      fadeOutSwipeHint()
       event.preventDefault()
     }
   }
@@ -352,6 +422,7 @@
     isAnimating.value = false
 
     startAutoplay()
+    syncSwipeHintVisibility()
   }, { immediate: true })
 
   onMounted(() => {
@@ -359,13 +430,16 @@
     updateVisibleCards(mediaQuery.matches)
     mediaQueryHandler = (event: MediaQueryListEvent) => {
       updateVisibleCards(event.matches)
+      syncSwipeHintVisibility()
     }
     mediaQuery.addEventListener('change', mediaQueryHandler)
     startAutoplay()
+    syncSwipeHintVisibility()
   })
 
   onBeforeUnmount(() => {
     stopAutoplay()
+    clearSwipeHintTimers()
 
     if (mediaQuery && mediaQueryHandler) {
       mediaQuery.removeEventListener('change', mediaQueryHandler)

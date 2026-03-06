@@ -130,8 +130,7 @@ const skillCategories = [
       'profile.skills.softSkills.item2',
       'profile.skills.softSkills.item3',
       'profile.skills.softSkills.item4',
-      'profile.skills.softSkills.item5',
-      'profile.skills.softSkills.item6'
+      'profile.skills.softSkills.item5'
     ]
   },
   {

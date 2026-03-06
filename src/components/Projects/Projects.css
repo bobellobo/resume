@@ -12,6 +12,22 @@
   padding: 0 3rem;
 }
 
+.swipe-hint {
+  display: none;
+  margin: 0.55rem 0 0;
+  text-align: center;
+  font-size: 0.72rem;
+  color: color-mix(in srgb, var(--text-light) 85%, var(--text-dark));
+  letter-spacing: 0.02em;
+  font-family: 'Geist Mono', monospace;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.swipe-hint.is-fading {
+  opacity: 0;
+}
+
 .carousel-viewport {
   position: relative;
   overflow: hidden;
@@ -215,6 +231,10 @@
 @media (max-width: 640px) {
   .projects-carousel {
     padding: 0;
+  }
+
+  .swipe-hint {
+    display: block;
   }
 
   .carousel-arrow {

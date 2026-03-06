@@ -23,11 +23,13 @@
                 <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
+              <span class="export-label">Export</span>
             </a>
             <button
-              :class="['theme-btn', `theme-${currentTheme}`]"
+              :class="['theme-btn', 'has-tooltip', `theme-${currentTheme}`]"
               :aria-label="currentTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
               :title="currentTheme === 'dark' ? $t('misc.lightMode') : $t('misc.darkMode')"
+              :data-tooltip="currentTheme === 'dark' ? $t('misc.lightMode') : $t('misc.darkMode')"
               @click="toggleTheme"
             >
               <span class="theme-options" aria-hidden="true">
@@ -64,9 +66,11 @@
             >
               <button
                 type="button"
-                class="language-trigger"
+                class="language-trigger has-tooltip"
                 :class="{ 'menu-open': isMobileLanguageMenuOpen }"
                 aria-label="Select language"
+                title="Select language"
+                data-tooltip="Select language"
                 aria-haspopup="listbox"
                 :aria-expanded="isMobileLanguageMenuOpen"
                 @click="toggleMobileLanguageMenu"
@@ -118,11 +122,13 @@
               <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
+            <span class="export-label">Export</span>
           </a>
           <button
-            :class="['theme-btn', `theme-${currentTheme}`]"
+            :class="['theme-btn', 'has-tooltip', `theme-${currentTheme}`]"
             :aria-label="currentTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
             :title="currentTheme === 'dark' ? $t('misc.lightMode') : $t('misc.darkMode')"
+            :data-tooltip="currentTheme === 'dark' ? $t('misc.lightMode') : $t('misc.darkMode')"
             @click="toggleTheme"
           >
             <span class="theme-options" aria-hidden="true">
@@ -159,9 +165,11 @@
           >
             <button
               type="button"
-              class="language-trigger"
+              class="language-trigger has-tooltip"
               :class="{ 'menu-open': isDesktopLanguageMenuOpen }"
               aria-label="Select language"
+              title="Select language"
+              data-tooltip="Select language"
               aria-haspopup="listbox"
               :aria-expanded="isDesktopLanguageMenuOpen"
               @click="toggleDesktopLanguageMenu"

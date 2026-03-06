@@ -53,7 +53,8 @@
   },
   "projects": {
     "title": "Projets et réalisations",
-    "imageUnavailable": "Aperçu du projet indisponible"
+    "imageUnavailable": "Aperçu du projet indisponible",
+    "swipeHint": "Glisser pour naviguer"
   },
   "experience": {
     "title": "Expériences professionnelles",
