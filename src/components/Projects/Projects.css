@@ -214,13 +214,11 @@
 
 @media (max-width: 640px) {
   .projects-carousel {
-    padding: 0 2rem;
+    padding: 0;
   }
 
   .carousel-arrow {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.2rem;
+    display: none;
   }
 
   .card-image {
@@ -252,10 +250,6 @@
 }
 
 @media (max-width: 480px) {
-  .projects-carousel {
-    padding: 0 1.75rem;
-  }
-
   .card-image {
     height: 165px;
   }
