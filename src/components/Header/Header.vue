@@ -227,7 +227,7 @@ const mobileLanguageSwitcherRef = ref<HTMLElement | null>(null)
 const isDesktopLanguageMenuOpen = ref(false)
 const isMobileLanguageMenuOpen = ref(false)
 const isMobileMenuOpen = ref(false)
-const exportLink = '/?view=export'
+const exportLink = '/resume/?view=export'
 
 const currentLanguageLabel = computed(() => (currentLanguage.value === 'fr' ? 'Français' : 'English'))
 
