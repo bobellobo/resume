@@ -58,12 +58,12 @@
     "content": {
       "en": {
         "title": "Multi-player card game app",
-        "description": "A React Native based application using Firebase for real-time multiplayer card gaming. Designed for playing with friends on the go when you've forgotten to bring a deck. This was a quick side project that I am planning to review soon to improve the codebase and the features.",
+        "description": "A React Native based application using Firebase for real-time multiplayer card gaming. Designed for playing with friends on the go when you've forgotten to bring a deck. It is structured like live quizz or live game apps like Kahoot with real-time updates, and a simple room ID system. This was a quick side project that I am planning to review soon to improve the codebase and the features.",
         "shortDescription": "An app dealing with real-time multiplayer card gaming. Designed for playing with friends on the go."
       },
       "fr": {
         "title": "Application mobile pour jeu de cartes multijoueur",
-        "description": "Application basée sur React Native + Firebase pour jouer aux cartes en multijoueur et en temps réel. Conçue pour jouer à des jeux simples entre amis lorsque tout le monde a oublié d'apporter un jeu de cartes. Il s'agit d'un projet annexe sur lequel j'ai prévu de refaire une passe pour ajouter des features et améliorer le code.",
+        "description": "Application basée sur React Native + Firebase pour jouer aux cartes en multijoueur et en temps réel. Conçue pour jouer à des jeux simples entre amis lorsque tout le monde a oublié d'apporter un jeu de cartes. Elle est structurée comme des applications de quiz en direct comme Kahoot ou de jeux en direct avec des mises à jour en temps réel et un système simple d'identifiant de session. Il s'agit d'un projet annexe sur lequel j'ai prévu de refaire une passe pour ajouter des features et améliorer le code.",
         "shortDescription": "Application mobile pour jeu de cartes en multijoueur. Conçue pour jouer avec des amis en déplacement."
       }
     },

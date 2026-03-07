@@ -61,6 +61,24 @@
   margin-bottom: 1rem;
 }
 
+.resume-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.resume-photo {
+  width: 5rem;
+  height: 5rem;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center 16%;
+  border-radius: 999px;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
 .resume-name {
   margin: 0;
   font-size: 1.9rem;
@@ -229,6 +247,10 @@
     flex-direction: column;
   }
 
+  .resume-identity {
+    width: 100%;
+  }
+
   .resume-links {
     text-align: left;
   }
@@ -269,6 +291,13 @@
   gap: 0.9rem;
   padding-bottom: 0.65rem;
   margin-bottom: 0.7rem;
+}
+
+.resume-page.print-preview .resume-photo {
+  width: 3.9rem;
+  height: 3.9rem;
+  border-width: 1px;
+  box-shadow: none;
 }
 
 .resume-page.print-preview .resume-name {
@@ -391,6 +420,13 @@
     gap: 0.9rem;
     padding-bottom: 0.65rem;
     margin-bottom: 0.7rem;
+  }
+
+  .resume-photo {
+    width: 3.9rem;
+    height: 3.9rem;
+    border-width: 1px;
+    box-shadow: none;
   }
 
   .resume-name {

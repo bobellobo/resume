@@ -25,9 +25,18 @@
 
     <article class="resume-sheet" :aria-label="$t('exportView.documentLabel')">
       <header class="resume-header">
-        <div>
-          <h1 class="resume-name">Titouan Guedon</h1>
-          <p class="resume-role">{{ $t('exportView.role') }}</p>
+        <div class="resume-identity">
+          <img
+            class="resume-photo"
+            :src="profilePhoto"
+            :alt="$t('exportView.photoAlt')"
+            loading="eager"
+            decoding="async"
+          >
+          <div>
+            <h1 class="resume-name">Titouan Guedon</h1>
+            <p class="resume-role">{{ $t('exportView.role') }}</p>
+          </div>
         </div>
         <ul class="resume-links" :aria-label="$t('exportView.contactLinks')">
           <li><a href="mailto:titouanguedon@proton.me">titouanguedon@proton.me</a></li>
@@ -101,6 +110,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import profilePhoto from '../../../content/projects/images/bibi.jpeg'
 
 const LANGUAGE_STORAGE_KEY = 'language'
 
