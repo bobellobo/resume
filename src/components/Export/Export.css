@@ -139,10 +139,17 @@
 }
 
 .experience-company {
-  margin: 0 0 0.2rem;
+  margin: 0;
   color: #0f172a;
   font-size: 0.82rem;
   font-weight: 600;
+}
+
+.experience-location {
+  margin: 0 0 0.2rem;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 500;
 }
 
 .skills-grid {
@@ -304,8 +311,12 @@
 }
 
 .resume-page.print-preview .experience-company {
-  margin-bottom: 0.14rem;
   font-size: 0.74rem;
+}
+
+.resume-page.print-preview .experience-location {
+  margin-bottom: 0.14rem;
+  font-size: 0.71rem;
 }
 
 .resume-page.print-preview .skills-grid {
@@ -422,8 +433,12 @@
   }
 
   .experience-company {
-    margin-bottom: 0.14rem;
     font-size: 0.74rem;
+  }
+
+  .experience-location {
+    margin-bottom: 0.14rem;
+    font-size: 0.71rem;
   }
 
   .skills-grid {

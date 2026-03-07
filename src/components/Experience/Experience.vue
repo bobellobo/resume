@@ -15,6 +15,7 @@
             <p class="timeline-period">{{ $t(`${item}.period`) }}</p>
             <h3 class="timeline-role">{{ $t(`${item}.role`) }}</h3>
             <p class="timeline-company">{{ $t(`${item}.company`) }}</p>
+            <p v-if="te(`${item}.location`)" class="timeline-location">{{ $t(`${item}.location`) }}</p>
             <p class="timeline-description">{{ $t(`${item}.description`) }}</p>
           </div>
         </article>
@@ -26,7 +27,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-useI18n()
+const { te } = useI18n()
 
 const experienceItems = [
   'experience.items.item1',

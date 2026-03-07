@@ -64,6 +64,7 @@
             <p class="experience-period">{{ $t(`${item}.period`) }}</p>
           </div>
           <p class="experience-company">{{ $t(`${item}.company`) }}</p>
+          <p v-if="te(`${item}.location`)" class="experience-location">{{ $t(`${item}.location`) }}</p>
           <p class="resume-text">{{ $t(`${item}.description`) }}</p>
         </article>
       </section>
@@ -103,7 +104,7 @@ import { useI18n } from 'vue-i18n'
 
 const LANGUAGE_STORAGE_KEY = 'language'
 
-const { locale, t } = useI18n()
+const { locale, t, te } = useI18n()
 const isPrintPreview = ref(false)
 
 const experienceItems = [

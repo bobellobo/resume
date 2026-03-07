@@ -69,10 +69,17 @@
 }
 
 .timeline-company {
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.2rem;
   color: var(--text-dark);
   font-weight: 600;
   font-size: 0.95rem;
+}
+
+.timeline-location {
+  margin-bottom: 0.55rem;
+  color: var(--text-light);
+  font-size: 0.86rem;
+  font-weight: 500;
 }
 
 .timeline-description {
@@ -127,6 +134,7 @@
   }
 
   .timeline-company,
+  .timeline-location,
   .timeline-description {
     font-size: 0.88rem;
   }
