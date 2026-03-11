@@ -3,8 +3,6 @@ import { createI18n } from 'vue-i18n'
 import App from './App.vue'
 import enMessages from '@content/i18n/en.json'
 import frMessages from '@content/i18n/fr.json'
-
-import { initAnalytics } from './analytics'
 import './style.css'
 
 const LANGUAGE_STORAGE_KEY = 'language'
@@ -29,5 +27,4 @@ const i18n = createI18n({
 
 const app = createApp(App);
 app.use(i18n);
-initAnalytics();
 app.mount('#app');
