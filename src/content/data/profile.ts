@@ -1,4 +1,5 @@
 import rawProfile from '@content/profile/profile.json'
+import type { SupportedLocale } from '../locale'
 
 export interface ProfileTextContent {
   description: string
@@ -15,7 +16,7 @@ interface ProfileData {
 const UNIVERSITY_TOKEN = '{university}'
 const profileData = rawProfile as ProfileData
 
-export const getProfileContent = (locale: string): ProfileTextContent => (
+export const getProfileContent = (locale: SupportedLocale): ProfileTextContent => (
   locale === 'fr' ? profileData.content.fr : profileData.content.en
 )
 

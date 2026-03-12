@@ -3,7 +3,7 @@ import rawSkills from '@content/skills/skills.json'
 
 export interface SkillItem {
   text: string
-  isJoke?: boolean
+  isJoke?: boolean // will strike out the text
 }
 
 export interface SkillCategoryContent {

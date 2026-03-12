@@ -35,11 +35,12 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import heroPhoto from '@content/projects/images/bibi.jpeg'
-import { getProfileContent, splitUniversityPlaceholder } from './Profile'
+import { getProfileContent, splitUniversityPlaceholder } from '../../content/data/profile'
+import { getSupportedLocale } from '../../content/locale'
 
 const { locale } = useI18n()
 
-const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
+const currentLocale = computed(() => getSupportedLocale(locale.value))
 const profileDescription = computed(() => getProfileContent(currentLocale.value).description)
 const profileDescriptionParts = computed(() => splitUniversityPlaceholder(profileDescription.value))
 

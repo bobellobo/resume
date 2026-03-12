@@ -110,9 +110,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useExperiencesData } from '../Experience/Experience'
-import { useSkillsData } from '../Skills/Skills'
-import { getProfileContent, splitUniversityPlaceholder } from '../Hero/Profile'
+import { useExperiencesData } from '../../content/data/experiences'
+import { useSkillsData } from '../../content/data/skills'
+import { getProfileContent, splitUniversityPlaceholder } from '../../content/data/profile'
+import { getSupportedLocale } from '../../content/locale'
 import profilePhoto from '../../../content/projects/images/bibi.jpeg'
 
 const LANGUAGE_STORAGE_KEY = 'language'
@@ -122,7 +123,7 @@ const isPrintPreview = ref(false)
 const { experiences } = useExperiencesData()
 const { skills } = useSkillsData()
 
-const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
+const currentLocale = computed(() => getSupportedLocale(locale.value))
 const exportProfileDescription = computed(() => getProfileContent(currentLocale.value).exportDescription)
 const exportProfileDescriptionParts = computed(() => splitUniversityPlaceholder(exportProfileDescription.value))
 

@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { Project } from './components/Projects/Projects'
+import type { Project } from './content/data/projects'
 import ExportView from './components/Export/Export.vue'
 import Header from './components/Header/Header.vue'
 import Hero from './components/Hero/Hero.vue'

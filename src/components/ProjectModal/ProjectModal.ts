@@ -1,5 +1,5 @@
 import { ref, watch } from 'vue'
-import { Project } from '../Projects/Projects'
+import type { Project } from '../../content/data/projects'
 
 
 export function useModalLogic() {

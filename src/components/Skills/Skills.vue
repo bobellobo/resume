@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useSkillsData } from './Skills'
+import { useSkillsData } from '../../content/data/skills'
 
 const { locale } = useI18n()
 const { skills } = useSkillsData()

@@ -27,7 +27,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useExperiencesData } from './Experience'
+import { useExperiencesData } from '../../content/data/experiences'
 
 const { locale } = useI18n()
 const { experiences } = useExperiencesData()
