@@ -15,7 +15,7 @@
     },
     "image": "images/business-portfolio-icon.avif",
     "technologies": ["Vue 3", "Vite", "TypeScript", "i18n"],
-    "link": "#"
+    "link": "https://github.com/bobellobo/portfolio-scaffolder"
   },
   {
     "id": 1,
