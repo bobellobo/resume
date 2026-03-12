@@ -1,5 +1,23 @@
 [
   {
+    "id": 5,
+    "content": {
+      "en": {
+        "title": "Portfolio Template Scaffold (WIP)",
+        "description": "I am currently turning this resume website into a reusable starter template so developers (or others) can scaffold their own portfolio quickly. The goal is to provide clean structure, bilingual content support, modular sections, and export capabilities that can be customized with minimal setup. This is currently a work in progress.",
+        "shortDescription": "This resume website is being converted into a reusable portfolio template for scaffolding your own portfolio. Work in progress."
+      },
+      "fr": {
+        "title": "Modèle de portfolio réutilisable (WIP)",
+        "description": "Je transforme ce site de CV en template réutilisable pour permettre aux développeurs de générer rapidement leur propre portfolio. L'objectif est de proposer une structure claire, un support bilingue, des sections modulaires et des capacités d'export facilement personnalisables. Ce projet est actuellement en cours de réalisation.",
+        "shortDescription": "Ce site de CV est en cours de transformation en template réutilisable pour générer son propre portfolio, pour permettre une personnalisation rapide et facile. Projet en cours."
+      }
+    },
+    "image": "images/business-portfolio-icon.avif",
+    "technologies": ["Vue 3", "Vite", "TypeScript", "i18n"],
+    "link": "#"
+  },
+  {
     "id": 1,
     "content": {
       "en": {
