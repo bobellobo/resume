@@ -41,6 +41,7 @@ const handleSelectProject = (project: Project) => {
 <style scoped>
 #app {
   width: 100%;
+  background-color: var(--surface-section);
 }
 
 .scroll-progress {
