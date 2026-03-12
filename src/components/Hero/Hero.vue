@@ -4,18 +4,18 @@
       <div class="hero-main">
         <div class="hero-copy">
           <!-- <p class="hero-subtitle">{{ $t('hero.subtitle') }}</p> -->
-          <i18n-t keypath="profile.description" tag="p" class="hero-about">
-            <template #university>
-              <a
-                class="inline-link"
-                href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {{ $t('profile.universityLabel') }}
-              </a>
-            </template>
-          </i18n-t>
+          <p class="hero-about">
+            {{ profileDescriptionParts.before }}
+            <a
+              class="inline-link"
+              href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ $t('profile.universityLabel') }}
+            </a>
+            {{ profileDescriptionParts.after }}
+          </p>
         </div>
         <img class="hero-photo" :src="heroPhoto" alt="Bibi photo" />
       </div>
@@ -32,10 +32,16 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import heroPhoto from '@content/projects/images/bibi.jpeg'
+import { getProfileContent, splitUniversityPlaceholder } from './Profile'
 
-useI18n()
+const { locale } = useI18n()
+
+const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
+const profileDescription = computed(() => getProfileContent(currentLocale.value).description)
+const profileDescriptionParts = computed(() => splitUniversityPlaceholder(profileDescription.value))
 
 const scrollToNextSection = () => {
   const skillsSection = document.getElementById('skills')

@@ -13,7 +13,6 @@
     "contact": "Contact"
   },
   "profile": {
-    "description": "Salut! \nJe suis Titouan, un développeur fullstack avec plus de 3 ans d'expérience, formé à l'{university}. J'ai de par ma formation une approche de conception centrée sur l'utilisateur et suis sensible à l'importance d'une bonne UX/UI. \n\nDans mes expériences passées, j'ai également acquis une solide expertise technique avec divers outils et méthodologies. \nJe suis capable de prendre en main des sujets techniques et de monter rapidement en compétence pour me concentrer sur le cœur de la conception, sans compromis sur la qualité technique et la propreté du code. \n\nAprès 2 ans passés à travailler à l'étranger, je suis à la recherche de nouvelles opportunités en France pour continuer à évoluer en tant que développeur.",
     "universityLabel": "Ecole Nationale Supérieure de Cognitique",
     "skillsTitle": "Aperçu des compétences"
   },
@@ -51,7 +50,6 @@
     "exportPdfJpeg": "Exporter PDF / JPEG",
     "documentLabel": "Vue d'export de Titouan Guedon",
     "role": "Développeur Full-stack",
-    "profileDescription": "Développeur full-stack avec plus de 3 ans d'expérience, formé à l'{university}. Je combine une approche centrée utilisateur avec une forte autonomie technique, de l'architecture à la livraison. Dans mes expériences précédentes, j'ai développé une expertise solide sur des outils et méthodologies modernes, avec une grande attention portée à la qualité du code, la performance et la maintenabilité. Après deux années en Italie, je suis désormais basé en France et à la recherche de nouvelles opportunités pour continuer à progresser en tant que développeur.",
     "contactLinks": "Liens de contact",
     "profile": "Profil",
     "attribution": "Ce PDF a été exporté depuis le site portfolio : {link}",

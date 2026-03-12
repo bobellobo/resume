@@ -51,18 +51,18 @@
 
       <section class="resume-section">
         <h2>{{ $t('exportView.profile') }}</h2>
-        <i18n-t keypath="exportView.profileDescription" tag="p" class="resume-text">
-          <template #university>
-            <a
-              class="inline-link"
-              href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ $t('profile.universityLabel') }}
-            </a>
-          </template>
-        </i18n-t>
+        <p class="resume-text">
+          {{ exportProfileDescriptionParts.before }}
+          <a
+            class="inline-link"
+            href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ $t('profile.universityLabel') }}
+          </a>
+          {{ exportProfileDescriptionParts.after }}
+        </p>
       </section>
 
       <section class="resume-section">
@@ -112,6 +112,7 @@ import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useExperiencesData } from '../Experience/Experience'
 import { useSkillsData } from '../Skills/Skills'
+import { getProfileContent, splitUniversityPlaceholder } from '../Hero/Profile'
 import profilePhoto from '../../../content/projects/images/bibi.jpeg'
 
 const LANGUAGE_STORAGE_KEY = 'language'
@@ -122,6 +123,8 @@ const { experiences } = useExperiencesData()
 const { skills } = useSkillsData()
 
 const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
+const exportProfileDescription = computed(() => getProfileContent(currentLocale.value).exportDescription)
+const exportProfileDescriptionParts = computed(() => splitUniversityPlaceholder(exportProfileDescription.value))
 
 const languageSwitchLabel = computed(() => (locale.value === 'fr' ? 'EN' : 'FR'))
 const languageSwitchTitle = computed(() => (
