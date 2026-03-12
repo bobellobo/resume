@@ -5,18 +5,18 @@
 
       <div class="timeline" role="list">
         <article
-          v-for="item in experienceItems"
-          :key="item"
+          v-for="item in experiences"
+          :key="item.id"
           class="timeline-item"
           role="listitem"
         >
           <span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-card surface-card">
-            <p class="timeline-period">{{ $t(`${item}.period`) }}</p>
-            <h3 class="timeline-role">{{ $t(`${item}.role`) }}</h3>
-            <p class="timeline-company">{{ $t(`${item}.company`) }}</p>
-            <p v-if="te(`${item}.location`)" class="timeline-location">{{ $t(`${item}.location`) }}</p>
-            <p class="timeline-description">{{ $t(`${item}.description`) }}</p>
+            <p class="timeline-period">{{ item.content[currentLocale].period }}</p>
+            <h3 class="timeline-role">{{ item.content[currentLocale].role }}</h3>
+            <p class="timeline-company">{{ item.content[currentLocale].company }}</p>
+            <p v-if="item.content[currentLocale].location" class="timeline-location">{{ item.content[currentLocale].location }}</p>
+            <p class="timeline-description">{{ item.content[currentLocale].description }}</p>
           </div>
         </article>
       </div>
@@ -25,15 +25,14 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useExperiencesData } from './Experience'
 
-const { te } = useI18n()
+const { locale } = useI18n()
+const { experiences } = useExperiencesData()
 
-const experienceItems = [
-  'experience.items.item1',
-  'experience.items.item2',
-  'experience.items.item3'
-]
+const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
 </script>
 
 <style scoped src="./Experience.css"></style>

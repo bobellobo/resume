@@ -67,14 +67,14 @@
 
       <section class="resume-section">
         <h2>{{ $t('experience.title') }}</h2>
-        <article v-for="item in experienceItems" :key="item" class="experience-item">
+        <article v-for="item in experiences" :key="item.id" class="experience-item">
           <div class="experience-heading">
-            <h3>{{ $t(`${item}.role`) }}</h3>
-            <p class="experience-period">{{ $t(`${item}.period`) }}</p>
+            <h3>{{ item.content[currentLocale].role }}</h3>
+            <p class="experience-period">{{ item.content[currentLocale].period }}</p>
           </div>
-          <p class="experience-company">{{ $t(`${item}.company`) }}</p>
-          <p v-if="te(`${item}.location`)" class="experience-location">{{ $t(`${item}.location`) }}</p>
-          <p class="resume-text">{{ $t(`${item}.description`) }}</p>
+          <p class="experience-company">{{ item.content[currentLocale].company }}</p>
+          <p v-if="item.content[currentLocale].location" class="experience-location">{{ item.content[currentLocale].location }}</p>
+          <p class="resume-text">{{ item.content[currentLocale].description }}</p>
         </article>
       </section>
 
@@ -110,18 +110,16 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useExperiencesData } from '../Experience/Experience'
 import profilePhoto from '../../../content/projects/images/bibi.jpeg'
 
 const LANGUAGE_STORAGE_KEY = 'language'
 
-const { locale, t, te } = useI18n()
+const { locale, t } = useI18n()
 const isPrintPreview = ref(false)
+const { experiences } = useExperiencesData()
 
-const experienceItems = [
-  'experience.items.item1',
-  'experience.items.item2',
-  'experience.items.item3'
-]
+const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
 
 const skillCategories = [
   {

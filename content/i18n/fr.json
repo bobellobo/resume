@@ -57,30 +57,7 @@
     "swipeHint": "Glisser pour naviguer"
   },
   "experience": {
-    "title": "Expériences professionnelles",
-    "items": {
-      "item1": {
-        "period": "Janvier 2024 — Janvier 2026",
-        "role": "Développeur Full-stack",
-        "company": "STMicroelectronics - System Research & Application",
-        "location": "Catane, Italie",
-        "description": "Conception et livraison d'applications web de bout en bout, de l'architecture au déploiement, avec une grande attention portée à la propreté des interfaces et la performance.Fort accent sur les paradigmes de programmation fonctionnelle et les bonnes pratiques de développement."
-      },
-      "item2": {
-        "period": "Septembre 2022 — Août 2023",
-        "role": "Développeur Full-stack",
-        "company": "Sopra Steria - Aeroline",
-        "location": "Bordeaux, France",
-        "description": "Tâches de développement dans un projet d'envergure du secteur de l'aéronautique, toujours dans un contexte agile. Dans la continuité du travail fourni en stage avec toujours un ownership important et des responsabilités accrues."
-      },
-      "item3": {
-        "period": "Mai 2022 - Août 2022",
-        "role": "Stagiaire Développeur Full-stack",
-        "company": "Sopra Steria - Aeroline",
-        "location": "Bordeaux, France",
-        "description": "Participation à des tâches de développement en tant que membre d'une équipe de 4 personnes, contribuant à un projet pour un acteur majeur de l'industrie aéronautique. Développement de A à Z d'un nouveau module pour l'application, y compris la conception, le développement, les tests et le déploiement. Expérience sur une codebase très large, dans le respect des bonnes pratiques avec beaucoup de code review."
-      }
-    }
+    "title": "Expériences professionnelles"
   },
   "contact": {
     "title": "Me contacter",
