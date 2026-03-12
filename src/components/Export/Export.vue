@@ -81,10 +81,10 @@
       <section class="resume-section">
         <h2>{{ $t('profile.skillsTitle') }}</h2>
         <div class="skills-grid">
-          <article v-for="category in skillCategories" :key="category.titleKey" class="skill-category">
-            <h3>{{ $t(category.titleKey) }}</h3>
+          <article v-for="category in skills" :key="category.id" class="skill-category">
+            <h3>{{ category.content[currentLocale].title }}</h3>
             <ul>
-              <li v-for="itemKey in category.itemKeys" :key="itemKey">{{ $t(itemKey) }}</li>
+              <li v-for="item in category.content[currentLocale].items" :key="item.text">{{ item.text }}</li>
             </ul>
           </article>
         </div>
@@ -111,6 +111,7 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useExperiencesData } from '../Experience/Experience'
+import { useSkillsData } from '../Skills/Skills'
 import profilePhoto from '../../../content/projects/images/bibi.jpeg'
 
 const LANGUAGE_STORAGE_KEY = 'language'
@@ -118,50 +119,9 @@ const LANGUAGE_STORAGE_KEY = 'language'
 const { locale, t } = useI18n()
 const isPrintPreview = ref(false)
 const { experiences } = useExperiencesData()
+const { skills } = useSkillsData()
 
 const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
-
-const skillCategories = [
-  {
-    titleKey: 'profile.skills.development.title',
-    itemKeys: [
-      'profile.skills.development.item1',
-      'profile.skills.development.item2',
-      'profile.skills.development.item3',
-      'profile.skills.development.item4',
-      'profile.skills.development.item5'
-    ]
-  },
-  {
-    titleKey: 'profile.skills.softSkills.title',
-    itemKeys: [
-      'profile.skills.softSkills.item1',
-      'profile.skills.softSkills.item2',
-      'profile.skills.softSkills.item3',
-      'profile.skills.softSkills.item4',
-      'profile.skills.softSkills.item5'
-    ]
-  },
-  {
-    titleKey: 'profile.skills.cognitiveScience.title',
-    itemKeys: [
-      'profile.skills.cognitiveScience.item1',
-      'profile.skills.cognitiveScience.item2',
-      'profile.skills.cognitiveScience.item3',
-      'profile.skills.cognitiveScience.item4',
-      'profile.skills.cognitiveScience.item5'
-    ]
-  },
-  {
-    titleKey: 'profile.skills.languages.title',
-    itemKeys: [
-      'profile.skills.languages.item1',
-      'profile.skills.languages.item2',
-      'profile.skills.languages.item3',
-      'profile.skills.languages.item4'
-    ]
-  }
-]
 
 const languageSwitchLabel = computed(() => (locale.value === 'fr' ? 'EN' : 'FR'))
 const languageSwitchTitle = computed(() => (

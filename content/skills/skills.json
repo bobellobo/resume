@@ -1,0 +1,102 @@
+[
+  {
+    "id": "development",
+    "content": {
+      "en": {
+        "title": "Development related",
+        "items": [
+          { "text": "Full-stack web development" },
+          { "text": "TypeScript, JavaScript, and modern frameworks" },
+          { "text": "API design and integration" },
+          { "text": "Functional programming" },
+          { "text": "Clean architecture and maintainable code" }
+        ]
+      },
+      "fr": {
+        "title": "Développement",
+        "items": [
+          { "text": "Développement web full-stack" },
+          { "text": "TypeScript, JavaScript et frameworks modernes" },
+          { "text": "Conception et intégration d'API" },
+          { "text": "Programmation fonctionnelle" },
+          { "text": "Architecture propre et code maintenable" }
+        ]
+      }
+    }
+  },
+  {
+    "id": "softSkills",
+    "content": {
+      "en": {
+        "title": "Soft skills",
+        "items": [
+          { "text": "Clear communication" },
+          { "text": "Collaborative teamwork" },
+          { "text": "Problem solving" },
+          { "text": "Adaptability and continuous learning" },
+          { "text": "Strong ability to work autonomously" },
+          { "text": "Pretty good at foosball", "isJoke": true }
+        ]
+      },
+      "fr": {
+        "title": "Soft skills",
+        "items": [
+          { "text": "Communication claire" },
+          { "text": "Esprit d'équipe et collaboration" },
+          { "text": "Résolution de problèmes" },
+          { "text": "Adaptabilité et apprentissage continu" },
+          { "text": "Forte capacité d'autonomie" },
+          { "text": "Plutôt fort au babyfoot", "isJoke": true }
+        ]
+      }
+    }
+  },
+  {
+    "id": "cognitiveScience",
+    "content": {
+      "en": {
+        "title": "Cognitive science",
+        "items": [
+          { "text": "User behavior analysis" },
+          { "text": "Human-computer interaction principles" },
+          { "text": "Experimental design and interpretation" },
+          { "text": "User-centered design" },
+          { "text": "Proficiency with UX/UI design tools" }
+        ]
+      },
+      "fr": {
+        "title": "Sciences cognitives",
+        "items": [
+          { "text": "Analyse des comportements utilisateurs" },
+          { "text": "Principes d'interaction humain-machine" },
+          { "text": "Conception et interprétation d'expériences" },
+          { "text": "Conception centrée utilisateur" },
+          { "text": "Maîtrise des outils de design UX/UI" }
+        ]
+      }
+    }
+  },
+  {
+    "id": "languages",
+    "content": {
+      "en": {
+        "title": "Languages spoken",
+        "items": [
+          { "text": "French (native)" },
+          { "text": "English (fluent)" },
+          { "text": "Italian (fluent)" },
+          { "text": "Spanish (intermediate)" }
+        ]
+      },
+      "fr": {
+        "title": "Langues parlées",
+        "items": [
+          { "text": "Français (langue maternelle)" },
+          { "text": "Anglais (bilingue professionnel)" },
+          { "text": "Italien (bilingue professionnel)" },
+          { "text": "Espagnol (intermédiaire)" }
+        ]
+      }
+    }
+  }
+]

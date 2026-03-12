@@ -15,41 +15,7 @@
   "profile": {
     "description": "Salut! \nJe suis Titouan, un développeur fullstack avec plus de 3 ans d'expérience, formé à l'{university}. J'ai de par ma formation une approche de conception centrée sur l'utilisateur et suis sensible à l'importance d'une bonne UX/UI. \n\nDans mes expériences passées, j'ai également acquis une solide expertise technique avec divers outils et méthodologies. \nJe suis capable de prendre en main des sujets techniques et de monter rapidement en compétence pour me concentrer sur le cœur de la conception, sans compromis sur la qualité technique et la propreté du code. \n\nAprès 2 ans passés à travailler à l'étranger, je suis à la recherche de nouvelles opportunités en France pour continuer à évoluer en tant que développeur.",
     "universityLabel": "Ecole Nationale Supérieure de Cognitique",
-    "skillsTitle": "Aperçu des compétences",
-    "skills": {
-      "development": {
-        "title": "Développement",
-        "item1": "Développement web full-stack",
-        "item2": "TypeScript, JavaScript et frameworks modernes",
-        "item3": "Conception et intégration d'API",
-        "item4": "Programmation fonctionnelle",
-        "item5": "Architecture propre et code maintenable"
-      },
-      "cognitiveScience": {
-        "title": "Sciences cognitives",
-        "item1": "Analyse des comportements utilisateurs",
-        "item2": "Principes d'interaction humain-machine",
-        "item3": "Conception et interprétation d'expériences",
-        "item4": "Conception centrée utilisateur",
-        "item5": "Maîtrise des outils de design UX/UI"
-      },
-      "languages": {
-        "title": "Langues parlées",
-        "item1": "Français (langue maternelle)",
-        "item2": "Anglais (bilingue professionnel)",
-        "item3": "Italien (bilingue professionnel)",
-        "item4": "Espagnol (intermédiaire)"
-      },
-      "softSkills": {
-        "title": "Soft skills",
-        "item1": "Communication claire",
-        "item2": "Esprit d'équipe et collaboration",
-        "item3": "Résolution de problèmes",
-        "item4": "Adaptabilité et apprentissage continu",
-        "item5": "Forte capacité d'autonomie",
-        "item6": "Plutôt fort au babyfoot"
-      }
-    }
+    "skillsTitle": "Aperçu des compétences"
   },
   "projects": {
     "title": "Projets et réalisations",

@@ -15,41 +15,7 @@
   "profile": {
     "description": "Hi there! \nI'm Titouan, a dedicated fullstack developer with over 3 years of experience, trained at {university}. \nDue to this background, I have a user-centered design approach and understand the importance of a good user experience. \n\nIn my past experiences, I have also gained a lot of technical expertise with various tools and methodologies. I'm able to take technical subjects in hand and quickly gain skill to focus on the core of the design, with no compromise on technical quality and clean code. \n\nAfter 2 years working in Italy, I am now moving back to France and looking for exciting new opportunities for me to apply my skills and grow as a developer.",
     "universityLabel": "Ecole Nationale Supérieure de Cognitique",
-    "skillsTitle": "Skills Overview",
-    "skills": {
-      "development": {
-        "title": "Development related",
-        "item1": "Full-stack web development",
-        "item2": "TypeScript, JavaScript, and modern frameworks",
-        "item3": "API design and integration",
-        "item4": "Functional programming",
-        "item5": "Clean architecture and maintainable code"
-      },
-      "cognitiveScience": {
-        "title": "Cognitive science",
-        "item1": "User behavior analysis",
-        "item2": "Human-computer interaction principles",
-        "item3": "Experimental design and interpretation",
-        "item4": "User-centered design",
-        "item5": "Proficiency with UX/UI design tools"
-      },
-      "languages": {
-        "title": "Languages spoken",
-        "item1": "French (native)",
-        "item2": "English (fluent)",
-        "item3": "Italian (fluent)",
-        "item4": "Spanish (intermediate)"
-      },
-      "softSkills": {
-        "title": "Soft skills",
-        "item1": "Clear communication",
-        "item2": "Collaborative teamwork",
-        "item3": "Problem solving",
-        "item4": "Adaptability and continuous learning",
-        "item5": "Strong ability to work autonomously",
-        "item6": "Pretty good at foosball"
-      }
-    }
+    "skillsTitle": "Skills Overview"
   },
   "projects": {
     "title": "Projects & Achievements",
