@@ -98,5 +98,28 @@
         ]
       }
     }
+  },
+  {
+    "id": "other",
+    "content": {
+      "en": {
+        "title": "Other",
+        "items": [
+          { "text": "Prototyping with Figma" },
+          { "text": "Agile methodologies" },
+          { "text": "Photoshop / Illustrator / Premiere Pro" },
+          { "text": "Scientific protocols and experiment conduction" }
+        ]
+      },
+      "fr": {
+        "title": "Autres",
+        "items": [
+          { "text": "Maquettage et prototypage avec Figma" },
+          { "text": "Méthodologies agiles" },
+          { "text": "Photoshop / Illustrator / Premiere Pro" },
+          { "text": "Protocoles scientifiques et passation d'expériences" }
+        ]
+      }
+    }
   }
 ]
