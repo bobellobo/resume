@@ -4,13 +4,13 @@
     "content": {
       "en": {
         "title": "Portfolio Template Scaffold (WIP)",
-        "description": "I am currently turning this resume website into a reusable starter template so developers (or others) can scaffold their own portfolio quickly. The goal is to provide clean structure, bilingual content support, modular sections, and export capabilities that can be customized with minimal setup. This is currently a work in progress.",
-        "shortDescription": "This resume website is being converted into a reusable portfolio template for scaffolding your own portfolio. Work in progress."
+        "description": "I am currently turning this website into a reusable starter template so anyone can create, edit and host their own portfolio website quickly, and for free. The goal is to provide clean structure, bilingual content support, easy customization, and export capabilities with minimal setup. Work in progress.",
+        "shortDescription": "This resume website is being converted into a reusable portfolio template for scaffolding and hosting your own portfolio website. Work in progress."
       },
       "fr": {
         "title": "Modèle de portfolio réutilisable (WIP)",
-        "description": "Je transforme ce site de CV en template réutilisable pour permettre aux développeurs de générer rapidement leur propre portfolio. L'objectif est de proposer une structure claire, un support bilingue, des sections modulaires et des capacités d'export facilement personnalisables. Ce projet est actuellement en cours de réalisation.",
-        "shortDescription": "Ce site de CV est en cours de transformation en template réutilisable pour générer son propre portfolio, pour permettre une personnalisation rapide et facile. Projet en cours."
+        "description": "Je suis en train de transformer ce site de CV en template réutilisable pour générer et héberger son propre site portfolio. L'objectif est de proposer une structure claire,  avec un support bilingue, et des capacités d'export et de personnalisation. Ce projet est actuellement en cours de réalisation.",
+        "shortDescription": "Je suis en train de transformer ce site de CV en template réutilisable pour générer et héberger son propre site portfolio, pour permettre une personnalisation rapide et facile. En cours de réalisation."
       }
     },
     "image": "images/business-portfolio-icon.avif",
