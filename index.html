@@ -3,11 +3,33 @@
   <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HWNWSC8F5"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-2HWNWSC8F5');
+      let gaLoaded = false;
+
+      function loadGoogleAnalytics(){
+
+        if(gaLoaded) return;
+        gaLoaded = true;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-2HWNWSC8F5";
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2HWNWSC8F5');
+
+        // Cleanup
+        window.removeEventListener('scroll', loadGoogleAnalytics);
+        window.removeEventListener('mousemove', loadGoogleAnalytics);
+        window.removeEventListener('touchstart', loadGoogleAnalytics);
+      }
+
+      window.addEventListener('scroll'    , loadGoogleAnalytics, { passive: true });
+      window.addEventListener('mousemove' , loadGoogleAnalytics);
+      window.addEventListener('touchstart', loadGoogleAnalytics, { passive: true });
+
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
