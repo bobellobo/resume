@@ -39,7 +39,7 @@
           </div>
           <div class="project-heading">
             <p class="project-eyebrow">{{ $t('projectPage.projectEyebrow') }}</p>
-            <h1>{{ project.content[currentLocale].title }}</h1>
+            <h2 class="project-title">{{ project.content[currentLocale].title }}</h2>
             <p class="project-intro">{{ project.content[currentLocale].description }}</p>
           </div>
         </header>

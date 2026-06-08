@@ -105,15 +105,15 @@
     "content": {
       "en": {
         "title": "Estimate (eDesignSuite)",
-        "description": "Estimation tool for circuit design and lifetime estimations. Refactored the frontend, reduced the technical debt over the span of 8 months.",
-        "shortDescription": "Estimation tool for circuit design and lifetime estimations. Refactored the whole frontend, especially the SVG toolchart.",
-        "article": "This project focused on frontend modernization and technical debt reduction on a production estimation platform. The work improved reliability and developer velocity before adding a custom SVG-based manager for visual circuit workflows.\\n\\nThe tool is part of eDesignSuite usage in a professional engineering context where maintainability and domain-specific visualization are critical. The D3.js manager added better control over design interactions and representation of circuit data."
+        "description": "Graphic and algorithmic tools for circuit design and lifetime estimations. Refactored the frontend, reduced the technical debt over the span of 8 months.",
+        "shortDescription": "Estimation tool for circuit design and lifetime estimations. Refactored the frontend, especially the SVG toolchart.",
+        "article": "This project focused on frontend modernization and technical debt reduction on a production estimation tool. The work improved reliability and overall UX before adding a custom SVG-based editor for circuit design.\\n\\nThe tool is part of eDesignSuite usage in a professional engineering context where maintainability and domain-specific visualization are critical. The D3.js library coupled with Redux added better control over design interactions and data representation."
       },
       "fr": {
         "title": "Estimate (eDesignSuite)",
-        "description": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Tâches de refonte et de réduction de la dette technique du frontend.",
-        "shortDescription": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Refonte complète du frontend.",
-        "article": "Ce projet s'est concentré sur la modernisation du frontend et la réduction de dette technique sur une plateforme d'estimation en production. Le travail a amélioré la fiabilité et la vélocité de développement avant l'ajout d'un gestionnaire SVG pour les workflows de design.\\n\\nL'outil s'inscrit dans l'environnement eDesignSuite en contexte d'ingénierie, où la maintenabilité et la visualisation métier sont essentielles. Le module D3.js a permis un meilleur contrôle des interactions et de la représentation des données de circuit."
+        "description": "Outils graphiques et algorithmiques pour la conception de circuits et les estimations de durée de vie. Tâches de refonte et de réduction de la dette technique du frontend.",
+        "shortDescription": "Outils graphiques et algorithmiques pour la conception de circuits et les estimations de durée de vie. Travaux de refonte côté frontend, notamment de l'éditeur SVG.",
+        "article": "Ce projet s'est concentré sur la modernisation du frontend et la réduction de dette technique sur une plateforme d'estimation en production. Le travail a consisté à améliorer la fiabilité ainsi que l'UX globale avant l'ajout d'un éditeur de circuit SVG.\\n\\nL'outil s'inscrit dans l'environnement eDesignSuite, dans un contexte où la maintenabilité et la visualisation des données métier sont essentielles. L'utilisation de la librairie D3.js et de Redux a permis un meilleur contrôle des interactions et de la représentation des données."
       }
     },
     "location": {
@@ -122,16 +122,15 @@
     },
     "image": "images/estimate.png",
     "gallery": [
-      "images/estimate.png"
+      "estimate.png",
+      "estimate-behavior.png"
     ],
     "technologies": [
       "Angular",
       "Redux",
       "D3.js",
       "ramda",
-      "RxJS",
       "TypeScript",
-      "Functional Programming",
       "Docker",
       "WSL",
       "MongoDB"
@@ -157,8 +156,8 @@
     "content": {
       "en": {
         "title": "AeroWebb - Module GAV",
-        "description": "Developped a whole new module as a part of a team of 4 in the AeroWebb suite, made for the management of D-type checks in aeronautical maintenance.",
-        "shortDescription": "Developped a whole new module as a part of a team of 4 in the AeroWebb suite, made for the management of D-type checks in aeronautical maintenance.",
+        "description": "Development of a whole new module as a part of a team of 4 in the AeroWebb suite, made for the management of D-type checks in aeronautical maintenance.",
+        "shortDescription": "Development of a whole new module as a part of a team of 4 in the AeroWebb suite, made for the management of D-type checks in aeronautical maintenance.",
         "article": "The module was built to support planning, tracking, and execution of heavy maintenance visits in aeronautics. It introduced dedicated workflows and data handling to improve visibility on operations and task progression.\\n\\nAs part of the larger AeroWebb platform, this work required alignment with existing architecture and business-critical maintenance processes. The result improved organization quality and execution traceability for complex maintenance phases, and the module was later adopted more widely for other clients and maintenance types."
       },
       "fr": {
@@ -172,9 +171,10 @@
       "en": "Sopra Steria/2MoRO | Mérignac, France",
       "fr": "Sopra Steria/2MoRO | Mérignac, France"
     },
-    "image": "images/aero.webp",
+    "image": "aero.webp",
     "gallery": [
-      "images/aero.webp"
+      "aero.webp",
+      "d-check.webp"
     ],
     "technologies": [
       "Angular",
@@ -214,20 +214,20 @@
     "content": {
       "en": {
         "title": "Multi-player card game app",
-        "description": "A React Native based application using Firebase for real-time multiplayer card gaming. Designed for playing with friends on the go.",
+        "description": "A mobile application based on React Native and Firebase for real-time multiplayer card gaming. Designed for playing with friends on the go.",
         "shortDescription": "An app dealing with real-time multiplayer card gaming. Designed for playing with friends on the go.",
-        "article": "This side project explored real-time synchronization patterns on mobile. The app is built around room-based interactions with immediate updates, inspired by quiz and party-game experiences.\\n\\nThe objective was to keep onboarding and room joining simple while testing multiplayer reliability using Firebase realtime capabilities. The codebase is planned for another pass to improve architecture and feature depth."
+        "article": "This side project explored real-time synchronization patterns on mobile. The app is built around room-based interactions with immediate updates, inspired by quiz and party-game experiences.\\n\\nThe objective was to keep onboarding simple while testing multiplayer reliability using Firebase features."
       },
       "fr": {
         "title": "Application mobile pour jeu de cartes multijoueur",
-        "description": "Application basée sur React Native + Firebase pour jouer aux cartes en multijoueur et en temps réel. Conçue pour jouer avec des amis en déplacement.",
+        "description": "Une application basée sur React Native et Firebase permettant de jouer aux cartes en multijoueur et en temps réel. Conçue sur le modèle d'autres applications de quizz comme Kahoot pour jouer avec des amis en temps réel.",
         "shortDescription": "Application mobile pour jeu de cartes en multijoueur. Conçue pour jouer avec des amis en déplacement.",
         "article": "Ce projet annexe explore des patterns de synchronisation temps réel sur mobile. L'application repose sur des sessions avec mises à jour immédiates, inspirées d'expériences de quiz et party-games.\\n\\nL'objectif était de garder un onboarding simple et un accès rapide à une session tout en testant la fiabilité du multijoueur via Firebase. Une nouvelle passe est prévue pour améliorer l'architecture et enrichir les fonctionnalités."
       }
     },
     "location": {
-      "en": "Side project, Remote",
-      "fr": "Projet annexe, Remote"
+      "en": "Talence - Academic project",
+      "fr": "Talence - Projet académique"
     },
     "image": "images/cardapp.png",
     "gallery": [
@@ -236,13 +236,14 @@
     "technologies": [
       "React Native",
       "Expo",
+      "Expo CLI",
       "Firebase",
       "TypeScript"
     ],
     "keywords": [
       "Realtime Database",
-      "Mobile Testing",
-      "Expo CLI"
+      "Mobile Development",
+      "Multiplayer Synchronization"
     ],
     "links": []
   },
@@ -251,43 +252,45 @@
     "slug": "autonomous-vehicles-experiments",
     "content": {
       "en": {
-        "title": "Autonomous vehicles behaviors experiments",
-        "description": "Implementation and validation of protocols, on simulator and in virtual reality, for the study of the acceptability of autonomous vehicle behaviors in mixed traffic situations.",
-        "shortDescription": "Implementation of protocols and conducting experiments on the acceptability of autonomous vehicle behaviors in mixed traffic situations.",
-        "article": "The work combined simulator and VR protocols to evaluate how autonomous vehicle behavior is perceived in mixed traffic scenarios. It included experiment setup, participant sessions, and analysis of resulting behavioral indicators.\\n\\nThis project was conducted in support of thesis research and required robust protocol execution and reproducible data collection. The goal was to provide clear evidence on acceptability factors for autonomous driving interactions."
+        "title": "Academic research experiments",
+        "description": "Implementation and validation of protocols, on simulator and in virtual reality, for the study of the acceptability of autonomous vehicle behaviors in so-called \"conflict\" situations.",
+        "shortDescription": "Implementation and validation of protocols, on simulator and in virtual reality, for the study of the acceptability of autonomous vehicle behaviors in so-called \"conflict\" situations.",
+        "article": "In the context of the PhD research work of M. Gabriel Nativel-Fontaine, this project involved the development and validation of protocols to evaluate how autonomous vehicle behavior is perceived in mixed traffic scenarios. The subjects were exposed to various scenarii in a virtual environment. It implied environment and experiment setup, experiment execution, and analysis of resulting behavioral indicators.\\n\\nThis project was conducted in support of thesis research and required robust protocol execution and reproducible data collection. The goal was to provide clear evidence on acceptability factors for autonomous driving interactions."
       },
       "fr": {
-        "title": "Expériences sur les comportements des véhicules autonomes",
-        "description": "Mise en place et validation de protocoles, sur simulateur et en réalité virtuelle, pour l'étude de l'acceptabilité des comportements des véhicules autonomes en situation de trafic mixte.",
-        "shortDescription": "Mise en place de protocoles et conduite d'expériences sur l'acceptabilité des comportements des véhicules autonomes en situation de trafic mixte.",
-        "article": "Le travail combine des protocoles sur simulateur et en VR pour évaluer la perception des comportements de véhicules autonomes en trafic mixte. Il couvre la mise en place des expériences, la conduite des sessions et l'analyse des indicateurs comportementaux.\\n\\nCe projet a été réalisé en appui d'un travail de thèse et nécessitait une exécution rigoureuse des protocoles ainsi qu'une collecte de données reproductible. L'objectif était d'identifier des facteurs d'acceptabilité des interactions de conduite autonome."
+        "title": "Travaux académiques",
+        "description": "Mise en place et validation de protocoles, sur simulateur et en réalité virtuelle, pour l'étude de l'acceptabilité des comportements des véhicules autonomes en situations dites conflictuelles.",
+        "shortDescription": "Mise en place et validation de protocoles, sur simulateur et en réalité virtuelle, pour l'étude de l'acceptabilité des comportements des véhicules autonomes en situations dites conflictuelles.",
+        "article": "Dans le cadre des travaux de thèse de M. Gabriel Nativel-Fontaine, ce travail a consisté à l'élaboration puis validation de protocoles sur simulateur en réalité virtuelle pour évaluer la perception des comportements des véhicules autonomes en trafic mixte. Il comprenait les travaux de recherche de l'état de l'art, la mise en place des expériences, la conduite des sessions et l'analyse des indicateurs comportementaux.\\n\\nCe projet a été réalisé dans un contexte académique et nécessitait donc une exécution rigoureuse des protocoles ainsi qu'une collecte de données reproductible. L'objectif était d'identifier les facteurs d'acceptabilité principaux des interactions de conduite autonome."
       }
     },
     "location": {
       "en": "University of Bordeaux, France",
       "fr": "Universite de Bordeaux, France"
     },
-    "image": "images/simu.png",
+    "image": "simu.png",
     "gallery": [
-      "images/simu.png"
+      "simu.png",
+      "vehicle-behavior-experiments.jpg"
     ],
     "technologies": [
       "C#",
       "Unity",
       "VR",
       "Simulation",
-      "Research"
+      "Dashboard automation",
+      "Data analysis"
     ],
     "keywords": [
-      "VR Simulation Setup",
+      "VR Simulation",
       "Experiment Protocols",
-      "Data Analysis"
+      "PhD Research"
     ],
     "links": [
       {
         "label": {
-          "en": "Related thesis",
-          "fr": "Thèse associée"
+          "en": "Thesis of Mr. Gabriel Nativel-Fontaine",
+          "fr": "Thèse de M. Gabriel Nativel-Fontaine"
         },
         "url": "https://theses.fr/2024BORD0304"
       }
@@ -299,23 +302,23 @@
     "content": {
       "en": {
         "title": "Study of the impact of music on emotions",
-        "description": "Implementation of a protocol for the study of the impact of music on emotions, using the EmotivPRO headset and software.",
+        "description": "Implementation of a protocol and automation of various dashboards and data visualization tools for the study of the impact of music on emotions, using the EmotivPRO headset and software.",
         "shortDescription": "Conduction of experiments based on ECG brainwave analysis to study the impact of music on emotions.",
-        "article": "This study focused on protocol design and execution for measuring emotional response to music with neuro-signal tools. It included operational setup, flow automation, and experiment reporting.\\n\\nNode-Red flows were developed to automate parts of acquisition and dashboarding. The project combined human-centered experimentation constraints with practical tooling for repeatable sessions."
+        "article": "This study focused on the protocol design and execution for measuring emotional response to music with neuro-signal tools. It included the operational setup, protocol validation,  data acquisition and flow automation, and experiment reporting.\\n\\nWe developed a dashboard built with Node-RED to automate parts of data-acquisition and hosting the experiments contents and results. Project conducted at ENSC within a team of 4 people."
       },
       "fr": {
-        "title": "Etude de l'impact de la musique sur les émotions",
-        "description": "Mise en place d'un protocole pour l'étude de l'impact de la musique sur les émotions, utilisant le casque et le logiciel EmotivPRO.",
+        "title": "Étude de l'impact de la musique sur les émotions",
+        "description": "Mise en place d'un protocole et automatisation de divers dashboard et outils de visualisation de données pour l'étude de l'impact de la musique sur les émotions, utilisant le casque et le logiciel EmotivPRO.",
         "shortDescription": "Conduite d'expériences basées sur l'analyse des ondes cérébrales ECG pour étudier l'impact de la musique sur les émotions.",
-        "article": "Cette étude se concentre sur la conception et l'exécution d'un protocole pour mesurer la réponse émotionnelle à la musique avec des outils neuro-signal. Elle inclut la mise en place opérationnelle, l'automatisation des flux et le reporting d'expériences.\\n\\nDes flows Node-Red ont été développés pour automatiser une partie de l'acquisition et du dashboarding. Le projet combine contraintes expérimentales orientées humain et outillage pratique pour des sessions répétables."
+        "article": "Cette étude se concentre sur la conception et l'exécution de protocoles pour mesurer la réponse émotionnelle à la musique. Elle inclut la recherche de l'état de l'art, la validation du protocole expérimental, l'automatisation des divers flux de visualisation et collecte des données et le traitement des résultats.\\n\\nL'automatisation d'une partie de l'acquisition et du dashboarding a été réalisée avec Node-RED, EmotivPRO ainsi qu'un serveur pour l'hébergement du dashboard, des morceaux retenus pour la passation des expériences, et des résultats. Projet académique réalisé à l'ENSC au sein d'une équipe de 4 personnes."
       }
     },
     "location": {
-      "en": "University of Bordeaux, France",
-      "fr": "Université de Bordeaux, France"
+      "en": "ENSC, France",
+      "fr": "ENSC, France"
     },
-    "image": "images/emotiv-pro.jpg",
-    "gallery": [],
+    "image": "emotiv-pro.jpg",
+    "gallery": ["emotiv-pro-2.webp"],
     "technologies": [
       "Node-Red",
       "ECG brainwave analysis",
@@ -337,18 +340,18 @@
         "title": "Self-hosted media server",
         "description": "Setting up a self-hosted media server using open-source tools for efficient media management and streaming.",
         "shortDescription": "Setting up a self-hosted media server using open-source tools for efficient media management and streaming.",
-        "article": "This homelab project focused on designing a reliable personal media platform with centralized storage, secure access, and smooth streaming. The setup balances maintainability with flexibility for future service additions.\\n\\nThe architecture uses containerized services, reverse proxy configuration, and standard Linux administration practices. The target was to provide a practical and robust environment for personal media workflows across devices."
+        "article": "This homelab project focused on designing a reliable personal media platform with centralized storage, secure access, and smooth streaming. The setup balances maintainability with flexibility for future service additions.\\n\\nThe architecture uses containerized services, reverse proxy configuration, and standard Linux administration practices. The target was to provide a smooth and efficient personal media workflows across devices."
       },
       "fr": {
         "title": "Serveur multimédia auto-hébergé",
         "description": "Mise en place d'un serveur multimédia auto-hébergé utilisant des outils open-source pour la gestion et le partage de médias.",
         "shortDescription": "Mise en place d'un serveur multimédia auto-hébergé utilisant des outils open-source pour la gestion et le partage de médias.",
-        "article": "Ce projet homelab vise la conception d'une plateforme multimédia personnelle fiable avec stockage centralisé, accès sécurisé et streaming fluide. L'architecture privilégie la maintenabilité tout en restant flexible pour ajouter de futurs services.\\n\\nL'implémentation s'appuie sur des services conteneurisés, une configuration reverse proxy et des pratiques classiques d'administration Linux. L'objectif est de fournir un environnement robuste pour un usage multi-appareils."
+        "article": "Conception d'une plateforme multimédia personnelle fiable avec un stockage centralisé, accès sécurisé et des performances de streaming fluides. L'architecture privilégie la portabilité de cette configuration tout en restant flexible pour ajouter de futurs services.\\n\\nRéalisé avec Docker, un reverse proxy et des pratiques classiques d'administration Linux. L'objectif était d'avoir une expérience de streaming fluide et sécurisée sur divers appareils."
       }
     },
     "location": {
-      "en": "Homelab, Bordeaux, France",
-      "fr": "Homelab, Bordeaux, France"
+      "en": "Remote, France",
+      "fr": "Remote, France"
     },
     "image": "images/homelab.jpg",
     "gallery": [
@@ -369,10 +372,10 @@
     "links": [
       {
         "label": {
-          "en": "Project link coming soon",
-          "fr": "Lien projet a venir"
+          "en": "Docker config",
+          "fr": "Configuration Docker"
         },
-        "url": "#"
+        "url": "https://github.com/bobellobo/media-server-config"
       }
     ]
   }
