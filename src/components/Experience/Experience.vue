@@ -25,12 +25,12 @@
                   :aria-label="$t('experience.languagesLabel')"
                 >
                   <li
-                    v-for="(languageFlag, index) in item.content[currentLocale].languages"
+                    v-for="(languageFlag, index) in getLanguageFlags(item.content[currentLocale].languages)"
                     :key="`${item.id}-language-${index}`"
                     class="experience-language"
-                    :aria-label="languageFlag"
+                    :aria-label="languageFlag.code.toUpperCase()"
                   >
-                    {{ languageFlag }}
+                    <img class="flag-icon" :src="languageFlag.src" alt="" aria-hidden="true">
                   </li>
                 </ul>
               </div>
@@ -88,12 +88,20 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useExperiencesData } from '../../content/data/experiences'
+import { useExperiencesData, toFlagCode, getFlagSvgByCode } from '../../content/data/experiences'
 
 const { locale } = useI18n()
 const { experiences } = useExperiencesData()
 
 const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
+
+const getLanguageFlags = (languages?: string[]) => (
+  (languages ?? [])
+    .map(toFlagCode)
+    .filter((code): code is string => Boolean(code))
+    .map((code) => ({ code, src: getFlagSvgByCode(code) }))
+    .filter((flag): flag is { code: string; src: string } => Boolean(flag.src))
+)
 </script>
 
 <style scoped src="./Experience.css"></style>

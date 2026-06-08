@@ -69,7 +69,23 @@
         <h2>{{ $t('experience.title') }}</h2>
         <article v-for="item in experiences" :key="item.id" class="experience-item">
           <div class="experience-heading">
-            <h3>{{ item.content[currentLocale].role }}</h3>
+            <div class="experience-role-group">
+              <h3>{{ item.content[currentLocale].role }}</h3>
+              <ul
+                v-if="item.content[currentLocale].languages?.length"
+                class="experience-languages"
+                :aria-label="$t('experience.languagesLabel')"
+              >
+                <li
+                  v-for="(languageFlag, index) in getLanguageFlags(item.content[currentLocale].languages)"
+                  :key="`${item.id}-export-language-${index}`"
+                  class="experience-language"
+                  :aria-label="languageFlag.code.toUpperCase()"
+                >
+                  <img class="flag-icon" :src="languageFlag.src" alt="" aria-hidden="true">
+                </li>
+              </ul>
+            </div>
             <p class="experience-period">{{ item.content[currentLocale].period }}</p>
           </div>
           <ul
@@ -151,7 +167,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useExperiencesData } from '../../content/data/experiences'
+import { useExperiencesData, toFlagCode, getFlagSvgByCode } from '../../content/data/experiences'
 import { useSkillsData } from '../../content/data/skills'
 import { getProfileContent, getContactInfo, splitUniversityPlaceholder } from '../../content/data/profile'
 import { getSupportedLocale } from '../../content/locale'
@@ -198,6 +214,14 @@ const printPreviewLabel = computed(() => (
 const printPreviewTitle = computed(() => (
   isPrintPreview.value ? t('exportView.previewOffHint') : t('exportView.previewOnHint')
 ))
+
+const getLanguageFlags = (languages?: string[]) => (
+  (languages ?? [])
+    .map(toFlagCode)
+    .filter((code): code is string => Boolean(code))
+    .map((code) => ({ code, src: getFlagSvgByCode(code) }))
+    .filter((flag): flag is { code: string; src: string } => Boolean(flag.src))
+)
 
 const toggleLanguage = () => {
   const nextLanguage = locale.value === 'fr' ? 'en' : 'fr'

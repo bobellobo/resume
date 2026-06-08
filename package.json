@@ -9,10 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "flag-icons": "^7.5.0",
     "ramda": "^0.32.0",
     "vue": "^3.4.0",
-    "vue-router": "^4.5.1",
-    "vue-i18n": "^9.13.0"
+    "vue-i18n": "^9.13.0",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@types/node": "^25.3.0",
