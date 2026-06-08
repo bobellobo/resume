@@ -3,10 +3,10 @@
     "id": "development",
     "content": {
       "en": {
-        "title": "Full-stack development",
+        "title": "Fullstack development",
         "items": [
           { "text": "TypeScript and modern frameworks (Angular, React, Vue, Next.js)" },
-          { "text": "API design and integration (Node.js, NestJS)" },
+          { "text": "API design and integration (Node.js, NestJS) / REST APIs" },
           { "text": "Functional  and asynchronous programming (fp-ts, Effect-TS, RxJS)" },
           { "text": "Clean architecture and maintainable code" },
           { "text": "Personal projects with Java, C#, Python, Docker"},
@@ -14,10 +14,10 @@
         ]
       },
       "fr": {
-        "title": "Développement full-stack",
+        "title": "Développement fullstack",
         "items": [
           { "text": "TypeScript et frameworks modernes (Angular, React, Vue, Next.js)" },
-          { "text": "Conception et intégration d'API (Node.js, NestJS)" },
+          { "text": "Conception et intégration d'API (Node.js, NestJS) / REST APIs" },
           { "text": "Programmation fonctionnelle et asynchrone (fp-ts, Effect-TS, RxJS)" },
           { "text": "Architecture propre et code maintenable" },
           { "text": "Projets personnels avec Java, C#, Python, Docker"},
@@ -37,8 +37,7 @@
           { "text": "Clear communication" },
           { "text": "Collaborative teamwork" },
           { "text": "Problem solving" },
-          { "text": "Strong ability to work autonomously" },
-          { "text": "Pretty good at foosball", "isJoke": true }
+          { "text": "Strong ability to work autonomously" }
         ]
       },
       "fr": {
@@ -49,8 +48,7 @@
           { "text": "Communication claire" },
           { "text": "Esprit d'équipe et collaboration" },
           { "text": "Résolution de problèmes" },
-          { "text": "Bonne capacité de travail en autonomie" },
-          { "text": "Plutôt fort au babyfoot", "isJoke": true }
+          { "text": "Forte capacité de travail en autonomie" }
         ]
       }
     }
@@ -59,7 +57,7 @@
     "id": "cognitiveScience",
     "content": {
       "en": {
-        "title": "Cognitive science",
+        "title": "Cognitive science and human factor",
         "items": [
           { "text": "User behavior analysis" },
           { "text": "Human-computer interaction principles" },
@@ -69,7 +67,7 @@
         ]
       },
       "fr": {
-        "title": "Sciences cognitives",
+        "title": "Sciences cognitives et facteur humain",
         "items": [
           { "text": "Analyse des comportements utilisateurs" },
           { "text": "Principes d'interaction humain-machine" },

@@ -5,14 +5,14 @@
       "en": {
         "period": "Jan 2024 — Jan 2026",
         "role": "Full-stack Engineer",
-        "languages": ["FR", "GB", "IT"],
+        "languages": ["IT", "GB", "FR"],
         "company": "STMicroelectronics - System Research & Application",
         "location": "Catania, Italy",
         "sections": [
           {
-            "title": "API integration tools - Lead Developer",
-            "description": "Agnostic approach for API oriented systems integration and inter-operability. Part of the STM32 Motor Control SDK. \nLed to a patent application.",
-            "technologies": ["TypeScript", "Node.js", "REST APIs", "STM32 SDK"]
+            "title": "Integration Architect - Lead Developer",
+            "description": "Engineered a platform-agnostic API middleware featuring a flexible, engine-interchangeable templating system. This solution abstracted underlying software complexities, allowing electronic engineers and experts to seamlessly define and orchestrate firmware component behaviors across different software environments. This work led to a patent filing request for the developed solution.",
+            "technologies": ["Node.js", "Effect-TS", "SDK STM32", "TypeScript"]
           },
           {
             "title": "Fullstack development",
@@ -24,14 +24,14 @@
       "fr": {
         "period": "Janvier 2024 — Janvier 2026",
         "role": "Développeur Fullstack",
-        "languages": ["FR", "GB", "IT"],
+        "languages": ["IT", "GB", "FR"],
         "company": "STMicroelectronics - System Research & Application",
         "location": "Catane, Italie",
         "sections": [
           {
-            "title": "Outils d'intégration d'API - Lead Developer",
-            "description": "Approche agnostique pour l'intégration de systèmes orientés API et l'interopérabilité. Partie du SDK STM32 Motor Control. \nA conduit à une demande de brevet.",
-            "technologies": ["TypeScript", "Node.js", "SDK STM32", "Effect-TS"]
+            "title": "Integration Architect - Lead Developer",
+            "description": "Développement d'un middleware API agnostique basé sur un système de templates multi-moteurs. Cette solution a permis d'abstraire la complexité technique, offrant aux experts métiers la capacité de définir et d'orchestrer nativement le comportement des composants firmwares à travers les différents logiciels. Ces travaux ont conduit à une demande de dépôt de brevet pour la solution développée.",
+            "technologies": ["Node.js", "Effect-TS", "SDK STM32", "TypeScript"]
           },
           {
             "title": "Développement Fullstack",
