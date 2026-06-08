@@ -54,15 +54,15 @@
     "content": {
       "en": {
         "title": "WB2MX2",
-        "description": "An agnostic approach for API oriented systems integration. This project focuses on creating a flexible and scalable solution for integrating various APIs in a seamless manner.",
-        "shortDescription": "Agnostic approach for API oriented systems integration and inter-operability. Part of the STM32 Motor Control SDK. Led to a patent application.",
-        "article": "WB2MX2 introduced a unified templating layer to integrate different APIs while preserving interoperability constraints in an embedded ecosystem. The implementation reduced integration friction and made the system easier to extend for future API variations.\\n\\nThe case study was conducted for the STM32 Motor Control ecosystem. The design and implementation contributed to a patent application due to the flexibility and long-term maintainability gains for API-oriented integrations."
+        "description": "Architected a unified API middleware utilizing an agnostic templating system to decouple functional logic from software specificities. This helped empowering functional teams to model complex firmware component behaviors independently of underlying API complexities, for various software environments.\nThis work led to a patent filing request for the developed solution.",
+        "shortDescription": "Designed and built a platform-agnostic middleware to unify disparate API-driven softwares, decoupling functional logic from software-specific complexities.",
+        "article": "WB2MX2 introduced a unified templating layer to integrate different software environments while preserving interoperability constraints in an embedded ecosystem. The goal was to help functional teams model complex firmware component behaviors without having to deal about the logic of each software. \nThis work was crucial, especially in prevision of the coming release of a new version of a tool called CubeMX which is responsible for generating ready-to-use firmware code for a given behavior. \nFor any software environment that's dedicated to a component family in the company's ecosystem, CubeMX acts as the endpoint of the workflow, enabling all users to easily manipulate components, describe their behavior and then generate C/C++ code ready to be embedded. The implementation reduced integration friction for each team of functional and electronics experts and made the system easier to extend for future API variations. \n\nIt relies heavily on functionnal programming principles and more specifically on a library called Effect-TS which is great for its advanced error handling features, but also for composition, dependency injection, retryability, etc..\\n\\nThis project was conducted over the course of 10 months within the STM32 Motor Control ecosystem by a team of 3 including a functional expert. \nThe design and implementation contributed to a patent application due to the flexibility and long-term maintainability gains for API-oriented integrations."
       },
       "fr": {
         "title": "WB2MX2",
-        "description": "Développement d'une approche agnostique pour l'intégration de systèmes d'API. Création d'une solution flexible et évolutive pour intégrer diverses API de manière transparente.",
-        "shortDescription": "Approche agnostique pour l'intégration de systèmes orientés API via l'implémentation d'un système flexible et évolutif de templating. A conduit à une demande de brevet.",
-        "article": "WB2MX2 introduit une couche de templating unifiée pour intégrer différentes API tout en conservant les contraintes d'inter-opérabilité d'un écosystème embarqué. L'implémentation réduit les frictions d'intégration et facilite l'extension du système pour de nouvelles variations d'API.\\n\\nL'étude de cas a été menée dans l'écosystème STM32 Motor Control. Le design et l'implémentation ont contribué à un dépôt de brevet grâce aux gains de flexibilité et de maintenabilité long terme."
+        "description": "Architecture d'un middleware API dit \"agnostique\" unifié basé sur un système de template, séparant la logique fonctionnelle des spécificités logicielles. Cela a permis d'aider les équipes fonctionnelles dans la modélisation et la description des comportements des composants firmwares, sans dépendance vis-à-vis de la complexité des API sous-jacentes.\n Ces travaux ont débouché à une demande de dépôt de brevet pour l'architecture de la solution développée.",
+        "shortDescription": "Conception et développement d'un middleware agnostique pour unifier divers logiciels orientés API, séparant la logique fonctionnelle des spécificités logicielles sous-jacentes.",
+        "article": "WB2MX2 est un outil interne qui agit un peu comme un middleware de N logiciels vers un logiciel de destination de manière transparente et, à l'avenir, bidirectionnelle. \nIl introduit une couche de templating unifiée pour garantir les contraintes d'interopérabilité au sein d'un écosystème embarqué. L'objectif était d'aider les équipes fonctionnelles à modéliser les comportements de composants firmware complexes sans avoir à se soucier de la logique propre à chaque logiciel. \nCe travail s'est avéré crucial, notamment en prévision de la sortie prochaine d'une nouvelle version de l'outil CubeMX, chargé de générer du code firmware prêt à l'emploi pour un comportement et une configuration donnés. \nPour tout environnement logiciel dédié à une famille de composants dans l'écosystème de l'entreprise, CubeMX fait office de point d'arrivée du processus de travail de l'utilisateur, permettant de manipuler facilement les composants, de décrire leur comportement, puis de générer du code C/C++ prêt à être embarqué. Cette implémentation a réduit les frictions d'intégration pour chaque équipe d'experts fonctionnels et électroniques, tout en facilitant les futures extensions firmwares ou software du système. \n\nLe projet repose en grande partie sur les principes de la programmation fonctionnelle, et plus particulièrement sur Effect-TS, reconnue pour ses fonctionnalités avancées de gestion des erreurs, de composition, d'injection de dépendances, de gestion des tentatives (retries), etc.\n\nCe projet a été mené sur une période de 10 mois au sein de l'écosystème STM32 Motor Control par une équipe de 3 personnes, dont un expert fonctionnel. \nSa conception et son implémentation ont contribué au dépôt d'une demande de brevet, grâce aux gains de flexibilité et de maintenabilité à long terme apportés aux intégrations orientées API."
       }
     },
     "location": {
@@ -71,20 +71,23 @@
     },
     "image": "images/wb2mx.avif",
     "gallery": [
-      "images/wb2mx.avif"
+      "images/stm32u5",
+      "images/mc-workbench.webp",
+      "images/developpement-flow-mcsdk.webp"
     ],
     "technologies": [
-      "EffectTS",
-      "TypeScript",
-      "NodeJS",
+      "Effect-TS",
+      "Node.js",
       "Functional Programming",
-      "Eta",
-      "Handlebars"
+      "Eta.js",
+      "Handlebars.js",
+      "bash"
     ],
     "keywords": [
       "Motor Control SDK",
       "Template Engine",
-      "Internal API Tooling"
+      "Internal API Tooling",
+      "CLI / Middleware tools"
     ],
     "links": [
       {

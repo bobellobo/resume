@@ -543,6 +543,11 @@
 }
 
 @media print {
+  :global(html),
+  :global(body) {
+    font-size: 15.7px;
+  }
+
   .resume-page {
     padding: 0;
     margin: 0;

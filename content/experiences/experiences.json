@@ -30,7 +30,7 @@
         "sections": [
           {
             "title": "Integration Architect - Lead Developer",
-            "description": "Développement d'un middleware API agnostique basé sur un système de templates multi-moteurs. Cette solution a permis d'abstraire la complexité technique, offrant aux experts métiers la capacité de définir et d'orchestrer nativement le comportement des composants firmwares à travers les différents logiciels. Ces travaux ont conduit à une demande de dépôt de brevet pour la solution développée.",
+            "description": "Développement d'un middleware API agnostique basé sur un système de templates multi-moteurs. Cette solution a permis d'abstraire la complexité technique, offrant aux experts métiers la capacité de définir et d'orchestrer nativement le comportement des composants firmwares à travers les différents logiciels. Ces travaux ont débouché à une demande de dépôt de brevet pour l'architecture de la solution développée.",
             "technologies": ["Node.js", "Effect-TS", "SDK STM32", "TypeScript"]
           },
           {
