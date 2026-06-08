@@ -17,7 +17,23 @@
             <p class="timeline-company">{{ item.content[currentLocale].company }}<span v-if="item.content[currentLocale].location" class="timeline-location"> · {{ item.content[currentLocale].location }}</span></p>
 
             <div class="timeline-role-row">
-              <h3 class="timeline-role">{{ item.content[currentLocale].role }}</h3>
+              <div class="timeline-role-title-group">
+                <h3 class="timeline-role">{{ item.content[currentLocale].role }}</h3>
+                <ul
+                  v-if="item.content[currentLocale].languages?.length"
+                  class="experience-languages"
+                  :aria-label="$t('experience.languagesLabel')"
+                >
+                  <li
+                    v-for="(languageFlag, index) in item.content[currentLocale].languages"
+                    :key="`${item.id}-language-${index}`"
+                    class="experience-language"
+                    :aria-label="languageFlag"
+                  >
+                    {{ languageFlag }}
+                  </li>
+                </ul>
+              </div>
               <ul
                 v-if="item.content[currentLocale].technologies?.length"
                 class="experience-tags"

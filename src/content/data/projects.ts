@@ -7,17 +7,32 @@ export interface ProjectContent {
   title: string
   description: string
   shortDescription: string
+  article: string
+}
+
+export interface LocalizedText {
+  en: string
+  fr: string
+}
+
+export interface ProjectExternalLink {
+  label: LocalizedText
+  url: string
 }
 
 export interface Project {
   id: number
+  slug: string
   content: {
     en: ProjectContent
     fr: ProjectContent
   }
+  location: LocalizedText
   image: string
+  gallery: string[]
   technologies: string[]
-  link: string
+  keywords: string[]
+  links: ProjectExternalLink[]
 }
 
 export const getProjectImageOrFallback = (image: string, fallbackLabel: string): string => (
@@ -26,10 +41,13 @@ export const getProjectImageOrFallback = (image: string, fallbackLabel: string):
 
 export function useProjectsData() {
   const imagesMap = makeImageMap()
+  const resolveImage = resolveProjectImage(imagesMap)
+
   const projectsData: Project[] = (rawProjects as Project[])
     .map((project) => ({
       ...project,
-      image: resolveProjectImage(imagesMap)(project.image)
+      image: resolveImage(project.image),
+      gallery: project.gallery.map((galleryImage) => resolveImage(galleryImage))
     }))
 
   return { projects: ref<Project[]>(projectsData) }

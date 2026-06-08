@@ -50,7 +50,7 @@
         </ul>
       </header>
 
-      <section class="resume-section">
+      <section class="resume-section resume-profile">
         <p class="resume-text">
           {{ exportProfileDescriptionParts.before }}
           <a

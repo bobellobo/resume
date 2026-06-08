@@ -3,23 +3,25 @@
     "id": "development",
     "content": {
       "en": {
-        "title": "Full-stack web development",
+        "title": "Full-stack development",
         "items": [
-          { "text": "TypeScript, JavaScript, and modern frameworks (Angular, React, Vue)" },
-          { "text": "API design and integration (Node.js)" },
+          { "text": "TypeScript and modern frameworks (Angular, React, Vue, Next.js)" },
+          { "text": "API design and integration (Node.js, NestJS)" },
           { "text": "Functional  and asynchronous programming (fp-ts, Effect-TS, RxJS)" },
           { "text": "Clean architecture and maintainable code" },
-          { "text": "Experience with Java, C#, Python, Docker" }
+          { "text": "Personal projects with Java, C#, Python, Docker"},
+          { "text": "Mobile development for real time applications (React Native)" }
         ]
       },
       "fr": {
-        "title": "Développement web full-stack",
+        "title": "Développement full-stack",
         "items": [
-          { "text": "TypeScript, JavaScript et frameworks modernes (Angular, React, Vue)" },
-          { "text": "Conception et intégration d'API (Node.js)" },
+          { "text": "TypeScript et frameworks modernes (Angular, React, Vue, Next.js)" },
+          { "text": "Conception et intégration d'API (Node.js, NestJS)" },
           { "text": "Programmation fonctionnelle et asynchrone (fp-ts, Effect-TS, RxJS)" },
           { "text": "Architecture propre et code maintenable" },
-          {  "text": "Expériences avec Java, C#, Python, Docker"}
+          { "text": "Projets personnels avec Java, C#, Python, Docker"},
+          { "text": "Développement mobile pour des applications en temps réel (React Native)" }
         ]
       }
     }
@@ -30,10 +32,11 @@
       "en": {
         "title": "Soft skills",
         "items": [
+          { "text": "Adaptability and continuous learning" },
+          { "text": "Versatility between technical and functional aspects" },
           { "text": "Clear communication" },
           { "text": "Collaborative teamwork" },
           { "text": "Problem solving" },
-          { "text": "Adaptability and continuous learning" },
           { "text": "Strong ability to work autonomously" },
           { "text": "Pretty good at foosball", "isJoke": true }
         ]
@@ -41,10 +44,11 @@
       "fr": {
         "title": "Soft skills",
         "items": [
+          { "text": "Adaptabilité et apprentissage continu" },
+          { "text": "Polyvalence entre les aspects techniques et fonctionnels" },
           { "text": "Communication claire" },
           { "text": "Esprit d'équipe et collaboration" },
           { "text": "Résolution de problèmes" },
-          { "text": "Adaptabilité et apprentissage continu" },
           { "text": "Bonne capacité de travail en autonomie" },
           { "text": "Plutôt fort au babyfoot", "isJoke": true }
         ]

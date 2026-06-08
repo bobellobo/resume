@@ -14,11 +14,13 @@ export interface ExperienceContent {
   location?: string
   description?: string
   technologies?: string[]
+  languages?: string[]
   sections?: ExperienceSection[]
 }
 
 export interface Experience {
   id: number
+  languages?: string[]
   content: {
     en: ExperienceContent
     fr: ExperienceContent

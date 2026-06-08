@@ -1,149 +1,376 @@
 [
   {
-    "id": 5,
+    "id": 1,
+    "slug": "portfolio-website-template",
     "content": {
       "en": {
         "title": "Portfolio Website Template",
-        "description": "Creating a reusable template based on this site to allow anyone to easily generate and host their own portfolio site via Github Pages, with quick and easy customization possibilities. \nThe goal is to provide a clean structure, bilingual content support, easy customization and most importantly the ability to export the content into a CV in PDF format easily. \nBecause most CV generators out there offer poor customization possibilities and are hard to maintain in the long run. By maintaining the content of your own portfolio site you also update your resume at the same time, and you can easily share your portfolio with recruiters and peers.",
-        "shortDescription": "Creating a reusable template based on this site to allow anyone to easily generate and host their own portfolio site via Github Pages, with quick and easy customization possibilities."
+        "description": "Creating a reusable template based on this site to allow anyone to easily generate and host their own portfolio site via Github Pages, with quick and easy customization possibilities.",
+        "shortDescription": "Creating a reusable template based on this site to allow anyone to easily generate and host their own portfolio site via Github Pages, with quick and easy customization possibilities.",
+        "article": "The project started from the need to have a portfolio to resume workflow that is maintainable over time.\nInstead of keeping separate sources, this template centralizes profile, experience, skills and projects into editable JSON files.\n\nIt is structured for fast customization and lightweight deployment.\\n\\nThe template provides bilingual support, route-based pages, and export capabilities so that updating portfolio content also updates resume content.\nIt was designed for non-developer-friendly customization and quick hosting through GitHub Pages."
       },
       "fr": {
         "title": "Modèle de site portfolio réutilisable",
-        "description": "Création d'un template réutilisable sur la base de ce site pour permettre à quiconque de générer et héberger son propre site portfolio facilement, avec des possibilités de personnalisation rapide et facile. \nLe but est de fournir une structure propre, un support de contenu bilingue, une personnalisation facile et surtout la capacité d'exporter le contenu en CV au format PDF facilement. \nCe projet part du constat que la plupart des générateurs de CV offrent peu de possibilités de personnalisation (ou bien sont payants) et sont difficiles à maintenir sur le long terme. En maintenant le contenu de votre propre site portfolio, vous mettez également à jour votre CV en même temps, et vous pouvez facilement partager votre CV/portfolio avec des recruteurs.",
-        "shortDescription": "Création d'un template réutilisable sur la base de ce site pour permettre à quiconque de générer et héberger son propre site portfolio facilement, avec des possibilités de personnalisation rapide et facile."
+        "description": "Création d'un template réutilisable sur la base de ce site pour permettre à quiconque de générer et héberger son propre site portfolio facilement, permettant de rapidement déployer puis personnaliser le site.",
+        "shortDescription": "Création d'un template réutilisable sur la base de ce site pour permettre à quiconque de générer et héberger son propre site portfolio facilement, permettant de rapidement déployer puis personnaliser le site.",
+        "article": "Le projet part du besoin d'avoir un workflow du portfolio vers le CV simple à maintenir dans la durée.\nPlutôt que de garder des sources séparées, ce template centralise le profil, les expériences, les compétences et les projets dans des fichiers JSON éditables.\n\nLa structure est pensée pour une personnalisation rapide et un déploiement léger.\\n\\nLe template propose un support bilingue, des pages dédiées via le système de routage, et des capacités d'export afin que la mise à jour du portfolio mette aussi à jour le CV.\nIl est conçu pour rester accessible même sans modifications de code lourdes et pour une mise en ligne rapide via GitHub Pages."
       }
+    },
+    "location": {
+      "en": "Remote, France",
+      "fr": "Remote, France"
     },
     "image": "images/business-portfolio-icon.avif",
-    "technologies": ["Vue 3", "Vite", "TypeScript", "i18n"],
-    "link": "https://github.com/bobellobo/resume-template-bootstrap"
-  },
-  {
-    "id": 1,
-    "content": {
-      "en": {
-        "title": "WB2MX2",
-        "description": "An agnostic approach for API oriented systems integration. This project focuses on creating a flexible and scalable solution for integrating various APIs in a seamless manner. The main goal is to provide a unified interface for developers to interact with different APIs without worrying about the underlying complexities. In this case study, the solution was implemented as a templating system to integrate various APIs and ensure inter-operability of the STM32 Motor Control Ecosystem. This project led to a patent application.",
-        "shortDescription": "Agnostic approach for API oriented systems integration and inter-operability. Part of the STM32 Motor Control SDK. \nLed to a patent application."
-      },
-      "fr": {
-        "title": "WB2MX2",
-        "description": "Développement d'une approche agnostique pour l'intégration de systèmes d'API. Création d'une solution flexible et évolutive pour intégrer diverses API de manière transparente. L'objectif principal est de fournir une interface unifiée permettant aux développeurs d'interagir avec différentes API sans se soucier des complexités sous-jacentes. Un dépôt de brevet a été déposé pour le design de ce système de templating.",
-        "shortDescription": "Approche agnostique pour l'intégration de systèmes orientés API via l'implémentation d'un système flexible et évolutif de templating. A conduit à une demande de brevet."
+    "gallery": ["portfolio-template.png", "portfolio-template-2.png"],
+    "technologies": [
+      "Vue 3",
+      "Vite",
+      "TypeScript",
+      "i18n"
+    ],
+    "keywords": [
+      "GitHub Pages", "Custom Tooling", "Resume Export"
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "GitHub template repository",
+          "fr": "Dépôt GitHub du template"
+        },
+        "url": "https://github.com/bobellobo/resume-template-bootstrap"
+      }, 
+      {
+        "label": {
+          "en": "Live demo",
+          "fr": "Démo en ligne"
+        },
+        "url": "https://bobellobo.github.io/resume-template-bootstrap"
       }
-    },
-    "image": "images/wb2mx.avif",
-    "technologies": ["EffectTS", "Typescript", "NodeJS", "Functional Programming", "Eta", "Handlebars"],
-    "link": "https://www.st.com/content/st_com/en/ecosystems/stm32-motor-control-ecosystem.html"
+    ]
   },
   {
     "id": 2,
+    "slug": "wb2mx2",
     "content": {
       "en": {
-        "title": "Estimate (eDesignSuite)",
-        "description": "Estimation tool for circuit design and lifetime estimations. Refactored the frontend, reduced the technical debt over the span of 8 months. Then I created a SVG manager toolchart for circuit design with d3.js.",
-        "shortDescription": "Estimation tool for circuit design and lifetime estimations. Refactored the whole frontend, especially the SVG toolchart."
+        "title": "WB2MX2",
+        "description": "An agnostic approach for API oriented systems integration. This project focuses on creating a flexible and scalable solution for integrating various APIs in a seamless manner.",
+        "shortDescription": "Agnostic approach for API oriented systems integration and inter-operability. Part of the STM32 Motor Control SDK. Led to a patent application.",
+        "article": "WB2MX2 introduced a unified templating layer to integrate different APIs while preserving interoperability constraints in an embedded ecosystem. The implementation reduced integration friction and made the system easier to extend for future API variations.\\n\\nThe case study was conducted for the STM32 Motor Control ecosystem. The design and implementation contributed to a patent application due to the flexibility and long-term maintainability gains for API-oriented integrations."
       },
       "fr": {
-        "title": "Estimate (eDesignSuite)",
-        "description": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Tâches de refonte et de réduction de la dette technique du frontend. Création d'un outil de design de circuit firmware avec d3.js et des données SVG.",
-        "shortDescription": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Refonte complète du frontend."
+        "title": "WB2MX2",
+        "description": "Développement d'une approche agnostique pour l'intégration de systèmes d'API. Création d'une solution flexible et évolutive pour intégrer diverses API de manière transparente.",
+        "shortDescription": "Approche agnostique pour l'intégration de systèmes orientés API via l'implémentation d'un système flexible et évolutif de templating. A conduit à une demande de brevet.",
+        "article": "WB2MX2 introduit une couche de templating unifiée pour intégrer différentes API tout en conservant les contraintes d'inter-opérabilité d'un écosystème embarqué. L'implémentation réduit les frictions d'intégration et facilite l'extension du système pour de nouvelles variations d'API.\\n\\nL'étude de cas a été menée dans l'écosystème STM32 Motor Control. Le design et l'implémentation ont contribué à un dépôt de brevet grâce aux gains de flexibilité et de maintenabilité long terme."
       }
     },
-    "image": "images/estimate.png",
-    "technologies": ["Angular", "Redux", "D3.js", "ramda", "RxJS", "TypeScript", "Functional Programming", "Docker", "WSL", "MongoDB"],
-    "link": "https://eds.st.com/eds-console/"
+    "location": {
+      "en": "STMicroelectronics | Catania, Italy",
+      "fr": "STMicroelectronics | Catania, Italie"
+    },
+    "image": "images/wb2mx.avif",
+    "gallery": [
+      "images/wb2mx.avif"
+    ],
+    "technologies": [
+      "EffectTS",
+      "TypeScript",
+      "NodeJS",
+      "Functional Programming",
+      "Eta",
+      "Handlebars"
+    ],
+    "keywords": [
+      "Motor Control SDK",
+      "Template Engine",
+      "Internal API Tooling"
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "STM32 ecosystem",
+          "fr": "Ecosystème STM32"
+        },
+        "url": "https://www.st.com/content/st_com/en/ecosystems/stm32-motor-control-ecosystem.html"
+      }
+    ]
   },
   {
     "id": 3,
+    "slug": "estimate-edesignsuite",
     "content": {
       "en": {
-        "title": "AeroWebb - Module GAV",
-        "description": "Developped a whole new module as a part of the AeroWebb suite, made for the management of D type checks in aeronautical maintenance. It provides a comprehensive solution for planning, tracking and managing D checks operations. With this module, users can easily organize tasks, track progress and ensure efficient maintenance of aircrafts.",
-        "shortDescription": "Developped a whole new module as a part of the AeroWebb suite, made for the management of D type checks in aeronautical maintenance."
+        "title": "Estimate (eDesignSuite)",
+        "description": "Estimation tool for circuit design and lifetime estimations. Refactored the frontend, reduced the technical debt over the span of 8 months.",
+        "shortDescription": "Estimation tool for circuit design and lifetime estimations. Refactored the whole frontend, especially the SVG toolchart.",
+        "article": "This project focused on frontend modernization and technical debt reduction on a production estimation platform. The work improved reliability and developer velocity before adding a custom SVG-based manager for visual circuit workflows.\\n\\nThe tool is part of eDesignSuite usage in a professional engineering context where maintainability and domain-specific visualization are critical. The D3.js manager added better control over design interactions and representation of circuit data."
       },
       "fr": {
-        "title": "AeroWebb - Module GAV",
-        "description": "Développement d'un tout nouveau module pour la gestion avancée des grandes visites pour la maintenance aéronautique. Ce module est intégré au coeur de la plateforme AeroWebb, offrant une solution complète pour la planification, le suivi et la gestion des grandes visites. Grâce à ce module, les utilisateurs peuvent facilement organiser les tâches, suivre les progrès et assurer une maintenance efficace des aéronefs. ",
-        "shortDescription": "Développement d'un tout nouveau module pour la gestion avancée des grandes visites pour la maintenance aéronautique. Module intégré au coeur de la plateforme AeroWebb."
+        "title": "Estimate (eDesignSuite)",
+        "description": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Tâches de refonte et de réduction de la dette technique du frontend.",
+        "shortDescription": "Outil d'estimation pour la conception de circuits et les estimations de durée de vie. Refonte complète du frontend.",
+        "article": "Ce projet s'est concentré sur la modernisation du frontend et la réduction de dette technique sur une plateforme d'estimation en production. Le travail a amélioré la fiabilité et la vélocité de développement avant l'ajout d'un gestionnaire SVG pour les workflows de design.\\n\\nL'outil s'inscrit dans l'environnement eDesignSuite en contexte d'ingénierie, où la maintenabilité et la visualisation métier sont essentielles. Le module D3.js a permis un meilleur contrôle des interactions et de la représentation des données de circuit."
       }
     },
-    "image": "images/aero.webp",
-    "technologies": ["Angular", "RxJS", "TypeScript", "Java", "PostgreSQL", "Tomcat", "Hibernate"],
-    "link": "https://2moro.fr/aerowebb"
+    "location": {
+      "en": "STMicroelectronics | Catania, Italy",
+      "fr": "STMicroelectronics | Catania, Italie"
+    },
+    "image": "images/estimate.png",
+    "gallery": [
+      "images/estimate.png"
+    ],
+    "technologies": [
+      "Angular",
+      "Redux",
+      "D3.js",
+      "ramda",
+      "RxJS",
+      "TypeScript",
+      "Functional Programming",
+      "Docker",
+      "WSL",
+      "MongoDB"
+    ],
+    "keywords": [
+      "SVG Toolchart",
+      "Docker",
+      "CI Pipelines"
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "eDesignSuite",
+          "fr": "eDesignSuite"
+        },
+        "url": "https://eds.st.com/eds-console/"
+      }
+    ]
   },
   {
     "id": 4,
+    "slug": "aerowebb-module-gav",
     "content": {
       "en": {
-        "title": "Multi-player card game app",
-        "description": "A React Native based application using Firebase for real-time multiplayer card gaming. Designed for playing with friends on the go when you've forgotten to bring a deck. It is structured like live quizz or live game apps like Kahoot with real-time updates, and a simple room ID system. This was a quick side project that I am planning to review soon to improve the codebase and the features.",
-        "shortDescription": "An app dealing with real-time multiplayer card gaming. Designed for playing with friends on the go."
+        "title": "AeroWebb - Module GAV",
+        "description": "Developped a whole new module as a part of a team of 4 in the AeroWebb suite, made for the management of D-type checks in aeronautical maintenance.",
+        "shortDescription": "Developped a whole new module as a part of a team of 4 in the AeroWebb suite, made for the management of D-type checks in aeronautical maintenance.",
+        "article": "The module was built to support planning, tracking, and execution of heavy maintenance visits in aeronautics. It introduced dedicated workflows and data handling to improve visibility on operations and task progression.\\n\\nAs part of the larger AeroWebb platform, this work required alignment with existing architecture and business-critical maintenance processes. The result improved organization quality and execution traceability for complex maintenance phases, and the module was later adopted more widely for other clients and maintenance types."
       },
       "fr": {
-        "title": "Application mobile pour jeu de cartes multijoueur",
-        "description": "Application basée sur React Native + Firebase pour jouer aux cartes en multijoueur et en temps réel. Conçue pour jouer à des jeux simples entre amis lorsque tout le monde a oublié d'apporter un jeu de cartes. Elle est structurée comme des applications de quiz en direct comme Kahoot ou de jeux en direct avec des mises à jour en temps réel et un système simple d'identifiant de session. Il s'agit d'un projet annexe sur lequel j'ai prévu de refaire une passe pour ajouter des features et améliorer le code.",
-        "shortDescription": "Application mobile pour jeu de cartes en multijoueur. Conçue pour jouer avec des amis en déplacement."
+        "title": "AeroWebb - Module GAV",
+        "description": "Développement d'un tout nouveau module pour la gestion avancée des grandes visites pour la maintenance aéronautique.",
+        "shortDescription": "Développement d'un tout nouveau module pour la gestion avancée des grandes visites pour la maintenance aéronautique. Module intégré au coeur de la plateforme AeroWebb.",
+        "article": "Le module a été conçu pour supporter la planification, le suivi et l'exécution des grandes visites de maintenance aéronautique. Il introduit des workflows dédiés et une gestion de données adaptée pour améliorer la visibilité des opérations et l'avancement des tâches.\\n\\nIntégré à la plateforme AeroWebb existante, ce travail a nécessité un alignement avec l'architecture en place et des processus métier critiques. Le résultat améliore l'organisation et la traçabilité d'exécution sur les phases de maintenance complexes, et le module a par la suite été adopté plus largement pour d'autres clients et types de maintenance."
       }
     },
-    "image": "images/cardapp.png",
-    "technologies": ["React Native", "Expo", "Firebase", "TypeScript"],
-    "link": "#"
+    "location": {
+      "en": "Sopra Steria/2MoRO | Mérignac, France",
+      "fr": "Sopra Steria/2MoRO | Mérignac, France"
+    },
+    "image": "images/aero.webp",
+    "gallery": [
+      "images/aero.webp"
+    ],
+    "technologies": [
+      "Angular",
+      "RxJS",
+      "TypeScript",
+      "Java",
+      "PostgreSQL",
+      "Tomcat",
+      "Hibernate"
+    ],
+    "keywords": [
+      "Maintenance Management",
+      "Aviation",
+      "International",
+      "Complex Workflows"
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "AeroWebb",
+          "fr": "AeroWebb"
+        },
+        "url": "https://2moro.fr/aerowebb"
+      },
+      {
+        "label": {
+          "en": "Press article",
+          "fr": "Article de presse"
+        },
+        "url": "https://www.technopolepaysbasque.fr/fr/toutes-les-actualites/actualite/le-logiciel-aero-webb-de-2moro-bientot-utilise-par-le-rafale.html"
+      }
+    ]
   },
   {
     "id": 5,
+    "slug": "multiplayer-card-game-app",
+    "content": {
+      "en": {
+        "title": "Multi-player card game app",
+        "description": "A React Native based application using Firebase for real-time multiplayer card gaming. Designed for playing with friends on the go.",
+        "shortDescription": "An app dealing with real-time multiplayer card gaming. Designed for playing with friends on the go.",
+        "article": "This side project explored real-time synchronization patterns on mobile. The app is built around room-based interactions with immediate updates, inspired by quiz and party-game experiences.\\n\\nThe objective was to keep onboarding and room joining simple while testing multiplayer reliability using Firebase realtime capabilities. The codebase is planned for another pass to improve architecture and feature depth."
+      },
+      "fr": {
+        "title": "Application mobile pour jeu de cartes multijoueur",
+        "description": "Application basée sur React Native + Firebase pour jouer aux cartes en multijoueur et en temps réel. Conçue pour jouer avec des amis en déplacement.",
+        "shortDescription": "Application mobile pour jeu de cartes en multijoueur. Conçue pour jouer avec des amis en déplacement.",
+        "article": "Ce projet annexe explore des patterns de synchronisation temps réel sur mobile. L'application repose sur des sessions avec mises à jour immédiates, inspirées d'expériences de quiz et party-games.\\n\\nL'objectif était de garder un onboarding simple et un accès rapide à une session tout en testant la fiabilité du multijoueur via Firebase. Une nouvelle passe est prévue pour améliorer l'architecture et enrichir les fonctionnalités."
+      }
+    },
+    "location": {
+      "en": "Side project, Remote",
+      "fr": "Projet annexe, Remote"
+    },
+    "image": "images/cardapp.png",
+    "gallery": [
+      "images/cardapp.png"
+    ],
+    "technologies": [
+      "React Native",
+      "Expo",
+      "Firebase",
+      "TypeScript"
+    ],
+    "keywords": [
+      "Realtime Database",
+      "Mobile Testing",
+      "Expo CLI"
+    ],
+    "links": []
+  },
+  {
+    "id": 6,
+    "slug": "autonomous-vehicles-experiments",
     "content": {
       "en": {
         "title": "Autonomous vehicles behaviors experiments",
-        "description": "Implementation and validation of protocols, on simulator and in virtual reality, for the study of the acceptability of autonomous vehicle behaviors in mixed traffic situations. Conducting experiments, analyzing results. As part of the thesis work of Mr. Gabriel Nativel-Fontaine.",
-        "shortDescription": "Implementation of protocols and conducting experiments on the acceptability of autonomous vehicle behaviors in mixed traffic situations. As part of the thesis work of Mr. Gabriel Nativel-Fontaine."
+        "description": "Implementation and validation of protocols, on simulator and in virtual reality, for the study of the acceptability of autonomous vehicle behaviors in mixed traffic situations.",
+        "shortDescription": "Implementation of protocols and conducting experiments on the acceptability of autonomous vehicle behaviors in mixed traffic situations.",
+        "article": "The work combined simulator and VR protocols to evaluate how autonomous vehicle behavior is perceived in mixed traffic scenarios. It included experiment setup, participant sessions, and analysis of resulting behavioral indicators.\\n\\nThis project was conducted in support of thesis research and required robust protocol execution and reproducible data collection. The goal was to provide clear evidence on acceptability factors for autonomous driving interactions."
       },
       "fr": {
         "title": "Expériences sur les comportements des véhicules autonomes",
-        "description": "Mise en place et validation de protocoles, sur simulateur et en réalité virtuelle, pour l'étude de l'acceptabilité des comportements des véhicules autonomes en situation de trafic mixte. Conduite d'expériences, analyse des résultats. Dans le cadre des travaux de thèses de M. Gabriel Nativel-Fontaine.",
-        "shortDescription": "Mise en place de protocoles et conduite d'expériences sur l'acceptabilité des comportements des véhicules autonomes en situation de trafic mixte. Dans le cadre des travaux de thèses de M. Gabriel Nativel-Fontaine."
+        "description": "Mise en place et validation de protocoles, sur simulateur et en réalité virtuelle, pour l'étude de l'acceptabilité des comportements des véhicules autonomes en situation de trafic mixte.",
+        "shortDescription": "Mise en place de protocoles et conduite d'expériences sur l'acceptabilité des comportements des véhicules autonomes en situation de trafic mixte.",
+        "article": "Le travail combine des protocoles sur simulateur et en VR pour évaluer la perception des comportements de véhicules autonomes en trafic mixte. Il couvre la mise en place des expériences, la conduite des sessions et l'analyse des indicateurs comportementaux.\\n\\nCe projet a été réalisé en appui d'un travail de thèse et nécessitait une exécution rigoureuse des protocoles ainsi qu'une collecte de données reproductible. L'objectif était d'identifier des facteurs d'acceptabilité des interactions de conduite autonome."
       }
-  
+    },
+    "location": {
+      "en": "University of Bordeaux, France",
+      "fr": "Universite de Bordeaux, France"
     },
     "image": "images/simu.png",
-    "technologies": ["C#", "Unity", "VR", "Simulation", "Research"],
-    "link": "https://theses.fr/2024BORD0304"
-  }, 
+    "gallery": [
+      "images/simu.png"
+    ],
+    "technologies": [
+      "C#",
+      "Unity",
+      "VR",
+      "Simulation",
+      "Research"
+    ],
+    "keywords": [
+      "VR Simulation Setup",
+      "Experiment Protocols",
+      "Data Analysis"
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "Related thesis",
+          "fr": "Thèse associée"
+        },
+        "url": "https://theses.fr/2024BORD0304"
+      }
+    ]
+  },
   {
-    "id": 6,
+    "id": 7,
+    "slug": "music-emotion-impact-study",
     "content": {
       "en": {
         "title": "Study of the impact of music on emotions",
-        "description": "Implementation of a protocol for the study of the impact of music on emotions, using the EmotivPRO headset and software. Development of Node-Red flows for data collection and dashboard automation. Conducting experiments, analyzing results.",
-        "shortDescription": "Conduction of experiments based on ECG brainwave analysis to study the impact of music on emotions."
+        "description": "Implementation of a protocol for the study of the impact of music on emotions, using the EmotivPRO headset and software.",
+        "shortDescription": "Conduction of experiments based on ECG brainwave analysis to study the impact of music on emotions.",
+        "article": "This study focused on protocol design and execution for measuring emotional response to music with neuro-signal tools. It included operational setup, flow automation, and experiment reporting.\\n\\nNode-Red flows were developed to automate parts of acquisition and dashboarding. The project combined human-centered experimentation constraints with practical tooling for repeatable sessions."
       },
       "fr": {
         "title": "Etude de l'impact de la musique sur les émotions",
-        "description": "Mise en place d'un protocole pour l'étude de l'impact de la musique sur les émotions, utilisant le casque et le logiciel EmotivPRO. Développement d'un dashboard pour la collecte de données et l'automatisation du processus avec Node-Red. Conduite d'expériences, analyse des résultats.",
-        "shortDescription": "Conduite d'expériences basées sur l'analyse des ondes cérébrales ECG pour étudier l'impact de la musique sur les émotions."
+        "description": "Mise en place d'un protocole pour l'étude de l'impact de la musique sur les émotions, utilisant le casque et le logiciel EmotivPRO.",
+        "shortDescription": "Conduite d'expériences basées sur l'analyse des ondes cérébrales ECG pour étudier l'impact de la musique sur les émotions.",
+        "article": "Cette étude se concentre sur la conception et l'exécution d'un protocole pour mesurer la réponse émotionnelle à la musique avec des outils neuro-signal. Elle inclut la mise en place opérationnelle, l'automatisation des flux et le reporting d'expériences.\\n\\nDes flows Node-Red ont été développés pour automatiser une partie de l'acquisition et du dashboarding. Le projet combine contraintes expérimentales orientées humain et outillage pratique pour des sessions répétables."
       }
-  
+    },
+    "location": {
+      "en": "University of Bordeaux, France",
+      "fr": "Université de Bordeaux, France"
     },
     "image": "images/emotiv-pro.jpg",
-    "technologies": ["Node-Red", "ECG brainwave analysis", "Dashboard automation", "EmotivPRO", "Research"],
-    "link": "#"
+    "gallery": [],
+    "technologies": [
+      "Node-Red",
+      "ECG brainwave analysis",
+      "Dashboard automation",
+      "EmotivPRO"
+    ],
+    "keywords": [
+      "Research",
+      "Dashboard automation",
+      "Experiment protocols"
+    ],
+    "links": []
   },
-    {
-    "id": 7,
+  {
+    "id": 8,
+    "slug": "self-hosted-media-server",
     "content": {
       "en": {
         "title": "Self-hosted media server",
-        "description": "Setting up a self-hosted media server using open-source tools. This project involved configuring the server to manage and stream media content efficiently, ensuring secure access and optimal performance. The media server allows for centralized storage and easy access to media files across multiple devices within the network.",
-        "shortDescription": "Setting up a self-hosted media server using open-source tools for efficient media management and streaming."
+        "description": "Setting up a self-hosted media server using open-source tools for efficient media management and streaming.",
+        "shortDescription": "Setting up a self-hosted media server using open-source tools for efficient media management and streaming.",
+        "article": "This homelab project focused on designing a reliable personal media platform with centralized storage, secure access, and smooth streaming. The setup balances maintainability with flexibility for future service additions.\\n\\nThe architecture uses containerized services, reverse proxy configuration, and standard Linux administration practices. The target was to provide a practical and robust environment for personal media workflows across devices."
       },
       "fr": {
         "title": "Serveur multimédia auto-hébergé",
-        "description": "Mise en place d'un serveur multimédia auto-hébergé utilisant des outils open-source. Ce projet a consisté à configurer le serveur pour gérer et diffuser le contenu multimédia de manière efficace, en garantissant un accès sécurisé et des performances optimales. Le serveur permet un stockage centralisé et un accès facile aux divers fichiers multimédias sur n'importe quel appareil.",
-        "shortDescription": "Mise en place d'un serveur multimédia auto-hébergé utilisant des outils open-source pour la gestion et le partage de médias."
+        "description": "Mise en place d'un serveur multimédia auto-hébergé utilisant des outils open-source pour la gestion et le partage de médias.",
+        "shortDescription": "Mise en place d'un serveur multimédia auto-hébergé utilisant des outils open-source pour la gestion et le partage de médias.",
+        "article": "Ce projet homelab vise la conception d'une plateforme multimédia personnelle fiable avec stockage centralisé, accès sécurisé et streaming fluide. L'architecture privilégie la maintenabilité tout en restant flexible pour ajouter de futurs services.\\n\\nL'implémentation s'appuie sur des services conteneurisés, une configuration reverse proxy et des pratiques classiques d'administration Linux. L'objectif est de fournir un environnement robuste pour un usage multi-appareils."
       }
-  
+    },
+    "location": {
+      "en": "Homelab, Bordeaux, France",
+      "fr": "Homelab, Bordeaux, France"
     },
     "image": "images/homelab.jpg",
-    "technologies": ["Docker", "Linux", "Reverse Proxy", "Media Management", "Server Administration"],
-    "link": "#"
+    "gallery": [
+      "images/homelab.jpg"
+    ],
+    "technologies": [
+      "Docker",
+      "Linux",
+      "Reverse Proxy",
+      "Media Management",
+      "Server Administration"
+    ],
+    "keywords": [
+      "Docker Compose",
+      "Nginx",
+      "Monitoring"
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "Project link coming soon",
+          "fr": "Lien projet a venir"
+        },
+        "url": "#"
+      }
+    ]
   }
 ]

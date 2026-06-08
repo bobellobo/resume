@@ -84,14 +84,13 @@
 
 <script setup lang="ts">
   import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+  import { useRouter } from 'vue-router'
   import { useI18n } from 'vue-i18n'
   import { useProjectsData, type Project, getProjectImageOrFallback } from '../../content/data/projects'
 
   const { locale } = useI18n()
+  const router = useRouter()
   const currentLocale = computed(() => locale.value as 'en' | 'fr')
-  const emit = defineEmits<{
-    selectProject: [project: Project]
-  }>()
 
   const { projects } = useProjectsData()
 
@@ -184,7 +183,12 @@
       return
     }
 
-    emit('selectProject', project)
+    router.push({
+      name: 'project-detail',
+      params: {
+        slug: project.slug
+      }
+    })
   }
 
   const stopAutoplay = () => {

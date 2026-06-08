@@ -23,7 +23,8 @@
   },
   "experience": {
     "title": "Expériences professionnelles",
-    "technologiesLabel": "Technologies principales"
+    "technologiesLabel": "Technologies principales",
+    "languagesLabel": "Langues parlées durant cette expérience"
   },
   "contact": {
     "title": "Me contacter",
@@ -37,19 +38,27 @@
       "email": "Email"
     }
   },
-  "modal": {
-    "visitProject": "Voir le projet",
-    "backToPortfolio": "Retour au portfolio",
-    "technologiesUsed": "Technologies utilisées"
-  },
   "projectCard": {
     "viewProject": "Voir plus"
   },
+  "projectPage": {
+    "backToProjects": "Retour aux projets",
+    "projectEyebrow": "Etude de cas",
+    "locationTitle": "Localisation",
+    "technologiesTitle": "Technologies",
+    "keywordsTitle": "Mots-clés",
+    "linksTitle": "Liens externes",
+    "galleryTitle": "Images additionnelles",
+    "noGallery": "Aucune image additionnelle n'est disponible pour le moment.",
+    "noLinks": "Aucun lien externe n'est disponible pour ce projet.",
+    "notFoundTitle": "Projet introuvable",
+    "notFoundDescription": "La page projet demandée n'existe pas."
+  },
   "templateNotice": {
-    "iconAriaLabel": "Ouvrir les details du template",
+    "iconAriaLabel": "Ouvrir les détails du template",
     "iconTooltip": "Ce site est disponible comme template",
     "dismiss": "Ne plus afficher",
-    "closeDialog": "Fermer la fenetre des details du template",
+    "closeDialog": "Fermer la fenêtre des détails du template",
     "dialogTitle": "Ce site portfolio est disponible comme template",
     "dialogDescription": "Le dépôt est conçu pour permettre de dupliquer le template et de créer et personnaliser rapidement son portfolio. Vous pouvez y modifier les fichiers de contenu pour adapter les textes, projets, compétences et expèriences. Ainsi, en tenant à jour le portfolio vous pouvez facilement maintenir et exporter votre CV pour les recruteurs. Un guide est présent dans le dépôt pour faciliter la mise en ligne du site via GitHub Pages.",
     "openRepository": "Voir le template sur GitHub"
@@ -61,7 +70,7 @@
     "documentLabel": "Vue d'export de Titouan Guedon",
     "role": "Développeur Full-stack - Ingénieur cogniticien",
     "contactLinks": "Liens de contact",
-    "attribution": "Ce CV a été exporté depuis mon site portfolio : {link}",
+    "attribution": "Ce CV a été exporté depuis mon site portfolio, conçu et designé par mes soins : {link}",
     "previewOn": "Apercu Impression",
     "previewOff": "Quitter Apercu",
     "previewOnHint": "Activer le mode apercu impression",

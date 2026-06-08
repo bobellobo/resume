@@ -23,7 +23,8 @@
   },
   "experience": {
     "title": "Professional Experience",
-    "technologiesLabel": "Main technologies"
+    "technologiesLabel": "Main technologies",
+    "languagesLabel": "Languages spoken during this experience"
   },
   "contact": {
     "title": "Let's get in touch",
@@ -37,13 +38,21 @@
       "email": "Email"
     }
   },
-  "modal": {
-    "visitProject": "View project",
-    "backToPortfolio": "Back to portfolio",
-    "technologiesUsed": "Technologies used"
-  },
   "projectCard": {
     "viewProject": "See more"
+  },
+  "projectPage": {
+    "backToProjects": "Back to projects",
+    "projectEyebrow": "Project case study", 
+    "locationTitle": "Location",
+    "technologiesTitle": "Technologies",
+    "keywordsTitle": "Keywords",
+    "linksTitle": "External links",
+    "galleryTitle": "Additional pictures",
+    "noGallery": "No additional pictures are available yet.",
+    "noLinks": "No external links are available for this project.",
+    "notFoundTitle": "Project not found",
+    "notFoundDescription": "The project page you requested does not exist."
   },
   "templateNotice": {
     "iconAriaLabel": "Open template details",
@@ -61,7 +70,7 @@
     "documentLabel": "Titouan Guedon export view",
     "role": "Full-stack Engineer - Cognitive Science Engineer",
     "contactLinks": "Contact links",
-    "attribution": "This resume was exported from my personal portfolio website: {link}",
+    "attribution": "This resume was exported from my personal portfolio website, designed and created by me: {link}",
     "previewOn": "Preview Print",
     "previewOff": "Exit Preview",
     "previewOnHint": "Enable print preview mode",

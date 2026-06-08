@@ -68,6 +68,36 @@
   color: var(--text-dark);
 }
 
+.timeline-role-title-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.experience-languages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-language {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.25rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--primary-color) 20%, transparent);
+  background: color-mix(in srgb, var(--primary-color) 8%, transparent);
+  font-size: 0.92rem;
+  line-height: 1;
+}
+
 .timeline-role-row {
   display: flex;
   align-items: baseline;
@@ -181,6 +211,10 @@
   .timeline-section-head {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .timeline-role-title-group {
+    width: 100%;
   }
 
   .experience-tags {
