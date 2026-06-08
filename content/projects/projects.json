@@ -13,7 +13,7 @@
         "title": "Modèle de site portfolio réutilisable",
         "description": "Création d'un template réutilisable sur la base de ce site pour permettre à quiconque de générer et héberger son propre site portfolio facilement, permettant de rapidement déployer puis personnaliser le site.",
         "shortDescription": "Création d'un template réutilisable sur la base de ce site pour permettre à quiconque de générer et héberger son propre site portfolio facilement, permettant de rapidement déployer puis personnaliser le site.",
-        "article": "Le projet part du besoin d'avoir un workflow du portfolio vers le CV simple à maintenir dans la durée.\nPlutôt que de garder des sources séparées, ce template centralise le profil, les expériences, les compétences et les projets dans des fichiers JSON éditables.\n\nLa structure est pensée pour une personnalisation rapide et un déploiement léger.\\n\\nLe template propose un support bilingue, des pages dédiées via le système de routage, et des capacités d'export afin que la mise à jour du portfolio mette aussi à jour le CV.\nIl est conçu pour rester accessible même sans modifications de code lourdes et pour une mise en ligne rapide via GitHub Pages."
+        "article": "Le projet part du besoin d'avoir un workflow du portfolio vers le CV simple à maintenir dans la durée.\nPlutôt que de garder des sources séparées, ce template centralise le profil, les expériences, les compétences et les projets dans des fichiers JSON éditables.\n\nLa structure est pensée pour une personnalisation et un déploiement rapides.\\n\\nLe template propose un support bilingue, des pages dédiées via le système de routage, et des capacités d'export afin que la mise à jour du portfolio permette aussi celle du CV.\nIl est conçu pour rester accessible même sans modifications de code lourdes et pour une mise en ligne rapide via GitHub Pages."
       }
     },
     "location": {
@@ -21,7 +21,7 @@
       "fr": "Remote, France"
     },
     "image": "images/business-portfolio-icon.avif",
-    "gallery": ["portfolio-template.png", "portfolio-template-2.png"],
+    "gallery": ["portfolio-template.png", "portfolio-template-2.png", "resume-template-export-view.png"],
     "technologies": [
       "Vue 3",
       "Vite",
@@ -71,7 +71,7 @@
     },
     "image": "images/wb2mx.avif",
     "gallery": [
-      "images/stm32u5",
+      "images/stm32u5.webp",
       "images/mc-workbench.webp",
       "images/developpement-flow-mcsdk.webp"
     ],
