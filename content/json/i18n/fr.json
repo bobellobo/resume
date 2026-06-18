@@ -15,7 +15,10 @@
   "projects": {
     "title": "Projets et réalisations",
     "imageUnavailable": "Aperçu du projet indisponible",
-    "swipeHint": "Glisser pour naviguer"
+    "swipeHint": "Glisser pour naviguer",
+    "expandProject": "Afficher les details du projet",
+    "collapseProject": "Masquer les details du projet",
+    "openExternalProject": "Ouvrir la page externe du projet"
   },
   "experience": {
     "title": "Expériences professionnelles",

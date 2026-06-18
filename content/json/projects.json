@@ -20,7 +20,8 @@
       "en": "Remote, France",
       "fr": "Remote, France"
     },
-    "image": "images/business-portfolio-icon.avif",
+    "icon": "images/icon-portfolio-template.svg",
+    "thumbnail": "images/business-portfolio-icon.avif",
     "gallery": [
       "portfolio-template.webp",
       "portfolio-template-2.webp",
@@ -75,7 +76,8 @@
       "en": "STMicroelectronics | Catania, Italy",
       "fr": "STMicroelectronics | Catania, Italie"
     },
-    "image": "images/wb2mx.avif",
+    "icon": "images/icon-wb2mx2.svg",
+    "thumbnail": "images/wb2mx.avif",
     "gallery": [
       "images/stm32u5.webp",
       "images/mc-workbench.webp",
@@ -126,7 +128,8 @@
       "en": "STMicroelectronics | Catania, Italy",
       "fr": "STMicroelectronics | Catania, Italie"
     },
-    "image": "images/estimate.webp",
+    "icon": "images/icon-estimate.svg",
+    "thumbnail": "images/estimate.webp",
     "gallery": [
       "estimate.webp",
       "estimate-behavior.webp"
@@ -177,7 +180,8 @@
       "en": "Sopra Steria/2MoRO | Mérignac, France",
       "fr": "Sopra Steria/2MoRO | Mérignac, France"
     },
-    "image": "aero.webp",
+    "icon": "images/icon-aerowebb.svg",
+    "thumbnail": "aero.webp",
     "gallery": [
       "aero.webp",
       "d-check.webp"
@@ -235,7 +239,8 @@
       "en": "Talence - Academic project",
       "fr": "Talence - Projet académique"
     },
-    "image": "images/cardapp.webp",
+    "icon": "images/icon-card-game.svg",
+    "thumbnail": "images/cardapp.webp",
     "gallery": [
       "images/cardapp.webp"
     ],
@@ -274,7 +279,8 @@
       "en": "University of Bordeaux, France",
       "fr": "Universite de Bordeaux, France"
     },
-    "image": "simu.webp",
+    "icon": "images/icon-autonomous-vehicles.svg",
+    "thumbnail": "simu.webp",
     "gallery": [
       "simu.webp",
       "vehicle-behavior-experiments.jpg"
@@ -323,7 +329,8 @@
       "en": "ENSC, France",
       "fr": "ENSC, France"
     },
-    "image": "emotiv-pro.jpg",
+    "icon": "images/icon-music-emotion.svg",
+    "thumbnail": "emotiv-pro.jpg",
     "gallery": [
       "emotiv-pro-2.webp"
     ],
@@ -361,7 +368,8 @@
       "en": "Remote, France",
       "fr": "Remote, France"
     },
-    "image": "images/homelab.jpg",
+    "icon": "images/icon-media-server.svg",
+    "thumbnail": "images/homelab.jpg",
     "gallery": [
       "images/homelab.jpg"
     ],

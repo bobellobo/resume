@@ -32,7 +32,7 @@
         <header class="project-header">
           <div class="project-hero-media">
             <img
-              :src="getProjectImageOrFallback(project.image, $t('projects.imageUnavailable'))"
+              :src="getProjectImageOrFallback(project.thumbnail, $t('projects.imageUnavailable'))"
               :alt="project.content[currentLocale].title"
               class="project-hero-image"
             />

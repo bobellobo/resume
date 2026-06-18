@@ -28,7 +28,8 @@ export interface Project {
     fr: ProjectContent
   }
   location: LocalizedText
-  image: string
+  icon: string
+  thumbnail: string
   gallery: string[]
   technologies: string[]
   keywords: string[]
@@ -46,7 +47,8 @@ export function useProjectsData() {
   const projectsData: Project[] = (rawProjects as Project[])
     .map((project) => ({
       ...project,
-      image: resolveImage(project.image),
+      icon: resolveImage(project.icon || ''),
+      thumbnail: resolveImage(project.thumbnail || (project as Project & { image?: string }).image || ''),
       gallery: project.gallery.map((galleryImage) => resolveImage(galleryImage))
     }))
 

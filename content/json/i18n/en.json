@@ -15,7 +15,10 @@
   "projects": {
     "title": "Projects & Achievements",
     "imageUnavailable": "Project preview unavailable",
-    "swipeHint": "Swipe to browse"
+    "swipeHint": "Swipe to browse",
+    "expandProject": "Expand project details",
+    "collapseProject": "Collapse project details",
+    "openExternalProject": "Open external project page"
   },
   "experience": {
     "title": "Professional Experience",
