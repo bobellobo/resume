@@ -1,18 +1,48 @@
 .container {
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--layout-padding-x-desktop);
 }
 
 .section-block {
-  padding: 6rem 20px;
-  scroll-margin-top: 2.5rem;
+  background-color: transparent;
+  padding: var(--section-padding-y-desktop) var(--layout-padding-x-desktop);
+  scroll-margin-top: var(--section-scroll-margin-default);
+}
+
+.skills .container,
+.experience .container {
+  width: 100%;
+  max-width: var(--content-width-compact);
+}
+
+.projects .container,
+.footer .container {
+  max-width: var(--content-width-wide);
+}
+
+.hero + .section-block,
+.section-block + .section-block,
+.section-block + .footer {
+  border-top: var(--section-separator);
+}
+
+.footer {
+  background-color: transparent;
+  color: var(--text-dark);
+  padding: var(--footer-padding-y-desktop) var(--layout-padding-x-desktop);
+  text-align: center;
+}
+
+.footer p {
+  color: var(--text-light);
+  margin-bottom: 0;
 }
 
 .section-title {
   color: var(--text-dark);
-  font-size: 2rem;
+  font-size: var(--section-title-size-desktop);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: var(--section-title-gap-desktop);
 }
 
 .surface-card {
@@ -23,11 +53,11 @@
 }
 
 .hover-lift {
-  transition: all 0.3s ease;
+  transition: all var(--motion-duration-slow) var(--motion-ease-standard);
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px);
+  transform: translateY(var(--motion-lift-lg));
   box-shadow: var(--shadow-lg);
 }
 
@@ -42,13 +72,13 @@
   border-radius: 0.5rem;
   cursor: pointer;
   min-height: 2.75rem;
-  transition: all 0.3s ease;
+  transition: all var(--motion-duration-slow) var(--motion-ease-standard);
   box-shadow: var(--shadow);
 }
 
 .cta-button:hover {
   background-color: var(--secondary-color);
-  transform: translateY(-2px);
+  transform: translateY(var(--motion-lift-sm));
   box-shadow: var(--shadow-lg);
 }
 
@@ -63,12 +93,12 @@
   border-radius: 0.5rem;
   cursor: pointer;
   min-height: 2.75rem;
-  transition: all 0.3s ease;
+  transition: all var(--motion-duration-slow) var(--motion-ease-standard);
 }
 
 .btn-secondary:hover {
   background-color: var(--border-color);
-  transform: translateY(-2px);
+  transform: translateY(var(--motion-lift-sm));
 }
 
 :where(a, button, [role='button'], input, textarea, select):focus-visible {
@@ -84,47 +114,63 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 16px;
+    padding: 0 var(--layout-padding-x-tablet);
   }
 
   .section-block {
-    padding: 4rem 16px;
-    scroll-margin-top: 8rem;
+    padding: var(--section-padding-y-tablet) var(--layout-padding-x-tablet);
+    scroll-margin-top: var(--section-scroll-margin-tablet);
   }
 
   .section-title {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: var(--section-title-size-tablet);
+    margin-bottom: var(--section-title-gap-tablet);
   }
 }
 
 @media (max-width: 640px) {
   .container {
-    padding: 0 14px;
+    padding: 0 var(--layout-padding-x-mobile);
   }
 
   .section-block {
-    padding: 3.25rem 14px;
+    padding: var(--section-padding-y-mobile) var(--layout-padding-x-mobile);
   }
 
   .section-title {
-    font-size: 1.35rem;
-    margin-bottom: 1.5rem;
+    font-size: var(--section-title-size-mobile);
+    margin-bottom: var(--section-title-gap-mobile);
+  }
+
+  .footer {
+    padding: var(--footer-padding-y-mobile) var(--layout-padding-x-mobile);
+  }
+
+  .footer p {
+    font-size: var(--footer-text-size-mobile);
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 12px;
+    padding: 0 var(--layout-padding-x-small);
   }
 
   .section-block {
-    padding: 2.75rem 12px;
-    scroll-margin-top: 9.5rem;
+    padding: var(--section-padding-y-small) var(--layout-padding-x-small);
+    scroll-margin-top: var(--section-scroll-margin-small);
   }
 
   .section-title {
-    font-size: 1.2rem;
-    margin-bottom: 1.25rem;
+    font-size: var(--section-title-size-small);
+    margin-bottom: var(--section-title-gap-small);
+  }
+
+  .footer {
+    padding: var(--footer-padding-y-small) var(--layout-padding-x-small);
+  }
+
+  .footer p {
+    font-size: var(--footer-text-size-small);
   }
 }

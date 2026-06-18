@@ -1,5 +1,5 @@
 <template>
-  <main :class="['resume-page', { 'print-preview': isPrintPreview }]">
+  <main class="resume-page print-preview">
     <div class="resume-toolbar" role="toolbar" :aria-label="$t('exportView.actionsLabel')">
       <a class="toolbar-link" href="/resume/">{{ $t('exportView.backToPortfolio') }}</a>
       <button
@@ -11,19 +11,72 @@
       >
         {{ languageSwitchLabel }}
       </button>
-      <button
-        type="button"
-        :class="['toolbar-button', { 'toolbar-button-active': isPrintPreview }]"
-        :title="printPreviewTitle"
-        :aria-label="printPreviewTitle"
-        @click="togglePrintPreview"
-      >
-        {{ printPreviewLabel }}
-      </button>
+      <div class="toolbar-scale-shell">
+      <div class="toolbar-scale" role="group" aria-label="Scale controls">
+        <button
+          type="button"
+          class="toolbar-button toolbar-button-compact"
+          title="Decrease scale"
+          aria-label="Decrease scale"
+          @click="decreaseScale"
+        >
+          -
+        </button>
+        <span class="toolbar-scale-value" aria-live="polite">{{ scalePercent }}%</span>
+        <button
+          type="button"
+          class="toolbar-button toolbar-button-compact"
+          title="Increase scale"
+          aria-label="Increase scale"
+          @click="increaseScale"
+        >
+          +
+        </button>
+        <button
+          type="button"
+          class="toolbar-button"
+          title="Reset scale"
+          aria-label="Reset scale"
+          @click="resetScale"
+        >
+          Reset
+        </button>
+        <span
+          :class="['toolbar-scale-indicator', { 'is-overflowing': isOverflowing }]"
+          role="img"
+          :aria-label="isOverflowing ? 'Content exceeds one page' : 'Content fits one page'"
+          :title="isOverflowing ? 'Content exceeds one page' : 'Content fits one page'"
+        ></span>
+        <button
+          type="button"
+          :class="[
+            'toolbar-button',
+            'toolbar-button-fit',
+            {
+              'toolbar-button-fit-pulse': isFitFeedbackActive,
+              'toolbar-button-fit-pulse-success': isFitFeedbackActive && !isOverflowing,
+              'toolbar-button-fit-pulse-overflow': isFitFeedbackActive && isOverflowing,
+            },
+          ]"
+          title="Fit to one page"
+          aria-label="Fit to one page"
+          @click="fitToSinglePage"
+        >
+          <span>Fit page</span>
+          <span
+            :class="['toolbar-fit-indicator', { 'is-overflowing': isOverflowing }]"
+            role="img"
+            :aria-label="isOverflowing ? 'Content exceeds one page' : 'Content fits one page'"
+            :title="isOverflowing ? 'Content exceeds one page' : 'Content fits one page'"
+          ></span>
+        </button>
+      </div>
+      </div>
       <button type="button" class="toolbar-button" @click="printExport">{{ $t('exportView.exportPdfJpeg') }}</button>
     </div>
 
-    <article class="resume-sheet" :aria-label="profileContent.exportDocumentLabel">
+    <article ref="resumeSheetRef" class="resume-sheet" :aria-label="profileContent.exportDocumentLabel">
+      <div ref="resumeSheetContentRef" class="resume-sheet-content" :style="resumeSheetStyle">
       <header class="resume-header">
         <div class="resume-identity">
           <img
@@ -160,12 +213,13 @@
           </template>
         </i18n-t>
       </p>
+      </div>
     </article>
   </main>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useExperiencesData, toFlagCode, getFlagSvgByCode } from '../../content/data/experiences'
 import { useSkillsData } from '../../content/data/skills'
@@ -174,12 +228,20 @@ import { getSupportedLocale } from '../../content/locale'
 import profilePhoto from '@content/images/bibi.jpeg'
 
 const LANGUAGE_STORAGE_KEY = 'language'
+const SCALE_STEP = 2
+const MIN_SCALE_PERCENT = 60
+const MAX_SCALE_PERCENT = 125
 
 const { locale, t } = useI18n()
-const isPrintPreview = ref(false)
 const { experiences } = useExperiencesData()
 const { skills } = useSkillsData()
 const contact = getContactInfo()
+const scalePercent = ref(100)
+const isOverflowing = ref(false)
+const isFitFeedbackActive = ref(false)
+const resumeSheetRef = ref<HTMLElement | null>(null)
+const resumeSheetContentRef = ref<HTMLElement | null>(null)
+let fitFeedbackTimer: number | null = null
 
 const currentLocale = computed(() => getSupportedLocale(locale.value))
 const exportSkills = computed(() => (
@@ -209,12 +271,9 @@ const languageSwitchLabel = computed(() => (locale.value === 'fr' ? 'EN' : 'FR')
 const languageSwitchTitle = computed(() => (
   locale.value === 'fr' ? t('exportView.switchToEnglish') : t('exportView.switchToFrench')
 ))
-const printPreviewLabel = computed(() => (
-  isPrintPreview.value ? t('exportView.previewOff') : t('exportView.previewOn')
-))
-const printPreviewTitle = computed(() => (
-  isPrintPreview.value ? t('exportView.previewOffHint') : t('exportView.previewOnHint')
-))
+const resumeSheetStyle = computed(() => ({
+  '--export-scale': String(scalePercent.value / 100),
+}))
 
 const getLanguageFlags = (languages?: string[]) => (
   (languages ?? [])
@@ -230,13 +289,124 @@ const toggleLanguage = () => {
   localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage)
 }
 
-const togglePrintPreview = () => {
-  isPrintPreview.value = !isPrintPreview.value
+const clampScale = (value: number) => Math.min(MAX_SCALE_PERCENT, Math.max(MIN_SCALE_PERCENT, value))
+
+const setScale = (value: number) => {
+  scalePercent.value = clampScale(value)
+}
+
+const isContentOverflowing = () => {
+  const sheet = resumeSheetRef.value
+  const content = resumeSheetContentRef.value
+
+  if (!sheet || !content) {
+    return false
+  }
+
+  const sheetStyles = window.getComputedStyle(sheet)
+  const paddingTop = Number.parseFloat(sheetStyles.paddingTop) || 0
+  const paddingBottom = Number.parseFloat(sheetStyles.paddingBottom) || 0
+  const availableHeight = sheet.clientHeight - paddingTop - paddingBottom
+  const currentScale = scalePercent.value / 100
+  const renderedHeight = content.scrollHeight * currentScale
+
+  return renderedHeight > availableHeight + 0.5
+}
+
+const updateOverflowState = async () => {
+  await nextTick()
+  isOverflowing.value = isContentOverflowing()
+}
+
+const increaseScale = () => {
+  setScale(scalePercent.value + SCALE_STEP)
+}
+
+const decreaseScale = () => {
+  setScale(scalePercent.value - SCALE_STEP)
+}
+
+const resetScale = () => {
+  setScale(100)
+}
+
+const triggerFitFeedback = () => {
+  isFitFeedbackActive.value = false
+
+  requestAnimationFrame(() => {
+    isFitFeedbackActive.value = true
+  })
+
+  if (fitFeedbackTimer !== null) {
+    window.clearTimeout(fitFeedbackTimer)
+  }
+
+  fitFeedbackTimer = window.setTimeout(() => {
+    isFitFeedbackActive.value = false
+    fitFeedbackTimer = null
+  }, 520)
+}
+
+const fitToSinglePage = async () => {
+  // Find the largest scale that still fits the A4 frame.
+  const initialScale = scalePercent.value
+  let candidate = MAX_SCALE_PERCENT
+  let guard = 0
+
+  setScale(candidate)
+
+  while (guard < 120) {
+    await nextTick()
+
+    if (!isContentOverflowing()) {
+      break
+    }
+
+    if (candidate <= MIN_SCALE_PERCENT) {
+      setScale(MIN_SCALE_PERCENT)
+      break
+    }
+
+    candidate -= 1
+    setScale(candidate)
+    guard += 1
+  }
+
+  await updateOverflowState()
+
+  if (scalePercent.value !== initialScale) {
+    triggerFitFeedback()
+  }
 }
 
 const printExport = () => {
   window.print()
 }
+
+const handleWindowResize = () => {
+  void fitToSinglePage()
+}
+
+watch(currentLocale, async () => {
+  await fitToSinglePage()
+})
+
+watch(scalePercent, () => {
+  void updateOverflowState()
+})
+
+onMounted(async () => {
+  window.addEventListener('resize', handleWindowResize)
+  await fitToSinglePage()
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleWindowResize)
+
+  if (fitFeedbackTimer !== null) {
+    window.clearTimeout(fitFeedbackTimer)
+  }
+})
 </script>
 
 <style scoped src="./Export.css"></style>

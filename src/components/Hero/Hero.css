@@ -1,9 +1,8 @@
 .hero {
-  background-color: var(--surface-section);
+  background-color: transparent;
   color: var(--text-dark);
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: 2rem 20px;
+  min-height: clamp(32rem, 84svh, 50rem);
+  padding: 1.5rem 20px 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,6 +28,13 @@
   max-width: 700px;
 }
 
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
 .hero-photo {
   width: 220px;
   height: 220px;
@@ -37,6 +43,54 @@
   margin: 0;
   border: 4px solid var(--border-color);
   box-shadow: var(--shadow-lg);
+}
+
+.hero-contact-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.hero-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  min-height: 2rem;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background-color: color-mix(in srgb, var(--bg-white) 88%, transparent);
+  color: var(--text-dark);
+  text-decoration: none;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: border-color var(--motion-duration-base) var(--motion-ease-standard), color var(--motion-duration-base) var(--motion-ease-standard), transform var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.hero-contact-link span {
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-contact-link svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+}
+
+.hero-contact-link:hover,
+.hero-contact-link:focus-visible {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(var(--motion-lift-xs));
 }
 
 .hero-content p {
@@ -87,7 +141,7 @@
   justify-content: center;
   cursor: pointer;
   animation: arrow-bounce 2s ease-in-out infinite;
-  transition: transform 0.25s ease, background-color 0.25s ease;
+  transition: transform var(--motion-duration-base) var(--motion-ease-standard), background-color var(--motion-duration-base) var(--motion-ease-standard);
   align-self: center;
 }
 
@@ -133,6 +187,9 @@
     width: 150px;
     height: 150px;
     margin: 0 auto;
+  }
+
+  .hero-side {
     order: -1;
   }
 
@@ -152,6 +209,12 @@
     height: 130px;
   }
 
+  .hero-contact-link {
+    font-size: 0.68rem;
+    padding: 0.26rem 0.55rem;
+    min-height: 1.9rem;
+  }
+
   .hero-content p {
     font-size: 1rem;
     margin-bottom: 1.25rem;
@@ -163,7 +226,7 @@
   }
 
   .hero {
-    padding: 1.5rem 20px;
+    padding: 1.25rem 20px 1.1rem;
   }
 
   .scroll-next-btn {
@@ -175,7 +238,7 @@
 @media (max-width: 480px) {
   .hero {
     min-height: auto;
-    padding: 1rem 12px 1.25rem;
+    padding: 0.9rem 12px 1.1rem;
   }
 
   .hero-content {
@@ -190,6 +253,29 @@
     width: 106px;
     height: 106px;
     border-width: 3px;
+  }
+
+  .hero-contact-links {
+    gap: 0.45rem;
+  }
+
+  .hero-contact-link {
+    min-height: 1.78rem;
+    padding: 0.24rem 0.48rem;
+    font-size: 0.64rem;
+  }
+
+  .hero-contact-link-social span {
+    display: none;
+  }
+
+  .hero-contact-link:not(.hero-contact-link-social) {
+    max-width: 86vw;
+  }
+
+  .hero-contact-link svg {
+    width: 0.82rem;
+    height: 0.82rem;
   }
 
   .hero-content p {
@@ -215,12 +301,17 @@
 
 @media (max-width: 360px) {
   .hero {
-    padding: 0.85rem 10px 1.1rem;
+    padding: 0.75rem 10px 1rem;
   }
 
   .hero-photo {
     width: 94px;
     height: 94px;
+  }
+
+  .hero-contact-link {
+    min-height: 1.65rem;
+    padding: 0.2rem 0.42rem;
   }
 
   .hero-content p,
@@ -238,6 +329,12 @@
   .hero-photo {
     width: 110px;
     height: 110px;
+  }
+
+  .hero-contact-link {
+    min-height: 1.82rem;
+    padding: 0.24rem 0.5rem;
+    font-size: 0.66rem;
   }
 
   .hero-content p {

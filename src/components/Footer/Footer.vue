@@ -16,5 +16,3 @@ const { locale } = useI18n()
 const currentLocale = computed(() => getSupportedLocale(locale.value))
 const profileContent = computed(() => getProfileContent(currentLocale.value))
 </script>
-
-<style scoped src="./Footer.css"></style>

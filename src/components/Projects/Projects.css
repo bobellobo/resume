@@ -1,11 +1,3 @@
-.projects {
-  background-color: var(--surface-section-muted);
-}
-
-.container {
-  max-width: 1200px;
-}
-
 .projects-carousel {
   position: relative;
   width: 100%;
@@ -21,7 +13,7 @@
   letter-spacing: 0.02em;
   font-family: 'Geist Mono', monospace;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--motion-duration-slow) var(--motion-ease-standard);
 }
 
 .swipe-hint.is-fading {
@@ -109,7 +101,7 @@
   cursor: pointer;
   box-shadow: var(--shadow);
   backdrop-filter: blur(8px);
-  transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  transition: color var(--motion-duration-base) var(--motion-ease-standard), border-color var(--motion-duration-base) var(--motion-ease-standard), transform var(--motion-duration-base) var(--motion-ease-standard);
   z-index: 2;
 }
 
@@ -119,7 +111,7 @@
 }
 
 .carousel-arrow:active {
-  transform: translateY(-50%) scale(0.98);
+  transform: translateY(-50%) scale(var(--motion-press-scale));
 }
 
 .carousel-arrow:disabled {
@@ -201,7 +193,7 @@
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  transition: color 0.3s ease;
+  transition: color var(--motion-duration-slow) var(--motion-ease-standard);
 }
 
 .card-link:hover {

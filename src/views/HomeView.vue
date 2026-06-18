@@ -6,7 +6,6 @@
     <Skills />
     <Experience />
     <Projects />
-    <Contact />
     <Footer />
   </div>
 </template>
@@ -17,7 +16,6 @@ import Hero from '../components/Hero/Hero.vue'
 import Skills from '../components/Skills/Skills.vue'
 import Experience from '../components/Experience/Experience.vue'
 import Projects from '../components/Projects/Projects.vue'
-import Contact from '../components/Contact/Contact.vue'
 import Footer from '../components/Footer/Footer.vue'
 </script>
 

@@ -25,6 +25,42 @@
     --project-placeholder-end: #d1d5db;
     --overlay-color: rgba(0, 0, 0, 0.5);
     --focus-ring: rgba(194, 65, 12, 0.32);
+    --layout-padding-x-desktop: 20px;
+    --layout-padding-x-tablet: 16px;
+    --layout-padding-x-mobile: 14px;
+    --layout-padding-x-small: 12px;
+    --section-padding-y-desktop: 3.25rem;
+    --section-padding-y-tablet: 2.75rem;
+    --section-padding-y-mobile: 2.3rem;
+    --section-padding-y-small: 2rem;
+    --section-scroll-margin-default: 2.5rem;
+    --section-scroll-margin-tablet: 8rem;
+    --section-scroll-margin-small: 9.5rem;
+    --section-title-size-desktop: 2rem;
+    --section-title-size-tablet: 1.5rem;
+    --section-title-size-mobile: 1.35rem;
+    --section-title-size-small: 1.2rem;
+    --section-title-gap-desktop: 1.75rem;
+    --section-title-gap-tablet: 1.4rem;
+    --section-title-gap-mobile: 1.15rem;
+    --section-title-gap-small: 1rem;
+    --section-separator: 1px solid color-mix(in srgb, var(--border-color) 68%, transparent);
+    --content-width-compact: 980px;
+    --content-width-wide: 1200px;
+    --footer-padding-y-desktop: 1.6rem;
+    --footer-padding-y-mobile: 1.35rem;
+    --footer-padding-y-small: 1.15rem;
+    --footer-text-size-mobile: 0.92rem;
+    --footer-text-size-small: 0.86rem;
+    --motion-ease-standard: ease;
+    --motion-duration-fast: 0.2s;
+    --motion-duration-base: 0.25s;
+    --motion-duration-slow: 0.3s;
+    --motion-duration-dialog: 0.22s;
+    --motion-lift-xs: -1px;
+    --motion-lift-sm: -2px;
+    --motion-lift-lg: -8px;
+    --motion-press-scale: 0.98;
 }
 
 [data-theme='dark'] {
@@ -68,7 +104,7 @@ body {
     color: var(--text-dark);
     background-color: var(--surface-page);
     line-height: 1.6;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color var(--motion-duration-base) var(--motion-ease-standard), color var(--motion-duration-base) var(--motion-ease-standard);
 }
 
 /* ========== Typography ========== */

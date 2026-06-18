@@ -10,13 +10,13 @@
   background: var(--bg-white);
   color: var(--text-dark);
   cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: transform var(--motion-duration-fast) var(--motion-ease-standard), border-color var(--motion-duration-fast) var(--motion-ease-standard), color var(--motion-duration-fast) var(--motion-ease-standard);
 }
 
 .template-notice-icon:hover {
   border-color: var(--primary-color);
   color: var(--primary-color);
-  transform: translateY(-1px);
+  transform: translateY(var(--motion-lift-xs));
 }
 
 .template-notice-bell {
@@ -122,7 +122,7 @@
 
 .template-dialog-pop-enter-active,
 .template-dialog-pop-leave-active {
-  transition: opacity 0.2s ease;
+  transition: opacity var(--motion-duration-fast) var(--motion-ease-standard);
 }
 
 .template-dialog-pop-enter-from,
@@ -132,7 +132,7 @@
 
 .template-dialog-pop-enter-active .template-dialog-overlay,
 .template-dialog-pop-leave-active .template-dialog-overlay {
-  transition: opacity 0.2s ease;
+  transition: opacity var(--motion-duration-fast) var(--motion-ease-standard);
 }
 
 .template-dialog-pop-enter-from .template-dialog-overlay,
@@ -142,7 +142,7 @@
 
 .template-dialog-pop-enter-active .template-dialog-content,
 .template-dialog-pop-leave-active .template-dialog-content {
-  transition: transform 0.22s ease, opacity 0.22s ease;
+  transition: transform var(--motion-duration-dialog) var(--motion-ease-standard), opacity var(--motion-duration-dialog) var(--motion-ease-standard);
 }
 
 .template-dialog-pop-enter-from .template-dialog-content,
