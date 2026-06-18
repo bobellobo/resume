@@ -21,7 +21,11 @@
       "fr": "Remote, France"
     },
     "image": "images/business-portfolio-icon.avif",
-    "gallery": ["portfolio-template.png", "portfolio-template-2.png", "resume-template-export-view.png"],
+    "gallery": [
+      "portfolio-template.webp",
+      "portfolio-template-2.webp",
+      "resume-template-export-view.webp"
+    ],
     "technologies": [
       "Vue 3",
       "Vite",
@@ -29,7 +33,9 @@
       "i18n"
     ],
     "keywords": [
-      "GitHub Pages", "Custom Tooling", "Resume Export"
+      "GitHub Pages",
+      "Custom Tooling",
+      "Resume Export"
     ],
     "links": [
       {
@@ -38,7 +44,7 @@
           "fr": "Dépôt GitHub du template"
         },
         "url": "https://github.com/bobellobo/resume-template-bootstrap"
-      }, 
+      },
       {
         "label": {
           "en": "Live demo",
@@ -120,10 +126,10 @@
       "en": "STMicroelectronics | Catania, Italy",
       "fr": "STMicroelectronics | Catania, Italie"
     },
-    "image": "images/estimate.png",
+    "image": "images/estimate.webp",
     "gallery": [
-      "estimate.png",
-      "estimate-behavior.png"
+      "estimate.webp",
+      "estimate-behavior.webp"
     ],
     "technologies": [
       "Angular",
@@ -229,9 +235,9 @@
       "en": "Talence - Academic project",
       "fr": "Talence - Projet académique"
     },
-    "image": "images/cardapp.png",
+    "image": "images/cardapp.webp",
     "gallery": [
-      "images/cardapp.png"
+      "images/cardapp.webp"
     ],
     "technologies": [
       "React Native",
@@ -268,9 +274,9 @@
       "en": "University of Bordeaux, France",
       "fr": "Universite de Bordeaux, France"
     },
-    "image": "simu.png",
+    "image": "simu.webp",
     "gallery": [
-      "simu.png",
+      "simu.webp",
       "vehicle-behavior-experiments.jpg"
     ],
     "technologies": [
@@ -318,7 +324,9 @@
       "fr": "ENSC, France"
     },
     "image": "emotiv-pro.jpg",
-    "gallery": ["emotiv-pro-2.webp"],
+    "gallery": [
+      "emotiv-pro-2.webp"
+    ],
     "technologies": [
       "Node-Red",
       "ECG brainwave analysis",
