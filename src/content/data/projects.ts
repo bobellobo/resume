@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import rawProjects from '@content/projects/projects.json'
+import rawProjects from '@content/json/projects.json'
 import { makeImageMap, createFallbackProjectImage } from '../../components/Projects/utils/loadImages'
 import { resolveProjectImage } from '../../components/Projects/utils/utils'
 

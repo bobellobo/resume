@@ -1,7 +1,15 @@
-import rawProfile from '@content/profile/profile.json'
+import rawProfile from '@content/json/profile.json'
 import type { SupportedLocale } from '../locale'
+import type { Experience } from './experiences'
+import type { SkillCategory } from './skills'
 
 export interface ProfileTextContent {
+  universityLabel: string
+  skillsTitle: string
+  exportRole: string
+  exportDocumentLabel: string
+  photoAlt: string
+  footerCopyright: string
   description: string
   exportDescription: string
 }
@@ -25,6 +33,8 @@ interface ProfileData {
     en: ProfileTextContent
     fr: ProfileTextContent
   }
+  experiences: Experience[]
+  skills: SkillCategory[]
 }
 
 const UNIVERSITY_TOKEN = '{university}'
@@ -40,6 +50,10 @@ export const getTemplateInfo = (): TemplateInfo => ({
   showNotice: profileData.template?.showNotice ?? false,
   repoUrl: profileData.template?.repoUrl ?? ''
 })
+
+export const getExperiences = (): Experience[] => profileData.experiences
+
+export const getSkills = (): SkillCategory[] => profileData.skills
 
 export const splitUniversityPlaceholder = (text: string) => {
   const tokenIndex = text.indexOf(UNIVERSITY_TOKEN)

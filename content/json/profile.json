@@ -1,0 +1,416 @@
+{
+  "contact": {
+    "email": "titouanguedon@proton.me",
+    "phone": "+33633351465",
+    "linkedin": "https://www.linkedin.com/in/titouan-guedon-150438198/",
+    "github": "https://github.com/bobellobo"
+  },
+  "template": {
+    "showNotice": true,
+    "repoUrl": "https://github.com/bobellobo/resume-template-bootstrap"
+  },
+  "content": {
+    "en": {
+      "universityLabel": "Ecole Nationale Supérieure de Cognitique",
+      "skillsTitle": "Skills Overview",
+      "exportRole": "Full-stack Engineer - Cognitive Science Engineer",
+      "exportDocumentLabel": "Titouan Guedon export view",
+      "photoAlt": "Portrait of Titouan Guedon",
+      "footerCopyright": "© 2026 Titouan Guedon. All rights reserved.",
+      "description": "Hi there! \nI'm Titouan, a dedicated fullstack developer with 4 years of experience, trained at {university}. \nThanks to this background, I have a very all-around skill set and am able to tackle both technical and functional aspects of interface and system design. \n\nIn my past experiences in France or abroad, I gained a lot of technical expertise with various tools and methodologies. I'm able to take technical subjects in hand and quickly gain skill to focus on the core of the design, with no compromise on technical quality and clean code. \n\nEven today I continue to learn and stay up to date on the latest technologies and development practices to always provide quality solutions. You can check out my projects and experience below, and feel free to reach out to me for any collaboration",
+      "exportDescription": "Full-stack developer with more than 4 years of experience, trained at {university}. Thanks to this background, I have a very all-around skill set and am able to tackle both technical and functional aspects of interface and system design. In previous roles in France or abroad, I developed expertise across modern tools and methodologies, with a strong focus on clean code, performance, and maintainable solutions."
+    },
+    "fr": {
+      "universityLabel": "Ecole Nationale Supérieure de Cognitique",
+      "skillsTitle": "Aperçu des compétences",
+      "exportRole": "Développeur Full-stack - Ingénieur cogniticien",
+      "exportDocumentLabel": "Vue d'export de Titouan Guedon",
+      "photoAlt": "Portrait de Titouan Guedon",
+      "footerCopyright": "© 2026 Titouan Guedon. Tous droits réservés.",
+      "description": "Salut! \nJe suis Titouan, un développeur fullstack avec plus de 4 ans d'expérience, formé à l'{university}. De par ma formation, j'ai un profil très polyvalent entre les aspects techniques et fonctionnel de la conception d'interface et de systèmes. \n\nDans mes expériences passées en France ou à l'étranger, j'ai acquis une solide expertise technique avec divers outils et méthodologies. \nJe suis capable de prendre en main des sujets techniques et de monter rapidement en compétence pour me concentrer sur le cœur de la conception, sans compromis sur la qualité technique et la propreté du code. \n\nEncore aujourd'hui je continue à apprendre et à me tenir à jour sur les dernières technologies et pratiques de développement pour toujours fournir des solutions de qualité. Vous pouvez consulter mes projets et expériences ci-dessous, et n'hésitez pas à me contacter pour toute collaboration.",
+      "exportDescription": "Développeur full-stack avec plus de 4 ans d'expérience, formé à l'{university}. De par ma formation, j'ai un profil très polyvalent entre les aspects techniques et fonctionnels de la conception d'interfaces et de systèmes en tout genre. Dans mes expériences précédentes en France ou à l'étranger j'ai développé une expertise solide sur des outils et méthodologies modernes, avec une grande attention portée à la qualité du code, la performance et la maintenabilité."
+    }
+  },
+  "experiences": [
+    {
+      "id": 1,
+      "content": {
+        "en": {
+          "period": "Jan 2024 — Jan 2026",
+          "role": "Full-stack Engineer",
+          "languages": [
+            "IT",
+            "GB",
+            "FR"
+          ],
+          "company": "STMicroelectronics - System Research & Application",
+          "location": "Catania, Italy",
+          "sections": [
+            {
+              "title": "Integration Architect - Lead Developer",
+              "description": "Engineered a platform-agnostic API middleware featuring a flexible, engine-interchangeable templating system. This solution abstracted underlying software complexities, allowing electronic engineers and experts to seamlessly define and orchestrate firmware component behaviors across different software environments. This work led to a patent filing request for the developed solution.",
+              "technologies": [
+                "Node.js",
+                "Effect-TS",
+                "SDK STM32",
+                "TypeScript"
+              ]
+            },
+            {
+              "title": "Fullstack development",
+              "description": "Design and delivery of end-to-end web applications, from requirement definition to deployment, with a strong focus on clean interfaces and performance. Strong emphasis on functional programming paradigms and development best practices.",
+              "technologies": [
+                "Vue.js",
+                "TypeScript",
+                "Functional Programming",
+                "CI/CD"
+              ]
+            }
+          ]
+        },
+        "fr": {
+          "period": "Janvier 2024 — Janvier 2026",
+          "role": "Développeur Fullstack",
+          "languages": [
+            "IT",
+            "GB",
+            "FR"
+          ],
+          "company": "STMicroelectronics - System Research & Application",
+          "location": "Catane, Italie",
+          "sections": [
+            {
+              "title": "Integration Architect - Lead Developer",
+              "description": "Développement d'un middleware API agnostique basé sur un système de templates multi-moteurs. Cette solution a permis d'abstraire la complexité technique, offrant aux experts métiers la capacité de définir et d'orchestrer nativement le comportement des composants firmwares à travers les différents logiciels. Ces travaux ont débouché à une demande de dépôt de brevet pour l'architecture de la solution développée.",
+              "technologies": [
+                "Node.js",
+                "Effect-TS",
+                "SDK STM32",
+                "TypeScript"
+              ]
+            },
+            {
+              "title": "Développement Fullstack",
+              "description": "Conception et livraison d'applications web de bout en bout, de la définition du besoin jusqu'au déploiement, avec une grande attention portée à la propreté des interfaces et la performance. Fort accent sur les paradigmes de programmation fonctionnelle et les bonnes pratiques de développement.",
+              "technologies": [
+                "Angular",
+                "React",
+                "Docker",
+                "D3.js",
+                "AWS",
+                "fp-ts"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "content": {
+        "en": {
+          "period": "Sept 2022 —  Aug 2023",
+          "role": "Fullstack Engineer",
+          "languages": [
+            "FR",
+            "GB"
+          ],
+          "company": "Sopra Steria - Aeroline",
+          "location": "Bordeaux, France",
+          "description": "Development tasks in a challenging and large, international context. Part of a team of 3 developers and one product owner. Agile environment with a lot of ownership and responsibilities given to the developers.",
+          "technologies": [
+            "Angular",
+            "Java",
+            "Spring",
+            "Agile Scrum"
+          ]
+        },
+        "fr": {
+          "period": "Septembre 2022 — Août 2023",
+          "role": "Développeur Fullstack",
+          "languages": [
+            "FR",
+            "GB"
+          ],
+          "company": "Sopra Steria - Aeroline",
+          "location": "Bordeaux, France",
+          "description": "Tâches de développement dans un projet d'envergure du secteur de l'aéronautique en contexte agile. Dans la continuité du travail déjà fourni avec toujours un ownership important et des responsabilités accrues.",
+          "technologies": [
+            "Angular",
+            "Java",
+            "Spring",
+            "Agile Scrum"
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "content": {
+        "en": {
+          "period": "May 2022 - Aug 2022",
+          "role": "Fullstack Developer Intern",
+          "languages": [
+            "FR",
+            "GB"
+          ],
+          "company": "Sopra Steria - Aeroline",
+          "location": "Bordeaux, France",
+          "description": "Took part in development tasks as a member of a team of 4, contributing to a project for a major actor in the aeronautical industry. Developed a new module for the core application from start to finish, including design, development, testing, deployment and delivery. Gained experience in working in a large codebase and following best practices for maintainable code.",
+          "technologies": [
+            "Angular",
+            "Java",
+            "SQL",
+            "JUnit",
+            "RxJS"
+          ]
+        },
+        "fr": {
+          "period": "Mai 2022 - Août 2022",
+          "role": "Stagiaire Développeur Fullstack",
+          "languages": [
+            "FR",
+            "GB"
+          ],
+          "company": "Sopra Steria - Aeroline",
+          "location": "Bordeaux, France",
+          "description": "Développement fullstack en tant que membre d'une équipe de 4 personnes, contribuant à un projet pour un acteur majeur de l'industrie aéronautique. Développement de A à Z d'un nouveau module pour l'application, de la conception au déploiement jusqu'à la livraison. Codebase très large, respect des bonnes pratiques et revues de code.",
+          "technologies": [
+            "Angular",
+            "Java",
+            "SQL",
+            "JUnit",
+            "RxJS"
+          ]
+        }
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "development",
+      "content": {
+        "en": {
+          "title": "Fullstack development",
+          "items": [
+            {
+              "text": "TypeScript and modern frameworks (Angular, React, Vue, Next.js)"
+            },
+            {
+              "text": "API design and integration (Node.js, NestJS) / REST APIs"
+            },
+            {
+              "text": "Functional  and asynchronous programming (fp-ts, Effect-TS, RxJS)"
+            },
+            {
+              "text": "Clean architecture and maintainable code"
+            },
+            {
+              "text": "Personal projects with Java, C#, Python, Docker"
+            },
+            {
+              "text": "Mobile development for real time applications (React Native)"
+            }
+          ]
+        },
+        "fr": {
+          "title": "Développement fullstack",
+          "items": [
+            {
+              "text": "TypeScript et frameworks modernes (Angular, React, Vue, Next.js)"
+            },
+            {
+              "text": "Conception et intégration d'API (Node.js, NestJS) / REST APIs"
+            },
+            {
+              "text": "Programmation fonctionnelle et asynchrone (fp-ts, Effect-TS, RxJS)"
+            },
+            {
+              "text": "Architecture propre et code maintenable"
+            },
+            {
+              "text": "Projets personnels avec Java, C#, Python, Docker"
+            },
+            {
+              "text": "Développement mobile pour des applications en temps réel (React Native)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "softSkills",
+      "content": {
+        "en": {
+          "title": "Soft skills",
+          "items": [
+            {
+              "text": "Adaptability and continuous learning"
+            },
+            {
+              "text": "Versatility between technical and functional aspects"
+            },
+            {
+              "text": "Clear communication"
+            },
+            {
+              "text": "Collaborative teamwork"
+            },
+            {
+              "text": "Problem solving"
+            },
+            {
+              "text": "Strong ability to work autonomously"
+            }
+          ]
+        },
+        "fr": {
+          "title": "Soft skills",
+          "items": [
+            {
+              "text": "Adaptabilité et apprentissage continu"
+            },
+            {
+              "text": "Polyvalence entre les aspects techniques et fonctionnels"
+            },
+            {
+              "text": "Communication claire"
+            },
+            {
+              "text": "Esprit d'équipe et collaboration"
+            },
+            {
+              "text": "Résolution de problèmes"
+            },
+            {
+              "text": "Forte capacité de travail en autonomie"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cognitiveScience",
+      "content": {
+        "en": {
+          "title": "Cognitive science and human factor",
+          "items": [
+            {
+              "text": "User behavior analysis"
+            },
+            {
+              "text": "Human-computer interaction principles"
+            },
+            {
+              "text": "Experimental design and interpretation"
+            },
+            {
+              "text": "User-centered design"
+            },
+            {
+              "text": "Proficiency with UX/UI design tools"
+            }
+          ]
+        },
+        "fr": {
+          "title": "Sciences cognitives et facteur humain",
+          "items": [
+            {
+              "text": "Analyse des comportements utilisateurs"
+            },
+            {
+              "text": "Principes d'interaction humain-machine"
+            },
+            {
+              "text": "Conception centrée utilisateur"
+            },
+            {
+              "text": "Conception et interprétation d'expériences"
+            },
+            {
+              "text": "Maîtrise des outils de design UX/UI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "languages",
+      "content": {
+        "en": {
+          "title": "Languages spoken",
+          "items": [
+            {
+              "text": "French (native)"
+            },
+            {
+              "text": "English (fluent)"
+            },
+            {
+              "text": "Italian (fluent)"
+            },
+            {
+              "text": "Spanish (intermediate)"
+            }
+          ]
+        },
+        "fr": {
+          "title": "Langues parlées",
+          "items": [
+            {
+              "text": "Français (langue maternelle)"
+            },
+            {
+              "text": "Anglais (bilingue professionnel)"
+            },
+            {
+              "text": "Italien (bilingue professionnel)"
+            },
+            {
+              "text": "Espagnol (intermédiaire)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "other",
+      "content": {
+        "en": {
+          "title": "Other",
+          "items": [
+            {
+              "text": "Prototyping with Figma"
+            },
+            {
+              "text": "Agile methodologies"
+            },
+            {
+              "text": "Photoshop / Illustrator / Premiere Pro"
+            },
+            {
+              "text": "Scientific protocols and experiment conduction"
+            }
+          ]
+        },
+        "fr": {
+          "title": "Autres",
+          "items": [
+            {
+              "text": "Maquettage et prototypage avec Figma"
+            },
+            {
+              "text": "Méthodologies agiles"
+            },
+            {
+              "text": "Photoshop / Illustrator / Premiere Pro"
+            },
+            {
+              "text": "Protocoles scientifiques et passation d'expériences"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

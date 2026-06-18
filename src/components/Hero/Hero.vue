@@ -12,7 +12,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              {{ $t('profile.universityLabel') }}
+              {{ profileContent.universityLabel }}
             </a>
             {{ profileDescriptionParts.after }}
           </p>
@@ -34,14 +34,15 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import heroPhoto from '@content/projects/images/bibi.jpeg'
+import heroPhoto from '@content/images/bibi.jpeg'
 import { getProfileContent, splitUniversityPlaceholder } from '../../content/data/profile'
 import { getSupportedLocale } from '../../content/locale'
 
 const { locale } = useI18n()
 
 const currentLocale = computed(() => getSupportedLocale(locale.value))
-const profileDescription = computed(() => getProfileContent(currentLocale.value).description)
+const profileContent = computed(() => getProfileContent(currentLocale.value))
+const profileDescription = computed(() => profileContent.value.description)
 const profileDescriptionParts = computed(() => splitUniversityPlaceholder(profileDescription.value))
 
 const scrollToNextSection = () => {

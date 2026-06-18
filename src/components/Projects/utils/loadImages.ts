@@ -1,6 +1,6 @@
 import { getFileNameFromPath } from "./utils";
 
-const images = import.meta.glob('@content/projects/images/*', 
+const images = import.meta.glob('@content/images/*', 
   { eager: true, import: 'default'}) as Record<string, string>;
 
 
@@ -34,9 +34,4 @@ return fallbackImageCache.get(label) ?? (
     fallbackImageCache.get(label)!
 );
 }
-
-
-
-
-
 

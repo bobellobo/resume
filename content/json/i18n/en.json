@@ -12,10 +12,6 @@
     "projects": "Projects",
     "contact": "Contact"
   },
-  "profile": {
-    "universityLabel": "Ecole Nationale Supérieure de Cognitique",
-    "skillsTitle": "Skills Overview"
-  },
   "projects": {
     "title": "Projects & Achievements",
     "imageUnavailable": "Project preview unavailable",
@@ -31,7 +27,6 @@
     "description": "Feel free to reach out for collaborations or just to say hi!"
   },
   "footer": {
-    "copyright": "© 2026 Titouan Guedon. All rights reserved.",
     "links": {
       "linkedin": "LinkedIn",
       "github": "GitHub",
@@ -67,8 +62,6 @@
     "actionsLabel": "Export actions",
     "backToPortfolio": "Back to portfolio",
     "exportPdfJpeg": "Export PDF / JPEG",
-    "documentLabel": "Titouan Guedon export view",
-    "role": "Full-stack Engineer - Cognitive Science Engineer",
     "contactLinks": "Contact links",
     "attribution": "This resume was exported from my personal portfolio website, designed and created by me: {link}",
     "previewOn": "Preview Print",
@@ -76,7 +69,6 @@
     "previewOnHint": "Enable print preview mode",
     "previewOffHint": "Disable print preview mode",
     "switchToFrench": "Switch language to French",
-    "switchToEnglish": "Switch language to English",
-    "photoAlt": "Portrait of Titouan Guedon"
+    "switchToEnglish": "Switch language to English"
   }
 }

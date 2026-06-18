@@ -1,8 +1,8 @@
 import { ref } from 'vue'
-import rawExperiences from '@content/experiences/experiences.json'
 import flagFr from 'flag-icons/flags/4x3/fr.svg'
 import flagGb from 'flag-icons/flags/4x3/gb.svg'
 import flagIt from 'flag-icons/flags/4x3/it.svg'
+import { getExperiences } from './profile'
 
 const LANGUAGE_TO_COUNTRY_CODE: Record<string, string> = {
   en: 'gb',
@@ -86,5 +86,5 @@ export const getFlagSvgByCode = (code: string): string | null => (
 )
 
 export function useExperiencesData() {
-  return { experiences: ref<Experience[]>(rawExperiences as Experience[]) }
+  return { experiences: ref<Experience[]>(getExperiences()) }
 }

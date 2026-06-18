@@ -1,7 +1,7 @@
 <template>
   <section id="skills" class="skills section-block">
     <div class="container">
-      <h2 class="section-title">{{ $t('profile.skillsTitle') }}</h2>
+      <h2 class="section-title">{{ profileContent.skillsTitle }}</h2>
 
       <div class="skills-grid">
         <article v-for="category in skills" :key="category.id" class="skill-card surface-card">
@@ -27,11 +27,14 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useSkillsData } from '../../content/data/skills'
+import { getProfileContent } from '../../content/data/profile'
+import { getSupportedLocale } from '../../content/locale'
 
 const { locale } = useI18n()
 const { skills } = useSkillsData()
 
-const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
+const currentLocale = computed(() => getSupportedLocale(locale.value))
+const profileContent = computed(() => getProfileContent(currentLocale.value))
 </script>
 
 <style scoped src="./Skills.css"></style>

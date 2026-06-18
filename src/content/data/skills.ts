@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import rawSkills from '@content/skills/skills.json'
+import { getSkills } from './profile'
 
 export interface SkillItem {
   text: string
@@ -20,5 +20,5 @@ export interface SkillCategory {
 }
 
 export function useSkillsData() {
-  return { skills: ref<SkillCategory[]>(rawSkills as SkillCategory[]) }
+  return { skills: ref<SkillCategory[]>(getSkills()) }
 }

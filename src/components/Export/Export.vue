@@ -23,19 +23,19 @@
       <button type="button" class="toolbar-button" @click="printExport">{{ $t('exportView.exportPdfJpeg') }}</button>
     </div>
 
-    <article class="resume-sheet" :aria-label="$t('exportView.documentLabel')">
+    <article class="resume-sheet" :aria-label="profileContent.exportDocumentLabel">
       <header class="resume-header">
         <div class="resume-identity">
           <img
             class="resume-photo"
             :src="profilePhoto"
-            :alt="$t('exportView.photoAlt')"
+            :alt="profileContent.photoAlt"
             loading="eager"
             decoding="async"
           >
           <div>
             <h1 class="resume-name">Titouan Guedon</h1>
-            <p class="resume-role">{{ $t('exportView.role') }}</p>
+            <p class="resume-role">{{ profileContent.exportRole }}</p>
           </div>
         </div>
         <ul class="resume-links" :aria-label="$t('exportView.contactLinks')">
@@ -59,7 +59,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            {{ $t('profile.universityLabel') }}
+            {{ profileContent.universityLabel }}
           </a>
           {{ exportProfileDescriptionParts.after }}
         </p>
@@ -136,7 +136,7 @@
       </section>
 
       <section class="resume-section">
-        <h2>{{ $t('profile.skillsTitle') }}</h2>
+        <h2>{{ profileContent.skillsTitle }}</h2>
         <div class="skills-grid">
           <article v-for="category in exportSkills" :key="category.id" class="skill-category">
             <h3>{{ category.content[currentLocale].title }}</h3>
@@ -171,7 +171,7 @@ import { useExperiencesData, toFlagCode, getFlagSvgByCode } from '../../content/
 import { useSkillsData } from '../../content/data/skills'
 import { getProfileContent, getContactInfo, splitUniversityPlaceholder } from '../../content/data/profile'
 import { getSupportedLocale } from '../../content/locale'
-import profilePhoto from '../../../content/projects/images/bibi.jpeg'
+import profilePhoto from '@content/images/bibi.jpeg'
 
 const LANGUAGE_STORAGE_KEY = 'language'
 
@@ -202,6 +202,7 @@ const exportSkills = computed(() => (
     ))
 ))
 const exportProfileDescription = computed(() => getProfileContent(currentLocale.value).exportDescription)
+const profileContent = computed(() => getProfileContent(currentLocale.value))
 const exportProfileDescriptionParts = computed(() => splitUniversityPlaceholder(exportProfileDescription.value))
 
 const languageSwitchLabel = computed(() => (locale.value === 'fr' ? 'EN' : 'FR'))
