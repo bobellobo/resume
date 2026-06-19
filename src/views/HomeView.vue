@@ -3,9 +3,9 @@
     <div class="scroll-progress" aria-hidden="true"></div>
     <Header />
     <Hero />
-    <Skills />
-    <Experience />
     <Projects />
+    <Experience />
+    <Skills />
     <Footer />
   </div>
 </template>

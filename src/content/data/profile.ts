@@ -4,6 +4,8 @@ import type { Experience } from './experiences'
 import type { SkillCategory } from './skills'
 
 export interface ProfileTextContent {
+  fullName: string
+  roles: string[]
   universityLabel: string
   skillsTitle: string
   exportRole: string
@@ -12,6 +14,20 @@ export interface ProfileTextContent {
   footerCopyright: string
   description: string
   exportDescription: string
+  overview: {
+    universityLabel: string
+    currentLocationLabel: string
+    currentLocation: string
+    phoneLabel: string
+    emailLabel: string
+    linkedinLabel: string
+    githubLabel: string
+    spokenLanguagesLabel: string
+    spokenLanguages: Array<{
+      code: string
+      level: string
+    }>
+  }
 }
 
 export interface ContactInfo {

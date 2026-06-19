@@ -1,73 +1,123 @@
 <template>
   <section id="home" class="hero">
-    <div class="hero-content">
-      <div class="hero-main">
-        <div class="hero-copy">
-          <!-- <p class="hero-subtitle">{{ $t('hero.subtitle') }}</p> -->
-          <p class="hero-about">
-            {{ profileDescriptionParts.before }}
+    <div class="hero-shell">
+      <article class="hero-card surface-card">
+        <div class="hero-card-header">
+          <img class="hero-photo" :src="heroPhoto" :alt="profileContent.photoAlt" />
+          <div class="hero-identity-copy">
+            <h1 class="hero-name">{{ profileContent.fullName }}</h1>
+            <div class="hero-role-marquee" aria-label="Current role" aria-live="polite">
+              <ul class="hero-role-track" :style="roleTrackStyle">
+                <li
+                  v-for="(role, roleIndex) in displayedRoles"
+                  :key="`${role}-${roleIndex}`"
+                  class="hero-role-item"
+                >
+                  {{ role }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <ul class="hero-details-grid" aria-label="Profile overview and contact links">
+          <li class="hero-grid-item hero-grid-item-clickable">
             <a
-              class="inline-link"
+              class="hero-grid-item-link"
               href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
               target="_blank"
               rel="noopener noreferrer"
+              :aria-label="profileContent.overview.universityLabel"
             >
-              {{ profileContent.universityLabel }}
+              <GraduationCap class="hero-grid-leading-icon" aria-hidden="true" />
+              <span class="hero-grid-value">{{ profileContent.universityLabel }}</span>
+              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
             </a>
-            {{ profileDescriptionParts.after }}
-          </p>
-        </div>
-        <div class="hero-side">
-          <img class="hero-photo" :src="heroPhoto" alt="Bibi photo" />
-          <ul class="hero-contact-links" aria-label="Contact links">
-            <li>
-              <a class="hero-contact-link hero-contact-link-social" :href="contact.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M16.5 8.5a3.5 3.5 0 0 1 3.5 3.5V19h-4v-6.2a1.8 1.8 0 0 0-3.6 0V19h-4V9h4v1.2A4 4 0 0 1 16.5 8.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M4 9h4v10H4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M6 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a class="hero-contact-link hero-contact-link-social" :href="contact.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M9 19c-4 1.2-4-2-6-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M15 22v-3.1a3.2 3.2 0 0 0-.9-2.5c3.2-.4 6.6-1.6 6.6-7.1A5.6 5.6 0 0 0 19 5.4 5.2 5.2 0 0 0 18.9 2S17.7 1.6 15 3.4a10.6 10.6 0 0 0-6 0C6.3 1.6 5.1 2 5.1 2A5.2 5.2 0 0 0 5 5.4a5.6 5.6 0 0 0-1.7 3.9c0 5.5 3.4 6.7 6.6 7.1a3.2 3.2 0 0 0-.9 2.5V22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a class="hero-contact-link" :href="`tel:${contact.phone}`" :aria-label="contact.phone">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M5 4h4l2 5-2.5 1.5A14 14 0 0 0 13.5 15L15 12.5l5 2v4a2 2 0 0 1-2.2 2A17.5 17.5 0 0 1 3.5 6.2 2 2 0 0 1 5 4Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>{{ contact.phone }}</span>
-              </a>
-            </li>
-            <li>
-              <a class="hero-contact-link" :href="`mailto:${contact.email}`" :aria-label="contact.email">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>{{ contact.email }}</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+          </li>
+          <li class="hero-grid-item">
+            <div class="hero-grid-item-static" :aria-label="profileContent.overview.currentLocationLabel">
+              <MapPin class="hero-grid-leading-icon" aria-hidden="true" />
+              <span class="hero-grid-value">{{ profileContent.overview.currentLocation }}</span>
+            </div>
+          </li>
+          <li class="hero-grid-item hero-grid-item-clickable">
+            <a class="hero-grid-item-link" :href="`tel:${contact.phone}`" :aria-label="profileContent.overview.phoneLabel">
+              <Phone class="hero-grid-leading-icon" aria-hidden="true" />
+              <span class="hero-grid-value">{{ contact.phone }}</span>
+              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
+            </a>
+          </li>
+          <li class="hero-grid-item hero-grid-item-clickable">
+            <a class="hero-grid-item-link" :href="`mailto:${contact.email}`" :aria-label="profileContent.overview.emailLabel">
+              <Mail class="hero-grid-leading-icon" aria-hidden="true" />
+              <span class="hero-grid-value">{{ contact.email }}</span>
+              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
+            </a>
+          </li>
+          <li class="hero-grid-item hero-grid-item-clickable">
+            <a
+              class="hero-grid-item-link"
+              :href="contact.linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="profileContent.overview.linkedinLabel"
+            >
+              <Globe class="hero-grid-leading-icon" aria-hidden="true" />
+              <span class="hero-grid-value">{{ profileContent.overview.linkedinLabel }}</span>
+              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
+            </a>
+          </li>
+          <li class="hero-grid-item hero-grid-item-clickable">
+            <a
+              class="hero-grid-item-link"
+              :href="contact.github"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="profileContent.overview.githubLabel"
+            >
+              <GitBranch class="hero-grid-leading-icon" aria-hidden="true" />
+              <span class="hero-grid-value">{{ profileContent.overview.githubLabel }}</span>
+              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
+            </a>
+          </li>
+          <li class="hero-grid-item hero-grid-item-wide">
+            <div class="hero-grid-item-static" :aria-label="profileContent.overview.spokenLanguagesLabel">
+              <Languages class="hero-grid-leading-icon" aria-hidden="true" />
+              <ul class="hero-language-flags" :aria-label="profileContent.overview.spokenLanguagesLabel">
+                <li
+                  v-for="(languageFlag, index) in spokenLanguageFlags"
+                  :key="`${languageFlag.code}-${index}`"
+                  class="hero-language-flag-item"
+                  :aria-label="languageFlag.code.toUpperCase()"
+                >
+                  <img class="hero-language-flag-icon" :src="languageFlag.src" alt="" aria-hidden="true">
+                  <span class="hero-language-level">{{ languageFlag.level }}</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </article>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import {
+  ArrowUpRight,
+  GitBranch,
+  Globe,
+  GraduationCap,
+  Languages,
+  Mail,
+  MapPin,
+  Phone
+} from '@lucide/vue'
 import heroPhoto from '@content/images/bibi.jpeg'
-import { getProfileContent, getContactInfo, splitUniversityPlaceholder } from '../../content/data/profile'
+import { getFlagSvgByCode, toFlagCode } from '../../content/data/languageFlags'
+import { getProfileContent, getContactInfo } from '../../content/data/profile'
 import { getSupportedLocale } from '../../content/locale'
 
 const { locale } = useI18n()
@@ -75,8 +125,137 @@ const contact = getContactInfo()
 
 const currentLocale = computed(() => getSupportedLocale(locale.value))
 const profileContent = computed(() => getProfileContent(currentLocale.value))
-const profileDescription = computed(() => profileContent.value.description)
-const profileDescriptionParts = computed(() => splitUniversityPlaceholder(profileDescription.value))
+const spokenLanguageFlags = computed(() => (
+  profileContent.value.overview.spokenLanguages
+      .map((language) => {
+        const code = toFlagCode(language.code)
+        if (!code) {
+          return null
+        }
+
+        const src = getFlagSvgByCode(code)
+        if (!src) {
+          return null
+        }
+
+        return {
+          code,
+          level: language.level,
+          src
+        }
+      })
+      .filter((flag): flag is { code: string; level: string; src: string } => Boolean(flag))
+))
+const activeRoleIndex = ref(0)
+const isRoleTransitionEnabled = ref(true)
+const roleItemHeightPx = ref(0)
+let roleRotationTimer: ReturnType<typeof setInterval> | undefined
+let roleResetTimer: ReturnType<typeof setTimeout> | undefined
+
+const ROLE_INTERVAL_MS = 2600
+const ROLE_TRANSITION_MS = 520
+
+const roles = computed(() => (
+  profileContent.value.roles.length > 0
+    ? profileContent.value.roles
+    : [profileContent.value.exportRole]
+))
+
+const displayedRoles = computed(() => (
+  roles.value.length > 1
+    ? [...roles.value, roles.value[0]]
+    : roles.value
+))
+
+const roleTrackStyle = computed(() => ({
+  transform: `translateY(-${activeRoleIndex.value * roleItemHeightPx.value}px)`,
+  transition: isRoleTransitionEnabled.value
+    ? `transform ${ROLE_TRANSITION_MS}ms var(--motion-ease-standard)`
+    : 'none'
+}))
+
+const measureRoleItemHeight = () => {
+  const firstRoleItem = document.querySelector<HTMLElement>('.hero-role-item')
+  if (!firstRoleItem) {
+    return
+  }
+
+  roleItemHeightPx.value = firstRoleItem.getBoundingClientRect().height
+}
+
+const updateRoleMeasurements = async () => {
+  await nextTick()
+  measureRoleItemHeight()
+}
+
+const clearRoleTimers = () => {
+  if (roleRotationTimer) {
+    clearInterval(roleRotationTimer)
+    roleRotationTimer = undefined
+  }
+
+  if (roleResetTimer) {
+    clearTimeout(roleResetTimer)
+    roleResetTimer = undefined
+  }
+}
+
+const scheduleCloneResetIfNeeded = () => {
+  if (roles.value.length <= 1) {
+    return
+  }
+
+  const cloneIndex = displayedRoles.value.length - 1
+  if (activeRoleIndex.value !== cloneIndex) {
+    return
+  }
+
+  roleResetTimer = setTimeout(() => {
+    isRoleTransitionEnabled.value = false
+    activeRoleIndex.value = 0
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        isRoleTransitionEnabled.value = true
+      })
+    })
+  }, ROLE_TRANSITION_MS)
+}
+
+const startRoleRotation = () => {
+  clearRoleTimers()
+
+  if (roles.value.length <= 1) {
+    activeRoleIndex.value = 0
+    isRoleTransitionEnabled.value = false
+    return
+  }
+
+  isRoleTransitionEnabled.value = true
+
+  roleRotationTimer = setInterval(() => {
+    activeRoleIndex.value += 1
+    scheduleCloneResetIfNeeded()
+  }, ROLE_INTERVAL_MS)
+}
+
+onMounted(() => {
+  void updateRoleMeasurements()
+  window.addEventListener('resize', measureRoleItemHeight)
+  startRoleRotation()
+})
+
+watch(roles, () => {
+  activeRoleIndex.value = 0
+  isRoleTransitionEnabled.value = roles.value.length > 1
+  void updateRoleMeasurements()
+  startRoleRotation()
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', measureRoleItemHeight)
+  clearRoleTimers()
+})
 </script>
 
 <style scoped src="./Hero.css"></style>

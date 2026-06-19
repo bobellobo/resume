@@ -87,7 +87,7 @@
             decoding="async"
           >
           <div>
-            <h1 class="resume-name">Titouan Guedon</h1>
+            <h1 class="resume-name">{{ profileContent.fullName }}</h1>
             <p class="resume-role">{{ profileContent.exportRole }}</p>
           </div>
         </div>
