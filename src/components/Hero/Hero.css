@@ -162,19 +162,20 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--surface-subcard-gap);
   width: 100%;
   min-height: 2.35rem;
-  border: 1px solid color-mix(in srgb, var(--border-color) 84%, transparent);
-  border-radius: 0.55rem;
-  background-color: color-mix(in srgb, var(--bg-white) 96%, transparent);
-  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--surface-subcard-border);
+  border-radius: var(--surface-subcard-radius);
+  background-color: var(--surface-subcard-bg);
+  box-shadow: var(--surface-subcard-shadow);
+  padding: var(--surface-subcard-padding-y) var(--surface-subcard-padding-x);
 }
 
 .hero-grid-item-link {
   text-decoration: none;
   color: var(--text-dark);
-  transition: color var(--motion-duration-base) var(--motion-ease-standard);
+  transition: color var(--motion-duration-base) var(--motion-ease-standard), border-color var(--motion-duration-base) var(--motion-ease-standard), background-color var(--motion-duration-base) var(--motion-ease-standard);
 }
 
 .hero-grid-leading-icon {
@@ -197,6 +198,8 @@
 .hero-grid-item-link:hover,
 .hero-grid-item-link:focus-visible {
   color: var(--primary-color);
+  border-color: var(--surface-subcard-border-hover);
+  background-color: color-mix(in srgb, var(--surface-subcard-bg) 88%, var(--surface-chip-bg));
 }
 
 .hero-grid-item-link:hover .hero-grid-leading-icon,

@@ -53,15 +53,6 @@
 
 .experience-zigzag-content {
   overflow: hidden;
-  background: transparent;
-  border-color: color-mix(in srgb, var(--primary-color) 16%, var(--border-color));
-  box-shadow: none;
-  border-radius: 0.68rem;
-  transition: border-color var(--motion-duration-fast) var(--motion-ease-standard);
-}
-
-.experience-zigzag-content:hover {
-  border-color: color-mix(in srgb, var(--primary-color) 24%, var(--border-color));
 }
 
 .experience-zigzag-cards {
@@ -241,7 +232,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 0.52rem;
+  gap: var(--surface-chip-gap);
   margin: 0 0 1.04rem;
   padding: 0;
   list-style: none;
@@ -250,11 +241,11 @@
 .experience-tech-badge {
   display: inline-flex;
   align-items: center;
-  border: 1px solid color-mix(in srgb, var(--primary-color) 32%, transparent);
+  border: 1px solid var(--surface-chip-border);
   border-radius: 999px;
-  padding: 0.32rem 0.62rem;
+  padding: var(--surface-chip-padding-y) var(--surface-chip-padding-x);
   color: color-mix(in srgb, var(--primary-color) 84%, var(--text-dark));
-  background: color-mix(in srgb, var(--primary-color) 9%, transparent);
+  background: var(--surface-chip-bg);
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.015em;
@@ -264,8 +255,8 @@
 }
 
 .experience-tech-badge:hover {
-  background: color-mix(in srgb, var(--primary-color) 14%, transparent);
-  border-color: color-mix(in srgb, var(--primary-color) 42%, transparent);
+  background: var(--surface-chip-bg-hover);
+  border-color: var(--surface-subcard-border-hover);
 }
 
 .experience-details-text {

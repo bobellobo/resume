@@ -4,8 +4,6 @@
 }
 
 .project-list-card {
-  border: 1px solid color-mix(in srgb, var(--border-color) 74%, transparent);
-  background: color-mix(in srgb, var(--surface-section) 92%, var(--bg-white));
   overflow: hidden;
 }
 
@@ -29,9 +27,9 @@
   width: 2.65rem;
   height: 2.65rem;
   border-radius: 0.65rem;
-  border: 1px solid color-mix(in srgb, var(--primary-color) 20%, var(--border-color));
-  background: color-mix(in srgb, var(--surface-section) 88%, var(--bg-white));
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-subcard-border);
+  background: var(--surface-subcard-bg);
+  box-shadow: var(--surface-subcard-shadow);
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
@@ -66,12 +64,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.45rem;
+  gap: var(--surface-chip-gap);
   flex-wrap: wrap;
   max-width: 32rem;
   margin-right: 0.7rem;
   padding-right: 0.9rem;
-  border-right: 1px solid color-mix(in srgb, var(--border-color) 75%, transparent);
+  border-right: 1px solid var(--surface-subcard-border);
 }
 
 .project-action-btn {
@@ -153,12 +151,18 @@
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--primary-color) 28%, var(--border-color));
-  padding: 0.14rem 0.52rem;
+  border: 1px solid var(--surface-chip-border);
+  padding: var(--surface-chip-padding-y) var(--surface-chip-padding-x);
   font-size: 0.72rem;
   line-height: 1.35;
   color: var(--text-dark);
-  background: color-mix(in srgb, var(--surface-section) 84%, var(--bg-white));
+  background: var(--surface-chip-bg);
+  transition: border-color var(--motion-duration-fast) var(--motion-ease-standard), background-color var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.project-list-tech-tag:hover {
+  border-color: var(--surface-subcard-border-hover);
+  background: var(--surface-chip-bg-hover);
 }
 
 @media (max-width: 900px) {

@@ -17,8 +17,8 @@
 }
 
 .navbar {
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.9rem;
   width: auto;
@@ -82,9 +82,9 @@
 
 .section-search {
   position: relative;
-  flex: 1 1 auto;
+  width: min(100%, 28rem);
   min-width: 0;
-  max-width: 32rem;
+  justify-self: center;
   margin: 0;
 }
 
@@ -229,7 +229,7 @@
 .header-controls {
   display: flex;
   align-items: center;
-  margin-left: auto;
+  margin-left: 0;
   gap: 0.75rem;
   flex-shrink: 0;
 }
@@ -591,6 +591,7 @@
   }
 
   .navbar {
+    display: flex;
     position: relative;
     align-items: center;
     gap: 0.55rem;

@@ -46,10 +46,16 @@
 }
 
 .surface-card {
-  background-color: var(--bg-white);
-  border: 1px solid var(--border-color);
-  border-radius: 0.75rem;
-  box-shadow: var(--shadow);
+  background-color: var(--surface-card-bg);
+  border: 1px solid var(--surface-card-border);
+  border-radius: var(--surface-card-radius);
+  box-shadow: var(--surface-card-shadow);
+  transition: border-color var(--motion-duration-base) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard), background-color var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.surface-card:hover {
+  border-color: var(--surface-card-border-hover);
+  box-shadow: var(--surface-card-shadow-hover);
 }
 
 .hover-lift {

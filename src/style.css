@@ -14,6 +14,26 @@
     --surface-section-muted: #f9fafb;
     --surface-header: #eef2f7;
     --surface-navbar: #ffffff;
+    --surface-card-bg: color-mix(in srgb, var(--surface-section) 90%, transparent);
+    --surface-card-border: color-mix(in srgb, var(--border-color) 84%, transparent);
+    --surface-card-border-hover: color-mix(in srgb, var(--primary-color) 26%, var(--border-color));
+    --surface-card-radius: 0.75rem;
+    --surface-card-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+    --surface-card-shadow-hover: 0 10px 20px rgba(15, 23, 42, 0.12);
+    --surface-subcard-bg: color-mix(in srgb, var(--surface-section) 84%, transparent);
+    --surface-subcard-border: color-mix(in srgb, var(--border-color) 82%, transparent);
+    --surface-subcard-border-hover: color-mix(in srgb, var(--primary-color) 28%, var(--border-color));
+    --surface-subcard-radius: 0.62rem;
+    --surface-subcard-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    --surface-chip-bg: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    --surface-chip-bg-hover: color-mix(in srgb, var(--primary-color) 16%, transparent);
+    --surface-chip-border: color-mix(in srgb, var(--primary-color) 30%, var(--border-color));
+    --surface-subcard-padding-y: 0.55rem;
+    --surface-subcard-padding-x: 0.65rem;
+    --surface-subcard-gap: 0.5rem;
+    --surface-chip-padding-y: 0.32rem;
+    --surface-chip-padding-x: 0.58rem;
+    --surface-chip-gap: 0.48rem;
     --border-color: #e5e7eb;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -61,6 +81,9 @@
     --motion-lift-sm: -2px;
     --motion-lift-lg: -8px;
     --motion-press-scale: 0.98;
+    --page-texture-dot: rgba(194, 65, 12, 0.2);
+    --page-texture-line: rgba(15, 23, 42, 0.1);
+    --page-texture-wash: rgba(255, 255, 255, 0.42);
 }
 
 [data-theme='dark'] {
@@ -75,6 +98,24 @@
     --surface-section-muted: #1e242d;
     --surface-header: #0d1117;
     --surface-navbar: #1a2029;
+    --surface-card-bg: color-mix(in srgb, var(--surface-section) 88%, transparent);
+    --surface-card-border: color-mix(in srgb, var(--border-color) 90%, transparent);
+    --surface-card-border-hover: color-mix(in srgb, var(--primary-color) 34%, var(--border-color));
+    --surface-card-shadow: 0 6px 14px rgba(0, 0, 0, 0.42);
+    --surface-card-shadow-hover: 0 14px 24px rgba(0, 0, 0, 0.5);
+    --surface-subcard-bg: color-mix(in srgb, var(--surface-section) 80%, transparent);
+    --surface-subcard-border: color-mix(in srgb, var(--border-color) 88%, transparent);
+    --surface-subcard-border-hover: color-mix(in srgb, var(--primary-color) 36%, var(--border-color));
+    --surface-subcard-shadow: 0 4px 10px rgba(0, 0, 0, 0.34);
+    --surface-chip-bg: color-mix(in srgb, var(--primary-color) 16%, transparent);
+    --surface-chip-bg-hover: color-mix(in srgb, var(--primary-color) 24%, transparent);
+    --surface-chip-border: color-mix(in srgb, var(--primary-color) 38%, var(--border-color));
+    --surface-subcard-padding-y: 0.52rem;
+    --surface-subcard-padding-x: 0.62rem;
+    --surface-subcard-gap: 0.48rem;
+    --surface-chip-padding-y: 0.3rem;
+    --surface-chip-padding-x: 0.56rem;
+    --surface-chip-gap: 0.46rem;
     --border-color: #313947;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.45);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
@@ -86,6 +127,9 @@
     --project-placeholder-end: #434c5d;
     --overlay-color: rgba(0, 0, 0, 0.65);
     --focus-ring: rgba(234, 88, 12, 0.38);
+    --page-texture-dot: rgba(234, 88, 12, 0.28);
+    --page-texture-line: rgba(148, 163, 184, 0.12);
+    --page-texture-wash: rgba(15, 23, 42, 0.48);
 }
 
 /* ========== General Styles ========== */
@@ -97,14 +141,74 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+/* Hide default scrollbar for Chrome, Safari, and Edge */
+html::-webkit-scrollbar {
+    display: none;
 }
 
 body {
     font-family: 'Geist Mono', monospace;
     color: var(--text-dark);
-    background-color: var(--surface-page);
+    background:
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--surface-page) 93%, var(--bg-light) 7%) 0%,
+            color-mix(in srgb, var(--surface-page) 86%, var(--bg-light) 14%) 100%
+        );
     line-height: 1.6;
+    min-height: 100vh;
+    isolation: isolate;
     transition: background-color var(--motion-duration-base) var(--motion-ease-standard), color var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: -20vh 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 1;
+    background-image:
+        radial-gradient(circle at 1px 1px, var(--page-texture-dot) 1.1px, transparent 0),
+        repeating-linear-gradient(-45deg, transparent 0 13px, var(--page-texture-line) 13px 14px),
+        linear-gradient(120deg, transparent 0%, var(--page-texture-wash) 50%, transparent 100%);
+    background-size: 20px 20px, auto, 180% 180%;
+    background-position: 0 0, 0 0, 0% 0%;
+    animation: page-texture-scroll linear both;
+    animation-timeline: scroll(root block);
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes page-texture-scroll {
+    from {
+        background-position: 0 0, 0 0, 0% 0%;
+        transform: translateY(-2%);
+    }
+
+    to {
+        background-position: 0 340px, 0 190px, 100% 100%;
+        transform: translateY(2%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+        transform: none;
+    }
+}
+
+@media print {
+    body::before {
+        display: none;
+    }
 }
 
 /* ========== Typography ========== */

@@ -1,7 +1,11 @@
 .resume-page {
   --export-page-texture:
     radial-gradient(circle at 20% 10%, rgba(194, 65, 12, 0.15), transparent 42%),
-    linear-gradient(180deg, #f3efe9 0%, #eceff3 100%);
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, #f3efe9 80%, transparent) 0%,
+      color-mix(in srgb, #eceff3 80%, transparent) 100%
+    );
   --export-sheet-border: 1px solid #d1d5db;
   min-height: 100vh;
   padding: 2rem 1rem 3rem;
