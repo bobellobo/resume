@@ -11,12 +11,9 @@
         >
           <div class="project-list-row">
             <div class="project-list-main">
-              <img
-                class="project-list-icon"
-                :src="getProjectImageOrFallback(project.icon, $t('projects.imageUnavailable'))"
-                alt=""
-                aria-hidden="true"
-              />
+              <span class="project-list-icon" aria-hidden="true">
+                <Icon :icon="resolveProjectIcon(project.icon)" class="project-list-icon-svg" />
+              </span>
               <h3 class="project-list-title">{{ project.content[currentLocale].title }}</h3>
             </div>
 
@@ -96,12 +93,21 @@
 import { computed, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import { useProjectsData, getProjectImageOrFallback, type Project } from '../../content/data/projects'
+import { Icon } from '@iconify/vue'
+import { useProjectsData, type Project } from '../../content/data/projects'
 
 const { locale } = useI18n()
 const currentLocale = computed(() => locale.value as 'en' | 'fr')
 
 const { projects } = useProjectsData()
+
+const ICON_COLLECTION = 'lucide'
+const FALLBACK_ICON = 'circle-help'
+
+const resolveProjectIcon = (iconSlug: string): string => {
+  const slug = iconSlug?.trim() || FALLBACK_ICON
+  return `${ICON_COLLECTION}:${slug}`
+}
 
 const expandedProjects = ref<Set<string>>(new Set())
 

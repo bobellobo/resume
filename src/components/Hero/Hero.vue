@@ -29,29 +29,29 @@
               rel="noopener noreferrer"
               :aria-label="profileContent.overview.universityLabel"
             >
-              <GraduationCap class="hero-grid-leading-icon" aria-hidden="true" />
+              <Icon icon="lucide:graduation-cap" class="hero-grid-leading-icon" aria-hidden="true" />
               <span class="hero-grid-value">{{ profileContent.universityLabel }}</span>
-              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
+              <Icon icon="lucide:arrow-up-right" class="hero-grid-item-corner-icon" aria-hidden="true" />
             </a>
           </li>
           <li class="hero-grid-item">
             <div class="hero-grid-item-static" :aria-label="profileContent.overview.currentLocationLabel">
-              <MapPin class="hero-grid-leading-icon" aria-hidden="true" />
+              <Icon icon="lucide:map-pin" class="hero-grid-leading-icon" aria-hidden="true" />
               <span class="hero-grid-value">{{ profileContent.overview.currentLocation }}</span>
             </div>
           </li>
           <li class="hero-grid-item hero-grid-item-clickable">
             <a class="hero-grid-item-link" :href="`tel:${contact.phone}`" :aria-label="profileContent.overview.phoneLabel">
-              <Phone class="hero-grid-leading-icon" aria-hidden="true" />
+              <Icon icon="lucide:phone" class="hero-grid-leading-icon" aria-hidden="true" />
               <span class="hero-grid-value">{{ contact.phone }}</span>
-              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
+              <Icon icon="lucide:arrow-up-right" class="hero-grid-item-corner-icon" aria-hidden="true" />
             </a>
           </li>
           <li class="hero-grid-item hero-grid-item-clickable">
             <a class="hero-grid-item-link" :href="`mailto:${contact.email}`" :aria-label="profileContent.overview.emailLabel">
-              <Mail class="hero-grid-leading-icon" aria-hidden="true" />
+              <Icon icon="lucide:mail" class="hero-grid-leading-icon" aria-hidden="true" />
               <span class="hero-grid-value">{{ contact.email }}</span>
-              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
+              <Icon icon="lucide:arrow-up-right" class="hero-grid-item-corner-icon" aria-hidden="true" />
             </a>
           </li>
           <li class="hero-grid-item hero-grid-item-clickable">
@@ -62,9 +62,9 @@
               rel="noopener noreferrer"
               :aria-label="profileContent.overview.linkedinLabel"
             >
-              <Globe class="hero-grid-leading-icon" aria-hidden="true" />
+              <Icon icon="lucide:briefcase-business" class="hero-grid-leading-icon" aria-hidden="true" />
               <span class="hero-grid-value">{{ profileContent.overview.linkedinLabel }}</span>
-              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
+              <Icon icon="lucide:arrow-up-right" class="hero-grid-item-corner-icon" aria-hidden="true" />
             </a>
           </li>
           <li class="hero-grid-item hero-grid-item-clickable">
@@ -75,14 +75,14 @@
               rel="noopener noreferrer"
               :aria-label="profileContent.overview.githubLabel"
             >
-              <GitBranch class="hero-grid-leading-icon" aria-hidden="true" />
+              <Icon icon="lucide:git-pull-request-draft" class="hero-grid-leading-icon" aria-hidden="true" />
               <span class="hero-grid-value">{{ profileContent.overview.githubLabel }}</span>
-              <ArrowUpRight class="hero-grid-item-corner-icon" aria-hidden="true" />
+              <Icon icon="lucide:arrow-up-right" class="hero-grid-item-corner-icon" aria-hidden="true" />
             </a>
           </li>
           <li class="hero-grid-item hero-grid-item-wide">
             <div class="hero-grid-item-static" :aria-label="profileContent.overview.spokenLanguagesLabel">
-              <Languages class="hero-grid-leading-icon" aria-hidden="true" />
+              <Icon icon="lucide:languages" class="hero-grid-leading-icon" aria-hidden="true" />
               <ul class="hero-language-flags" :aria-label="profileContent.overview.spokenLanguagesLabel">
                 <li
                   v-for="(languageFlag, index) in spokenLanguageFlags"
@@ -105,16 +105,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import {
-  ArrowUpRight,
-  GitBranch,
-  Globe,
-  GraduationCap,
-  Languages,
-  Mail,
-  MapPin,
-  Phone
-} from '@lucide/vue'
+import { Icon } from '@iconify/vue'
 import heroPhoto from '@content/images/bibi.jpeg'
 import { getFlagSvgByCode, toFlagCode } from '../../content/data/languageFlags'
 import { getProfileContent, getContactInfo } from '../../content/data/profile'

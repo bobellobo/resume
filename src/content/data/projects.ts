@@ -47,7 +47,6 @@ export function useProjectsData() {
   const projectsData: Project[] = (rawProjects as Project[])
     .map((project) => ({
       ...project,
-      icon: resolveImage(project.icon || ''),
       thumbnail: resolveImage(project.thumbnail || (project as Project & { image?: string }).image || ''),
       gallery: project.gallery.map((galleryImage) => resolveImage(galleryImage))
     }))

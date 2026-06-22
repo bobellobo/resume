@@ -32,32 +32,14 @@
               :data-tooltip="currentTheme === 'dark' ? $t('misc.lightMode') : $t('misc.darkMode')"
               @click="toggleTheme"
             >
-              <span class="theme-options" aria-hidden="true">
-                <span class="theme-option theme-option-light">
-                  <svg class="theme-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
-                    <path d="M12 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M12 20V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M4.93 4.93L6.34 6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M17.66 17.66L19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M2 12H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M20 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M4.93 19.07L6.34 17.66" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M17.66 6.34L19.07 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  </svg>
-                </span>
-                <span class="theme-option theme-option-dark">
-                  <svg class="theme-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M21 12.79A9 9 0 1 1 11.21 3c0 0-1.21 6.79 2.79 10.79S21 12.79 21 12.79Z"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-              </span>
+              <Transition name="theme-icon-swap" mode="out-in">
+                <Icon
+                  :key="currentTheme"
+                  :icon="currentTheme === 'dark' ? 'lucide:moon' : 'lucide:sun-medium'"
+                  class="theme-icon-svg"
+                  aria-hidden="true"
+                />
+              </Transition>
             </button>
             <div
               ref="mobileLanguageSwitcherRef"
@@ -131,32 +113,14 @@
             :data-tooltip="currentTheme === 'dark' ? $t('misc.lightMode') : $t('misc.darkMode')"
             @click="toggleTheme"
           >
-            <span class="theme-options" aria-hidden="true">
-              <span class="theme-option theme-option-light">
-                <svg class="theme-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
-                  <path d="M12 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  <path d="M12 20V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  <path d="M4.93 4.93L6.34 6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  <path d="M17.66 17.66L19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  <path d="M2 12H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  <path d="M20 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  <path d="M4.93 19.07L6.34 17.66" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  <path d="M17.66 6.34L19.07 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                </svg>
-              </span>
-              <span class="theme-option theme-option-dark">
-                <svg class="theme-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M21 12.79A9 9 0 1 1 11.21 3c0 0-1.21 6.79 2.79 10.79S21 12.79 21 12.79Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-            </span>
+            <Transition name="theme-icon-swap" mode="out-in">
+              <Icon
+                :key="currentTheme"
+                :icon="currentTheme === 'dark' ? 'lucide:moon' : 'lucide:sun-medium'"
+                class="theme-icon-svg"
+                aria-hidden="true"
+              />
+            </Transition>
           </button>
           <div
             ref="desktopLanguageSwitcherRef"
@@ -230,6 +194,7 @@
 
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { Icon } from '@iconify/vue'
 import { useHeaderLogic } from './Header'
 import TemplateNotice from '../TemplateNotice/TemplateNotice.vue'
 import { getTemplateInfo } from '../../content/data/profile'

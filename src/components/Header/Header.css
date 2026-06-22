@@ -278,63 +278,56 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: var(--bg-white);
   color: var(--text-dark);
   border: 2px solid var(--border-color);
   border-radius: 999px;
   cursor: pointer;
-  padding: 0.2rem;
+  padding: 0;
   line-height: 1;
-  transition: border-color var(--motion-duration-slow) var(--motion-ease-standard), color var(--motion-duration-slow) var(--motion-ease-standard), transform var(--motion-duration-base) var(--motion-ease-standard);
+  overflow: hidden;
+  transition: border-color var(--motion-duration-slow) var(--motion-ease-standard), color var(--motion-duration-slow) var(--motion-ease-standard), transform var(--motion-duration-base) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard), background-color var(--motion-duration-base) var(--motion-ease-standard);
 }
 
-.theme-btn::before {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 999px;
-  background-color: color-mix(in srgb, var(--primary-color) 14%, transparent);
-  transition: transform var(--motion-duration-base) var(--motion-ease-standard);
+.theme-btn.theme-light {
+  background-color: color-mix(in srgb, var(--surface-navbar) 74%, var(--bg-white));
+  color: var(--text-dark);
 }
 
-.theme-btn.theme-dark::before {
-  transform: translateX(1.8rem);
-}
-
-.theme-options {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-}
-
-.theme-option {
-  width: 1.8rem;
-  height: 1.8rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  transition: color var(--motion-duration-base) var(--motion-ease-standard);
-}
-
-.theme-btn.theme-light .theme-option-light,
-.theme-btn.theme-dark .theme-option-dark {
-  color: var(--primary-color);
+.theme-btn.theme-dark {
+  background-color: color-mix(in srgb, var(--surface-navbar) 68%, var(--bg-light));
+  color: color-mix(in srgb, var(--text-dark) 84%, var(--text-light));
 }
 
 .theme-icon-svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.05rem;
+  height: 1.05rem;
 }
 
 .theme-btn:hover {
   border-color: var(--primary-color);
   color: var(--primary-color);
+  box-shadow: 0 8px 16px -10px color-mix(in srgb, var(--primary-color) 55%, transparent);
   transform: translateY(var(--motion-lift-xs));
+}
+
+.theme-icon-swap-enter-active,
+.theme-icon-swap-leave-active {
+  transition: transform 280ms var(--motion-ease-standard), opacity 220ms var(--motion-ease-standard), filter 280ms var(--motion-ease-standard);
+}
+
+.theme-icon-swap-enter-from {
+  opacity: 0;
+  transform: rotate(-120deg) scale(0.45);
+  filter: blur(1px);
+}
+
+.theme-icon-swap-leave-to {
+  opacity: 0;
+  transform: rotate(120deg) scale(0.45);
+  filter: blur(1px);
 }
 
 .menu-toggle {
