@@ -161,6 +161,12 @@
   background: color-mix(in srgb, var(--surface-section) 84%, var(--bg-white));
 }
 
+@media (max-width: 900px) {
+  .project-list-tech-inline {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .project-list-row {
     padding: 0.7rem 0.85rem;

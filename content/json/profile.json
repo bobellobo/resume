@@ -109,7 +109,7 @@
             "GB",
             "FR"
           ],
-          "company": "STMicroelectronics - System Research & Application",
+          "company": "STMicroelectronics",
           "location": "Catania, Italy",
           "sections": [
             {
@@ -123,7 +123,7 @@
               ]
             },
             {
-              "title": "Fullstack development",
+              "title": "Fullstack developer",
               "description": "Design and delivery of end-to-end web applications, from requirement definition to deployment, with a strong focus on clean interfaces and performance. Strong emphasis on functional programming paradigms and development best practices.",
               "technologies": [
                 "Vue.js",
@@ -142,7 +142,7 @@
             "GB",
             "FR"
           ],
-          "company": "STMicroelectronics - System Research & Application",
+          "company": "STMicroelectronics",
           "location": "Catane, Italie",
           "sections": [
             {
@@ -156,7 +156,7 @@
               ]
             },
             {
-              "title": "Développement Fullstack",
+              "title": "Développeur Fullstack",
               "description": "Conception et livraison d'applications web de bout en bout, de la définition du besoin jusqu'au déploiement, avec une grande attention portée à la propreté des interfaces et la performance. Fort accent sur les paradigmes de programmation fonctionnelle et les bonnes pratiques de développement.",
               "technologies": [
                 "Angular",
@@ -181,7 +181,7 @@
             "FR",
             "GB"
           ],
-          "company": "Sopra Steria - Aeroline",
+          "company": "Sopra Steria",
           "location": "Bordeaux, France",
           "description": "Development tasks in a challenging and large, international context. Part of a team of 3 developers and one product owner. Agile environment with a lot of ownership and responsibilities given to the developers.",
           "technologies": [
@@ -198,7 +198,7 @@
             "FR",
             "GB"
           ],
-          "company": "Sopra Steria - Aeroline",
+          "company": "Sopra Steria",
           "location": "Bordeaux, France",
           "description": "Tâches de développement dans un projet d'envergure du secteur de l'aéronautique en contexte agile. Dans la continuité du travail déjà fourni avec toujours un ownership important et des responsabilités accrues.",
           "technologies": [
@@ -220,7 +220,7 @@
             "FR",
             "GB"
           ],
-          "company": "Sopra Steria - Aeroline",
+          "company": "Sopra Steria",
           "location": "Bordeaux, France",
           "description": "Took part in development tasks as a member of a team of 4, contributing to a project for a major actor in the aeronautical industry. Developed a new module for the core application from start to finish, including design, development, testing, deployment and delivery. Gained experience in working in a large codebase and following best practices for maintainable code.",
           "technologies": [
@@ -238,7 +238,7 @@
             "FR",
             "GB"
           ],
-          "company": "Sopra Steria - Aeroline",
+          "company": "Sopra Steria",
           "location": "Bordeaux, France",
           "description": "Développement fullstack en tant que membre d'une équipe de 4 personnes, contribuant à un projet pour un acteur majeur de l'industrie aéronautique. Développement de A à Z d'un nouveau module pour l'application, de la conception au déploiement jusqu'à la livraison. Codebase très large, respect des bonnes pratiques et revues de code.",
           "technologies": [

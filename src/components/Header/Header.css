@@ -124,6 +124,12 @@
   outline: none;
 }
 
+.section-search-input:focus,
+.section-search-input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 .section-search-input::placeholder {
   color: color-mix(in srgb, var(--text-light) 75%, var(--text-dark));
 }
