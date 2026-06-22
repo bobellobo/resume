@@ -2,12 +2,58 @@
   <header ref="headerRef" class="header">
     <div class="header-shell">
       <nav class="navbar">
-        <a href="#home" class="logo" @click="handleNavLinkClick">Titouan Guedon</a>
+        <a href="#home" class="logo" aria-label="Back to home section" @click="handleNavLinkClick">
+          <span class="logo-mark" aria-hidden="true">TG</span>
+        </a>
+        <div
+          ref="sectionSearchRef"
+          class="section-search"
+          @keydown.esc.stop="closeSectionMenu"
+        >
+          <div class="section-search-shell" :class="{ open: isSectionMenuOpen }">
+            <Icon icon="lucide:search" class="section-search-icon" aria-hidden="true" />
+            <input
+              ref="sectionSearchInputRef"
+              v-model="sectionQuery"
+              type="search"
+              class="section-search-input"
+              placeholder="Search sections"
+              aria-label="Search sections"
+              @focus="openSectionMenu"
+              @input="handleSectionQueryInput"
+              @keydown.down.prevent="moveSectionHighlight(1)"
+              @keydown.up.prevent="moveSectionHighlight(-1)"
+              @keydown.enter.prevent="selectHighlightedSection"
+            />
+            <kbd class="section-search-shortcut">Ctrl K</kbd>
+          </div>
+
+          <ul
+            v-if="isSectionMenuOpen"
+            class="section-search-menu"
+            role="listbox"
+            aria-label="Section search results"
+          >
+            <li v-if="filteredSections.length === 0" class="section-search-empty">
+              No section found
+            </li>
+            <li v-for="(section, index) in filteredSections" :key="section.id">
+              <button
+                type="button"
+                class="section-search-option"
+                :class="{ active: index === highlightedSectionIndex }"
+                role="option"
+                :aria-selected="index === highlightedSectionIndex"
+                @mouseenter="highlightedSectionIndex = index"
+                @mousedown.prevent="goToSection(section.id)"
+              >
+                <span>{{ section.label }}</span>
+                <span class="section-search-anchor">#{{ section.id }}</span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <ul id="primary-navigation" :class="['nav-links', { open: isMobileMenuOpen }]">
-        <li><a href="#home" @click="handleNavLinkClick">{{ $t('nav.home') }}</a></li>
-        <li><a href="#skills" @click="handleNavLinkClick">{{ $t('nav.skills') }}</a></li>
-        <li><a href="#experience" @click="handleNavLinkClick">{{ $t('nav.experience') }}</a></li>
-        <li><a href="#projects" @click="handleNavLinkClick">{{ $t('nav.projects') }}</a></li>
         <li class="mobile-menu-controls">
           <div class="mobile-controls-row">
             <a
@@ -195,23 +241,49 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { Icon } from '@iconify/vue'
+import { useI18n } from 'vue-i18n'
 import { useHeaderLogic } from './Header'
 import TemplateNotice from '../TemplateNotice/TemplateNotice.vue'
 import { getTemplateInfo } from '../../content/data/profile'
 
+type SectionId = 'home' | 'skills' | 'experience' | 'projects'
+
 const { currentLanguage, switchLanguage, currentTheme, toggleTheme } = useHeaderLogic()
+const { t } = useI18n()
 const MOBILE_BREAKPOINT = 900
 
 const headerRef = ref<HTMLElement | null>(null)
 const desktopLanguageSwitcherRef = ref<HTMLElement | null>(null)
 const mobileLanguageSwitcherRef = ref<HTMLElement | null>(null)
+const sectionSearchRef = ref<HTMLElement | null>(null)
+const sectionSearchInputRef = ref<HTMLInputElement | null>(null)
 const isDesktopLanguageMenuOpen = ref(false)
 const isMobileLanguageMenuOpen = ref(false)
 const isMobileMenuOpen = ref(false)
+const isSectionMenuOpen = ref(false)
+const sectionQuery = ref('')
+const highlightedSectionIndex = ref(0)
 const exportLink = '/resume/?view=export'
 const templateInfo = getTemplateInfo()
 
 const currentLanguageLabel = computed(() => (currentLanguage.value === 'fr' ? 'Français' : 'English'))
+const sections = computed<{ id: SectionId; label: string }[]>(() => [
+  { id: 'home', label: t('nav.home') },
+  { id: 'skills', label: t('nav.skills') },
+  { id: 'experience', label: t('nav.experience') },
+  { id: 'projects', label: t('nav.projects') }
+])
+const filteredSections = computed(() => {
+  const query = sectionQuery.value.trim().toLowerCase()
+
+  if (!query) {
+    return sections.value
+  }
+
+  return sections.value.filter((section) => {
+    return section.label.toLowerCase().includes(query) || section.id.includes(query)
+  })
+})
 
 const toggleDesktopLanguageMenu = () => {
   isDesktopLanguageMenuOpen.value = !isDesktopLanguageMenuOpen.value
@@ -236,6 +308,85 @@ const closeLanguageMenus = () => {
   closeMobileLanguageMenu()
 }
 
+const openSectionMenu = () => {
+  isSectionMenuOpen.value = true
+
+  if (filteredSections.value.length === 0) {
+    highlightedSectionIndex.value = -1
+    return
+  }
+
+  if (highlightedSectionIndex.value < 0 || highlightedSectionIndex.value >= filteredSections.value.length) {
+    highlightedSectionIndex.value = 0
+  }
+}
+
+const closeSectionMenu = () => {
+  isSectionMenuOpen.value = false
+}
+
+const focusSectionSearchInput = () => {
+  closeMobileMenu()
+  closeLanguageMenus()
+  sectionSearchInputRef.value?.focus()
+  sectionSearchInputRef.value?.select()
+  openSectionMenu()
+}
+
+const handleSectionQueryInput = () => {
+  openSectionMenu()
+  highlightedSectionIndex.value = filteredSections.value.length > 0 ? 0 : -1
+}
+
+const moveSectionHighlight = (delta: number) => {
+  openSectionMenu()
+
+  if (filteredSections.value.length === 0) {
+    highlightedSectionIndex.value = -1
+    return
+  }
+
+  if (highlightedSectionIndex.value < 0) {
+    highlightedSectionIndex.value = 0
+    return
+  }
+
+  const next = highlightedSectionIndex.value + delta
+  const count = filteredSections.value.length
+  highlightedSectionIndex.value = (next + count) % count
+}
+
+const goToSection = (sectionId: SectionId) => {
+  const targetSection = document.getElementById(sectionId)
+
+  if (!targetSection) {
+    return
+  }
+
+  targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  history.replaceState(null, '', `#${sectionId}`)
+
+  const selectedSection = sections.value.find((section) => section.id === sectionId)
+  sectionQuery.value = selectedSection?.label ?? ''
+  closeSectionMenu()
+  closeMobileMenu()
+  closeLanguageMenus()
+}
+
+const selectHighlightedSection = () => {
+  if (highlightedSectionIndex.value < 0) {
+    return
+  }
+
+  const section = filteredSections.value[highlightedSectionIndex.value]
+
+  if (!section) {
+    return
+  }
+
+  goToSection(section.id)
+}
+
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 
@@ -252,6 +403,7 @@ const closeMobileMenu = () => {
 const handleNavLinkClick = () => {
   closeMobileMenu()
   closeLanguageMenus()
+  closeSectionMenu()
 }
 
 const handleLanguageSelect = (lang: 'en' | 'fr') => {
@@ -265,7 +417,12 @@ const handleDocumentMouseDown = (event: MouseEvent) => {
   if (target && headerRef.value && !headerRef.value.contains(target)) {
     closeMobileMenu()
     closeLanguageMenus()
+    closeSectionMenu()
     return
+  }
+
+  if (sectionSearchRef.value && target && !sectionSearchRef.value.contains(target)) {
+    closeSectionMenu()
   }
 
   if (desktopLanguageSwitcherRef.value && target && !desktopLanguageSwitcherRef.value.contains(target)) {
@@ -284,13 +441,22 @@ const handleWindowResize = () => {
   }
 }
 
+const handleDocumentKeydown = (event: KeyboardEvent) => {
+  if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+    event.preventDefault()
+    focusSectionSearchInput()
+  }
+}
+
 onMounted(() => {
   document.addEventListener('mousedown', handleDocumentMouseDown)
+  document.addEventListener('keydown', handleDocumentKeydown)
   window.addEventListener('resize', handleWindowResize)
 })
 
 onBeforeUnmount(() => {
   document.removeEventListener('mousedown', handleDocumentMouseDown)
+  document.removeEventListener('keydown', handleDocumentKeydown)
   window.removeEventListener('resize', handleWindowResize)
 })
 </script>
