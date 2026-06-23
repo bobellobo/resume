@@ -6,16 +6,55 @@
 .hero-card {
   display: grid;
   gap: var(--space-sm);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   padding: var(--space-md);
   border-radius: var(--glass-radius-card);
-  background: var(--glass-fill-card);
+  background:
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--surface-section) 74%, transparent),
+      color-mix(in srgb, var(--surface-section) 58%, transparent)
+    ),
+    var(--glass-fill-card);
   border: 1px solid var(--glass-border-soft);
+  backdrop-filter: blur(calc(var(--glass-blur-sm) + 1px)) saturate(114%);
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur-sm) + 1px)) saturate(114%);
   transition: background-color var(--motion-duration-fast) var(--motion-ease-standard), border-color var(--motion-duration-fast) var(--motion-ease-standard);
 }
 
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.34;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 22px, color-mix(in srgb, var(--border-color) 10%, transparent) 22px 23px),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-section) 12%, transparent), transparent 50%);
+}
+
+.hero-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-card:hover {
-  background: var(--glass-fill-card-hover);
+  background:
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--surface-section) 78%, transparent),
+      color-mix(in srgb, var(--surface-section) 64%, transparent)
+    ),
+    var(--glass-fill-card-hover);
   border-color: var(--glass-border-soft-hover);
+}
+
+[data-theme='dark'] .hero-card {
+  border-color: color-mix(in srgb, var(--primary-color) 24%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary-color) 12%, transparent), 0 10px 22px rgba(0, 0, 0, 0.3);
 }
 
 .hero-card-header {

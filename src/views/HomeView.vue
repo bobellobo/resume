@@ -25,9 +25,7 @@ import Footer from '../components/Footer/Footer.vue'
 #app {
   width: 100%;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, color-mix(in srgb, var(--primary-color) 10%, transparent), transparent 45%),
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-page) 84%, transparent), color-mix(in srgb, var(--bg-light) 76%, transparent));
+  background: transparent;
 }
 
 .home-compact-stack {

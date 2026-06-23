@@ -62,25 +62,61 @@
   padding: var(--glass-card-padding-y) var(--glass-card-padding-x);
   background: var(--glass-fill-card);
   border: 1px solid var(--glass-border-soft);
-  transition: background-color var(--motion-duration-fast) var(--motion-ease-standard), border-color var(--motion-duration-fast) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard);
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-standard), border-color var(--motion-duration-fast) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard), transform var(--motion-duration-base) var(--motion-ease-standard);
 }
 
 .glass-card-hover:hover {
   background: var(--glass-fill-card-hover);
   border-color: var(--glass-border-soft-hover);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.13), 0 0 0 1px color-mix(in srgb, var(--primary-color) 10%, transparent);
+  transform: translateY(var(--motion-lift-sm));
 }
 
 :where(.skill-card, .project-list-card, .experience-zigzag-content, .project-article, .project-not-found) {
   border-radius: var(--glass-radius-card);
   padding: var(--glass-card-padding-y) var(--glass-card-padding-x);
-  background: var(--glass-fill-card);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--surface-section) 72%, transparent),
+      color-mix(in srgb, var(--surface-section) 56%, transparent)
+    ),
+    var(--glass-fill-card);
   border: 1px solid var(--glass-border-soft);
-  transition: background-color var(--motion-duration-fast) var(--motion-ease-standard), border-color var(--motion-duration-fast) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard);
+  backdrop-filter: blur(calc(var(--glass-blur-sm) + 1px)) saturate(112%);
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur-sm) + 1px)) saturate(112%);
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-standard), border-color var(--motion-duration-fast) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard), transform var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+:where(.skill-card, .project-list-card, .experience-zigzag-content, .project-article, .project-not-found)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.36;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 22px, color-mix(in srgb, var(--border-color) 10%, transparent) 22px 23px),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-section) 12%, transparent), transparent 48%);
+}
+
+:where(.skill-card, .project-list-card, .experience-zigzag-content, .project-article, .project-not-found) > * {
+  position: relative;
+  z-index: 1;
 }
 
 :where(.skill-card, .project-list-card, .experience-zigzag-content):hover {
   background: var(--glass-fill-card-hover);
   border-color: var(--glass-border-soft-hover);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.13), 0 0 0 1px color-mix(in srgb, var(--primary-color) 10%, transparent);
+  transform: translateY(var(--motion-lift-sm));
+}
+
+[data-theme='dark'] :where(.skill-card, .project-list-card, .experience-zigzag-content, .project-article, .project-not-found) {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary-color) 12%, transparent), 0 10px 22px rgba(0, 0, 0, 0.3);
 }
 
 .glass-navbar-shell {

@@ -1,10 +1,9 @@
 .resume-page {
   --export-page-texture:
-    radial-gradient(circle at 20% 10%, rgba(194, 65, 12, 0.15), transparent 42%),
     linear-gradient(
       180deg,
-      color-mix(in srgb, #f3efe9 80%, transparent) 0%,
-      color-mix(in srgb, #eceff3 80%, transparent) 100%
+      color-mix(in srgb, transparent 84%, var(--surface-page) 16%) 0%,
+      color-mix(in srgb, transparent 90%, var(--bg-light) 10%) 100%
     );
   --export-sheet-border: 1px solid #d1d5db;
   min-height: 100vh;
@@ -107,7 +106,7 @@
 
 @keyframes toolbar-fit-pulse {
   0% {
-    box-shadow: 0 0 0 0 var(--toolbar-fit-pulse-color, rgba(194, 65, 12, 0.28));
+    box-shadow: 0 0 0 0 var(--toolbar-fit-pulse-color, rgba(0, 0, 0, 0.2));
   }
   70% {
     box-shadow: 0 0 0 8px rgba(0, 0, 0, 0);
@@ -132,14 +131,14 @@
 
 .toolbar-link:hover,
 .toolbar-button:hover {
-  border-color: #c2410c;
-  color: #c2410c;
+  border-color: #171717;
+  color: #171717;
 }
 
 .toolbar-button-active {
-  border-color: #c2410c;
-  color: #c2410c;
-  background: color-mix(in srgb, #c2410c 8%, #ffffff);
+  border-color: #171717;
+  color: #171717;
+  background: color-mix(in srgb, #171717 8%, #ffffff);
 }
 
 .resume-sheet {
@@ -219,7 +218,7 @@
 }
 
 .resume-links a:hover {
-  color: #c2410c;
+  color: #171717;
 }
 
 .resume-section {
@@ -230,7 +229,7 @@
   margin: 0 0 0.55rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #c2410c;
+  color: #171717;
   font-size: 0.9rem;
 }
 
@@ -350,7 +349,7 @@
 
 .experience-section {
   padding-left: 0.6rem;
-  border-left: 2px solid color-mix(in srgb, #c2410c 30%, transparent);
+  border-left: 2px solid color-mix(in srgb, #171717 30%, transparent);
 }
 
 .experience-section-title {
@@ -408,7 +407,7 @@
 }
 
 .inline-link {
-  color: #c2410c;
+  color: #171717;
   text-decoration: none;
 }
 
@@ -432,7 +431,7 @@
 }
 
 .export-attribution a:hover {
-  color: #c2410c;
+  color: #171717;
 }
 
 @media screen and (max-width: 980px) {
