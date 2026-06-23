@@ -1,5 +1,4 @@
 @import './styles/common.css';
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 /* ========== CSS Variables ========== */
 :root {
@@ -36,9 +35,10 @@
     --surface-chip-padding-x: 0.58rem;
     --surface-chip-gap: 0.48rem;
     --glass-blur-sm: 8px;
+    --glass-blur-navbar: 6px;
     --glass-blur-md: 10px;
-    --glass-fill-navbar: color-mix(in srgb, var(--surface-navbar) 60%, transparent);
-    --glass-fill-navbar-strong: color-mix(in srgb, var(--surface-navbar) 94%, transparent);
+    --glass-fill-navbar: color-mix(in srgb, var(--surface-navbar) 78%, transparent);
+    --glass-fill-navbar-strong: color-mix(in srgb, var(--surface-navbar) 96%, transparent);
     --glass-fill-card: color-mix(in srgb, var(--primary-color) 5%, transparent);
     --glass-fill-card-hover: color-mix(in srgb, var(--primary-color) 7%, transparent);
     --glass-fill-card-subtle: color-mix(in srgb, var(--primary-color) 2%, transparent);
@@ -155,8 +155,8 @@
     --surface-chip-padding-y: 0.3rem;
     --surface-chip-padding-x: 0.56rem;
     --surface-chip-gap: 0.46rem;
-    --glass-fill-navbar: color-mix(in srgb, var(--surface-navbar) 68%, transparent);
-    --glass-fill-navbar-strong: color-mix(in srgb, var(--surface-navbar) 92%, transparent);
+    --glass-fill-navbar: color-mix(in srgb, var(--surface-navbar) 80%, transparent);
+    --glass-fill-navbar-strong: color-mix(in srgb, var(--surface-navbar) 95%, transparent);
     --glass-fill-card: color-mix(in srgb, var(--primary-color) 11%, transparent);
     --glass-fill-card-hover: color-mix(in srgb, var(--primary-color) 15%, transparent);
     --glass-fill-card-subtle: color-mix(in srgb, var(--primary-color) 7%, transparent);

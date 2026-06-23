@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from './views/HomeView.vue'
-import ProjectView from './views/project/ProjectView.vue'
-import ExportView from './components/Export/Export.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,12 +31,12 @@ const router = createRouter({
     {
       path: '/projects/:slug',
       name: 'project-detail',
-      component: ProjectView
+      component: () => import('./views/project/ProjectView.vue')
     },
     {
       path: '/export',
       name: 'export',
-      component: ExportView
+      component: () => import('./components/Export/Export.vue')
     },
     {
       path: '/:pathMatch(.*)*',

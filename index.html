@@ -1,22 +1,21 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HWNWSC8F5"></script>
     <script>
-
       let gaLoaded = false;
 
-      function loadGoogleAnalytics(){
-
-        if(gaLoaded) return;
+      function loadGoogleAnalytics() {
+        if (gaLoaded) return;
         gaLoaded = true;
+
         const script = document.createElement('script');
         script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-2HWNWSC8F5";
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-2HWNWSC8F5';
         document.head.appendChild(script);
 
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
         gtag('js', new Date());
         gtag('config', 'G-2HWNWSC8F5');
 
@@ -26,10 +25,9 @@
         window.removeEventListener('touchstart', loadGoogleAnalytics);
       }
 
-      window.addEventListener('scroll'    , loadGoogleAnalytics, { passive: true });
-      window.addEventListener('mousemove' , loadGoogleAnalytics);
+      window.addEventListener('scroll', loadGoogleAnalytics, { passive: true });
+      window.addEventListener('mousemove', loadGoogleAnalytics);
       window.addEventListener('touchstart', loadGoogleAnalytics, { passive: true });
-
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
@@ -37,6 +35,7 @@
     <title>Portfolio - Titouan Guedon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" />
   </head>
   <body>
     <div id="app"></div>
