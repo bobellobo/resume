@@ -1,10 +1,14 @@
 <template>
-  <RouterView />
+  <AmbientCurves />
+  <div class="app-foreground">
+    <RouterView />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import { onMounted, onUnmounted } from 'vue'
+import AmbientCurves from './components/AmbientCurves/AmbientCurves.vue'
 
 // Smooth cursor-following spotlight via lerp-animated CSS custom properties
 let targetX = 0
@@ -82,3 +86,10 @@ onUnmounted(() => {
   stopSpotlightAnimation()
 })
 </script>
+
+<style scoped>
+.app-foreground {
+  position: relative;
+  z-index: 20;
+}
+</style>
