@@ -3,7 +3,8 @@
     <div class="project-page-shell">
       <div class="project-topbar">
         <RouterLink class="project-back-link" :to="{ name: 'home', hash: '#projects' }">
-          {{ $t('projectPage.backToProjects') }}
+          <Icon icon="lucide:arrow-left" aria-hidden="true" />
+          <span class="sr-only">{{ $t('projectPage.backToProjects') }}</span>
         </RouterLink>
 
         <div class="project-language-switcher" role="group" aria-label="Language switcher">
@@ -14,7 +15,8 @@
             :aria-pressed="currentLocale === 'en'"
             @click="switchLanguage('en')"
           >
-            EN
+            <Icon icon="flag:gb-4x3" aria-hidden="true" />
+            <span class="sr-only">EN</span>
           </button>
           <button
             type="button"
@@ -23,7 +25,8 @@
             :aria-pressed="currentLocale === 'fr'"
             @click="switchLanguage('fr')"
           >
-            FR
+            <Icon icon="flag:fr-4x3" aria-hidden="true" />
+            <span class="sr-only">FR</span>
           </button>
         </div>
       </div>
@@ -160,6 +163,7 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { Icon } from '@iconify/vue'
 import { getProjectImageOrFallback } from '../../content/data/projects'
 import { useProjectView } from './useProjectView'
 

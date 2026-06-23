@@ -13,7 +13,7 @@
     "contact": "Contact"
   },
   "projects": {
-    "title": "Projects & Achievements",
+    "title": "Projects",
     "imageUnavailable": "Project preview unavailable",
     "swipeHint": "Swipe to browse",
     "expandProject": "Expand project details",
@@ -21,9 +21,7 @@
     "openExternalProject": "Open external project page"
   },
   "experience": {
-    "title": "Professional Experience",
-    "technologiesLabel": "Main technologies",
-    "languagesLabel": "Languages spoken during this experience"
+    "title": "Experience"
   },
   "contact": {
     "title": "Let's get in touch",
@@ -40,7 +38,6 @@
     "viewProject": "See more"
   },
   "projectPage": {
-    "backToProjects": "Back to projects",
     "projectEyebrow": "Project case study", 
     "locationTitle": "Location",
     "technologiesTitle": "Technologies",

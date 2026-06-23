@@ -1,12 +1,12 @@
 .template-notice-icon {
   position: relative;
-  width: 2.35rem;
-  height: 2.35rem;
+  width: calc(var(--control-min-size) + 0.15rem);
+  height: calc(var(--control-min-size) + 0.15rem);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--border-color);
-  border-radius: 999px;
+  border: var(--control-border-width) solid var(--border-color);
+  border-radius: var(--glass-radius-control);
   background: var(--bg-white);
   color: var(--text-dark);
   cursor: pointer;
@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: var(--space-md);
 }
 
 .template-dialog-overlay {
@@ -59,11 +59,12 @@
 .template-dialog-content {
   position: relative;
   width: min(100%, 32rem);
-  padding: 1rem;
-  border-radius: 0.8rem;
-  border: 1px solid var(--border-color);
-  background: var(--bg-white);
+  padding: var(--space-md);
+  border-radius: var(--glass-radius-menu);
+  border: 1px solid var(--glass-border-soft);
+  background: var(--glass-fill-navbar-strong);
   box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(var(--glass-blur-md));
 }
 
 .template-dialog-close {
@@ -85,15 +86,15 @@
 }
 
 .template-dialog-content h2 {
-  margin: 0 2rem 0.5rem 0;
+  margin: 0 var(--space-2xl) var(--space-xs) 0;
   color: var(--text-dark);
-  font-size: 1.1rem;
+  font-size: var(--type-title-md);
 }
 
 .template-dialog-content p {
-  margin: 0 0 0.9rem;
+  margin: 0 0 var(--space-sm);
   color: var(--text-light);
-  font-size: 0.86rem;
+  font-size: var(--type-body-sm);
   line-height: 1.55;
 }
 

@@ -17,7 +17,8 @@
     --surface-card-bg: color-mix(in srgb, var(--surface-section) 90%, transparent);
     --surface-card-border: color-mix(in srgb, var(--border-color) 84%, transparent);
     --surface-card-border-hover: color-mix(in srgb, var(--primary-color) 26%, var(--border-color));
-    --surface-card-radius: 0.75rem;
+    --surface-card-radius: 0.875rem;
+    --surface-card-padding: 1.1rem;
     --surface-card-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
     --surface-card-shadow-hover: 0 10px 20px rgba(15, 23, 42, 0.12);
     --surface-subcard-bg: color-mix(in srgb, var(--surface-section) 84%, transparent);
@@ -34,6 +35,37 @@
     --surface-chip-padding-y: 0.32rem;
     --surface-chip-padding-x: 0.58rem;
     --surface-chip-gap: 0.48rem;
+    --glass-blur-sm: 8px;
+    --glass-blur-md: 10px;
+    --glass-fill-navbar: color-mix(in srgb, var(--surface-navbar) 60%, transparent);
+    --glass-fill-navbar-strong: color-mix(in srgb, var(--surface-navbar) 94%, transparent);
+    --glass-fill-card: color-mix(in srgb, var(--primary-color) 5%, transparent);
+    --glass-fill-card-hover: color-mix(in srgb, var(--primary-color) 7%, transparent);
+    --glass-fill-card-subtle: color-mix(in srgb, var(--primary-color) 2%, transparent);
+    --glass-border-soft: color-mix(in srgb, var(--border-color) 40%, transparent);
+    --glass-border-soft-hover: color-mix(in srgb, var(--border-color) 50%, transparent);
+    --glass-border-muted: color-mix(in srgb, var(--border-color) 52%, transparent);
+    --glass-border-strong: color-mix(in srgb, var(--border-color) 72%, transparent);
+    --glass-radius-card: 14px;
+    --glass-card-padding-y: 0.16rem;
+    --glass-card-padding-x: 0.78rem;
+    --glass-radius-menu: 0.9rem;
+    --glass-radius-control: 999px;
+    --control-min-size: 2.2rem;
+    --control-border-width: 2px;
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.25rem;
+    --space-xl: 1.5rem;
+    --space-2xl: 2rem;
+    --type-label-xs: 0.72rem;
+    --type-body-sm: 0.88rem;
+    --type-body-md: 0.95rem;
+    --type-title-sm: 1rem;
+    --type-title-md: 1.05rem;
+    --type-section-tight: 1.3rem;
     --border-color: #e5e7eb;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -116,6 +148,15 @@
     --surface-chip-padding-y: 0.3rem;
     --surface-chip-padding-x: 0.56rem;
     --surface-chip-gap: 0.46rem;
+    --glass-fill-navbar: color-mix(in srgb, var(--surface-navbar) 68%, transparent);
+    --glass-fill-navbar-strong: color-mix(in srgb, var(--surface-navbar) 92%, transparent);
+    --glass-fill-card: color-mix(in srgb, var(--primary-color) 7%, transparent);
+    --glass-fill-card-hover: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    --glass-fill-card-subtle: color-mix(in srgb, var(--primary-color) 3%, transparent);
+    --glass-border-soft: color-mix(in srgb, var(--border-color) 66%, transparent);
+    --glass-border-soft-hover: color-mix(in srgb, var(--border-color) 78%, transparent);
+    --glass-border-muted: color-mix(in srgb, var(--border-color) 72%, transparent);
+    --glass-border-strong: color-mix(in srgb, var(--border-color) 84%, transparent);
     --border-color: #313947;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.45);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
@@ -249,6 +290,14 @@ p {
 }
 
 @media (max-width: 640px) {
+    :root {
+        --surface-card-radius: 0.82rem;
+        --surface-card-padding: 1rem;
+        --glass-radius-card: 13px;
+        --glass-card-padding-y: 0.12rem;
+        --glass-card-padding-x: 0.65rem;
+    }
+
     h1 {
         font-size: 1.8rem;
     }
@@ -263,6 +312,14 @@ p {
 }
 
 @media (max-width: 480px) {
+    :root {
+        --surface-card-radius: 0.78rem;
+        --surface-card-padding: 0.92rem;
+        --glass-radius-card: 12px;
+        --glass-card-padding-y: 0.1rem;
+        --glass-card-padding-x: 0.56rem;
+    }
+
     h1 {
         font-size: 1.5rem;
     }

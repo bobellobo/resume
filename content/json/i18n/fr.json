@@ -13,7 +13,7 @@
     "contact": "Contact"
   },
   "projects": {
-    "title": "Projets et réalisations",
+    "title": "Projets",
     "imageUnavailable": "Aperçu du projet indisponible",
     "swipeHint": "Glisser pour naviguer",
     "expandProject": "Afficher les details du projet",
@@ -21,9 +21,7 @@
     "openExternalProject": "Ouvrir la page externe du projet"
   },
   "experience": {
-    "title": "Expériences professionnelles",
-    "technologiesLabel": "Technologies principales",
-    "languagesLabel": "Langues parlées durant cette expérience"
+    "title": "Expériences"
   },
   "contact": {
     "title": "Me contacter",
@@ -40,7 +38,6 @@
     "viewProject": "Voir plus"
   },
   "projectPage": {
-    "backToProjects": "Retour aux projets",
     "projectEyebrow": "Etude de cas",
     "locationTitle": "Localisation",
     "technologiesTitle": "Technologies",

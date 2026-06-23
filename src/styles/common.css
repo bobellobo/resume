@@ -3,6 +3,18 @@
   padding: 0 var(--layout-padding-x-desktop);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .section-block {
   background-color: transparent;
   padding: var(--section-padding-y-desktop) var(--layout-padding-x-desktop);
@@ -45,11 +57,71 @@
   margin-bottom: var(--section-title-gap-desktop);
 }
 
+.glass-card {
+  border-radius: var(--glass-radius-card);
+  padding: var(--glass-card-padding-y) var(--glass-card-padding-x);
+  background: var(--glass-fill-card);
+  border: 1px solid var(--glass-border-soft);
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-standard), border-color var(--motion-duration-fast) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.glass-card-hover:hover {
+  background: var(--glass-fill-card-hover);
+  border-color: var(--glass-border-soft-hover);
+}
+
+:where(.skill-card, .project-list-card, .experience-zigzag-content, .project-article, .project-not-found) {
+  border-radius: var(--glass-radius-card);
+  padding: var(--glass-card-padding-y) var(--glass-card-padding-x);
+  background: var(--glass-fill-card);
+  border: 1px solid var(--glass-border-soft);
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-standard), border-color var(--motion-duration-fast) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+:where(.skill-card, .project-list-card, .experience-zigzag-content):hover {
+  background: var(--glass-fill-card-hover);
+  border-color: var(--glass-border-soft-hover);
+}
+
+.glass-navbar-shell {
+  background-color: var(--glass-fill-navbar);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(var(--glass-blur-sm));
+}
+
+.glass-menu-shell {
+  background-color: var(--glass-fill-navbar-strong);
+  border: 1px solid var(--border-color);
+  border-radius: var(--glass-radius-menu);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(var(--glass-blur-sm));
+}
+
+.control-pill {
+  min-height: var(--control-min-size);
+  border: var(--control-border-width) solid var(--border-color);
+  border-radius: var(--glass-radius-control);
+  transition: border-color var(--motion-duration-base) var(--motion-ease-standard), color var(--motion-duration-base) var(--motion-ease-standard), transform var(--motion-duration-base) var(--motion-ease-standard), background-color var(--motion-duration-base) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.control-pill:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(var(--motion-lift-xs));
+}
+
+.control-pill:focus-visible {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
 .surface-card {
   background-color: var(--surface-card-bg);
   border: 1px solid var(--surface-card-border);
   border-radius: var(--surface-card-radius);
   box-shadow: var(--surface-card-shadow);
+  padding: var(--surface-card-padding);
   transition: border-color var(--motion-duration-base) var(--motion-ease-standard), box-shadow var(--motion-duration-base) var(--motion-ease-standard), background-color var(--motion-duration-base) var(--motion-ease-standard);
 }
 
@@ -111,8 +183,8 @@
 .tech-badge {
   display: inline-flex;
   align-items: center;
-  border: 0;
-  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--primary-color) 30%, transparent);
+  border-radius: 999px;
   padding: 0.24rem 0.45rem;
   background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
   color: var(--primary-color);
@@ -128,12 +200,13 @@
 }
 
 .tech-badge-subtle {
-  color: var(--text-dark);
-  background-color: color-mix(in srgb, var(--border-color) 20%, transparent);
+  color: var(--primary-color);
+  border-color: color-mix(in srgb, var(--border-color) 50%, transparent);
+  background-color: color-mix(in srgb, var(--border-color) 40%, transparent);
 }
 
 .tech-badge-subtle:hover {
-  background-color: color-mix(in srgb, var(--border-color) 28%, transparent);
+  background-color: color-mix(in srgb, var(--border-color) 50%, transparent);
 }
 
 :where(a, button, [role='button'], input, textarea, select):focus-visible {
