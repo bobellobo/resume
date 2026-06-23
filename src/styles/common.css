@@ -107,6 +107,35 @@
   transform: translateY(var(--motion-lift-sm));
 }
 
+/* ========== Tag/Badge Tokens ========== */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  padding: 0.24rem 0.45rem;
+  background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.tech-badge:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 16%, transparent);
+}
+
+.tech-badge-subtle {
+  color: var(--text-dark);
+  background-color: color-mix(in srgb, var(--border-color) 20%, transparent);
+}
+
+.tech-badge-subtle:hover {
+  background-color: color-mix(in srgb, var(--border-color) 28%, transparent);
+}
+
 :where(a, button, [role='button'], input, textarea, select):focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;

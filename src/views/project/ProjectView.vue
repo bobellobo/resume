@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <article v-if="project" class="project-article surface-card">
+      <article v-if="project" class="project-article">
         <header class="project-header">
           <div class="project-hero-media">
             <img
@@ -53,7 +53,7 @@
           <div v-if="hasTechnologies" class="project-fact-row">
             <p class="fact-label">{{ $t('projectPage.technologiesTitle') }}</p>
             <div class="chip-list">
-              <span v-for="technology in normalizedTechnologies" :key="technology" class="meta-chip">
+              <span v-for="technology in normalizedTechnologies" :key="technology" class="tech-badge">
                 {{ technology }}
               </span>
             </div>
@@ -62,7 +62,7 @@
           <div v-if="hasKeywords" class="project-fact-row">
             <p class="fact-label">{{ $t('projectPage.keywordsTitle') }}</p>
             <div class="chip-list">
-              <span v-for="keyword in normalizedKeywords" :key="keyword" class="meta-chip meta-chip-subtle">
+              <span v-for="keyword in normalizedKeywords" :key="keyword" class="tech-badge tech-badge-subtle">
                 {{ keyword }}
               </span>
             </div>
@@ -150,7 +150,7 @@
         </section>
       </article>
 
-      <section v-else class="project-not-found surface-card">
+      <section v-else class="project-not-found">
         <h1>{{ $t('projectPage.notFoundTitle') }}</h1>
         <p>{{ $t('projectPage.notFoundDescription') }}</p>
       </section>

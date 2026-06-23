@@ -1,6 +1,5 @@
 <template>
-  <section id="experience" class="experience section-block">
-    <div class="container">
+  <section id="experience" class="home-stack-section experience">
       <h2 class="section-title">{{ $t('experience.title') }}</h2>
 
       <div class="experience-zigzag" role="list">
@@ -21,7 +20,7 @@
             <div
               v-for="card in group.cards"
               :key="card.id"
-              class="experience-zigzag-content surface-card"
+              class="experience-zigzag-content"
             >
               <button
                 type="button"
@@ -69,7 +68,7 @@
                     <li
                       v-for="technology in card.technologies"
                       :key="`${card.id}-${technology}`"
-                      class="experience-tech-badge"
+                      class="tech-badge"
                     >
                       {{ technology }}
                     </li>
@@ -81,7 +80,6 @@
           </div>
         </article>
       </div>
-    </div>
   </section>
 </template>
 

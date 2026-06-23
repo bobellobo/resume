@@ -1,7 +1,6 @@
 <template>
-  <section id="home" class="hero">
-    <div class="hero-shell">
-      <article class="hero-card surface-card">
+  <section class="home-stack-section hero">
+    <article class="hero-card">
         <div class="hero-card-header">
           <img class="hero-photo" :src="heroPhoto" :alt="profileContent.photoAlt" />
           <div class="hero-identity-copy">
@@ -98,7 +97,6 @@
           </li>
         </ul>
       </article>
-    </div>
   </section>
 </template>
 

@@ -173,10 +173,9 @@ body::before {
     opacity: 1;
     background-image:
         radial-gradient(circle at 1px 1px, var(--page-texture-dot) 1.1px, transparent 0),
-        repeating-linear-gradient(-45deg, transparent 0 13px, var(--page-texture-line) 13px 14px),
         linear-gradient(120deg, transparent 0%, var(--page-texture-wash) 50%, transparent 100%);
-    background-size: 20px 20px, auto, 180% 180%;
-    background-position: 0 0, 0 0, 0% 0%;
+    background-size: 20px 20px, 180% 180%;
+    background-position: 0 0, 0% 0%;
     animation: page-texture-scroll linear both;
     animation-timeline: scroll(root block);
 }

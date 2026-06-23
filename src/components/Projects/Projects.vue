@@ -1,12 +1,11 @@
 <template>
-  <section id="projects" class="projects section-block">
-    <div class="container">
+  <section id="projects" class="home-stack-section projects">
       <h2 class="section-title">{{ $t('projects.title') }}</h2>
       <div class="projects-list" role="list">
         <article
           v-for="project in projects"
           :key="project.slug"
-          :class="['project-list-card surface-card', { 'is-expanded': isExpanded(project.slug) }]"
+          :class="['project-list-card', { 'is-expanded': isExpanded(project.slug) }]"
           role="listitem"
         >
           <div class="project-list-row">
@@ -22,7 +21,7 @@
                 <span
                   v-for="technology in getTechnologies(project)"
                   :key="`${project.slug}-${technology}`"
-                  class="project-list-tech-tag"
+                  class="tech-badge"
                 >
                   {{ technology }}
                 </span>
@@ -85,7 +84,6 @@
           </Transition>
         </article>
       </div>
-    </div>
   </section>
 </template>
 

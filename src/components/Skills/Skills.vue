@@ -1,10 +1,9 @@
 <template>
-  <section id="skills" class="skills section-block">
-    <div class="container">
+  <section id="skills" class="home-stack-section skills">
       <h2 class="section-title">{{ profileContent.skillsTitle }}</h2>
 
       <div class="skills-grid">
-        <article v-for="category in skills" :key="category.id" class="skill-card surface-card">
+        <article v-for="category in skills" :key="category.id" class="skill-card">
           <h3 class="skill-heading">{{ category.content[currentLocale].title }}</h3>
           <ul class="skill-list">
             <li
@@ -19,7 +18,6 @@
           </ul>
         </article>
       </div>
-    </div>
   </section>
 </template>
 
