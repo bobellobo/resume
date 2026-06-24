@@ -263,7 +263,7 @@ const isMobileMenuOpen = ref(false)
 const isSectionMenuOpen = ref(false)
 const sectionQuery = ref('')
 const highlightedSectionIndex = ref(0)
-const exportLink = '/resume/?view=export'
+const exportLink = `${import.meta.env.BASE_URL}?view=export`
 const templateInfo = getTemplateInfo()
 
 const currentLanguageLabel = computed(() => (currentLanguage.value === 'fr' ? 'Français' : 'English'))

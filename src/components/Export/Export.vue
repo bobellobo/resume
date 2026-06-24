@@ -1,7 +1,7 @@
 <template>
   <main class="resume-page print-preview">
     <div class="resume-toolbar" role="toolbar" :aria-label="$t('exportView.actionsLabel')">
-      <a class="toolbar-link" href="/resume/">{{ $t('exportView.backToPortfolio') }}</a>
+      <a class="toolbar-link" :href="baseUrl">{{ $t('exportView.backToPortfolio') }}</a>
       <button
         type="button"
         class="toolbar-button"
@@ -231,6 +231,7 @@ const LANGUAGE_STORAGE_KEY = 'language'
 const SCALE_STEP = 2
 const MIN_SCALE_PERCENT = 60
 const MAX_SCALE_PERCENT = 125
+const baseUrl = import.meta.env.BASE_URL
 
 const { locale, t } = useI18n()
 const { experiences } = useExperiencesData()
