@@ -26,6 +26,8 @@ let currentX = 0
 let currentY = 0
 let rafId: number | null = null
 let isAnimating = false
+let lastRenderTs = 0
+let targetFrameMs = 32
 const SPOTLIGHT_LERP = 0.45
 const SPOTLIGHT_SNAP_DISTANCE = 0.4
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
@@ -54,6 +56,7 @@ function stopSpotlightAnimation() {
     rafId = null
   }
   isAnimating = false
+  lastRenderTs = 0
 }
 
 function startSpotlightAnimation() {
@@ -68,7 +71,13 @@ function lerp(a: number, b: number, t: number): number {
   return a + (b - a) * t
 }
 
-function animateSpotlight() {
+function animateSpotlight(frameTs: number) {
+  if (lastRenderTs !== 0 && frameTs - lastRenderTs < targetFrameMs) {
+    rafId = requestAnimationFrame(animateSpotlight)
+    return
+  }
+
+  lastRenderTs = frameTs
   currentX = lerp(currentX, targetX, SPOTLIGHT_LERP)
   currentY = lerp(currentY, targetY, SPOTLIGHT_LERP)
 
@@ -97,7 +106,7 @@ onMounted(() => {
   const reducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches
   const coarsePointer = window.matchMedia(COARSE_POINTER_QUERY).matches
   const performanceTier = getPerformanceTier()
-  const shouldDisableSpotlight = reducedMotion || coarsePointer || performanceTier === 'low'
+  const shouldDisableSpotlight = reducedMotion || coarsePointer || performanceTier !== 'high'
 
   document.documentElement.dataset.performanceTier = performanceTier
 
@@ -106,6 +115,8 @@ onMounted(() => {
     document.documentElement.style.setProperty('--my', '50%')
     return
   }
+
+  targetFrameMs = 24
 
   targetX = window.innerWidth / 2
   targetY = window.innerHeight / 2
