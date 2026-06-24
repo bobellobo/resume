@@ -16,6 +16,7 @@
   --ambient-curve-4-end: #00ffd0;
   --ambient-curve-5-start: #2ef8ff;
   --ambient-curve-5-end: #8bff73;
+  transform: translateZ(0);
 }
 
 :global([data-theme='dark'] .ambient-curves) {
@@ -35,6 +36,7 @@
   width: 100%;
   height: 100%;
   overflow: visible;
+  transform: translateZ(0);
 }
 
 .ambient-curve {
@@ -44,6 +46,9 @@
   opacity: 0.84;
   will-change: transform;
   mix-blend-mode: normal;
+  transform: translate3d(var(--drift-x, 0px), var(--offset-y, 0px), 0);
+  transform-origin: center;
+  backface-visibility: hidden;
 }
 
 .ambient-curve-1 {

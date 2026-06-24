@@ -30,7 +30,7 @@
         class="ambient-curve"
         :class="curve.className"
         :d="curve.path"
-        :style="{ transform: curve.transform }"
+        :style="curve.cssVars"
       />
     </svg>
   </div>
@@ -38,6 +38,8 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, reactive } from 'vue'
+
+type PerformanceTier = 'high' | 'medium' | 'low'
 
 type CurveSpec = {
   id: number
@@ -63,7 +65,10 @@ type CurveState = {
   id: number
   className: string
   path: string
-  transform: string
+  cssVars: {
+    '--drift-x': string
+    '--offset-y': string
+  }
 }
 
 const curveSpecs: CurveSpec[] = [
@@ -121,7 +126,10 @@ const curves = reactive<CurveState[]>(
     id: curveSpec.id,
     className: curveSpec.className,
     path: '',
-    transform: 'translate3d(0px, 0px, 0)'
+    cssVars: {
+      '--drift-x': '0px',
+      '--offset-y': '0px'
+    }
   }))
 )
 
@@ -129,11 +137,11 @@ let latestScrollY = 0
 let smoothedScrollY = 0
 let frameId: number | null = null
 let firstFrameTs = 0
-let lastRenderTs = 0
-let targetFrameMs = 16
 let activeCurveCount = curveSpecs.length
 let maxParallaxOffset = 420
 let reducedMotionMedia: MediaQueryList | null = null
+let tierObserver: MutationObserver | null = null
+let currentTier: PerformanceTier = 'high'
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
 
 function randomBetween(min: number, max: number): number {
@@ -189,7 +197,7 @@ function buildStaticPath(spec: RuntimeCurveSpec): string {
   return `M ${leadStartX.toFixed(2)} ${leadStartY.toFixed(2)} C ${leadCtrl1X.toFixed(2)} ${leadCtrl1Y.toFixed(2)}, ${leadCtrl2X.toFixed(2)} ${leadCtrl2Y.toFixed(2)}, ${spec.xControl[0]} ${y0.toFixed(2)} C ${x1.toFixed(2)} ${y1.toFixed(2)}, ${x2.toFixed(2)} ${y2.toFixed(2)}, ${spec.xControl[3]} ${y3.toFixed(2)} C ${extensionCtrl1X.toFixed(2)} ${extensionCtrl1Y.toFixed(2)}, ${extensionCtrl2X.toFixed(2)} ${extensionCtrl2Y.toFixed(2)}, ${extensionEndX.toFixed(2)} ${extensionEndY.toFixed(2)}`
 }
 
-function getPerformanceTier(): 'high' | 'medium' | 'low' {
+function getPerformanceTier(): PerformanceTier {
   const tier = document.documentElement.dataset.performanceTier
 
   if (tier === 'low' || tier === 'medium' || tier === 'high') {
@@ -200,34 +208,33 @@ function getPerformanceTier(): 'high' | 'medium' | 'low' {
 }
 
 function refreshQualityProfile() {
-  const tier = getPerformanceTier()
+  const tier = currentTier
 
   if (tier === 'low') {
-    targetFrameMs = 34
     activeCurveCount = 3
     return
   }
 
   if (tier === 'medium') {
-    targetFrameMs = 24
     activeCurveCount = 4
     return
   }
 
-  targetFrameMs = 16
   activeCurveCount = curveSpecs.length
 }
 
-function updateCurves(frameTs: number) {
-  refreshQualityProfile()
+function handlePerformanceTierChange() {
+  const nextTier = getPerformanceTier()
 
-  if (lastRenderTs !== 0 && frameTs - lastRenderTs < targetFrameMs) {
-    frameId = requestAnimationFrame(updateCurves)
+  if (nextTier === currentTier) {
     return
   }
 
-  lastRenderTs = frameTs
+  currentTier = nextTier
+  refreshQualityProfile()
+}
 
+function updateCurves(frameTs: number) {
   if (firstFrameTs === 0) {
     firstFrameTs = frameTs
   }
@@ -249,7 +256,8 @@ function updateCurves(frameTs: number) {
 
     if (index >= activeCurveCount) {
       curveState.path = ''
-      curveState.transform = 'translate3d(0px, 0px, 0)'
+      curveState.cssVars['--drift-x'] = '0px'
+      curveState.cssVars['--offset-y'] = '0px'
       continue
     }
 
@@ -269,7 +277,8 @@ function updateCurves(frameTs: number) {
       curveState.path = buildStaticPath(spec)
     }
 
-    curveState.transform = `translate3d(${driftX.toFixed(2)}px, ${(parallaxY + driftY).toFixed(2)}px, 0)`
+    curveState.cssVars['--drift-x'] = `${driftX.toFixed(2)}px`
+    curveState.cssVars['--offset-y'] = `${(parallaxY + driftY).toFixed(2)}px`
   }
 
   frameId = requestAnimationFrame(updateCurves)
@@ -299,7 +308,6 @@ function onVisibilityChanged() {
   }
 
   firstFrameTs = 0
-  lastRenderTs = 0
 
   if (frameId === null) {
     frameId = requestAnimationFrame(updateCurves)
@@ -308,7 +316,13 @@ function onVisibilityChanged() {
 
 onMounted(() => {
   initializeRuntimeSpecs()
+  currentTier = getPerformanceTier()
   refreshQualityProfile()
+  tierObserver = new MutationObserver(handlePerformanceTierChange)
+  tierObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-performance-tier']
+  })
   reducedMotionMedia = window.matchMedia(REDUCED_MOTION_QUERY)
   latestScrollY = window.scrollY || window.pageYOffset || 0
   smoothedScrollY = latestScrollY
@@ -328,6 +342,11 @@ onUnmounted(() => {
 
   if (reducedMotionMedia) {
     reducedMotionMedia.removeEventListener('change', onReducedMotionChanged)
+  }
+
+  if (tierObserver) {
+    tierObserver.disconnect()
+    tierObserver = null
   }
 
   if (frameId !== null) {
