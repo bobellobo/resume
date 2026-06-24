@@ -143,6 +143,7 @@ let reducedMotionMedia: MediaQueryList | null = null
 let tierObserver: MutationObserver | null = null
 let currentTier: PerformanceTier = 'high'
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
+const SCROLL_CONTRIBUTION_FACTOR = 1.18
 
 function randomBetween(min: number, max: number): number {
   return min + Math.random() * (max - min)
@@ -248,7 +249,7 @@ function updateCurves(frameTs: number) {
     smoothedScrollY += (latestScrollY - smoothedScrollY) * 0.12
   }
 
-  const activeScrollY = isReducedMotion ? 0 : smoothedScrollY
+  const activeScrollY = isReducedMotion ? 0 : smoothedScrollY * SCROLL_CONTRIBUTION_FACTOR
 
   for (let index = 0; index < runtimeCurveSpecs.length; index += 1) {
     const spec = runtimeCurveSpecs[index]
