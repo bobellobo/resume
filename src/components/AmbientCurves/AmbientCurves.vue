@@ -129,6 +129,10 @@ let latestScrollY = 0
 let smoothedScrollY = 0
 let frameId: number | null = null
 let firstFrameTs = 0
+let lastRenderTs = 0
+let targetFrameMs = 16
+let activeCurveCount = curveSpecs.length
+let maxParallaxOffset = 420
 let reducedMotionMedia: MediaQueryList | null = null
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
 
@@ -139,8 +143,9 @@ function randomBetween(min: number, max: number): number {
 function initializeRuntimeSpecs() {
   runtimeCurveSpecs.length = 0
 
-  for (const spec of curveSpecs) {
-    runtimeCurveSpecs.push({
+  for (let index = 0; index < curveSpecs.length; index += 1) {
+    const spec = curveSpecs[index]
+    const runtimeSpec: RuntimeCurveSpec = {
       ...spec,
       directionX: Math.random() > 0.5 ? 1 : -1,
       directionY: Math.random() > 0.5 ? 1 : -1,
@@ -149,30 +154,80 @@ function initializeRuntimeSpecs() {
       speedPrimary: randomBetween(0.35, 0.9),
       speedSecondary: randomBetween(0.5, 1.35),
       pathJitter: randomBetween(10, 34)
-    })
+    }
+
+    runtimeCurveSpecs.push(runtimeSpec)
+    curves[index].path = buildStaticPath(runtimeSpec)
   }
 }
 
-function buildPath(spec: RuntimeCurveSpec, scrollY: number, elapsed: number): string {
-  const flowA = scrollY / 170
-  const flowB = scrollY / 260
+function buildStaticPath(spec: RuntimeCurveSpec): string {
+  const y0 = spec.yBase[0] + (Math.sin(spec.phase) * spec.waveStrength * 0.56)
+  const y1 = spec.yBase[1] + (Math.cos(spec.phase * 1.22) * (spec.waveStrength * 0.44))
+  const y2 = spec.yBase[2] + (Math.sin(spec.phase * 0.92) * (spec.waveStrength * 0.36))
+  const y3 = spec.yBase[3] + (Math.cos(spec.phase * 1.08) * (spec.waveStrength * 0.32))
 
-  const harmonicA = Math.sin(elapsed * spec.speedPrimary + spec.phase)
-  const harmonicB = Math.cos(elapsed * spec.speedSecondary + spec.phase)
-  const harmonicC = Math.sin(elapsed * (spec.speedPrimary + spec.speedSecondary) * 0.5 + spec.phase)
+  const x1 = spec.xControl[1] + (spec.pathJitter * 0.5 * spec.directionX)
+  const x2 = spec.xControl[2] + (spec.pathJitter * 0.6 * spec.directionX)
 
-  const y0 = spec.yBase[0] + (Math.sin(flowA + spec.phase) * spec.waveStrength) + (harmonicA * spec.pathJitter)
-  const y1 = spec.yBase[1] + (Math.cos(flowA * 1.22 + spec.phase) * (spec.waveStrength * 0.82)) + (harmonicB * spec.pathJitter * 0.88)
-  const y2 = spec.yBase[2] + (Math.sin(flowA * 0.92 + flowB + spec.phase) * (spec.waveStrength * 0.74)) + (harmonicC * spec.pathJitter * 0.72)
-  const y3 = spec.yBase[3] + (Math.cos(flowA * 1.08 + spec.phase) * (spec.waveStrength * 0.64)) + (harmonicA * spec.pathJitter * 0.56)
+  // Start each curve far above the viewport so the top endpoint never enters view.
+  const leadStartX = spec.xControl[0] - (spec.pathJitter * 0.9 * spec.directionX)
+  const leadStartY = y0 - (980 + spec.waveStrength * 2.2)
+  const leadCtrl1X = spec.xControl[0] - (spec.pathJitter * 1.15 * spec.directionX)
+  const leadCtrl1Y = y0 - (560 + spec.waveStrength * 1.8)
+  const leadCtrl2X = spec.xControl[0] - (spec.pathJitter * 0.65 * spec.directionX)
+  const leadCtrl2Y = y0 - (240 + spec.waveStrength * 1.25)
 
-  const x1 = spec.xControl[1] + harmonicB * spec.pathJitter * spec.directionX
-  const x2 = spec.xControl[2] + harmonicC * spec.pathJitter * 1.2 * spec.directionX
+  // Extend each curve well below the viewport so bottom endpoints stay hidden during scroll/parallax.
+  const extensionCtrl1X = spec.xControl[3] + (spec.pathJitter * 0.7 * spec.directionX)
+  const extensionCtrl1Y = y3 + (220 + spec.waveStrength * 1.2)
+  const extensionCtrl2X = spec.xControl[3] + (spec.pathJitter * 1.25 * spec.directionX)
+  const extensionCtrl2Y = y3 + (560 + spec.waveStrength * 1.8)
+  const extensionEndX = spec.xControl[3] + (spec.pathJitter * 0.85 * spec.directionX)
+  const extensionEndY = y3 + (1050 + spec.waveStrength * 2.6)
 
-  return `M ${spec.xControl[0]} ${y0.toFixed(2)} C ${x1.toFixed(2)} ${y1.toFixed(2)}, ${x2.toFixed(2)} ${y2.toFixed(2)}, ${spec.xControl[3]} ${y3.toFixed(2)}`
+  return `M ${leadStartX.toFixed(2)} ${leadStartY.toFixed(2)} C ${leadCtrl1X.toFixed(2)} ${leadCtrl1Y.toFixed(2)}, ${leadCtrl2X.toFixed(2)} ${leadCtrl2Y.toFixed(2)}, ${spec.xControl[0]} ${y0.toFixed(2)} C ${x1.toFixed(2)} ${y1.toFixed(2)}, ${x2.toFixed(2)} ${y2.toFixed(2)}, ${spec.xControl[3]} ${y3.toFixed(2)} C ${extensionCtrl1X.toFixed(2)} ${extensionCtrl1Y.toFixed(2)}, ${extensionCtrl2X.toFixed(2)} ${extensionCtrl2Y.toFixed(2)}, ${extensionEndX.toFixed(2)} ${extensionEndY.toFixed(2)}`
+}
+
+function getPerformanceTier(): 'high' | 'medium' | 'low' {
+  const tier = document.documentElement.dataset.performanceTier
+
+  if (tier === 'low' || tier === 'medium' || tier === 'high') {
+    return tier
+  }
+
+  return 'high'
+}
+
+function refreshQualityProfile() {
+  const tier = getPerformanceTier()
+
+  if (tier === 'low') {
+    targetFrameMs = 34
+    activeCurveCount = 3
+    return
+  }
+
+  if (tier === 'medium') {
+    targetFrameMs = 24
+    activeCurveCount = 4
+    return
+  }
+
+  targetFrameMs = 16
+  activeCurveCount = curveSpecs.length
 }
 
 function updateCurves(frameTs: number) {
+  refreshQualityProfile()
+
+  if (lastRenderTs !== 0 && frameTs - lastRenderTs < targetFrameMs) {
+    frameId = requestAnimationFrame(updateCurves)
+    return
+  }
+
+  lastRenderTs = frameTs
+
   if (firstFrameTs === 0) {
     firstFrameTs = frameTs
   }
@@ -192,6 +247,12 @@ function updateCurves(frameTs: number) {
     const spec = runtimeCurveSpecs[index]
     const curveState = curves[index]
 
+    if (index >= activeCurveCount) {
+      curveState.path = ''
+      curveState.transform = 'translate3d(0px, 0px, 0)'
+      continue
+    }
+
     const driftX = (
       Math.sin(elapsed * spec.speedPrimary + spec.phase) * spec.swayAmplitudeX * spec.directionX
       + Math.cos(activeScrollY / 190 + spec.phase) * (spec.swayAmplitudeX * 0.42)
@@ -202,8 +263,12 @@ function updateCurves(frameTs: number) {
       + Math.sin(activeScrollY / 160 + spec.phase) * (spec.swayAmplitudeY * 0.38)
     )
 
-    const parallaxY = activeScrollY * spec.ratio * spec.directionY
-    curveState.path = buildPath(spec, activeScrollY, elapsed)
+    const rawParallaxY = activeScrollY * spec.ratio * spec.directionY
+    const parallaxY = Math.max(-maxParallaxOffset, Math.min(maxParallaxOffset, rawParallaxY))
+    if (curveState.path.length === 0) {
+      curveState.path = buildStaticPath(spec)
+    }
+
     curveState.transform = `translate3d(${driftX.toFixed(2)}px, ${(parallaxY + driftY).toFixed(2)}px, 0)`
   }
 
@@ -216,20 +281,42 @@ function onScroll() {
 
 function onResize() {
   latestScrollY = window.scrollY || window.pageYOffset || 0
+  maxParallaxOffset = Math.max(320, window.innerHeight * 0.55)
 }
 
 function onReducedMotionChanged() {
   firstFrameTs = 0
 }
 
+function onVisibilityChanged() {
+  if (document.hidden) {
+    if (frameId !== null) {
+      cancelAnimationFrame(frameId)
+      frameId = null
+    }
+
+    return
+  }
+
+  firstFrameTs = 0
+  lastRenderTs = 0
+
+  if (frameId === null) {
+    frameId = requestAnimationFrame(updateCurves)
+  }
+}
+
 onMounted(() => {
   initializeRuntimeSpecs()
+  refreshQualityProfile()
   reducedMotionMedia = window.matchMedia(REDUCED_MOTION_QUERY)
   latestScrollY = window.scrollY || window.pageYOffset || 0
   smoothedScrollY = latestScrollY
+  maxParallaxOffset = Math.max(320, window.innerHeight * 0.55)
 
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('resize', onResize, { passive: true })
+  document.addEventListener('visibilitychange', onVisibilityChanged)
   reducedMotionMedia.addEventListener('change', onReducedMotionChanged)
   frameId = requestAnimationFrame(updateCurves)
 })
@@ -237,6 +324,7 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', onScroll)
   window.removeEventListener('resize', onResize)
+  document.removeEventListener('visibilitychange', onVisibilityChanged)
 
   if (reducedMotionMedia) {
     reducedMotionMedia.removeEventListener('change', onReducedMotionChanged)
@@ -249,93 +337,4 @@ onUnmounted(() => {
 })
 </script>
 
-<style scoped>
-.ambient-curves {
-  position: fixed;
-  inset: -12vh -12vw;
-  z-index: 10;
-  pointer-events: none;
-  overflow: hidden;
-  isolation: isolate;
-  --ambient-curve-1-start: #00e5ff;
-  --ambient-curve-1-end: #49f0ff;
-  --ambient-curve-2-start: #97ff00;
-  --ambient-curve-2-end: #c6ff31;
-  --ambient-curve-3-start: #9400ff;
-  --ambient-curve-3-end: #7ac8ff;
-  --ambient-curve-4-start: #31a8ff;
-  --ambient-curve-4-end: #00ffd0;
-  --ambient-curve-5-start: #2ef8ff;
-  --ambient-curve-5-end: #8bff73;
-}
-
-:global([data-theme='dark']) .ambient-curves {
-  --ambient-curve-1-start: #ff0fb3;
-  --ambient-curve-1-end: #ff5ad9;
-  --ambient-curve-2-start: #ff4db8;
-  --ambient-curve-2-end: #ff8cb1;
-  --ambient-curve-3-start: #7d2cff;
-  --ambient-curve-3-end: #bf64ff;
-  --ambient-curve-4-start: #ff8a2a;
-  --ambient-curve-4-end: #ff6f1f;
-  --ambient-curve-5-start: #ff2cab;
-  --ambient-curve-5-end: #7a2cff;
-}
-
-.ambient-curves-svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.ambient-curve {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0.84;
-  will-change: transform, d;
-  mix-blend-mode: normal;
-}
-
-.ambient-curve-1 {
-  stroke: url(#ambient-gradient-1);
-  stroke-width: 10px;
-  filter: blur(26px) saturate(1.06);
-}
-
-.ambient-curve-2 {
-  stroke: url(#ambient-gradient-2);
-  stroke-width: 12px;
-  filter: blur(28px) saturate(1.08);
-}
-
-.ambient-curve-3 {
-  stroke: url(#ambient-gradient-3);
-  stroke-width: 9px;
-  filter: blur(22px) saturate(1.08);
-}
-
-.ambient-curve-4 {
-  stroke: url(#ambient-gradient-4);
-  stroke-width: 11px;
-  filter: blur(30px) saturate(1.1);
-}
-
-.ambient-curve-5 {
-  stroke: url(#ambient-gradient-5);
-  stroke-width: 8px;
-  filter: blur(18px) saturate(1.05);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ambient-curve {
-    will-change: auto;
-  }
-}
-
-@media print {
-  .ambient-curves {
-    display: none;
-  }
-}
-</style>
+<style scoped src="./AmbientCurves.css"></style>

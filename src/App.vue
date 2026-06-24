@@ -10,6 +10,15 @@ import { RouterView } from 'vue-router'
 import { onMounted, onUnmounted } from 'vue'
 import AmbientCurves from './components/AmbientCurves/AmbientCurves.vue'
 
+type PerformanceTier = 'high' | 'medium' | 'low'
+
+type ExtendedNavigator = Navigator & {
+  deviceMemory?: number
+  connection?: {
+    saveData?: boolean
+  }
+}
+
 // Smooth cursor-following spotlight via lerp-animated CSS custom properties
 let targetX = 0
 let targetY = 0
@@ -20,6 +29,24 @@ let isAnimating = false
 const SPOTLIGHT_LERP = 0.45
 const SPOTLIGHT_SNAP_DISTANCE = 0.4
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
+const COARSE_POINTER_QUERY = '(pointer: coarse)'
+
+function getPerformanceTier(): PerformanceTier {
+  const nav = navigator as ExtendedNavigator
+  const hardwareThreads = navigator.hardwareConcurrency || 8
+  const deviceMemory = nav.deviceMemory ?? 8
+  const saveDataEnabled = nav.connection?.saveData === true
+
+  if (saveDataEnabled || hardwareThreads <= 4 || deviceMemory <= 4) {
+    return 'low'
+  }
+
+  if (hardwareThreads <= 6 || deviceMemory <= 6) {
+    return 'medium'
+  }
+
+  return 'high'
+}
 
 function stopSpotlightAnimation() {
   if (rafId !== null) {
@@ -67,7 +94,16 @@ function onPointerMove(e: PointerEvent) {
 }
 
 onMounted(() => {
-  if (window.matchMedia(REDUCED_MOTION_QUERY).matches) {
+  const reducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches
+  const coarsePointer = window.matchMedia(COARSE_POINTER_QUERY).matches
+  const performanceTier = getPerformanceTier()
+  const shouldDisableSpotlight = reducedMotion || coarsePointer || performanceTier === 'low'
+
+  document.documentElement.dataset.performanceTier = performanceTier
+
+  if (shouldDisableSpotlight) {
+    document.documentElement.style.setProperty('--mx', '50%')
+    document.documentElement.style.setProperty('--my', '50%')
     return
   }
 
@@ -84,6 +120,10 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('pointermove', onPointerMove)
   stopSpotlightAnimation()
+
+  if (document.documentElement.dataset.performanceTier) {
+    delete document.documentElement.dataset.performanceTier
+  }
 })
 </script>
 

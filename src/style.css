@@ -221,7 +221,7 @@ body {
 body::before {
     content: '';
     position: fixed;
-    inset: -20vh 0;
+    inset: -20vh -16vw;
     pointer-events: none;
     z-index: 0;
     opacity: 1;
@@ -234,6 +234,11 @@ body::before {
         linear-gradient(120deg, transparent 0%, var(--page-texture-wash) 50%, transparent 100%);
     background-size: 200px 200px, 40px 40px, 40px 40px, 20px 20px, 20px 20px, 180% 180%;
     background-position: 0 0, 0 0, 0 0, 0 0, 10px 10px, 0% 0%;
+    animation: none;
+    transform: none;
+}
+
+:root[data-performance-tier='high'] body::before {
     animation: page-texture-scroll linear both;
     animation-timeline: scroll(root block);
 }
@@ -259,12 +264,12 @@ body > * {
 @keyframes page-texture-scroll {
     from {
         background-position: 0 0, 0 0, 0 0, 0 0, 10px 10px, 0% 0%;
-        transform: translateY(-5%) scale(1.04);
+        transform: translateY(-5%) scale(1.08);
     }
 
     to {
         background-position: 20px 280px, 0 120px, 0 120px, 0 400px, 10px 410px, 100% 100%;
-        transform: translateY(5%) scale(0.96);
+        transform: translateY(5%) scale(1.03);
     }
 }
 

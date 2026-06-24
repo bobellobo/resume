@@ -64,6 +64,11 @@ import Footer from '../components/Footer/Footer.vue'
   animation-timeline: scroll(root block);
 }
 
+:global(:root[data-performance-tier='medium']) .scroll-progress,
+:global(:root[data-performance-tier='low']) .scroll-progress {
+  display: none;
+}
+
 @keyframes scroll-progress {
   from {
     transform: scaleX(0);

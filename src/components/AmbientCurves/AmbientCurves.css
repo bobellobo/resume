@@ -1,0 +1,111 @@
+.ambient-curves {
+  position: fixed;
+  inset: -30vh -30vw;
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;
+  contain: layout paint;
+  isolation: isolate;
+  --ambient-curve-1-start: #00e5ff;
+  --ambient-curve-1-end: #49f0ff;
+  --ambient-curve-2-start: #97ff00;
+  --ambient-curve-2-end: #c6ff31;
+  --ambient-curve-3-start: #9400ff;
+  --ambient-curve-3-end: #7ac8ff;
+  --ambient-curve-4-start: #31a8ff;
+  --ambient-curve-4-end: #00ffd0;
+  --ambient-curve-5-start: #2ef8ff;
+  --ambient-curve-5-end: #8bff73;
+}
+
+:global([data-theme='dark'] .ambient-curves) {
+  --ambient-curve-1-start: #FF10F0;
+  --ambient-curve-1-end: #00FFFF;
+  --ambient-curve-2-start: #00FF00;
+  --ambient-curve-2-end: #FF1100;
+  --ambient-curve-3-start: #1100FF;
+  --ambient-curve-3-end: #FFFF00;
+  --ambient-curve-4-start: #FF00FF;
+  --ambient-curve-4-end: #00FF88;
+  --ambient-curve-5-start: #FF8800;
+  --ambient-curve-5-end: #0088FF;
+}
+
+.ambient-curves-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ambient-curve {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.84;
+  will-change: transform;
+  mix-blend-mode: normal;
+}
+
+.ambient-curve-1 {
+  stroke: url(#ambient-gradient-1);
+  stroke-width: 10px;
+  filter: blur(18px) saturate(1.04);
+}
+
+.ambient-curve-2 {
+  stroke: url(#ambient-gradient-2);
+  stroke-width: 12px;
+  filter: blur(20px) saturate(1.05);
+}
+
+.ambient-curve-3 {
+  stroke: url(#ambient-gradient-3);
+  stroke-width: 9px;
+  filter: blur(16px) saturate(1.05);
+}
+
+.ambient-curve-4 {
+  stroke: url(#ambient-gradient-4);
+  stroke-width: 11px;
+  filter: blur(20px) saturate(1.06);
+}
+
+.ambient-curve-5 {
+  stroke: url(#ambient-gradient-5);
+  stroke-width: 8px;
+  filter: blur(14px) saturate(1.04);
+}
+
+:global(:root[data-performance-tier='medium']) .ambient-curve {
+  opacity: 0.72;
+}
+
+:global(:root[data-performance-tier='medium']) .ambient-curve-1,
+:global(:root[data-performance-tier='medium']) .ambient-curve-2,
+:global(:root[data-performance-tier='medium']) .ambient-curve-3,
+:global(:root[data-performance-tier='medium']) .ambient-curve-4,
+:global(:root[data-performance-tier='medium']) .ambient-curve-5 {
+  filter: blur(10px) saturate(1.02);
+}
+
+:global(:root[data-performance-tier='low']) .ambient-curve {
+  opacity: 0.55;
+  filter: none;
+}
+
+:global(:root[data-performance-tier='low']) .ambient-curve-4,
+:global(:root[data-performance-tier='low']) .ambient-curve-5 {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-curve {
+    will-change: auto;
+  }
+}
+
+@media print {
+  .ambient-curves {
+    display: none;
+  }
+}
