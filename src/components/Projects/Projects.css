@@ -84,7 +84,7 @@
 .project-action-btn {
   width: 2.2rem;
   height: 2.2rem;
-  border-radius: 0;
+  border-radius: 999px;
   border: 0;
   background: transparent;
   color: var(--text-dark);
@@ -93,12 +93,14 @@
   justify-content: center;
   cursor: pointer;
   text-decoration: none;
-  transition: color var(--motion-duration-base) var(--motion-ease-standard);
+  transition: color var(--motion-duration-base) var(--motion-ease-standard),
+    transform var(--motion-duration-base) var(--motion-ease-standard);
 }
 
 .project-action-btn svg {
   width: 1.25rem;
   height: 1.25rem;
+  transition: filter var(--motion-duration-base) var(--motion-ease-standard);
 }
 
 .chevron-toggle-icon {
@@ -112,10 +114,21 @@
 .project-action-btn:hover,
 .project-action-btn:focus-visible {
   color: var(--primary-color);
+  transform: translateY(var(--motion-lift-xs));
+}
+
+.project-action-btn:hover svg,
+.project-action-btn:focus-visible svg {
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--primary-color) 55%, transparent));
+}
+
+.project-action-btn:active {
+  transform: scale(var(--motion-press-scale));
 }
 
 .project-action-btn:focus-visible {
-  box-shadow: 0 0 0 2px var(--focus-ring);
+  outline: none;
+  box-shadow: none;
 }
 
 .project-list-details {

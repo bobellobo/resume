@@ -156,22 +156,35 @@
   color: var(--text-dark);
   background: transparent;
   border: 0;
-  border-radius: 0;
-  transition: color var(--motion-duration-fast) var(--motion-ease-standard);
+  border-radius: 999px;
+  transition: color var(--motion-duration-fast) var(--motion-ease-standard),
+    transform var(--motion-duration-fast) var(--motion-ease-standard);
   flex-shrink: 0;
 }
 
 .experience-card-head:hover .experience-card-toggle {
   color: var(--primary-color);
+  transform: translateY(var(--motion-lift-xs));
 }
 
 .experience-card-head:focus-visible .experience-card-toggle {
   color: var(--primary-color);
+  transform: translateY(var(--motion-lift-xs));
+}
+
+.experience-card-toggle:active {
+  transform: scale(var(--motion-press-scale));
 }
 
 .experience-card-toggle-icon {
   width: 1.2rem;
   height: 1.2rem;
+  transition: filter var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.experience-card-head:hover .experience-card-toggle-icon,
+.experience-card-head:focus-visible .experience-card-toggle-icon {
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--primary-color) 55%, transparent));
 }
 
 .experience-card-details {
