@@ -245,24 +245,93 @@
 
 /* Tech badge styles are defined in common.css via .tech-badge token */
 
+.project-chip-tech {
+  border-color: color-mix(in srgb, var(--primary-color) 45%, transparent);
+  background-color: color-mix(in srgb, var(--primary-color) 14%, transparent);
+  color: color-mix(in srgb, var(--primary-color) 90%, var(--text-dark) 10%);
+}
+
+.project-chip-tech:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 22%, transparent);
+}
+
+.project-chip-keyword {
+  border-style: dashed;
+  border-width: 1px;
+  border-color: color-mix(in srgb, var(--text-light) 62%, transparent);
+  background-color: color-mix(in srgb, var(--surface-section) 75%, var(--border-color) 25%);
+  color: color-mix(in srgb, var(--text-dark) 88%, var(--primary-color) 12%);
+}
+
+.project-chip-keyword:hover {
+  background-color: color-mix(in srgb, var(--surface-section) 60%, var(--border-color) 40%);
+}
+
+[data-theme='dark'] .project-chip-keyword {
+  border-color: color-mix(in srgb, var(--primary-color) 55%, var(--text-light) 45%);
+  background-color: color-mix(in srgb, var(--primary-color) 18%, var(--surface-section) 82%);
+  color: color-mix(in srgb, white 88%, var(--primary-color) 12%);
+}
+
+[data-theme='dark'] .project-chip-keyword:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 28%, var(--surface-section) 72%);
+}
+
 .project-links {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm);
+  align-items: center;
+  gap: 0;
 }
 
 .meta-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
   text-decoration: none;
   color: var(--primary-color);
-  border-bottom: 1px solid color-mix(in srgb, var(--primary-color) 35%, transparent);
-  padding-bottom: 0.08rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color) 42%, transparent);
+  padding: 0.08rem 0;
   font-size: 0.85rem;
   font-weight: 600;
+  transition: color var(--motion-duration-base) var(--motion-ease-standard), border-bottom-color var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.meta-link + .meta-link {
+  margin-left: 1rem;
+}
+
+.meta-link + .meta-link::before {
+  content: '';
+  position: absolute;
+  left: -0.55rem;
+  top: 50%;
+  width: 1px;
+  height: 0.9em;
+  transform: translateY(-50%);
+  background-color: color-mix(in srgb, var(--text-light) 45%, transparent);
+  pointer-events: none;
+}
+
+.meta-link-arrow {
+  width: 0.76rem;
+  height: 0.76rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform var(--motion-duration-base) var(--motion-ease-standard);
 }
 
 .meta-link:hover {
   color: var(--secondary-color);
   border-bottom-color: var(--secondary-color);
+}
+
+.meta-link:hover .meta-link-arrow {
+  transform: translate(0.08rem, -0.08rem);
 }
 
 .project-gallery {

@@ -56,7 +56,7 @@
           <div v-if="hasTechnologies" class="project-fact-row">
             <p class="fact-label">{{ $t('projectPage.technologiesTitle') }}</p>
             <div class="chip-list">
-              <span v-for="technology in normalizedTechnologies" :key="technology" class="tech-badge">
+              <span v-for="technology in normalizedTechnologies" :key="technology" class="tech-badge project-chip-tech">
                 {{ technology }}
               </span>
             </div>
@@ -65,7 +65,11 @@
           <div v-if="hasKeywords" class="project-fact-row">
             <p class="fact-label">{{ $t('projectPage.keywordsTitle') }}</p>
             <div class="chip-list">
-              <span v-for="keyword in normalizedKeywords" :key="keyword" class="tech-badge tech-badge-subtle">
+              <span
+                v-for="keyword in normalizedKeywords"
+                :key="keyword"
+                class="tech-badge tech-badge-subtle project-chip-keyword"
+              >
                 {{ keyword }}
               </span>
             </div>
@@ -82,7 +86,11 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {{ link.label[currentLocale] }}
+                <span>{{ link.label[currentLocale] }}</span>
+                <svg class="meta-link-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <path d="M5 11L11 5" />
+                  <path d="M6 5H11V10" />
+                </svg>
               </a>
             </div>
           </div>

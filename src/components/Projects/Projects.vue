@@ -88,38 +88,18 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { Icon } from '@iconify/vue'
 import { useProjectsData, type Project } from '../../content/data/projects'
+import { useProjectExpansion } from '../../composables/useProjectExpansion'
 
 const { locale } = useI18n()
 const currentLocale = computed(() => locale.value as 'en' | 'fr')
 
 const { projects } = useProjectsData()
-
-const ICON_COLLECTION = 'lucide'
-const FALLBACK_ICON = 'circle-help'
-
-const resolveProjectIcon = (iconSlug: string): string => {
-  const slug = iconSlug?.trim() || FALLBACK_ICON
-  return `${ICON_COLLECTION}:${slug}`
-}
-
-const expandedProjects = ref<Set<string>>(new Set())
-
-const isExpanded = (projectSlug: string): boolean => expandedProjects.value.has(projectSlug)
-
-const toggleExpanded = (projectSlug: string): void => {
-  const next = new Set(expandedProjects.value)
-  if (next.has(projectSlug)) {
-    next.delete(projectSlug)
-  } else {
-    next.add(projectSlug)
-  }
-  expandedProjects.value = next
-}
+const { isExpanded, toggleExpanded, resolveProjectIcon } = useProjectExpansion()
 
 const getTechnologies = (project: Project): string[] => (
   project.technologies.filter((technology) => technology.trim().length > 0)

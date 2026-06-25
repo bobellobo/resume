@@ -23,7 +23,7 @@
               @input="handleSectionQueryInput"
               @keydown.down.prevent="moveSectionHighlight(1)"
               @keydown.up.prevent="moveSectionHighlight(-1)"
-              @keydown.enter.prevent="selectHighlightedSection"
+              @keydown.enter.prevent="handleSectionSelect"
             />
             <kbd class="section-search-shortcut">Ctrl K</kbd>
           </div>
@@ -239,93 +239,36 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, ref, onBeforeUnmount, onMounted } from 'vue'
 import { Icon } from '@iconify/vue'
-import { useI18n } from 'vue-i18n'
 import { useHeaderLogic } from './Header'
 import TemplateNotice from '../TemplateNotice/TemplateNotice.vue'
 import { getTemplateInfo } from '../../content/data/profile'
+import { useSectionSearch } from '../../composables/useSectionSearch'
+import { useMobileMenu } from '../../composables/useMobileMenu'
 
-type SectionId = 'home' | 'skills' | 'experience' | 'projects'
-
+// Legacy composable for backward compatibility
 const { currentLanguage, switchLanguage, currentTheme, toggleTheme } = useHeaderLogic()
-const { t } = useI18n()
-const MOBILE_BREAKPOINT = 900
 
+// New composables
+const { isSectionMenuOpen, sectionQuery, highlightedSectionIndex, filteredSections, openSectionMenu, closeSectionMenu, handleSectionQueryInput, moveSectionHighlight, selectHighlightedSection, goToSection } = useSectionSearch()
+
+const { isMobileMenuOpen, isDesktopLanguageMenuOpen, isMobileLanguageMenuOpen, toggleDesktopLanguageMenu, toggleMobileLanguageMenu, closeDesktopLanguageMenu, closeMobileLanguageMenu, closeLanguageMenus, toggleMobileMenu, closeMobileMenu, handleWindowResize } = useMobileMenu()
+
+// Template refs
 const headerRef = ref<HTMLElement | null>(null)
 const desktopLanguageSwitcherRef = ref<HTMLElement | null>(null)
 const mobileLanguageSwitcherRef = ref<HTMLElement | null>(null)
 const sectionSearchRef = ref<HTMLElement | null>(null)
 const sectionSearchInputRef = ref<HTMLInputElement | null>(null)
-const isDesktopLanguageMenuOpen = ref(false)
-const isMobileLanguageMenuOpen = ref(false)
-const isMobileMenuOpen = ref(false)
-const isSectionMenuOpen = ref(false)
-const sectionQuery = ref('')
-const highlightedSectionIndex = ref(0)
+
 const exportLink = `${import.meta.env.BASE_URL}?view=export`
 const templateInfo = getTemplateInfo()
 
 const currentLanguageLabel = computed(() => (currentLanguage.value === 'fr' ? 'Français' : 'English'))
-const sections = computed<{ id: SectionId; label: string }[]>(() => [
-  { id: 'home', label: t('nav.home') },
-  { id: 'skills', label: t('nav.skills') },
-  { id: 'experience', label: t('nav.experience') },
-  { id: 'projects', label: t('nav.projects') }
-])
-const filteredSections = computed(() => {
-  const query = sectionQuery.value.trim().toLowerCase()
 
-  if (!query) {
-    return sections.value
-  }
-
-  return sections.value.filter((section) => {
-    return section.label.toLowerCase().includes(query) || section.id.includes(query)
-  })
-})
-
-const toggleDesktopLanguageMenu = () => {
-  isDesktopLanguageMenuOpen.value = !isDesktopLanguageMenuOpen.value
-  isMobileLanguageMenuOpen.value = false
-}
-
-const toggleMobileLanguageMenu = () => {
-  isMobileLanguageMenuOpen.value = !isMobileLanguageMenuOpen.value
-  isDesktopLanguageMenuOpen.value = false
-}
-
-const closeDesktopLanguageMenu = () => {
-  isDesktopLanguageMenuOpen.value = false
-}
-
-const closeMobileLanguageMenu = () => {
-  isMobileLanguageMenuOpen.value = false
-}
-
-const closeLanguageMenus = () => {
-  closeDesktopLanguageMenu()
-  closeMobileLanguageMenu()
-}
-
-const openSectionMenu = () => {
-  isSectionMenuOpen.value = true
-
-  if (filteredSections.value.length === 0) {
-    highlightedSectionIndex.value = -1
-    return
-  }
-
-  if (highlightedSectionIndex.value < 0 || highlightedSectionIndex.value >= filteredSections.value.length) {
-    highlightedSectionIndex.value = 0
-  }
-}
-
-const closeSectionMenu = () => {
-  isSectionMenuOpen.value = false
-}
-
-const focusSectionSearchInput = () => {
+// Handler functions
+function focusSectionSearchInput() {
   closeMobileMenu()
   closeLanguageMenus()
   sectionSearchInputRef.value?.focus()
@@ -333,85 +276,18 @@ const focusSectionSearchInput = () => {
   openSectionMenu()
 }
 
-const handleSectionQueryInput = () => {
-  openSectionMenu()
-  highlightedSectionIndex.value = filteredSections.value.length > 0 ? 0 : -1
-}
-
-const moveSectionHighlight = (delta: number) => {
-  openSectionMenu()
-
-  if (filteredSections.value.length === 0) {
-    highlightedSectionIndex.value = -1
-    return
-  }
-
-  if (highlightedSectionIndex.value < 0) {
-    highlightedSectionIndex.value = 0
-    return
-  }
-
-  const next = highlightedSectionIndex.value + delta
-  const count = filteredSections.value.length
-  highlightedSectionIndex.value = (next + count) % count
-}
-
-const goToSection = (sectionId: SectionId) => {
-  const targetSection = document.getElementById(sectionId)
-
-  if (!targetSection) {
-    return
-  }
-
-  targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  history.replaceState(null, '', `#${sectionId}`)
-
-  const selectedSection = sections.value.find((section) => section.id === sectionId)
-  sectionQuery.value = selectedSection?.label ?? ''
-  closeSectionMenu()
-  closeMobileMenu()
-  closeLanguageMenus()
-}
-
-const selectHighlightedSection = () => {
-  if (highlightedSectionIndex.value < 0) {
-    return
-  }
-
-  const section = filteredSections.value[highlightedSectionIndex.value]
-
-  if (!section) {
-    return
-  }
-
-  goToSection(section.id)
-}
-
-const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
-
-  if (!isMobileMenuOpen.value) {
-    closeMobileLanguageMenu()
-  }
-}
-
-const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false
-  closeMobileLanguageMenu()
-}
-
-const handleNavLinkClick = () => {
+function handleNavLinkClick() {
   closeMobileMenu()
   closeLanguageMenus()
   closeSectionMenu()
 }
 
-const handleLanguageSelect = (lang: 'en' | 'fr') => {
+function handleLanguageSelect(lang: 'en' | 'fr') {
   switchLanguage(lang)
   closeLanguageMenus()
 }
 
-const handleDocumentMouseDown = (event: MouseEvent) => {
+function handleDocumentMouseDown(event: MouseEvent) {
   const target = event.target as Node | null
 
   if (target && headerRef.value && !headerRef.value.contains(target)) {
@@ -434,14 +310,7 @@ const handleDocumentMouseDown = (event: MouseEvent) => {
   }
 }
 
-const handleWindowResize = () => {
-  if (window.innerWidth > MOBILE_BREAKPOINT) {
-    closeMobileMenu()
-    closeMobileLanguageMenu()
-  }
-}
-
-const handleDocumentKeydown = (event: KeyboardEvent) => {
+function handleDocumentKeydown(event: KeyboardEvent) {
   if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
     event.preventDefault()
     focusSectionSearchInput()
@@ -459,6 +328,14 @@ onBeforeUnmount(() => {
   document.removeEventListener('keydown', handleDocumentKeydown)
   window.removeEventListener('resize', handleWindowResize)
 })
+
+// Handle section selection
+function handleSectionSelect() {
+  const section = selectHighlightedSection()
+  if (section) {
+    goToSection(section.id)
+  }
+}
 </script>
 
 <style scoped src="./Header.css"></style>

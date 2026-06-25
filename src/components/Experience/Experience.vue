@@ -84,87 +84,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { Icon } from '@iconify/vue'
-import { useExperiencesData, toFlagCode, getFlagSvgByCode } from '../../content/data/experiences'
+import { useExperiencesData } from '../../content/data/experiences'
+import { useExperienceExpansion } from '../../composables/useExperienceExpansion'
 
-const { locale } = useI18n()
 const { experiences } = useExperiencesData()
-const expandedExperienceIds = ref<string[]>([])
-
-interface ExperienceCard {
-  id: string
-  title: string
-  company: string
-  languages?: string[]
-  technologies?: string[]
-  description: string
-}
-
-interface ExperienceGroup {
-  id: number
-  period: string
-  location?: string
-  cards: ExperienceCard[]
-}
-
-const currentLocale = computed<'en' | 'fr'>(() => (locale.value === 'fr' ? 'fr' : 'en'))
-
-const experienceGroups = computed<ExperienceGroup[]>(() => {
-  const localeKey = currentLocale.value
-
-  return experiences.value.map((experience) => {
-    const localizedContent = experience.content[localeKey]
-    const sections = localizedContent.sections ?? []
-
-    if (sections.length > 1) {
-      return {
-        id: experience.id,
-        period: localizedContent.period,
-        location: localizedContent.location,
-        cards: sections.map((section, sectionIndex) => ({
-          id: `${experience.id}-section-${sectionIndex}`,
-          title: section.title,
-          company: localizedContent.company,
-          languages: localizedContent.languages,
-          technologies: section.technologies,
-          description: section.description,
-        })),
-      }
-    }
-
-    return {
-      id: experience.id,
-      period: localizedContent.period,
-      location: localizedContent.location,
-      cards: [{
-        id: String(experience.id),
-        title: localizedContent.role,
-        company: localizedContent.company,
-        languages: localizedContent.languages,
-        technologies: localizedContent.technologies ?? sections[0]?.technologies,
-        description: localizedContent.description ?? sections[0]?.description ?? '',
-      }],
-    }
-  })
-})
-
-const getLanguageFlags = (languages?: string[]) => (
-  (languages ?? [])
-    .map(toFlagCode)
-    .filter((code): code is string => Boolean(code))
-    .map((code) => ({ code, src: getFlagSvgByCode(code) }))
-    .filter((flag): flag is { code: string; src: string } => Boolean(flag.src))
-)
-
-const isExpanded = (id: string) => expandedExperienceIds.value.includes(id)
-
-const toggleExpanded = (id: string) => {
-  expandedExperienceIds.value = isExpanded(id)
-    ? expandedExperienceIds.value.filter((currentId) => currentId !== id)
-    : [...expandedExperienceIds.value, id]
-}
+const { experienceGroups, getLanguageFlags, isExpanded, toggleExpanded } = useExperienceExpansion(experiences)
 </script>
 
 <style scoped src="./Experience.css"></style>
