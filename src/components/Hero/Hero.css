@@ -82,10 +82,13 @@
 }
 
 .hero-photo {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 9999px;
   object-fit: cover;
+  object-position: center 26%;
+  transform: scale(1.08);
+  transform-origin: center;
   border: 3px solid color-mix(in srgb, var(--primary-color) 35%, var(--border-color));
 }
 
@@ -303,8 +306,8 @@
 
 @media (max-width: 900px) {
   .hero-photo {
-    width: 110px;
-    height: 110px;
+    width: 126px;
+    height: 126px;
   }
 
   .hero-name {
@@ -338,8 +341,8 @@
 
 @media (max-width: 480px) {
   .hero-photo {
-    width: 94px;
-    height: 94px;
+    width: 108px;
+    height: 108px;
   }
 
   .hero-role-marquee {

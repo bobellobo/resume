@@ -6,24 +6,26 @@ import { ref, Ref } from 'vue'
  */
 export function useExpansionState(useSet = false) {
   const expandedArray = ref<string[]>([])
-  const expandedSet = new Set<string>()
+  const expandedSet = ref<Set<string>>(new Set<string>())
 
-  const expanded: Ref<string[]> | Set<string> = useSet ? expandedSet : expandedArray
+  const expanded: Ref<string[]> | Ref<Set<string>> = useSet ? expandedSet : expandedArray
 
   function isExpanded(id: string): boolean {
     if (useSet) {
-      return expandedSet.has(id)
+      return expandedSet.value.has(id)
     }
     return expandedArray.value.includes(id)
   }
 
   function toggleExpanded(id: string): void {
     if (useSet) {
-      if (expandedSet.has(id)) {
-        expandedSet.delete(id)
+      const nextSet = new Set(expandedSet.value)
+      if (nextSet.has(id)) {
+        nextSet.delete(id)
       } else {
-        expandedSet.add(id)
+        nextSet.add(id)
       }
+      expandedSet.value = nextSet
     } else {
       const arr = expandedArray.value
       if (arr.includes(id)) {
@@ -36,11 +38,13 @@ export function useExpansionState(useSet = false) {
 
   function setExpanded(id: string, isExp: boolean): void {
     if (useSet) {
+      const nextSet = new Set(expandedSet.value)
       if (isExp) {
-        expandedSet.add(id)
+        nextSet.add(id)
       } else {
-        expandedSet.delete(id)
+        nextSet.delete(id)
       }
+      expandedSet.value = nextSet
     } else {
       const arr = expandedArray.value
       const hasId = arr.includes(id)

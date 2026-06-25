@@ -158,7 +158,7 @@
 
 .project-expand-enter-to,
 .project-expand-leave-from {
-  max-height: 220px;
+  max-height: 2000px;
   opacity: 1;
   transform: translateY(0);
 }
