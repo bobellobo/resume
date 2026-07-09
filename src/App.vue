@@ -1,5 +1,5 @@
 <template>
-  <AmbientCurves />
+  <!--<AmbientCurves />-->
   <div class="app-foreground">
     <RouterView />
   </div>
@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import AmbientCurves from './components/AmbientCurves/AmbientCurves.vue'
+//import AmbientCurves from './components/AmbientCurves/AmbientCurves.vue'
 import { usePerformanceTier } from './composables/usePerformanceTier'
 
 usePerformanceTier()

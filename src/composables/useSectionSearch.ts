@@ -14,9 +14,9 @@ export function useSectionSearch() {
 
   const sections = computed<Section[]>(() => [
     { id: 'home', label: t('nav.home') },
-    { id: 'skills', label: t('nav.skills') },
+    { id: 'projects', label: t('nav.projects') },
     { id: 'experience', label: t('nav.experience') },
-    { id: 'projects', label: t('nav.projects') }
+    { id: 'skills', label: t('nav.skills') }
   ])
 
   const filteredSections = computed(() => {
