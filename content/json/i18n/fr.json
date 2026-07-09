@@ -49,6 +49,13 @@
     "notFoundTitle": "Projet introuvable",
     "notFoundDescription": "La page projet demandée n'existe pas."
   },
+  "enscPage": {
+    "backToHome": "Retour à l'accueil",
+    "visitWebsite": "Visiter le site officiel",
+    "locationTitle": "Localisation",
+    "foundedTitle": "Fondée en",
+    "programsTitle": "Domaines d'expertise"
+  },
   "templateNotice": {
     "iconAriaLabel": "Ouvrir les détails du template",
     "iconTooltip": "Ce site est disponible comme template",

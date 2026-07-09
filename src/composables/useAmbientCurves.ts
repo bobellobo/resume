@@ -1,32 +1,27 @@
-import { onMounted, onUnmounted, reactive } from 'vue'
-import { RuntimeCurveSpec, CurveState } from '../components/AmbientCurves/types'
+import { onMounted, onUnmounted } from 'vue'
+import { RuntimeCurveSpec } from '../components/AmbientCurves/types'
 
 type PerformanceTierType = 'high' | 'medium' | 'low'
 
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
 const SCROLL_CONTRIBUTION_FACTOR = 1.18
 const SCROLL_SMOOTHING_FACTOR = 0.22
+// Ambient drift is slow, low-frequency motion, so updating faster than this is imperceptible
+// but still costs a style write per curve — capping it cuts work on high refresh-rate displays.
+const MIN_UPDATE_INTERVAL_MS = 1000 / 45
 
 /**
- * Manages ambient curve animation lifecycle and state
- * Handles performance optimization, scroll tracking, and animation frames
+ * Manages ambient curve animation lifecycle and state.
+ * Updates are written directly to the DOM (bypassing Vue reactivity) since this
+ * runs every animation frame and a reactive round-trip per curve per frame is
+ * pure overhead for values that never need to be rendered by Vue's vdom.
  */
 export function useAmbientCurves(
   curveSpecs: Array<{ id: number; className: string }>,
   buildStaticPath: (spec: RuntimeCurveSpec) => string
 ) {
-  const curves = reactive<CurveState[]>(
-    curveSpecs.map(({ id, className }) => ({
-      id,
-      className,
-      path: '',
-      cssVars: {
-        '--drift-x': '0px',
-        '--offset-y': '0px'
-      }
-    }))
-  )
-
+  const pathElements: (SVGPathElement | null)[] = new Array(curveSpecs.length).fill(null)
+  const pathInitialized: boolean[] = new Array(curveSpecs.length).fill(false)
   const runtimeCurveSpecs: RuntimeCurveSpec[] = []
 
   // State tracking
@@ -34,11 +29,16 @@ export function useAmbientCurves(
   let smoothedScrollY = 0
   let frameId: number | null = null
   let firstFrameTs = 0
+  let lastUpdateTs = 0
   let activeCurveCount = curveSpecs.length
   let maxParallaxOffset = 420
   let reducedMotionMedia: MediaQueryList | null = null
   let tierObserver: MutationObserver | null = null
   let currentTier: PerformanceTierType = 'high'
+
+  function setPathRef(index: number, el: Element | null) {
+    pathElements[index] = (el as SVGPathElement) ?? null
+  }
 
   function randomBetween(min: number, max: number): number {
     return min + Math.random() * (max - min)
@@ -121,6 +121,12 @@ export function useAmbientCurves(
       firstFrameTs = frameTs
     }
 
+    if (frameTs - lastUpdateTs < MIN_UPDATE_INTERVAL_MS) {
+      frameId = requestAnimationFrame(updateCurves)
+      return
+    }
+    lastUpdateTs = frameTs
+
     const isReducedMotion = reducedMotionMedia?.matches ?? false
     const elapsed = (frameTs - firstFrameTs) / 1000
 
@@ -134,12 +140,15 @@ export function useAmbientCurves(
 
     for (let index = 0; index < runtimeCurveSpecs.length; index += 1) {
       const spec = runtimeCurveSpecs[index]
-      const curveState = curves[index]
+      const el = pathElements[index]
+
+      if (!el) {
+        continue
+      }
 
       if (index >= activeCurveCount) {
-        curveState.path = ''
-        curveState.cssVars['--drift-x'] = '0px'
-        curveState.cssVars['--offset-y'] = '0px'
+        el.style.setProperty('--drift-x', '0px')
+        el.style.setProperty('--offset-y', '0px')
         continue
       }
 
@@ -158,12 +167,13 @@ export function useAmbientCurves(
       const rawParallaxY = activeScrollY * spec.ratio * spec.directionY
       const parallaxY = Math.max(-maxParallaxOffset, Math.min(maxParallaxOffset, rawParallaxY))
 
-      if (curveState.path.length === 0) {
-        curveState.path = buildStaticPath(spec)
+      if (!pathInitialized[index]) {
+        el.setAttribute('d', buildStaticPath(spec))
+        pathInitialized[index] = true
       }
 
-      curveState.cssVars['--drift-x'] = `${driftX.toFixed(2)}px`
-      curveState.cssVars['--offset-y'] = `${(parallaxY + driftY).toFixed(2)}px`
+      el.style.setProperty('--drift-x', `${driftX.toFixed(2)}px`)
+      el.style.setProperty('--offset-y', `${(parallaxY + driftY).toFixed(2)}px`)
     }
 
     frameId = requestAnimationFrame(updateCurves)
@@ -180,6 +190,7 @@ export function useAmbientCurves(
     }
 
     firstFrameTs = 0
+    lastUpdateTs = 0
 
     if (frameId === null) {
       frameId = requestAnimationFrame(updateCurves)
@@ -236,6 +247,6 @@ export function useAmbientCurves(
   })
 
   return {
-    curves
+    setPathRef
   }
 }

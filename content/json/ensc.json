@@ -1,0 +1,35 @@
+{
+  "website": "https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc",
+  "content": {
+    "en": {
+      "eyebrow": "My engineering school",
+      "title": "École Nationale Supérieure de Cognitique",
+      "shortTitle": "ENSC",
+      "description": "A French engineering school entirely dedicated to cognitive engineering, where computer science meets human factors.",
+      "article": "The École Nationale Supérieure de Cognitique (ENSC) is a French Grande École of engineering, part of the Bordeaux INP group, located in Talence near Bordeaux. Founded in 1991, it is one of the very few engineering schools in Europe entirely dedicated to cognitive engineering: a discipline that bridges computer science, cognitive science and human factors to design systems that are both technically sound and human-centered.\n\nThe curriculum blends software engineering, artificial intelligence, neuroscience, ergonomics and user experience design, training engineers who understand how humans perceive, think and interact with technology, and who can translate that understanding into better products and interfaces.\n\nThis unique, multidisciplinary training shaped my approach to engineering: building technically robust systems while staying attentive to the people who use them.",
+      "location": "Talence, France",
+      "founded": "1991",
+      "programs": [
+        "Cognitive Engineering",
+        "Human-Computer Interaction",
+        "Artificial Intelligence",
+        "Neuroscience & UX"
+      ]
+    },
+    "fr": {
+      "eyebrow": "Mon école d'ingénieur",
+      "title": "École Nationale Supérieure de Cognitique",
+      "shortTitle": "ENSC",
+      "description": "Une école d'ingénieurs française entièrement dédiée à la cognitique, à la croisée de l'informatique et des facteurs humains.",
+      "article": "L'École Nationale Supérieure de Cognitique (ENSC) est une grande école d'ingénieurs française, membre du groupe Bordeaux INP, située à Talence, près de Bordeaux. Fondée en 1991, elle est l'une des rares écoles d'ingénieurs en Europe entièrement dédiées à la cognitique : une discipline qui associe informatique, sciences cognitives et facteurs humains pour concevoir des systèmes à la fois techniquement solides et centrés sur l'humain.\n\nLa formation associe génie logiciel, intelligence artificielle, neurosciences, ergonomie et conception d'expériences utilisateur, formant des ingénieurs capables de comprendre comment les humains perçoivent, raisonnent et interagissent avec la technologie, et de traduire cette compréhension en produits et interfaces plus pertinents.\n\nCette formation unique et pluridisciplinaire a façonné mon approche de l'ingénierie : concevoir des systèmes techniquement robustes tout en restant attentif aux personnes qui les utilisent.",
+      "location": "Talence, France",
+      "founded": "1991",
+      "programs": [
+        "Cognitique",
+        "Interaction Homme-Machine",
+        "Intelligence Artificielle",
+        "Neurosciences & UX"
+      ]
+    }
+  }
+}

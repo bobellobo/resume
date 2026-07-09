@@ -49,6 +49,13 @@
     "notFoundTitle": "Project not found",
     "notFoundDescription": "The project page you requested does not exist."
   },
+  "enscPage": {
+    "backToHome": "Back to home",
+    "visitWebsite": "Visit official website",
+    "locationTitle": "Location",
+    "foundedTitle": "Founded",
+    "programsTitle": "Focus areas"
+  },
   "templateNotice": {
     "iconAriaLabel": "Open template details",
     "iconTooltip": "This site is available as a template",

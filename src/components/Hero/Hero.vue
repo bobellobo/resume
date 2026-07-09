@@ -21,17 +21,15 @@
 
         <ul class="hero-details-grid" aria-label="Profile overview and contact links">
           <li class="hero-grid-item hero-grid-item-clickable">
-            <a
+            <RouterLink
               class="hero-grid-item-link"
-              href="https://ensc.bordeaux-inp.fr/fr/presentation-de-l-ensc"
-              target="_blank"
-              rel="noopener noreferrer"
+              :to="{ name: 'ensc' }"
               :aria-label="profileContent.overview.universityLabel"
             >
               <Icon icon="lucide:graduation-cap" class="hero-grid-leading-icon" aria-hidden="true" />
               <span class="hero-grid-value">{{ profileContent.universityLabel }}</span>
-              <Icon icon="lucide:arrow-up-right" class="hero-grid-item-corner-icon" aria-hidden="true" />
-            </a>
+              <Icon icon="lucide:arrow-right" class="hero-grid-item-corner-icon" aria-hidden="true" />
+            </RouterLink>
           </li>
           <li class="hero-grid-item">
             <div class="hero-grid-item-static" :aria-label="profileContent.overview.currentLocationLabel">
@@ -103,6 +101,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { RouterLink } from 'vue-router'
 import { Icon } from '@iconify/vue'
 import heroPhoto from '@content/images/bibi.jpeg'
 import { getFlagSvgByCode, toFlagCode } from '../../content/data/languageFlags'

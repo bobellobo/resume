@@ -25,12 +25,11 @@
       </defs>
 
       <path
-        v-for="curve in curves"
-        :key="curve.id"
+        v-for="(spec, index) in curveSpecs"
+        :key="spec.id"
+        :ref="(el) => setPathRef(index, el as Element | null)"
         class="ambient-curve"
-        :class="curve.className"
-        :d="curve.path"
-        :style="curve.cssVars"
+        :class="spec.className"
       />
     </svg>
   </div>
@@ -57,7 +56,7 @@ function buildStaticPath(spec: RuntimeCurveSpec): string {
   return `M ${spec.xControl[0]} ${y0.toFixed(2)} C ${x1.toFixed(2)} ${y1.toFixed(2)}, ${x2.toFixed(2)} ${y2.toFixed(2)}, ${spec.xControl[3]} ${y3.toFixed(2)}`
 }
 
-const { curves } = useAmbientCurves(curveSpecs, buildStaticPath)
+const { setPathRef } = useAmbientCurves(curveSpecs, buildStaticPath)
 </script>
 
 <style scoped src="./AmbientCurves.css"></style>

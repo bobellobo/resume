@@ -19,13 +19,3 @@ export type RuntimeCurveSpec = CurveSpec & {
   speedSecondary: number
   pathJitter: number
 }
-
-export type CurveState = {
-  id: number
-  className: string
-  path: string
-  cssVars: {
-    '--drift-x': string
-    '--offset-y': string
-  }
-}

@@ -34,6 +34,11 @@ const router = createRouter({
       component: () => import('./views/project/ProjectView.vue')
     },
     {
+      path: '/ensc',
+      name: 'ensc',
+      component: () => import('./views/ensc/EnscView.vue')
+    },
+    {
       path: '/export',
       name: 'export',
       component: () => import('./components/Export/Export.vue')
