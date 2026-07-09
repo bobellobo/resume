@@ -2,31 +2,24 @@ import { onMounted, onUnmounted, ref } from 'vue'
 
 type PerformanceTier = 'high' | 'medium' | 'low'
 
-type ExtendedNavigator = Navigator & {
-  deviceMemory?: number
-  connection?: {
-    saveData?: boolean
-  }
-}
-
 /**
- * Detects device performance capabilities and manages performance tier
- * Considers hardware threads, device memory, and data saver mode
+ * Estimates a performance tier and manages it on the document root.
+ * Uses only standard media-query preference signals (reduced motion,
+ * reduced data, coarse pointer) rather than device/hardware introspection.
  */
 export function usePerformanceTier() {
   const performanceTier = ref<PerformanceTier>('high')
 
   function detectPerformanceTier(): PerformanceTier {
-    const nav = navigator as ExtendedNavigator
-    const hardwareThreads = navigator.hardwareConcurrency || 8
-    const deviceMemory = nav.deviceMemory ?? 8
-    const saveDataEnabled = nav.connection?.saveData === true
-
-    if (saveDataEnabled || hardwareThreads <= 4 || deviceMemory <= 4) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return 'low'
     }
 
-    if (hardwareThreads <= 6 || deviceMemory <= 6) {
+    if (window.matchMedia('(prefers-reduced-data: reduce)').matches) {
+      return 'low'
+    }
+
+    if (window.matchMedia('(pointer: coarse)').matches) {
       return 'medium'
     }
 
