@@ -2,6 +2,8 @@ import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { SectionId, Section } from './types'
 
+const SECTION_SCROLL_GAP = 16
+
 /**
  * Manages section search menu state and filtering
  * Handles keyboard navigation and section navigation
@@ -95,7 +97,11 @@ export function useSectionSearch() {
       return
     }
 
-    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const header = document.querySelector<HTMLElement>('.header')
+    const headerOffset = header?.getBoundingClientRect().height ?? 0
+    const targetTop = targetSection.getBoundingClientRect().top + window.scrollY - headerOffset - SECTION_SCROLL_GAP
+
+    window.scrollTo({ top: Math.max(targetTop, 0), behavior: 'smooth' })
     history.replaceState(null, '', `#${sectionId}`)
 
     const selectedSection = sections.value.find((section) => section.id === sectionId)
