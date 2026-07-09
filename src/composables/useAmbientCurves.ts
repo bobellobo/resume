@@ -4,7 +4,7 @@ import { RuntimeCurveSpec } from '../components/AmbientCurves/types'
 type PerformanceTierType = 'high' | 'medium' | 'low'
 
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
-const SCROLL_CONTRIBUTION_FACTOR = 1.18
+const SCROLL_CONTRIBUTION_FACTOR = 1.08
 const SCROLL_SMOOTHING_FACTOR = 0.22
 // Ambient drift is slow, low-frequency motion, so updating faster than this is imperceptible
 // but still costs a style write per curve — capping it cuts work on high refresh-rate displays.

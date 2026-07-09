@@ -196,7 +196,7 @@
 
 .experience-expand-enter-active,
 .experience-expand-leave-active {
-  transition: max-height var(--motion-duration-base) var(--motion-ease-standard), opacity var(--motion-duration-base) var(--motion-ease-standard), padding var(--motion-duration-base) var(--motion-ease-standard);
+  transition: max-height var(--motion-duration-expand) var(--motion-ease-expand), opacity 120ms ease-out, padding var(--motion-duration-expand) var(--motion-ease-expand);
 }
 
 .experience-expand-enter-from {
@@ -207,14 +207,14 @@
 }
 
 .experience-expand-enter-to {
-  max-height: 2000px;
+  max-height: 900px;
   opacity: 1;
   padding-top: 1.08rem;
   padding-bottom: 1.08rem;
 }
 
 .experience-expand-leave-from {
-  max-height: 2000px;
+  max-height: 900px;
   opacity: 1;
   padding-top: 1.08rem;
   padding-bottom: 1.08rem;

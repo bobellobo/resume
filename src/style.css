@@ -105,10 +105,12 @@
     --footer-text-size-mobile: 0.92rem;
     --footer-text-size-small: 0.86rem;
     --motion-ease-standard: ease;
+    --motion-ease-expand: cubic-bezier(0.16, 1, 0.3, 1);
     --motion-duration-fast: 0.2s;
     --motion-duration-base: 0.25s;
     --motion-duration-slow: 0.3s;
     --motion-duration-dialog: 0.22s;
+    --motion-duration-expand: 0.16s;
     --motion-lift-xs: -1px;
     --motion-lift-sm: -2px;
     --motion-lift-lg: -8px;

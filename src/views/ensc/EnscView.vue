@@ -33,7 +33,6 @@
 
       <article class="ensc-article">
         <header class="ensc-header">
-          <p class="ensc-eyebrow">{{ content.eyebrow }}</p>
           <h1 class="ensc-title">{{ content.title }}</h1>
           <p class="ensc-intro">{{ content.description }}</p>
 

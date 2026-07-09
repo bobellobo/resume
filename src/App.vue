@@ -1,5 +1,5 @@
 <template>
-  <!-- <AmbientCurves /> -->
+  <AmbientCurves/>
   <div class="app-foreground">
     <RouterView />
   </div>

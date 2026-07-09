@@ -146,7 +146,7 @@
 .project-expand-enter-active,
 .project-expand-leave-active {
   overflow: hidden;
-  transition: max-height 260ms var(--motion-ease-standard), opacity 220ms var(--motion-ease-standard), transform 220ms var(--motion-ease-standard);
+  transition: max-height var(--motion-duration-expand) var(--motion-ease-expand), opacity 120ms ease-out, transform 120ms var(--motion-ease-expand);
 }
 
 .project-expand-enter-from,
@@ -158,7 +158,7 @@
 
 .project-expand-enter-to,
 .project-expand-leave-from {
-  max-height: 2000px;
+  max-height: 640px;
   opacity: 1;
   transform: translateY(0);
 }
