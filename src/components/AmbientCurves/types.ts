@@ -1,4 +1,4 @@
-export type PerformanceTier = 'high' | 'medium' | 'low'
+export type PerformanceTier = 'high' | 'low'
 
 export type CurveSpec = {
   id: number

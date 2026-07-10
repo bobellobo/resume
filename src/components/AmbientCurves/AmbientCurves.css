@@ -81,18 +81,6 @@
   filter: blur(14px) saturate(1.04);
 }
 
-:global(:root[data-performance-tier='medium']) .ambient-curve {
-  opacity: 0.72;
-}
-
-:global(:root[data-performance-tier='medium']) .ambient-curve-1,
-:global(:root[data-performance-tier='medium']) .ambient-curve-2,
-:global(:root[data-performance-tier='medium']) .ambient-curve-3,
-:global(:root[data-performance-tier='medium']) .ambient-curve-4,
-:global(:root[data-performance-tier='medium']) .ambient-curve-5 {
-  filter: blur(10px) saturate(1.02);
-}
-
 :global(:root[data-performance-tier='low']) .ambient-curve {
   opacity: 0.55;
   filter: none;

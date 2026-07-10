@@ -6,7 +6,7 @@ export const randomBetween = (min: number, max: number): number =>
 export function getPerformanceTier(): PerformanceTier {
   const tier = document.documentElement.dataset.performanceTier
 
-  if (tier === 'low' || tier === 'medium' || tier === 'high') {
+  if (tier === 'low' || tier === 'high') {
     return tier
   }
 

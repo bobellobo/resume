@@ -1,7 +1,7 @@
 import { onMounted, onUnmounted } from 'vue'
 import { RuntimeCurveSpec } from '../components/AmbientCurves/types'
 
-type PerformanceTierType = 'high' | 'medium' | 'low'
+type PerformanceTierType = 'high' | 'low'
 
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
 const SCROLL_CONTRIBUTION_FACTOR = 1.08
@@ -69,7 +69,7 @@ export function useAmbientCurves(
   function getPerformanceTier(): PerformanceTierType {
     const tier = document.documentElement.dataset.performanceTier
 
-    if (tier === 'low' || tier === 'medium' || tier === 'high') {
+    if (tier === 'low' || tier === 'high') {
       return tier
     }
 
@@ -81,11 +81,6 @@ export function useAmbientCurves(
 
     if (tier === 'low') {
       activeCurveCount = 3
-      return
-    }
-
-    if (tier === 'medium') {
-      activeCurveCount = 4
       return
     }
 

@@ -40,7 +40,6 @@
   animation-timeline: scroll(root block);
 }
 
-:global(:root[data-performance-tier='medium']) .scroll-progress,
 :global(:root[data-performance-tier='low']) .scroll-progress {
   display: none;
 }

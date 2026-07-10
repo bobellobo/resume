@@ -1,11 +1,11 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
-type PerformanceTier = 'high' | 'medium' | 'low'
+type PerformanceTier = 'high' | 'low'
 
 /**
  * Estimates a performance tier and manages it on the document root.
- * Uses only standard media-query preference signals (reduced motion,
- * reduced data, coarse pointer) rather than device/hardware introspection.
+ * Uses only explicit user accessibility preferences (reduced motion,
+ * reduced data) rather than device/hardware or input-type introspection.
  */
 export function usePerformanceTier() {
   const performanceTier = ref<PerformanceTier>('high')
@@ -17,10 +17,6 @@ export function usePerformanceTier() {
 
     if (window.matchMedia('(prefers-reduced-data: reduce)').matches) {
       return 'low'
-    }
-
-    if (window.matchMedia('(pointer: coarse)').matches) {
-      return 'medium'
     }
 
     return 'high'
