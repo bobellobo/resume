@@ -2,8 +2,6 @@
  * Composables index - Central location for composable exports
  */
 
-export { usePerformanceTier } from './usePerformanceTier'
-export { useAmbientCurves } from './useAmbientCurves'
 export { useHeaderTheme } from './useHeaderTheme'
 export { useHeaderLanguage } from './useHeaderLanguage'
 export { useSectionSearch } from './useSectionSearch'

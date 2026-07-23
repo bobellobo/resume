@@ -65,6 +65,7 @@
   background: var(--glass-fill-navbar-strong);
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(var(--glass-blur-md));
+  -webkit-backdrop-filter: blur(var(--glass-blur-md));
 }
 
 .template-dialog-close {

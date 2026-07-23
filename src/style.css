@@ -115,12 +115,12 @@
     --motion-lift-sm: -2px;
     --motion-lift-lg: -8px;
     --motion-press-scale: 0.98;
-    --page-texture-dot: rgba(0, 0, 0, 0.18);
-    --page-texture-line: rgba(0, 0, 0, 0.1);
+    --page-texture-dot: rgba(0, 0, 0, 0.26);
+    --page-texture-line: rgba(0, 0, 0, 0.14);
     --page-texture-wash: rgba(255, 255, 255, 0.5);
     --page-spotlight-top: rgba(80, 80, 80, 0.16);
     --page-spotlight-side: rgba(0, 0, 0, 0.06);
-    --page-grain-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    --page-grain-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
 }
 
 [data-theme='dark'] {
@@ -173,12 +173,12 @@
     --project-placeholder-end: #333333;
     --overlay-color: rgba(0, 0, 0, 0.65);
     --focus-ring: rgba(255, 255, 255, 0.2);
-    --page-texture-dot: rgba(255, 255, 255, 0.14);
-    --page-texture-line: rgba(255, 255, 255, 0.09);
+    --page-texture-dot: rgba(255, 255, 255, 0.2);
+    --page-texture-line: rgba(255, 255, 255, 0.12);
     --page-texture-wash: rgba(0, 0, 0, 0.42);
     --page-spotlight-top: rgba(255, 255, 255, 0.16);
     --page-spotlight-side: rgba(255, 255, 255, 0.06);
-    --page-grain-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
+    --page-grain-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
 }
 
 /* ========== General Styles ========== */
@@ -234,9 +234,11 @@ body::before {
     transform: none;
 }
 
-:root[data-performance-tier='high'] body::before {
-    animation: page-texture-scroll linear both;
-    animation-timeline: scroll(root block);
+@supports (animation-timeline: scroll()) {
+    :root[data-performance-tier='high'] body::before {
+        animation: page-texture-scroll linear both;
+        animation-timeline: scroll(root block);
+    }
 }
 
 body > * {

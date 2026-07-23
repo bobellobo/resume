@@ -1,16 +1,13 @@
 <template>
-  <AmbientCurves/>
+  <AmbientGlow />
   <div class="app-foreground">
     <RouterView />
   </div>
 </template>
 
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import AmbientCurves from './components/AmbientCurves/AmbientCurves.vue'
-import { usePerformanceTier } from './composables/usePerformanceTier'
-
-usePerformanceTier()
+import { RouterView } from 'vue-router';
+import AmbientGlow from './components/AmbientGlow/AmbientGlow.vue';
 </script>
 
 

@@ -36,8 +36,16 @@
   background: color-mix(in srgb, var(--primary-color) 65%, transparent);
   transform: scaleX(0);
   transform-origin: 0 50%;
-  animation: scroll-progress linear both;
-  animation-timeline: scroll(root block);
+}
+
+/* Scroll-driven animations aren't supported in Safari/Firefox yet; without this
+   guard the shorthand's default 0s duration would snap the bar to scaleX(1)
+   and leave it stuck full-width instead of just not animating. */
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root block);
+  }
 }
 
 :global(:root[data-performance-tier='low']) .scroll-progress {
