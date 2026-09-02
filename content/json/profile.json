@@ -50,7 +50,7 @@
           }
         ]
       },
-      "exportDescription": "Full-stack developer with 4 years of experience, trained at {university}. This background gave me a very all-around skill set and I'm able to tackle both technical and functional aspects of interface and system design. In previous roles in France or abroad, I developed expertise across modern tools and methodologies, with a strong focus on clean code, performance, and maintainable solutions. I have mostly worked on web applications with TypeScript and modern frameworks, but I am able to quickly learn new technologies and adapt to new challenges."
+      "exportDescription": "Full-stack developer with 4 years of experience, trained as a cognitive engineer at {university}. I have a very versatile profile and am able to navigate between the technical and functional aspects of a project. In my previous experiences in France or abroad, I have developed a strong technical expertise and experience on projects with various configurations. I like learning new things everyday while constantly improving the technical aspects of my crafts."
     },
     "fr": {
       "fullName": "Titouan Guedon",
@@ -58,7 +58,7 @@
         "Développeur Full-stack",
         "Ingénieur cogniticien"
       ],
-      "universityLabel": "Ecole Nationale Supérieure de Cognitique",
+      "universityLabel": "ENSC",
       "skillsTitle": "Compétences",
       "exportRole": "Développeur Full-stack - Ingénieur cogniticien",
       "exportDocumentLabel": "Vue d'export de Titouan Guedon",
@@ -92,7 +92,7 @@
           }
         ]
       },
-      "exportDescription": "Développeur full-stack avec 4 ans d'expérience, formé à l'{university}. J'y ai acquis un profil très polyvalent entre les aspects techniques et fonctionnels de la conception d'interfaces et de systèmes. Dans mes expériences précédentes en France ou à l'étranger j'ai développé une expertise technique solide sur des frameworks et langages modernes, avec une grande attention portée à la qualité du code, la performance et la maintenabilité. J'ai majoritairement travaillé sur des applications web, le plus souvent avec TypeScript et des frameworks modernes, mais je suis capable de monter en compétence rapidement sur de nouveaux sujets."
+      "exportDescription": "Développeur full-stack avec 4 ans d'expérience, formé en tant qu'ingénieur cogniticien à l'{university}. J'ai un profil très polyvalent, capable de naviguer entre les aspects techniques et fonctionnels d'un projet. Dans mes expériences précédentes en France ou à l'étranger j'ai développé une expertise technique solide et une expérience sur des projets de configurations diverses. J'aime toucher à tout, apprendre de nouvelles choses et me perfectionner sur les sujets que je maîtrise déjà."
     }
   },
   "experiences": [
