@@ -100,6 +100,55 @@
       "id": 1,
       "content": {
         "en": {
+          "period": "Sept 2026 - Now",
+          "role": "Full-stack Engineer",
+          "languages": [
+            "FR"
+          ],
+          "company": "Aubay Solutec",
+          "location": "Bordeaux, France",
+          "sections": [
+            {
+              "title": "Fullstack developer",
+              "description": "Consultancy work as a fullstack developer",
+              "technologies": [
+                "Node.js",
+                "TypeScript",
+                "React",
+                "Angular",
+                "Java Spring"
+              ]
+            }
+          ]
+        },
+        "fr": {
+          "period": "Sept 2026 - Aujourd'hui",
+          "role": "Développeur Fullstack",
+          "languages": [
+            "FR"
+          ],
+          "company": "Aubay Solutec",
+          "location": "Bordeaux, France",
+          "sections": [
+            {
+              "title": "Développeur Fullstack",
+              "description": "Consultant en développement fullstack.",
+              "technologies": [
+                "Node.js",
+                "TypeScript",
+                "React",
+                "Angular",
+                "Java Spring"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "content": {
+        "en": {
           "period": "Jan 2024 — Jan 2026",
           "role": "Full-stack Engineer",
           "languages": [
@@ -168,7 +217,7 @@
       }
     },
     {
-      "id": 2,
+      "id": 3,
       "content": {
         "en": {
           "period": "Sept 2022 —  Aug 2023",
@@ -211,7 +260,7 @@
       }
     },
     {
-      "id": 3,
+      "id": 4,
       "content": {
         "en": {
           "period": "May 2022 - Aug 2022",
